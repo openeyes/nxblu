@@ -39,7 +39,7 @@ Also update: `style_eyedraw_doodles.css` to `nxblu/dist/css/`
 <!-- newblue current -->
 <link rel="stylesheet" type="text/css" href="/newblue/dist/css/edge_style_oe_print.3.css">
 <!-- nxblu -->
-<link rel="stylesheet" href="/nxblu/dist/css/6.0.0_oe_print.css">
+<link rel="stylesheet" href="/nxblu/dist/css/oe_print.css">
 ```
 
 
