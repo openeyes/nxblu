@@ -98,7 +98,7 @@ iDG is using this in `<head>` as it helps with font flickering, the next stage w
 
 ### nxblu version 6.0.0
 
-nxblu 6.0.0 is the updated version of newblue 5.13.10, however, it has removed several old and redundant CSS approaches that were still being supported in newblue.
+nxblu 6.0.0 is the updated version of newblue 5.13.10, it has removed several old and redundant CSS approaches that were still being supported in newblue but should no longer be used in the DOM
 
 
 
