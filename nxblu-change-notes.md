@@ -21,7 +21,7 @@ Replace the 2 light and dark CSS files:
 ```
 
 With these updated CSS files from `nxblue/dist/css`:  
-**important: match the media attributes, do not change these**
+**Important: do not change the media attributes**
 
 ```html
 <link href="/nxblu/dist/css/style_openeyes.css" rel="stylesheet" media="screen">
