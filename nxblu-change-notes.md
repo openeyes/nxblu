@@ -48,7 +48,8 @@ Replace the current theme change link text with the following buttons
 </div>
 ```
 
-JS is only required to change the class on `<htm>` to update the UI theme *(obviously you'll need to add the server cookie storage for the User)*  
+JS is only required to change the class on `<html>` to update the UI theme  
+*(Obviously you'll need to add the server cookie storage for the User)*  
 e.g.
 
 ```js
