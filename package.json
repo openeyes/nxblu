@@ -1,7 +1,7 @@
 {
-  "name": "newblue",
-  "version": "4.0.0",
-  "description": "newblue for OpenEyes",
+  "name": "nxblu",
+  "version": "6",
+  "description": "nxblu for OpenEyes",
   "private": true,
   "author": {
     "name": "Toby Fisher",
@@ -10,11 +10,11 @@
   "license": "AGPL-3.0-only",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openeyes/newblue"
+    "url": "https://github.com/openeyes/nxblu"
   },
   "browserslist": [
-    "Chrome > 84",
-    "Edge > 84",
+    "Chrome > 89",
+    "Edge > 89",
     "Safari > 15"
   ],
   "scripts": {
