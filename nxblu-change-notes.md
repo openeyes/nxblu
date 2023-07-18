@@ -9,7 +9,7 @@ Major OE CSS version change: 5.x.x to 6.x.x
 3. Manage theme classes on `<html>`
 4. Preload fonts (optional)
 
-> iDG is setup to demo the following...
+> iDG is setup to demo all the following...
 
 ### 1) CSS and `<head>` changes
 
