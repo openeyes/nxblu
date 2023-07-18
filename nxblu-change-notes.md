@@ -7,6 +7,7 @@ Major OE CSS version change: 5.x.x to 6.x.x
 1. Update newblue CSS files with nxblu CSS files
 2. Update OE panel with new UI buttons to allow User to change themes
 3. Manage theme classes on `<html>`
+4. Preload fonts (optional)
 
 > iDG is setup to demo the following...
 
@@ -30,14 +31,23 @@ With these updated CSS files from `nxblue/dist/css`:
 Also update: `style_eyedraw_doodles.css` to `nxblu/dist/css/`  
 *(btw. this only provides CSS for the doodle icons so it only needs loading when a User is editing an Eyedraw)*
 
-### Print CSS: `style_oe_print.3.css`
+### Print CSS: 
+
+```html
+<!-- newblue current -->
+<link rel="stylesheet" type="text/css" href="/newblue/dist/css/edge_style_oe_print.3.css">
+<!-- nxblu -->
+
+```
+
+`style_oe_print.3.css`
 
 This file is available in nxblu **but** I advise to continue to use the current one from newblue for now until you are ready to move this over - the PDF/Printing is impossible to fully test on iDG.
 
 
 ---
 
-## UI theme change buttons
+### 2) UI theme change buttons
 
 Replace the current theme change link text with the following buttons
 
@@ -65,13 +75,26 @@ darkBtn.onclick = () => switchTheme("dark");
 lightBtn.onclick = () => switchTheme("light");
 ```
 
-HTML tag must always be set to a theme:
+### 3) HTML tag must have a theme class:
 
 ```html
 <html lang="en" class="theme-light">
 <!-- or -->
 <html lang="en" class="theme-dark">
 ```
+---
+
+### 4) Preloading fonts (optional)
+iDG is using this and it may help with font flickering, the next stage would be to implement the Font API... but for now (and allow caching):
+```html
+<!-- preload common custom fonts -->
+<link rel="preload" href="/nxblu/dist/fonts/roboto-subset/100-thin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/nxblu/dist/fonts/roboto-subset/300-light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/nxblu/dist/fonts/roboto-subset/400-latin-greek.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/nxblu/dist/fonts/roboto-subset/500-latin-greek.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/nxblu/dist/fonts/roboto-subset/700-latin-greek.woff2" as="font" type="font/woff2" crossorigin>
+```
+
 ---
 
 ### nxblu version 6.0.0
