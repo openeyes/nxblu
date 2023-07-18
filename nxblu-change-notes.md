@@ -31,18 +31,17 @@ With these updated CSS files from `nxblue/dist/css`:
 Also update: `style_eyedraw_doodles.css` to `nxblu/dist/css/`  
 *(btw. this only provides CSS for the doodle icons so it only needs loading when a User is editing an Eyedraw)*
 
-### Print CSS: 
+### Print / PDF CSS 
+
+99% sure it's ok to switch over to nxblu for the Print / PDF for the headless chrome, however it's impossible to fully test this one on iDG.
 
 ```html
 <!-- newblue current -->
 <link rel="stylesheet" type="text/css" href="/newblue/dist/css/edge_style_oe_print.3.css">
 <!-- nxblu -->
-
+<link rel="stylesheet" href="/nxblu/dist/css/6.0.0_oe_print.css">
 ```
 
-`style_oe_print.3.css`
-
-This file is available in nxblu **but** I advise to continue to use the current one from newblue for now until you are ready to move this over - the PDF/Printing is impossible to fully test on iDG.
 
 
 ---
