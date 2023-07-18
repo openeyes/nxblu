@@ -84,7 +84,7 @@ lightBtn.onclick = () => switchTheme("light");
 ---
 
 ### 4) Preloading fonts (optional)
-iDG is using this and it may help with font flickering, the next stage would be to implement the Font API... but for now (and allow caching):
+iDG is using this in `<head>` as it helps with font flickering, the next stage would be to implement the Font API properly... but for now (need to allow caching):
 ```html
 <!-- preload common custom fonts -->
 <link rel="preload" href="/nxblu/dist/fonts/roboto-subset/100-thin.woff2" as="font" type="font/woff2" crossorigin>
