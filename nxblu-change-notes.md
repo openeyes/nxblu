@@ -76,7 +76,7 @@ HTML tag must always be set to a theme:
 
 ### nxblu version 6.0.0
 
-nxblu 6.0.0 is currently tracking the latest version of newblue (5.13.10) until OE switches over. 
+nxblu 6.0.0 is the updated version of newblue 5.13.10, however, it has removed several old and redundant CSS approaches that were still being supported in newblue.
 
 
 
