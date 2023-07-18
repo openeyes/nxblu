@@ -1,0 +1,19 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-event-quickview {
+	.i-btn-close {
+		position:absolute;
+		top:0;
+		right:0;
+		height: $oe-event-header-height;
+		width: $oe-event-header-height;	
+		cursor: pointer;
+		// large icon size (make sure it's obvious that it's been locked open)
+		background: center / 19px var(--i-remove-circle) no-repeat;
+	}
+}
+

@@ -1,0 +1,23 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.element {
+
+	// adds a background line to divide R & L Eye data
+
+	&.eye-divider {
+		background-image: var(--i-elem-rl-vertical);
+		background-position: 50% 0;
+		background-repeat: repeat-y;
+		background-size: 19px;
+
+		@include extended() {
+			// needs offsetting because headers have dropped left
+			background-position-x: 54.5%;
+		}
+	}
+}
+
+

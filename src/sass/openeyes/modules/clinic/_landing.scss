@@ -1,0 +1,26 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-clinic {
+	// Help info for landing page
+	.oec-help {
+		width: 450px;
+		margin:60px 20px;	
+		
+		
+		@include font-size(15);
+		font-weight: var(--font-light);
+		color: var(--txt-light);
+		
+		.help-note {
+			@include flex( center, space-between );
+			position: fixed;
+			
+			@include font-size(12);
+			font-weight: var(--font-medium);
+		}
+		
+	}
+}

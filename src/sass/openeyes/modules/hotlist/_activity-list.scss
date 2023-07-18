@@ -1,0 +1,102 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// <table>
+.activity-list {
+	width: 100%;
+	margin: 5px 0 10px 0;
+	background: var(--bg-event);
+
+
+	td {
+		vertical-align: top;
+		padding: 7px 5px;
+		@include font-size(12);
+		font-weight: 400;
+		color: var(--txt-base);
+
+		// DOM v1 (no <colgroup>), v2 should have <colgroup>
+		&:nth-child(2) {
+			width: 60%;
+		}
+
+		&:last-child {
+			text-align: right;
+			white-space: nowrap;
+
+			// icons, with v2 these are using a flex wrap
+			.oe-i {
+				width: 28px;
+				height: 28px;
+			}
+		}
+
+		// Old style of comment "Comment blah bl..." was cut off
+		// and shown in a popup
+		// CSS added AFTER JS. so hooking into the JS class
+		// but covered with normal CSS class as well.
+		:is(.js-hotlist-comment-readonly, .hotlist-comment-readonly ) {
+			font-style: italic;
+			font-weight: 300;
+			width: 105px;
+			overflow: hidden;
+			// truncate text
+			white-space: nowrap;
+			text-overflow: ellipsis;
+
+			border-left: 1px solid rgba(200, 200, 200, 0.1);
+			padding: 0 0 0 4px;
+
+		}
+
+		// Update DOM approach, shown in iDG needs implementing
+		// JS needs to allow the <td> wrapper to pick up point
+		// events to allow <tr> to click through to Patient Overview
+		.patient-fullname {
+			pointer-events: none;
+			font-weight: var(--font-medium);
+		}
+
+		// wraps <textarea> and <div>.user-comment
+		.patient-comments {
+			pointer-events: none;
+			margin: 3px 0 0 0;
+
+			textarea {
+				pointer-events: auto;
+			}
+
+			.user-comment {
+				@include font-size(11);
+			}
+		}
+	}
+
+	// show <tr> as a clickable row
+	tr {
+		border-top-color: var(--bg-popup);
+
+		&:hover,
+		&:focus {
+			cursor: pointer;
+			background: var(--btn-base-light); // row is a big button
+		}
+
+		// but not hotlist-comment
+		// (textarea on separate row to create comment)
+		&.hotlist-comment {
+			&:hover,
+			&:focus {
+				cursor: auto;
+				background: var(--bg-data);
+			}
+		}
+	}
+
+
+}
+
+
+

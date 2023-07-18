@@ -1,0 +1,113 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-annotate-image {
+
+	.toolbox {
+		z-index: 1;
+		position: absolute; 
+		top: 0; 
+		right: 0;
+		bottom: 0;
+		width:  150px;
+		
+		hr {
+			display:block;
+			border : 0;
+			margin: 5px 0;  // reduced was 20px 0 15px 0;
+			border-bottom:1px dotted var(--gui-line);
+		}
+		
+		svg.colors {
+			rect {
+				stroke-width:2px;
+				stroke: var(--input-base);
+			}
+			.selected {
+				stroke: none;
+				outline: 1px dotted var(--txt-highlight);
+			}
+		}
+		
+		// input ranges are a nightmare to style: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+		.line-width {
+			border-radius: 5px;
+			padding:2px 3px;
+			background: rgba(0,0,0,0.1);
+			
+			small {
+				padding:0 0 0 5px;
+			}
+		}
+		
+		button {
+			width: 100%;
+			margin:0 0 5px 0;
+			
+			&.tool-manipulate {
+				height: 50px; // buttons are 24px high	
+				
+				svg {
+					pointer-events: none; // stops JS Delegation
+					fill: var(--txt-base);
+					width:75px;  
+					height:25px;
+				}
+				
+				&:hover, 
+				&:focus,
+				&.selected {
+					svg {
+						fill: #fff;
+					}	
+				}
+				
+				// UI hack, drawing tools not well implemented
+				&.draw {
+					background-color:var(--btn-green);
+					svg {
+						fill: #fff;
+					}
+				}
+				
+				
+				
+			}
+			
+			&.tool-btn {
+				width: 50px;
+				height: 50px; // buttons are 24px high
+				
+				svg {
+					pointer-events: none; // stops JS Delegation
+					fill: var(--txt-base);
+					width:25px;  
+					height:25px;
+				}
+				
+				&:hover, 
+				&:focus,
+				&.selected {
+					svg {
+						fill: #fff;
+					}	
+				}	
+				
+				// UI hack, drawing tools not well implemented
+				&.draw {
+					background-color: var(--btn-green);
+					svg {
+						fill: #fff;
+					}
+				}
+			}	
+		}	
+	}
+}
+
+
+
+

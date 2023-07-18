@@ -1,0 +1,25 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+.home-messages {
+	// Sub-grid layout can not use the the standard
+	// oe-full-content layout because
+	// 1) it's narrower
+	// 2) it needs to allow for the top Patient Search area
+
+	&.subgrid {
+		// CSS3: Grid
+		display: grid;
+		grid: 1fr / 260px 1fr;
+		grid-column-gap: 20px;
+
+		.message-actions,
+		.messages-all {
+			// height allows for patient search
+			height: calc(100vh - #{ $oe-header-height + ($oe-event-header-height * 2) });
+			overflow-y:auto;
+		}
+	}
+}

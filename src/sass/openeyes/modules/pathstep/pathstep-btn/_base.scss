@@ -1,0 +1,37 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// <span>
+.oe-pathstep-btn {	
+	position: relative;
+	@include inline-flex( center, center );
+	
+	// if it has two children (e.g name and time) then it needs stacking
+	flex-direction: column;
+	
+	// fixed height: 
+	height:34px; // arbitary, seems ideal
+	
+	padding:0 10px;
+	margin:2px 2px 2px 0; 
+	&:last-child {
+		margin-right:0;
+	}
+
+	// this needs fixing or else it will affect the layout
+	line-height: 1;
+	
+	@include font-size(12);
+	font-style: italic;
+	font-weight: var(--font-medium);
+	cursor: pointer;
+	
+	// turn off point events for all children
+	// JS needs this:
+	* {
+		pointer-events: none;
+	}
+
+}

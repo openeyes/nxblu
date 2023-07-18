@@ -1,0 +1,75 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.load-on-request {
+	// match collapse-data styling, when it loads
+	// it will switch to that expanded DOM
+	margin: 5px 0 10px 0;
+	cursor: pointer;
+	padding: 5px 50px 5px 10px;
+	color: var(--txt-hd);
+
+	// as User regularly interact with this turn off selection
+	user-select: none;
+
+	// use outline, rather than border to better balance visual
+	// vertical alignment with normal collapse-data layouts.
+	outline:1px solid var(--gui-line);
+	border-radius: 10px;
+
+	// in Exam tiles the outline is cropped
+	.tile-data-overflow & {
+		outline-offset: -1px;
+	}
+
+	position: relative;
+
+	// no background-opacity in CSS (... why not huh?!)
+	// need to match icon opacity (when not
+	// being hovered over...) which can be done like this:
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 10px; // visual alignment tweak
+		width: 15px;
+
+		// put the expand collapse icon into the background
+		background: var(--i-download) right center no-repeat;
+		background-size: 17px;
+
+		opacity: $oe-icon-opacity; //  now i can use opacity
+	}
+
+	// JS
+	* {
+		pointer-events: none;
+	}
+
+	// show user interaction
+	&:hover,
+	&:active,
+	&.loading {
+		color: var(--txt-highlight);
+		&::after { opacity: 1; }
+	}
+
+	&.loading {
+		outline-color: var(--btn-blue-hint);
+	}
+
+	// loading spinner <i>
+	i.spinner {
+		position: absolute;
+		top:50%;
+		transform: translateY(-8px); // spinner icon is 16px
+		right:25px;
+	}
+}
+
+
+

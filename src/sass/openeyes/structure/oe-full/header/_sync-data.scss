@@ -1,0 +1,84 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.sync-data {
+	position: relative;
+
+	.sync-btn {
+		height: $oe-event-header-height; // 38px
+		background-color: var(--btn-base);
+		margin: 0 10px 0 0;
+		padding: 0 8px 0 32px; // allow for icon animation
+
+		@include flex(center, center);
+		flex-direction: column;
+
+		@include font-size(10);
+		font-weight: 500;
+		color: rgba(255, 255, 255, 0.8);
+
+		cursor: pointer;
+
+		* {
+			pointer-events: none;
+		}
+
+		// JS interaction
+		&.active {
+			background: var(--btn-blue-hint);
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 8px;
+			left: 5px;
+			width: 21px;
+			height: 21px;
+			background: center / 21px url(svg-white-icon("i/sync")) no-repeat;
+			opacity: 0.2; // off opacity
+		}
+
+		// on or off (off is the default styles but may hook in later )
+		&.on {
+			&::before {
+				animation: spinner 20s linear infinite;
+				opacity: 0.6;
+			}
+		}
+
+	}
+
+	.sync-options {
+
+		display: none; // js controlled.
+		position: absolute;
+		top: $oe-event-header-height;
+		left: 0;
+		z-index: $oe-z-shortcuts;
+		background: var(--btn-blue-hint);
+		border-top: 2px solid var(--btn-blue-hint);
+
+		// buttons in the dropdown list
+		// use the same DOM as in the header bar
+		// but we need to stretch them out to fill container
+		li > button {
+			display: inline-block;
+			width: 100%;
+			color: #fff;
+			text-align: left;
+
+			&:is(:hover, :focus, :active) {
+				color: #fff;
+				background-color: var(--btn-blue);
+			}
+		}
+
+	}
+
+}
+
+

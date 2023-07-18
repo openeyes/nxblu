@@ -1,0 +1,54 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// OE Whiteboard
+.oe-wb-widget {
+	&.green,
+	&.orange,
+	&.red {
+		&::after {
+			content: "";
+			position: absolute;
+			bottom:5px;
+			left:5px;
+			height:2vw;
+			width:2vw;
+			border-radius: 50%;
+			outline: 1px solid var(--bg-invert);
+		}
+	}
+
+	// color flags for complexity
+	&.green {
+		border-bottom: 2px solid var(--color-green);
+		&::after {
+			background-color: var(--color-green) ;
+		}
+	}
+
+	&.orange {
+		border-bottom: 2px solid var(--color-orange);
+		&::after {
+			background-color: var(--color-orange);
+		}
+	}
+
+	&.red {
+		border-bottom: 2px solid var(--color-red);
+		&::after {
+			background-color: var(--color-red);
+		}
+	}
+
+	// N/A (none)
+	.none {
+		color: var(--txt-light);
+		font-weight: 300
+	}
+}
+
+
+
+
+

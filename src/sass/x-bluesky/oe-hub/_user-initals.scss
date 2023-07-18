@@ -1,0 +1,45 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-nav {
+	@include flex( center, space-between);
+
+	.user-context {
+		border-left: 2px solid var(--gui-line);
+		max-width: 130px;
+		padding: 0 10px 0 5px;
+		@include font-size(9.5);
+		color: var(--txt-light);
+		line-height: 1.3;
+	}
+}
+
+li.oe-nav-btn {
+	.user-initials {
+		width: $oe-header-height;
+
+		margin-left: 15px;
+
+		@include font-size(11);
+		font-weight: 700;
+
+		color: var(--txt-light);
+		background: var(--bg-max);
+
+		background-clip: padding-box;
+		border: 10px solid var(--bg-html);
+		border-radius: 50%;
+
+		&.active {
+			background: var(--btn-blue-hint);
+			color: #fff;
+		}
+	}
+
+	// flag home icon
+	.icon-btn.open {
+		svg {
+			fill: var(--txt-active);
+		}
+	}
+}

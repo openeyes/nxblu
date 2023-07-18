@@ -1,0 +1,51 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+:is(button, .button) {
+	// give a hint of the button colour to the user
+	&.hint {
+		color: var(--btn-text);
+
+		&.green {
+			background: var(--btn-green-hint);
+		}
+
+		&.red {
+			background: var(--btn-red-hint);
+		}
+
+		&.blue {
+			background: var(--btn-blue-hint);
+		}
+	}
+
+	// same as default, need this for 'hint' to work
+	&.blue {
+		&:is(:hover, :focus){
+			background: var(--btn-blue);
+		}
+		&:active {
+			background: var(--btn-blue-active);
+		}
+	}
+
+	&.green {
+		&:is(:hover, :focus){
+			background: var(--btn-green);
+		}
+
+		&:active {
+			background: var(--btn-green-active);
+		}
+	}
+
+	&.red {
+		&:is(:hover, :focus){
+			background: var(--btn-red);
+		}
+
+		&:active {
+			background: var(--btn-red-active);
+		}
+	}
+}

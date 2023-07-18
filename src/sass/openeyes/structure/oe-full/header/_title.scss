@@ -1,0 +1,35 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-full-header {
+	.title {
+		@include flex(center, flex-start);
+		@include font-size(22);
+		text-transform: uppercase;
+		font-weight: var(--font-light);
+		color: var(--txt-light);
+	}
+}
+
+.title {
+	&.wordcaps {
+		text-transform: capitalize;
+	}
+
+	&.nocaps {
+		text-transform: none;
+	}
+
+	b, strong {
+		font-weight: var(--font-medium);
+	}
+
+	// Analytics and OEscape fix the styling
+	// wrapped this in case i need to make smaller:
+	.oe-area {
+		font-weight: 100;
+		padding: 0 10px 0 0;
+	}
+}

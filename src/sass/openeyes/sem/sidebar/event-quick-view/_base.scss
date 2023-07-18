@@ -1,0 +1,38 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+@use "openeyes/keyframes" as *;
+
+.oe-event-quickview {
+	
+	display:none; // js controlled.
+	z-index:$oe-z-event-quick-view; 
+	
+	position:fixed;
+	top: $oe-header-height;
+	left:$oe-event-sidebar-width;
+	bottom:0;
+	
+	// needs to fit in below 1200px (minimum)
+	width: 900px;
+	height: calc(100vh - #{$oe-header-height});
+	overflow:hidden;
+ 
+	background: var(--bg-popup); // colour to match sidebar quicklook
+	border-right: 1px solid var(--txt-active);
+	
+	// CSS animation, previously jQuery
+	// however, JS needs to remove the fadeout class...
+	&.fade-in {
+	  display:block;
+	  // animation: 0.1s ease-out forwards fadein; // too much!
+	}
+	
+	&.fade-out {
+	  display:block;
+	  animation: 0.2s ease-in forwards fadeout; // note: JS: remove class after 300 microseconds!
+	}
+}
+

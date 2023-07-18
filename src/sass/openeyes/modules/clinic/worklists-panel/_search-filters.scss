@@ -1,0 +1,44 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-worklists-panel {
+	// Build your search critera
+	.search-filters {
+		margin:10px;
+		
+		// using row-list idea to layout the filters
+		table.filters {
+			width:100%;
+			
+			margin:0 0 10px 0;
+			tbody {
+				tr {
+					border-top:1px solid var(--gui-line);
+					&:first-child { 
+						border-top: none;
+					}
+				}
+				
+				td {
+					padding: 5px; 
+					@include font-size(13);
+					
+					&:last-child{
+						text-align: right;
+					}
+					
+				}
+				
+				th {
+					@include font-size(11);
+					font-weight: var(--font-medium);
+					color: var(--txt-light);
+				}
+			}
+		} 
+	}	
+}
+
+

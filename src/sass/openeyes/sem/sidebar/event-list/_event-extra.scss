@@ -1,0 +1,27 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+// <span>
+// space for extra event data
+// (altho not much)... created to add Eye laterality info 
+.event-extra {
+	display: inline-block;
+	width: 30px; // allow 2 medium icons to be dropped in
+	padding:0 0 0 3px;
+	
+	// override theme laterality icons!
+	// originally these where NOT themed
+	// and displayed the same across both
+	// themes. rather than add "pro-theme"
+	// class, override here:
+	.oe-i.laterality {
+		// the vertical-align middle isn't quite middle. 
+		position:relative;
+		top:2px;
+		&.R { 	background-image: var(--i-lat-R-green); }
+		&.L { 	background-image: var(--i-lat-L-red); }
+		&.NA {	background-image: var(--i-lat-NA); }
+	}
+}

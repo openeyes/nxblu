@@ -1,0 +1,23 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-hotlist-panel {
+	.patient-activity {
+
+		// visually divide hotlist areas
+		.divider {
+			border-top: 1px dotted var(--gui-line);
+			margin-top: 10px;
+		}
+
+		h4 {
+			padding:5px 15px; // match overview style
+ 			@include font-size(13);
+			font-weight:400;
+		}
+	}
+}
+
+

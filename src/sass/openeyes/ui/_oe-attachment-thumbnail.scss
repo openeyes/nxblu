@@ -1,0 +1,81 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-attachment-thumbnail {
+	// wrapper for a thumbnail <img> that  
+	// is available to be viewd at fullsize
+
+	display: inline-block;
+	position: relative;
+	cursor: zoom-in;
+
+	// <img>
+	.thumbnail {
+		pointer-events: none; // allow parent to capture these (blueJay)
+		width: 100%;
+		height: auto;
+		min-height: 50px; // what if <img> doesn't load?
+	}
+
+	// provide padding options
+	&.pad-v {
+		margin: 10px 0;
+	}
+
+	// attachment maybe part of an image stack i.g it has previous versions
+	.attachment-img-stack {
+		position: absolute;
+		top: 3px;
+		left: 3px;
+		z-index: 1;
+		padding: 0 5px;
+
+		height: 25px;
+		@include flex(center, flex-start);
+
+		background-color: #00d;
+		color: #fff;
+
+		@include font-size(16);
+		font-weight: 500;
+	}
+
+	.attachment-meta-data {
+		margin: 8px 0 5px 0;
+		@include font-size(10);
+		opacity: 0.5;
+
+		ul.dot-list {
+			li {
+				margin-bottom: 1px;
+			}
+		}
+	}
+
+	// add a visual hint of functionality
+	// e.g. add a search icon...
+	&::after {
+		content: "";
+		position: absolute;
+		top: 3px;
+		right: 3px;
+		z-index: 1;
+
+		height: 25px;
+		width: 25px;
+		border-radius: 20%;
+
+
+		background: top 3px right 3px / 19px url(svg-white-icon("i/zoom-in")) #00d no-repeat;
+	}
+
+
+}
+
+
+
+		
+		

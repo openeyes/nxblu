@@ -1,0 +1,111 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// provides a single DOM element approach to show
+// RL, R•, •L, ••, Systemic (all and sides)
+// generally used on <span>, but could be <div>
+
+.oe-lat {
+	display: block;
+	height: 14px; // match background-size
+	width:30px; // creates a center gap
+	margin: 0 2px; // space makes up to 36px (2 icons)
+
+	// default set up for all icons (match small icon size)
+	background-size:14px;
+	background-position: center left, center right;
+	background-repeat: no-repeat;
+
+	&.inline {
+		display: inline-block;
+	}
+
+	@mixin bg( $left, $right ){
+		background-image: var(--i-#{$left}),var(--i-#{$right});
+	}
+
+	// not sure if this is actually needed/used
+	// but available...
+	&.mini {
+		background-size:11px;
+		width:25px; // 2px gap
+	}
+
+	// this is "n-n"
+	@include bg("lat-NA","lat-NA");
+
+	// quite a few available combinations
+	// each side can be: n, R, Ri, Rq
+
+	&.R-L {
+		@include bg("lat-R-green","lat-L-red");
+	}
+	&.R-n {
+		@include bg("lat-R-green","lat-NA");
+	}
+	&.n-L {
+		@include bg("lat-NA","lat-L-red");
+	}
+	&.R-Lq {
+		@include bg("lat-R-green","lat-L-query");
+	}
+	&.Ri-Li {
+		@include bg("lat-R-inactive","lat-L-inactive");
+	}
+	&.Ri-n {
+		@include bg("lat-R-inactive","lat-NA");
+	}
+	&.Ri-L {
+		@include bg("lat-R-inactive","lat-L-red");
+	}
+	&.Ri-Lq {
+		@include bg("lat-R-inactive","lat-L-query");
+	}
+	&.n-Li {
+		@include bg("lat-NA","lat-L-inactive");
+	}
+	&.R-Li {
+		@include bg("lat-R-green","lat-L-inactive");
+	}
+	&.Rq-Li {
+		@include bg("lat-R-query","lat-L-inactive");
+	}
+
+	&.Rq-Lq {
+		@include bg("lat-R-query","lat-L-query");
+	}
+	&.Rq-n {
+		@include bg("lat-R-query","lat-NA");
+	}
+	&.Rq-L {
+		@include bg("lat-R-query","lat-L-red");
+	}
+	&.n-Lq {
+		@include bg("lat-NA","lat-L-query");
+	}
+	&.n-L {
+		@include bg("lat-NA","lat-L-red");
+	}
+
+	&.beo {
+		background-position:center center;
+		background-image: var(--i-beo);
+	}
+
+	&.sys {
+		background-position:center center;
+		background-image: var(--person-green);
+	}
+	&.sys-i {
+		background-position:center center;
+		background-image: var(--i-person-inactive);
+	}
+	&.sys-q {
+		background-position:center center;
+		background-image: var(--i-person-query);
+	}
+	&.sys-n {
+		background-position:center center;
+		background-image: var(--i-lat-NA);
+	}
+}

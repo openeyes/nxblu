@@ -1,0 +1,38 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// popup wrapper to show in Events
+.pathway-in-event {
+	
+	z-index:$oe-z-element-search;
+	position: fixed;
+	top:$oe-header-height + $oe-event-header-height;
+	left:$oe-event-sidebar-width;
+	width: calc( 100vw - #{$oe-event-sidebar-width });
+	
+	border-bottom:1px solid var(--btn-blue);
+	border-top:1px solid var(--btn-blue);
+	
+	background: var(--bg-popup); // match table in Clinic Manager
+	padding:10px 0;
+	
+	// this needs to match the padding added to the Events 
+	min-height: 80px; 
+	
+	// adjust to always fill the <main> Event width
+	@include fix-hotlist(){
+		width: $oe-event-main-extended-width;
+	}
+	@include super-wide(){
+		width: $oe-event-main-max;
+	}
+	
+	.close-icon-btn {
+		position:absolute;
+		top:15px;
+		right:10px;
+	}
+}

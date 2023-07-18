@@ -1,0 +1,324 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "sass:list";
+@use "_mix" as *;
+
+// oe icons: <i class="oe-i [name] [size] [...options]"></i>
+//	small: 	13px 
+// 	medium:	16px
+//	large: 	19px (default size)
+
+// Print, only need to use the "light" icon set
+// and no need for any of the interaction stuff.
+
+.oe-i {
+	display: inline-flex;
+	line-height: 1;
+	vertical-align: middle; // fixes a layout issue in tables
+
+	$size-large: 19px;
+	$size-medium: 16px;
+	$size-small: 13px;
+
+	width: $size-large;
+	height: $size-large;
+
+	// default background error SVG, to handle URL errors
+	background: center / $size-large no-repeat;
+
+
+	&.small {
+		width: $size-small;
+		height: $size-small;
+		background-size: $size-small;
+		vertical-align: middle;
+	}
+
+	&.medium {
+		width: $size-medium;
+		height: $size-medium;
+		background-size: $size-medium;
+		vertical-align: middle;
+	}
+
+	&.large {
+		// default, class isn't need.
+		// set as the default because of the trash icon (in hindsight...)
+	}
+
+	// large area 19px but small icon within this area
+	&.small-icon {
+		background-size: $size-small;
+		vertical-align: text-top;
+	}
+
+	// large area 19px but medium icon within this area
+	&.medium-icon {
+		background-size: $size-medium;
+		vertical-align: text-top;
+	}
+
+	// used 'inline' to 'pad' out the icon
+	&.pad {
+		margin: 0 4px;
+	}
+
+	&.pad-more,
+	&.pad-both {
+		margin: 0 8px;
+	}
+
+	// icons before text
+	&.pad-r,
+	&.pad-right {
+		margin: 0 8px 0 0;
+	}
+
+	// icons after text
+	&.pad-l,
+	&.pad-left {
+		margin: 0 0 0 8px;
+	}
+
+	opacity: 1;
+
+	&.disabled {
+		opacity: 0.25;
+	}
+
+	// Hide interaction icons
+	// no use in PRINT format
+	&.expand,
+	&.collapse,
+	&.reduce-height,
+	&.increase-height {
+		display: none;
+	}
+
+
+	// special typographic icons, this are only for grammatical usage
+	// line-break = single diagonal line
+	// paragraph = +1 line breaks. a double diagonal line
+	&.line-break {
+		opacity: 1;
+		width: $size-small;
+		height: $size-small;
+		margin: 0 0.4em;
+		background-size: 0.8em;
+		background-image: url(svg-fixed("ui/type-linebreak"));
+	}
+
+	&.paragraph {
+		opacity: 1;
+		width: $size-small;
+		height: $size-small;
+		margin: 0 0.5em;
+		background-size: 1em;
+		background-image: url(svg-fixed("ui/type-paragraph"));
+	}
+
+
+	// CSS class | SVG file name
+	$themed_icons: (
+		"plus": "plus",
+		"plus-bold": "plus-bold",
+		"plus-circle": "plus-circle",
+		"minus": "minus",
+		"minus-bold": "minus-bold",
+		"arrow-down": "arrow-down",
+		"arrow-up": "arrow-up",
+		"arrow-down-bold": "arrow-down-bold",
+		"arrow-up-bold": "arrow-up-bold",
+		"arrow-right-bold": "arrow-right-bold",
+		"arrow-left-bold": "arrow-left-bold",
+		"direction-right": "direction-right",
+		"direction-left": "direction-left",
+		"direction-up": "direction-up",
+		"direction-down": "direction-down",
+		"direction-horizontal": "direction-horizontal",
+		"direction-right-circle": "direction-right-circle",
+		"direction-left-circle": "direction-left-circle",
+		"direction-up-circle": "direction-up-circle",
+		"direction-down-circle": "direction-down-circle",
+		"move": "move",
+		"child-arrow": "child-arrow",
+		"parent-arrow": "parent-arrow",
+		"menu": "menu",
+		"trash": "trash",
+		"trash-blue": "trash-blue",
+		"print": "print",
+		"search": "search",
+		"zoom-in": "zoom-in",
+		"zoom-out": "zoom-out",
+		"filter": "filter",
+		"remove": "remove",
+		"remove-circle": "remove-circle",
+		"duplicate": "duplicate",
+		"copy-forward": "copy-forward",
+		"info": "info",
+		"info-blue": "info-blue",
+		"eye": "eye",
+		"eye-circle": "eye-circle",
+		"comments": "comments",
+		"comments-added": "comments-added",
+		"comments-who": "comments-who",
+		"start": "start",
+		"stop": "stop",
+		"range": "range",
+		"change": "change",
+		"d-slash": "double-slash",
+		"expand": "expand",
+		"collapse": "collapse",
+		"top":"top",
+		"reduce-height": "reduce-height",
+		"increase-height": "increase-height",
+		"increase-height-orange": "increase-height-orange",
+		"downup": "downup",
+		"history": "rotate-left", // rotate-left
+		"rewind": "rotate-left", // rotate-left
+		"rotate-left": "rotate-left", // rotate-left
+		"forward": "rotate-right", // rotate-right
+		"rotate-right": "rotate-right", // rotate-right
+		"tick": "tick",
+		"tick-circle": "tick-circle",
+		"triangle": "triangle",
+		"time": "time",
+		"audit-trail": "audit-trail",
+		"download": "download",
+		"asterisk": "asterisk",
+		"asterisk-blue": "asterisk-blue",
+		"pencil": "pencil",
+		"pencil-blue": "pencil-blue",
+		"exclamation": "exclamation",
+		"male": "male",
+		"female": "female",
+		"drug-rx": "drug-rx",
+		"formulary": "formulary",
+		"injection": "injection",
+		"drop": "drop",
+		"drop-done": "drop-done",
+		"star": "star",
+		"starline": "starline",
+		"flag": "flag",
+		"flagline": "flagline",
+		"letter-1": "letter-1",
+		"letter-2": "letter-2",
+		"letter-in": "letter-invitation",
+		"letter-GP": "letter-GP",
+		"no-permissions": "no-permissions",
+		"waiting": "waiting",
+		"more-h": "more-h",
+		"status-urgent": "status-urgent",
+		"status-query": "status-query",
+		"status-query-reply": "status-query-reply",
+		"whiteboard": "whiteboard",
+		"doubt": "doubt",
+		"doubt-active": "doubt-active",
+		"person": "person",
+		"person-green": "person-green",
+		"person-split": "person-split",
+		"reset": "reset",
+		"undo": "undo",
+		"sync": "sync",
+		"flux": "flux",
+		"cog": "cog",
+		"padlock": "padlock",
+		"fork": "fork",
+		"path-break": "path-break",
+		"happy": "happy",
+		"crying": "crying",
+		"eyelat-L": "lat-L", // monochromatic Eye Lat icons:
+		"eyelat-R": "lat-R", // monochromatic Eye Lat icons:
+		"lat-R": "lat-R-green",
+		"lat-L": "lat-L-red",
+		"lat-n": "lat-NA",
+		"lat-Ri": "lat-R-inactive",
+		"lat-Li": "lat-L-inactive",
+		"lat-Rq": "lat-R-query",
+		"lat-Lq": "lat-L-query",
+		// note: laterality icon set did use TWO classes: e.g class="oe-i laterality R"
+		"laterality.R": "lat-R-green",
+		"laterality.L": "lat-L-red",
+		"laterality.NA": "lat-NA",
+		"beo": "beo", // Both Eyes Open
+		"NA":"lat-NA", // basic a grey dot, used with Systemic icon
+		"patient": "patient", // nav icons that may be required in the IU
+		"trials": "trials",
+		"save": "save",
+		"save-blue": "save-blue",
+		"save-plus": "add",
+		"add": "add",
+		"add-blue": "add-blue",
+		"edit": "edit",
+		"edit-blue": "edit-blue",
+		"cancel": "cancel",
+		"finish": "finish",
+		"mpr": "mpr",
+		"tick-green": "tick-green",
+	);
+
+	$universal_icons: (
+		"circle-green": "circle-green",
+		"circle-yellow": "circle-yellow",
+		"circle-amber": "circle-orange", // amber = orange
+		"circle-orange": "circle-orange",
+		"circle-red": "circle-red",
+		"circle-grey": "circle-grey",
+		"flag-green": "flag-green",
+		"flag-amber": "flag-orange", // amber = orange
+		"flag-orange": "flag-orange",
+		"flag-red": "flag-red",
+		"flag-grey": "flag-grey",
+		"triangle-green": "triangle-green",
+		"triangle-amber": "triangle-orange", // amber = orange
+		"triangle-orange": "triangle-orange",
+		"triangle-red": "triangle-red",
+		"triangle-grey": "triangle-grey",
+		"mpr-red": "mpr-red",
+		"mpr-amber": "mpr-amber",
+		"mpr-green": "mpr-green",
+		"exclamation-green": "exclamation-green",
+		"exclamation-amber": "exclamation-orange", // amber = orange
+		"exclamation-orange": "exclamation-orange",
+		"exclamation-red": "exclamation-red",
+		"warning": "warning", // RED Risk/Alert triangle
+		"warning-none": "warning-none",
+		"cross-red": "cross-red"
+	);
+
+	$eyedraw_icons: (
+		"ed-reset": "ed-reset",
+		"ed-zoom": "ed-zoom",
+		"ed-lock": "ed-lock",
+		"ed-trash": "ed-trash",
+		"ed-move-backward": "ed-backward",
+		"ed-move-forward": "ed-forward",
+		"ed-info": "ed-info",
+	);
+
+	// @mixin - build specific icon classes
+	// $map: see lists above
+	// $set: where are the SVG files?
+	// $dir: sub-directory within main sets
+	@mixin oe-i( $map, $set:"themed", $dir: "i/" ) {
+		@each $name, $svg in $map {
+			// extend .oe-i
+			&.#{$name} {
+				// select SVG set to use
+				@if $set == "themed" {
+					background-image: url(svg-themed($dir + $svg)) // svg in : "in-css/{dark|light}/i/{svg}"
+				} @else {
+					background-image: url(svg-fixed($dir + $svg)); // svg in : "in-css/all/i/{svg}"
+				}
+			}
+		}
+	}
+
+	// Build icon classes using @mixin oe-i
+	// Map | Icon set to use | sub-directory (optional)
+	@include oe-i($themed_icons, "themed");
+	@include oe-i($universal_icons, "all");
+	@include oe-i($eyedraw_icons, "all", "eyedraw/");
+
+}

@@ -1,0 +1,49 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.clinic-filters {
+	
+	.filter-btn {
+		@include flex( center, center );
+		height:$oe-event-header-height;
+		min-width: 45px;
+		background: var(--bg-title);
+		cursor:pointer;
+		color: var(--txt-light);
+		padding: 0 10px 0 15px; // visually better 
+		
+		.name {
+			@include font-size(13);
+		}
+		
+		.count {
+			padding: 0 0 0 5px;
+			@include font-size( 11 );
+			font-weight: var(--font-bold);
+			color: var(--txt-highlight);
+			transform: translateY(-6px);			
+		}
+		
+		&:hover, 
+		&:focus, 
+		&.selected {
+			background:var(--btn-blue);
+			color:#fff;
+			.oe-i {
+				opacity: 1;
+			}
+			.count {
+				color: #fff;
+			}
+		}
+		
+		// turn off JS events in Children
+		* {
+			pointer-events: none;
+		}
+	}
+	
+}

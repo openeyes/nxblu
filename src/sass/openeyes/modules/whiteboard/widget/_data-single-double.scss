@@ -1,0 +1,51 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+:is(.data-single, .data-single-extra, .data-double-extra) {
+
+	.wb-data {
+		text-align: center;
+		margin: auto;
+		line-height: 1.1;
+
+		small {
+			display: inline-block;
+			font-size: $wb3-font-header; // qualify data postfix (e.g. mm / D)
+			padding: 0 0 0 0.2em;
+		}
+
+		.extra-data {
+			text-align: center;
+			font-size: $wb3-font-base;
+		}
+
+		.extra-small-data {
+			font-size: $wb3-font-header;
+			line-height: 1;
+			margin-bottom: 0.3em;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.data-single,
+.data-single-extra {
+	.wb-data {
+		font-size: $wb3-font-large;
+	}
+}
+
+.data-double-extra {
+	.wb-data {
+		font-size: $wb3-font-medium;
+	}
+}
+
+
+

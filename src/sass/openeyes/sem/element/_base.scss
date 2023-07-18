@@ -1,0 +1,48 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// OE Elements
+//
+// Elements can be either Full (width) or Tiled
+// Tiles (1 of 3 in a horizontal layout), are only used in VIEW
+
+// View & Edit generally share styling with some specifics.
+// Also, elements maybe used in "Previous history" popups
+
+// note! sidebar nav overlay also uses "element", these need
+// changing but for now use "main-event" to correctly specify
+
+// v4: in-audit is for User history activity popup
+
+.in-audit .element,
+.main-event .element {
+	position: relative;
+	min-height: 60px; // ensure element actions and header can always be seen
+	background-color: var(--bg-data);
+	padding: 32px 5px 10px 10px; // provide top space for header/actions
+	margin: 0 0 3px 0;
+	font-weight: var(--font-medium);
+}
+
+.main-event .element {
+	// provide desktop user with element highlight effect
+	// border required in default state to stop the re-sizing effect
+	border: 1px solid rgba(#fff, 0);
+	transition: border-color 0.2s ease-in; // animate
+
+	&:is(:hover, :focus-within) {
+		border-color: var(--input-focus-outline);
+
+		.element-header {
+			.element-title {
+				transition: color 0.5s ease-out;
+				color: var(--txt-highlight);
+			}
+		}
+	}
+}
+
+
+
+

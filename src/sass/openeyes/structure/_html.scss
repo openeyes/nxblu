@@ -1,0 +1,33 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+html {
+	background: var(--bg-html, #000);
+	color: var(--txt-base, #fff);
+
+	// Fixed base font-size,
+	// Ensures greater control of UI display.
+	// All other font-sizes are set as rem
+
+	// re: line-height
+	// Be careful. Globally set to use 1.4 because of cascade issues
+	// with different line-heights messing up layouts
+
+	font: 400 16px/1.4 "Roboto", system-ui;
+}
+
+body.open-eyes {
+	// Smallest monitor size is 1280px (1268px with scrollbars)
+	// so supporting down to 1200px (and this also provides some tablet device support)
+	min-width: 1199px;
+	padding:0;
+	margin:0;
+
+	// set a sensible global default font-size.
+	// Do not change this (unless you want to work through all the UI!)
+	@include font-size(14);
+}
+
+

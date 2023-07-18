@@ -1,0 +1,47 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// <a>
+a {
+	// generally links are indistinguishable from regular text
+	// because the common usage is to link Patient names and ids
+	// to the overview page and this keeps the UI uncluttered
+	// add "hint" if you need an a link to obvious
+	color:inherit;
+	text-decoration: none;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color:var(--txt-active);
+		text-decoration: none;
+	}
+
+	// sometimes the anchor needs to be more obvious:
+	&.hint:not(.button) {
+		text-decoration: underline;
+	}
+
+	&.button {
+		// ensure that when <a> is styled as a button it's text colour is correct
+		color: var(--btn-text);
+	}
+
+	// improve keyboard accessibility
+	&:focus-visible {
+		outline: 1px dotted var(--input-focus-outline);
+		outline-offset: 1px;
+	}
+	
+	&.selected {
+		color:var(--txt-highlight);
+		font-weight:var(--font-medium);
+	}
+}
+
+
+
+
+
+		

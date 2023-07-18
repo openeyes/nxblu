@@ -1,0 +1,31 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// Instead of using <table> structure with
+// with a single <td> in a row for layout
+// use this instead.
+ul.row-list {
+	li {
+		display: block;
+
+		// match standard <table> <td> padding
+		padding: 5px 0;
+
+		// table <tr> in Element EDIT state
+		.element-fields & {
+			@include flex(center, flex-start);
+			min-height: 28px; // <td> has a min-height in Elements (can't remember why tho...)
+			padding: 2px 0 2px 1px;
+		}
+
+		border-top: 1px solid var(--gui-line);
+
+		&:first-child {
+			border-top: none;
+		}
+	}
+}
+
+

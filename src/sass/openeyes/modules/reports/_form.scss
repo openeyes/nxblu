@@ -1,0 +1,24 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-reports {	
+	
+	// <form> wraps the top input filters options
+	// targeting this, but may need a class, this
+	// approach is now out-dated and needs changing
+	
+	form {
+		table {
+			@include font-size(12);	
+		}
+		
+		h3 {
+			@include font-size(13);
+			margin:0 0 8px 0;
+		}
+	}	
+}
+
+

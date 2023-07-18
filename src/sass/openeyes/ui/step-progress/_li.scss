@@ -1,0 +1,134 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+@use "openeyes/var" as *;
+
+// <ul>
+.oe-step-progress {
+	// <li>
+	li {
+		position: relative;
+		@include flex(center, center);
+		cursor: pointer;
+		user-select: none;
+
+		height: 21px;
+		min-width: 20px;
+		padding: 0 6px;
+		margin: 0;
+
+		@include font-size(13);
+		font-weight: 500;
+		color: var(--txt-light);
+
+		// outline the <li>
+		border: 2px solid var(--txt-light);
+		border-right: none;
+
+		&:first-child {
+			border-radius: 3px 0 0 3px;
+		}
+
+		&:last-child {
+			border-radius: 0 3px 3px 0;
+			border-right: 2px solid var(--txt-light);
+		}
+
+		// interval between steps
+		// reduce font-size to handle '1y2m24d'
+		&.interval {
+			@include font-size(10);
+			font-weight: 500;
+			padding: 0 6px;
+		}
+
+		// these are both currently handled the same
+		// but maybe need visually differentiating in the future
+		&.series-gap,
+		&.actual {
+			padding: 0 3px;
+			background: var(--txt-light);
+			color: var(--txt-invert);
+		}
+
+
+		&.next {
+			color: var(--txt-highlight);
+			font-weight: var(--font-bold);
+			padding: 0 8px;
+
+			// emphasise the next step with an underline:
+			&::before {
+				content: " ";
+				position: absolute;
+				top: calc(100% + 3px);
+				left: 0;
+				right: 0;
+				height: 2px;
+				background-color: var(--txt-highlight);
+				pointer-events: none;
+			}
+
+			// set the arrow triangle height
+			$-step-arrow: 7px;
+
+			// indicate direction with arrow from previous step
+			&::after {
+				content: " ";
+				position: absolute;
+				top: 50%;
+				left: 0;
+				pointer-events: none;
+				height: 0;
+				width: 0;
+				border: $-step-arrow solid transparent;
+				border-left: $-step-arrow solid var(--txt-light);
+				transform: scale(0.4, 1) translateY(-$-step-arrow);
+				transform-origin: left;
+			}
+		}
+
+		&.injection {
+			background: left 8px center/13px transparent var(--i-injection) no-repeat;
+			padding-left: 26px;
+			padding-right: 12px;
+		}
+
+		&.todo {
+			padding: 0 3px;
+			color: var(--txt-light);
+			font-weight: var(--font-bold);
+		}
+
+		&.completed {
+			z-index: 1;
+			background: var(--txt-light);
+			color: var(--txt-invert);
+			padding: 0 3px;
+		}
+
+		&.cancelled {
+			color: var(--color-red);
+			background: linear-gradient(
+					135deg,
+					rgba(0, 0, 0, 0) calc(50% - 4px),
+					var(--color-red) calc(50%),
+					rgba(0, 0, 0, 0) calc(50% + 4px)
+			);
+		}
+
+		&.redated {
+			@include font-size(10);
+			font-weight: 700;
+			color: var(--color-orange);
+			background: radial-gradient(
+					circle at center,
+					rgba(0, 0, 0, 0) 40%,
+					var(--color-orange) 65%,
+					var(--txt-light) 95%
+			)
+		}
+	}
+}	
+

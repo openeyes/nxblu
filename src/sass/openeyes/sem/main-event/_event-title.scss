@@ -1,0 +1,57 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+@use "openeyes/var" as *;
+
+.main-event {
+
+	// Event title <h2>, up to v4, still support
+	// To help with UAH work the DOM was adjusted in iDG concept mockup
+	// IDG change is to shift <h2> into the "event-details" wrapper below
+	.event-title {
+		@include font-size(15);
+		font-weight: var(--font-medium);
+		color: var(--txt-highlight);
+		padding: 8px 0 8px 11px;
+	}
+
+	.event-details {
+		@include flex(center, flex-start);
+		height: $oe-event-header-height;
+
+		.event-title {
+			padding: 0 11px;
+		}
+
+		// increase i to button size:
+		.oe-i {
+			width: $oe-event-header-height;
+			height: $oe-event-header-height;
+		}
+	}
+
+
+	// event specific elements within the Event header space
+	// currently for injection:
+	.event-title-extra-info {
+		position: absolute;
+		top: 8px; // match the main event padding
+		right: 20px;
+		@include flex(center, flex-end);
+
+		.extra-info {
+			@include font-size(15);
+			font-weight: var(--font-light);
+			margin: 0 0 0 20px;
+
+			input.date {
+				@include font-size(13);
+				padding: 2px 5px;
+				width: 90px;
+				background: pink;
+			}
+		}
+
+	}
+}

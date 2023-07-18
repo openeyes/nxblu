@@ -1,0 +1,48 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.theatre-overview {
+	.theatre-state {
+		padding: 10px;
+
+		.session-time-left {
+			@include font-size(14);
+			margin: 0 0 10px 0;
+
+			:is(.max-patients, .minutes) {
+				font-weight: var(--font-bold);
+			}
+
+			:is(
+			.procedure-count,
+			.overbooked,
+			.session-unavailable,
+			.max-patients) {
+				margin: 3px 0 0 0;
+			}
+
+			// generic UI for Patients, Complexities & Procedures
+			.session-max {
+				margin: 4px 0;
+				padding: 4px 0;
+				@include font-size(12);
+				border-bottom: 1px dotted var(--txt-light); // rgba($oe-text-light,0.5);
+
+				.max-limit {
+					font-weight: var(--font-bold);
+				}
+
+				.overbooked {
+					text-align: right;
+					@include font-size(12);
+				}
+
+
+			}
+
+		}
+	}
+}
+

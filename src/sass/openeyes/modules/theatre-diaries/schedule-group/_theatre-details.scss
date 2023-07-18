@@ -1,0 +1,38 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.schedule-group {
+	.theatre-overview {
+		// e.g
+		// Mon, 18th Nov 2013
+		// 13:00 - 17:00
+		// Medical Retinal Service for (Medical Retina)
+		// Theatre One (Kings Hospital)
+
+		.theatre-details {
+			background: var(--bg-data);
+			padding: 10px;
+			// <ul>	<li> items:
+			.date,
+			.time {
+				@include font-size(15);
+				font-weight: var(--font-bold);
+			}
+
+			.context,
+			.theatre {
+				margin: 5px 0 0 0;
+			}
+
+			// edit mode Admin can make it unavailable
+			.session-unavailable {
+				margin: 10px 0 0 0;
+				padding: 3px;
+				border: 1px solid var(--color-red);
+				background: var(--color-grey);
+			}
+		}
+	}
+}

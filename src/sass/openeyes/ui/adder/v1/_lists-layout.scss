@@ -1,0 +1,24 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// <table> with a single <tr>
+// used to layout the adder (because this is pre-flex)
+// This can be an issue when inserted into another <table>
+// Some cascades may need overwriting here
+
+.oe-add-select-search {
+	// wrapper multiple group lists in the td
+	// (but used all the time, even for single lists)
+	.lists-layout {
+		@include flex(flex-start, flex-start);
+		.list-wrap {
+			margin:0 0 0 2px;
+			&:first-child {
+				margin:0 0 0 0;
+			}
+		}
+	}
+}
+

@@ -1,0 +1,13 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.clinic-filters {
+	// position within the header 'oe-full-header'
+	// requires a wrapper: <nav class="options-left"> to work
+	position: absolute;
+	top:0; 
+	left: 145px; // visually align with the clinc table Patient names
+	@include flex( center, flex-start );
+}

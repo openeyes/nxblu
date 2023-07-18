@@ -1,0 +1,92 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+@use "openeyes/var" as *;
+
+// Updated filter list
+// Cleaner DOM (no <i> needed)
+// whole <li> is button that be clicked on
+ul.multi-filter-list {
+	margin:4px 0;
+
+	&.inline {
+		li {
+			display:inline-flex;
+			margin:2px 2px 0 0;
+		}
+	}
+
+	&.light {
+		li {
+			color: var(--txt-base);
+			background: var(--btn-base-light);
+			&::after {
+				background-image: var(--i-remove-circle);
+			}
+		}
+
+	}
+
+	li {
+		position: relative;
+		cursor: pointer; // used as a button
+
+		// min-height to allow for long inputs
+		min-height: $oe-input-height;
+		@include flex(center, flex-start);
+
+		padding:0 25px 0 5px;
+		margin:0 0 2px 0; // when wrapped provide a gap
+
+		color: var(--btn-text);
+		background: var(--btn-base);
+
+		// remove icon
+		&::after {
+			content: "";
+			pointer-events: none; // use <li>
+			position: absolute;
+			z-index: 1;
+			right: 0;
+			top: 0;
+			width: 20px;
+			height: 100%;
+			background: center / 11px url(svg-white-icon("i/remove-circle")) no-repeat;
+			opacity: $oe-icon-opacity;
+		}
+
+		&:is( :hover, :focus ) {
+			background-color: var(--btn-blue);
+			color:#fff;
+			&::after {
+				opacity: 1;
+				background-image: url(svg-white-icon("i/remove-circle"));
+			}
+		}
+	}
+}
+
+// Multi-select (original)
+// Uses an <i> DOM element in <li>, user has to click on icon
+// <ul>
+ul.oe-multi-select {
+	margin:4px 0;
+	@include font-size(12);
+
+	&.inline {
+		li {
+			display:inline-flex;
+			margin:2px 2px 0 0;
+		}
+	}
+
+	li {
+		display:flex;
+		align-items: center;
+		justify-content: space-between;
+		padding:2px 4px 2px 6px;
+		margin:0 0 2px 0;
+		background: var(--btn-base-light);
+	}
+}

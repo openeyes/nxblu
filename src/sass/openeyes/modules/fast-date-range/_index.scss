@@ -1,0 +1,69 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.set-date-range {
+	// Used in the sidebar to quickly set
+	// date range option for common date searches
+	margin: 0 0 10px 0;
+	
+	// used in worklist panel
+	.oe-worklists-panel & {
+		margin:10px;
+	} 
+
+	// wrapper for start and end <inputs type="date">
+	.date-inputs {
+		@include flex(center, space-between);
+		gap:5px;
+		margin: 0 0 5px 0;
+
+		input {
+			flex:1;
+		}
+	}
+
+	// Fast date selectors: today, next week, last month, etc
+	// group selectors together and layout in rows
+	.selectors {
+		@include flex( center , space-between );
+		
+		// updated range selectors as radio groups
+		// there should only be one selected at time
+		// Also update the UIX for date selection
+		
+		label {
+			// reset the cascade
+			display: block;
+			white-space: normal; 
+			margin:0;
+			padding:0;
+			flex:1;
+			.btn {
+				width: 100%;
+				@include flex( center, flex-start );
+				cursor: pointer;
+				height:24px;
+				padding:0 2px;
+				@include font-size(11);
+				font-weight: var(--font-medium);
+				color: var(--txt-light);
+				
+			}
+
+			> input[type="radio"] {
+				display: none;
+				// CSS magic '+' next sibling! 
+				+ .btn {
+					&:is(:hover, :focus ){
+						color:var(--txt-active);
+					}
+				}
+				&:checked + .btn {
+					color:var(--txt-highlight);
+				}
+			}
+		}
+	}
+}

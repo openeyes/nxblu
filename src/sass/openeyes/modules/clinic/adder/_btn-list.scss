@@ -1,0 +1,34 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+.oec-adder {
+	// btn-lists are normally used in popups 
+	// which are dark-themed... adapting them for clinic use
+	.btn-list {
+		li {
+			color: var(--txt-base);
+			background: var(--btn-base-light);
+
+			// modify the btn-list default
+			padding: 0 2px; // reduced default padding
+			height: 23px; // increase height (for better touch support)
+
+			&:hover,
+			&:focus {
+				background: var(--btn-blue);
+				color: #fff;
+			}
+
+			&.red {
+				color: #fff;
+				background: var(--btn-red);
+			}
+
+			// JS is hooked on the <li>
+			* {
+				pointer-events: none;
+			}
+		}
+	}
+}

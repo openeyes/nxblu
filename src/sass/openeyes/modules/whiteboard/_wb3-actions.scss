@@ -1,0 +1,88 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// footer actions
+// at the bottom so that they can be reached
+// and hidden so you can still see the data
+
+.wb3-actions {
+	position: fixed;
+	left: 0;
+	height: 70px;
+	width: 100%;
+	@include flex(center, center);
+	background: var(--bg-invert);
+	border-top: 3px solid var(--bg-title);
+	transition: bottom 0.2s ease-in-out;
+	// slide up & down:
+	&.down {
+		bottom: -70px;
+		border-top-color: var(--bg-title);
+	}
+
+	&.up {
+		bottom: 0;
+		border-top-color: var(--bg-max);
+	}
+
+	.openclose-icon-btn {
+		position: absolute;
+		bottom: 100%;
+		right: 10vw;
+
+		background: var(--btn-blue) url(svg-white-icon("i/direction-up-circle")) center center no-repeat;
+		background-size: 35px;
+
+		width: 60px;
+		height: 55px;
+		border-radius: 15px 15px 0 0;
+		cursor: pointer;
+
+		&.close {
+			background-image: url(svg-white-icon("i/remove-circle"));
+		}
+
+	}
+
+	button {
+		height: $oe-event-header-height;
+		@include inline-flex(center, center);
+		@include font-size(16);
+		padding: 0 16px;
+		margin: 10px 32px 10px 0;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	// Tablet portrait handheld
+	@include handheld() {
+		position: static;
+		margin:5px 0 0 0;
+		height:5vh;
+
+		// in portrait buttons may overflow!
+		overflow-x: auto;
+
+		// remove the draw slider
+		.openclose-icon-btn {
+			display: none;
+		}
+
+		button {
+			height: #{$oe-header-height * 2};
+			@include font-size(24);
+			margin: 0 10px 0 0;
+		}
+
+	}
+}
+	
+
+
+
+

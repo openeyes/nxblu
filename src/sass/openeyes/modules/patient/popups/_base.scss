@@ -1,0 +1,76 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-patient-popup {
+	display:none; // js controlled.
+	z-index:$oe-z-quicklook;
+	position: fixed;
+	top:$oe-header-height;
+	left:$oe-event-sidebar-width;
+	right: 0;
+	// height: 435px;  // height is controlled by the overflow (i.e. its flexible)
+
+	@include font-size(12);
+
+	background: var(--bg-html);
+	border:1px solid var(--gui-line);
+	border-top:none;
+	border-bottom-color: var(--btn-blue-hint);
+	padding:15px 15px 20px 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+	
+	// lock width beyond this
+	@include extended(){
+		right:auto;
+		width:$oe-event-main-extended-width; 
+	}
+
+	// maintain a minimum width layout
+	@include below-minimum(){
+		right:auto;
+		width:$oe-event-main-default-width;
+	}
+	
+	// overflow wrappers for all data in Patient Popups
+	// only used in Patient Popups; in generic (centered!) popups 'oe-popup-content' handles this	
+	.oe-popup-overflow, 
+	.popup-overflow {
+		max-height: 415px; // this restricts the popup's vertical hieight (for lowest res monitors)
+		overflow: auto;
+		padding:0 5px 0 0; // breathing space next to scrollbar
+		margin:3px 0 0 0; // a bit of breathing space if alerts are added above content
+	}
+	
+	// popup area subtitles
+	.subtitle { 
+		position:relative;
+		display:block;
+		
+		padding:0 0 0 0;
+		margin:8px 0;
+		&:first-child {
+			margin-top:0;
+		}
+		
+		@include font-size(14);
+		font-weight:400; 
+		color: var(--txt-hd); //var(--txt-light);
+		
+		.extra-actions {
+			position:absolute;
+			top:0;
+			right:0;
+		}	
+		
+	}
+	
+	
+	
+}
+
+
+
+

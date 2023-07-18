@@ -1,0 +1,129 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use 'openeyes/mix' as *;
+
+// Home - Messages
+// Table data lists Patient (No, Gender, Age, Name)
+// then message: data, who, message, actions.
+// at lowest supported resolution a very long name can push
+// table into horizontal scrolling
+
+.oe-home {
+
+	// wrapper for <table> .messages
+	.messages-all {
+		padding:10px 10px 20px 0;
+
+		h3 {
+			@include font-size(18);
+			color: var(--txt-hd);
+			font-weight: var(--font-light);
+		}
+	}
+
+	// <table>
+	// extends 'standard' table and uses highlight-rows
+	table.messages {
+		width: 100%;
+		margin-top: 0; // override default
+
+		// set last <td> to the right
+		th, td {
+			// default (message read)
+			@include font-size(12);
+			vertical-align: top;
+			padding:10px 10px 8px 5px;
+
+			&:last-child {
+				text-align: right;
+				padding-right:0;
+			}
+		}
+
+		tbody {
+			tr {
+				// unread messages
+				&.unread {
+					td {
+						font-weight:var(--font-bold);
+
+						// above extended increase slightly
+						@include extended(){
+							@include font-size(13);
+						}
+					}
+				}
+			}
+
+			// <td>
+			td {
+				// create a vertical divider between
+				// patient data and message data
+				&.patient {
+					border-right:2px solid var(--gui-line);
+					padding-right:12px
+				}
+
+				.urgent-message {
+					fill:rgb(202,121,50); // must work across themes
+					margin:0 3px 0 0;
+				}
+				.reply-message {
+					fill:var(--txt-active);
+				}
+
+			}
+		}
+
+
+
+		// handle the actual messages within the <td>
+		// DOM: <div class="message">Message</div>
+		.message {
+			// message has 2 states: collapsed (single line with ellipsis) and expanded (multi-line)
+			// in order to get the single line overflow working the container
+			// needs to be width restricted (could NOT get it to work on the <td>!)
+
+			position: relative;
+			padding:0 25px 0 0;
+			margin:0 10px 0 0;
+
+			width: calc(100vw - 1100px);
+			min-width: 260px;
+			font-style: italic;
+
+			// truncate text
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+
+			// set the height to increase the hit-area for the expand icon
+			height:30px;
+
+			// expand and read full message (if truncated)
+			// reset the height and allow the message text to wrap
+			&.expand {
+				height: auto;
+				white-space: normal;
+			}
+
+			// position the expand/collapse icon
+			.expand-message {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				width: 20px;
+
+				.oe-i {
+					width:20px;
+					height:100%;
+					min-height:50px;
+					background-position: top right;
+				}
+			}
+		}
+	}
+}
+

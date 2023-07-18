@@ -1,0 +1,36 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oec-adder {
+	position:fixed;
+	top: #{ $oe-header-height + $oe-event-header-height };
+	bottom: 0; 
+	z-index: $oe-z-quicklook - 1; // make it under Patient Quick View popup
+	
+	background: var(--bg-popup); // same as the table
+	border-left:1px solid var(--btn-blue);
+
+	// User CSS Animation.
+	display: none;
+	right: -10px;  // can't animate display states but can nudge over.
+	
+	&.fadein {
+		display: block;
+		animation: 0.2s ease-out forwards fadein;
+		right:0;
+		
+		// when hotlist locks in need to switch to the right
+		@include fix-hotlist(){
+			right: calc( 100vw - #{$oe-extended-browser-size });
+		}
+		
+		// when super wide!... hotlist extends to maximum width
+		@include super-wide(){
+			right: $oe-hotlist-panel-max; // because .oe-full-content is now set at 65vw
+		}
+		
+	}
+}

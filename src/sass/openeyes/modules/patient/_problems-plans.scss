@@ -1,0 +1,92 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// OE Problems and Plan
+// Sortable list of P & Ps
+// used in: Overview and Patient popup
+
+.problems-plans {	
+	padding:0; 
+	margin:0;
+
+	// <ul>
+	// list all the problems plans
+	.problems-plans-sortable {
+		padding:0;
+		margin:0;
+		li {
+			display:block;
+			position: relative;
+			width:100%;
+			padding:8px 65px 8px 5px; // allow for icons i & x 
+			margin:0 0 1px 0;
+			
+			@include font-size(12);
+			background: var(--bg-event);
+
+			.drag-handle {
+				padding:0 3px;
+				margin:0 5px 0 0;
+			}
+			
+			.metadata {
+				position: absolute;
+				right:35px;
+				top:8px;
+			}
+			
+			// remove-circle icon
+			.remove {
+				position: absolute;
+				right:4px;
+				top:8px;
+			}
+			
+			// JS hook, wraps 'oe-i menu'
+			// .drag-handle {}
+		}
+	}
+
+	// add a new P & P to the list
+	.create-new-problem-plan {
+		background: var(--bg-event); // not inverted in classic
+		padding:3px;
+		margin:3px 0 0 0;
+	
+		input { 
+			@include font-size(13);
+			font-weight: 400;
+			padding:5px;
+			border-radius:3px;
+			width: calc(100% - 38px);
+		}
+	}
+} 	
+
+
+// set up as themeable
+table.past-problems-plans {
+	width:100%;
+	margin:0 0 10px 0;
+
+	tbody {
+		tr {
+			border-top:1px dotted var(--gui-line);
+			&:first-child {
+				border-top: none;
+			}
+		}
+		
+		td {
+			padding:6px 3px; 
+			
+			// overidden in main-event
+			@include font-size(11);
+		}
+	}
+	
+}
+

@@ -1,0 +1,44 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.admin-main {
+	// override the default last-right
+	td,
+	th {
+		&:last-child {
+			text-align: left;
+		}
+	}
+
+	// modify the 'standard' table
+	table.standard {
+		th, td {
+			@include font-size(12);
+		}
+
+		tbody {
+			td {
+				// for Admin Users this will be better
+				vertical-align: top;
+			}
+		}
+	}
+
+	table.large {
+		th, td {
+			@include font-size(13);
+		}
+
+		tbody {
+			td {
+				vertical-align: middle;
+				padding:7px 10px 7px 0;
+			}
+		}
+	}
+}
+	
+
+

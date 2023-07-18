@@ -1,0 +1,57 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+
+// this class can either be used
+// on <div> or <button>
+// e.g. print is a <div> because it's a drop down
+.header-icon-btn {
+	height: $oe-event-header-height;
+	width: $oe-event-header-height;
+	opacity: $oe-icon-opacity;
+
+	// make like a button even if it's a <div>
+	cursor: pointer;
+
+	// overwrite the button base
+	margin: 0;
+
+	// currently always a button
+	// note: Chrome bug with background image size on :hover, so do it like this
+	&.trash {
+		background: center / 19px var(--i-trash) no-repeat;
+		&:hover,
+		&:focus {
+			opacity: 1;
+			background-image: url(svg-white-icon("i/trash"));
+			background-color: var(--btn-red);
+		}
+	}
+
+	&.print {
+		background: center / 19px var(--i-print) no-repeat;
+		&.active,
+		&:hover,
+		&:focus {
+			opacity: 1;
+			background-image: url(svg-white-icon("i/print"));
+			background-color: var(--btn-blue-hint);
+		}
+	}
+
+	// overflow for "more" buttons, not currently used
+	&.more {
+		background: center / 19px var(--i-more-h) no-repeat;
+		&.active,
+		&:hover,
+		&:focus {
+			opacity: 1;
+			background-image: url(svg-white-icon("i/more-h"));
+			background-color: var(--btn-blue-hint);
+		}
+	}
+}
+
+

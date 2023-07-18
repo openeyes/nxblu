@@ -1,0 +1,62 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-pathstep-popup {
+
+	.step-content {
+		
+		table {
+			width: 100%;
+			tbody {
+				tr {
+					border-top:1px dotted var(--gui-line-soft);
+					&.no-line,
+					&:first-child { 
+						border-top: none;
+					}
+					
+					// follows element table styling approach
+					&.divider {
+						border-top:2px solid var(--gui-line-soft);
+
+						th, td {
+							padding-top:6px;
+						}
+					}	
+				}
+			}
+			
+			th,
+			td {
+				vertical-align: top;
+				text-align: left;
+				@include font-size(11);
+				color: var(--txt-base);
+				font-weight: var(--font-medium);
+				padding:4px 2px; 
+				
+				// reduce the height of these
+				label.highlight {
+					margin:0 2px 0 0;
+					height:auto;
+					padding:2px 4px; // default: 0 5px
+				}
+				
+			}
+		
+			th {
+				color:var(--txt-light);
+			}
+
+		}
+		
+		
+		
+	}
+
+}
+
+
+

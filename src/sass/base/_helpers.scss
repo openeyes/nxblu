@@ -1,0 +1,34 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+.hidden {
+    display: none;
+}
+
+.inline {
+	display:inline-block;
+}
+
+// 'display-...'
+// added to help out Vue which doesn't
+// like inline styles .e.g. style="display: block"
+.display-block {
+	display: block !important;
+}
+
+.display-flex {
+	display: flex !important;
+}
+
+
+.invisible {
+	visibility: hidden;
+}
+
+// use visibility to 'hide' a <tr>
+// DOM is hidden & space occupied is removed (as if display: none).
+// BUT! - rows and columns are still calculated as though the cells
+// in the collapsed row(s) or column(s) are still present.
+.tr-collapse {
+	visibility: collapse;
+}

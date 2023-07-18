@@ -1,0 +1,65 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.uah-event-summary {
+	z-index: $oe-z-quicklook - 1; // make sure it's under the Patient popups
+	position: absolute;
+	top: 38px;
+	left: 0;
+	width: 500px;
+	background: var(--bg-event);
+	padding: 0 10px 10px 11px;
+
+	border-right: 1px solid var(--txt-highlight);
+	border-bottom: 1px solid var(--txt-highlight);
+
+	@include font-size(12);
+	font-weight: var(--font-medium);
+
+	section {
+		margin: 0 0 15px 0;
+
+		// wrap each group of change notes
+		.change-notes {
+			margin: 0 0 5px 0;
+		}
+	}
+
+	.title {
+		@include font-size(11);
+		color: var(--txt-highlight);
+		margin: 0 0 5px 0;
+	}
+
+	.who-when {
+		@include flex(flex-start, space-between);
+
+		.who {
+			@include font-size(13);
+		}
+	}
+
+	.details {
+		@include font-size(11);
+		color: var(--txt-light);
+	}
+
+	.activity {
+		@include font-size(10);
+	}
+
+	// these are <button> that link to the UAH popup
+	.deleted-elements {
+		// overwrite <button> defaults
+		button {
+			width: 100%;
+			color: var(--btn-text);
+			background: center right 10px / 13px var(--btn-red-hint) url(svg-fixed("ui/sidebar-audit-trail")) no-repeat;
+			justify-content: flex-start;
+		}
+	}
+
+}

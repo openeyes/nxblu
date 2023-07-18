@@ -1,0 +1,49 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.wb3 {
+	// .oe-wb-widget
+	// .oe-wb-special
+
+	h3 {
+		position: relative;
+		@include flex( center, flex-start);
+		padding: 2px 0 2px 0.5em;
+		margin:0 0 2px 0;
+
+		font-size: $wb3-font-header;
+		font-weight: 500;
+
+		color: var(--txt-invert);
+		background: var(--bg-invert);
+
+		// edit widget btn:
+		// switch to show textarea to edit a widget
+		.edit-widget-btn {
+			position: absolute;
+			top: 3px;
+			right: 3px;
+			bottom: 3px;
+			background: var(--btn-blue);
+			padding: 5px;
+			border-radius: 3px;
+			width: 12%;
+			min-width: 25px;
+
+			display: flex;
+
+			.oe-i {
+				margin: auto;
+				width: 100%;
+				height: 100%;
+				background-size: contain;
+				opacity: 0.8;
+				filter: var(--btn-icon-hover-filter);
+			}
+		}
+
+	}
+}

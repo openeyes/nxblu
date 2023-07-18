@@ -1,0 +1,16 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+// iFrame / embed - load in the Print DOM
+.correspondence-print-iframe {
+	// fill available height, 100px is a bit of guess.
+	// It allows for the Event Title and 50px gap at the bottom
+	height: calc(100vh - #{$oe-header-height + $oe-event-header-height} - 100px);
+	max-height: 1400px; // so it doesn't get crazy on the super monitors
+	border: none;
+	background: var(--gui-line);
+	padding: 10px;
+
+}

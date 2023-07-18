@@ -1,0 +1,66 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+tbody {
+	// underline rows to help with data reading
+	tr {
+		border-top: 1px solid var(--gui-line);
+
+		// no-line for when you need to group 2 rows visually together
+		&.no-line,
+		&:first-child {
+			border-top: none;
+		}
+
+		// divider - emphasis slightly the dividing row line
+		// (for a obvious divide use <hr class="divider"> and have 2 tables!)
+		&.divider {
+			border-top-width: 2px;
+
+			td {
+				padding-top: 4px;
+			}
+		}
+
+		// subtly show  odd/even rows
+		// this can be combined with those below
+		// so it needs to be first
+		.oddeven-rows & {
+			&:nth-child(odd){
+				background:var(--bg-title);
+			}
+		}
+
+		// Either make ALL table rows clickable.
+		// OR make specific row 'clickable'
+		// JS will handle the interaction but make the table rows look like buttons
+		.clickable-rows &,
+		&.clickable {
+			&:is(:hover, :focus-within) {
+				cursor: pointer;
+				background: var(--btn-base-light); // row is a big button
+			}
+		}
+
+		// All table rows react to focus/hover to help with using the data
+		.highlight-rows & {
+			&:is(:hover, :focus-within) {
+				background: var(--bg-hover-row);
+			}
+		}
+
+		// Not sure where this is used. Keeping for support
+		// but should probably be depreciated and replaced
+		&.selected-row {
+			background: var(--btn-blue-hint);
+			td {
+				color: #fff;
+			}
+		}
+
+
+	}
+}
+

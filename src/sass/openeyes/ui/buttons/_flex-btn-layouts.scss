@@ -1,0 +1,30 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// Useful btn layouts
+// 1) Horizontal, buttons fill space equally
+.flex-btns {
+	@include flex( center, space-between );
+	> button {
+		flex: 1;
+	}
+}
+
+// 2) Vertical, stack buttons
+.button-stack {
+	@include flex( flex-start, center );
+	flex-direction: column;
+	gap: 10px;
+
+	button,
+	.button {
+		// assume that buttons should fill area width, kinda standard design
+		width: 100%;
+	}
+
+	&.tight {
+		gap: 4px;
+	}
+}

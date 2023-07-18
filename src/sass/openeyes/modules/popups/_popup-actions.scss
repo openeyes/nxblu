@@ -1,0 +1,35 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-popup {
+	// button actions
+	.popup-actions {
+		@include flex(center, space-between);
+		// should be used as last DOM element
+		margin-top:20px;
+		
+		// horizontal alignments
+		&.flex-right {
+			justify-content:flex-end; 		// group items to the right
+		}
+		&.flex-left {
+			justify-content:flex-start; 	// group items to the left
+		}
+		
+		button {
+			margin:0 5px 0 0;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	
+	// change button default
+	// otherwise in light default button is white!
+	button {
+		color: var(--btn-text);
+		background: var(--btn-blue);
+	}	
+}

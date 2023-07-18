@@ -1,0 +1,61 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "../_var" as *;
+
+// "impaired-vision" - very poor eye sight 
+
+.change-font.impaired-vision, 
+.impaired-vision {
+	
+	// adjust all type sizes
+	$impaired-vision-increase: 8; 
+	
+	font-size: $fontsize-base + $impaired-vision-increase;
+	
+	h3 {
+		font-size: $fontsize-h3 + $impaired-vision-increase;
+	}
+	h4 {
+		font-size: $fontsize-base + $impaired-vision-increase;
+	}
+	p {
+		font-size: $fontsize-base + $impaired-vision-increase;
+	}
+	h5 {
+		font-size: $fontsize-base + $impaired-vision-increase;
+	}
+
+	ul, ol {
+		li {
+			font-size: $fontsize-small + $impaired-vision-increase;
+			font-weight:500;
+ 		}
+ 		&.normal {
+ 			li {
+ 				font-size: $fontsize-base + $impaired-vision-increase; 
+			}
+		} 
+		&.large {
+			li {
+				font-size: $fontsize-h3 + $impaired-vision-increase; 
+			}
+		} 
+	}
+	
+	table {
+    	td, th {
+	    	font-size: $fontsize-small + $impaired-vision-increase;
+	    }
+	    
+	    &.label-item,
+	    &.label-r-l {
+			td, th {
+				font-size: $fontsize-base + $impaired-vision-increase; 
+			}
+		}
+	}
+}
+
+
+

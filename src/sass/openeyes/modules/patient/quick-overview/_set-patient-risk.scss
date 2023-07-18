@@ -1,0 +1,33 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-patient-quick-overview {
+	
+	.set-patient-risk {
+		margin:5px 0 15px 0;
+		@include font-size( 14 );
+		
+		.pr-help {
+			border-top:1px dotted var(--gui-line);
+			margin:5px 0 0 0;
+			padding: 5px 0 0 0;
+			@include font-size( 11 );
+			
+			> div {
+				margin:5px 0;
+			}
+		}
+	}
+	
+	.set-clinicl-pathway {
+		@include font-size( 14 );
+	}
+}
+
+
+
+
+

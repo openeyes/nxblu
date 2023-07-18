@@ -1,0 +1,16 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+.oe-wb-widget {
+	// div wrapper for textarea
+	.edit-widget {
+		textarea {
+			width: 95%;
+			font-size: inherit;
+			line-height: 1.2;
+		}
+	}
+}
+
+
+

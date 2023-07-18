@@ -1,0 +1,35 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.element-actions {
+	position: absolute;
+	top: 4px;
+	right: 5px;
+
+	// set up as Flex, need this to be
+	// able to reverse the flow when extended
+	display: flex;
+
+	// space out icons <i>
+	// Trash, audit, duplicate, copy-forward
+	span {
+		@include flex(center, center);
+	}
+
+	.oe-i {
+		width: 25px;
+		height: 25px;
+		margin: 0 2px 2px 2px;
+
+		&.copy-forward {
+			background-size: 17px;
+		}
+
+		&.audit-trail {
+			background-size: 13px;
+		}
+	}
+}
+

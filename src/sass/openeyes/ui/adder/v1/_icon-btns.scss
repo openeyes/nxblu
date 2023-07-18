@@ -1,0 +1,55 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-add-select-search {
+
+	// Button Bar (bottom)
+	// divs not buttons, as can only be used with JS anyway
+	// this also removes cascade issues
+
+	.close-icon-btn,
+	.add-icon-btn {
+		position: absolute;
+		bottom:0;
+		height:32px; // large button height		
+		
+		// Flex: justify-content (h), align-items (v)
+		@include flex(center, center);
+		
+		cursor: pointer;
+
+		.oe-i {
+			// invert to white  light theme
+			filter: var(--btn-icon-hover-filter);
+		}
+	}
+	
+	.close-icon-btn {
+		right:0;
+		width:40px;
+		background-color:var(--btn-blue-hint);
+		&:hover, &:focus, &:active {
+			background-color:var(--btn-blue);
+		}
+	}
+	
+	// <div>
+	// icon + text message
+	.add-icon-btn {
+		left:0;
+		width: calc(100% - 40px);
+		background-color: var(--btn-green-hint);
+		&:hover, &:focus, &:active {
+			background-color: var(--btn-green);
+			color:rgba(255,255,255,1);
+		}
+		
+		@include font-size(13);
+		font-weight:300;
+		color:rgba(255,255,255,0.8);
+	}
+}
+

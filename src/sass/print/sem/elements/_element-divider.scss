@@ -1,0 +1,17 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "src/sass/print/_mix" as *;
+
+// --- PRINT
+
+.element {
+	// line to divide R & L
+	&.eye-divider {
+		background-image: url(svg-themed("ui/element-divider"));
+		background-position: 50% 0;
+		background-repeat: repeat-y;
+		background-size: 19px;
+	}
+}
+

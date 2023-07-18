@@ -1,0 +1,82 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+.toggle-switch {
+	// relates to icon height  
+	$-toggle-height: 18px;
+	$-toggle-width: 28px;
+	$-toggle-padding: 1px;
+	$-toggle-btn: 12px;
+	$-toggle-shift: 9px;
+
+	width: $-toggle-width;
+	height: $-toggle-height;
+	position: relative;
+	display: inline-block;
+	line-height: 0;
+	margin: 0;
+	vertical-align: middle;
+
+	input[type="checkbox"] {
+		display: none;
+
+		// CSS magic '+' next sibling! 
+		&:checked + .toggle-btn {
+			background: var(--btn-green);
+		}
+
+		&:checked + .toggle-btn::before {
+			transform: translateX($-toggle-shift);
+			background: #fff
+		}
+	}
+
+	.toggle-btn {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		cursor: pointer;
+		border: 2px solid var(--txt-light);
+		border-radius: $-toggle-height;
+
+		&::before {
+			position: absolute;
+			left: $-toggle-padding;
+			bottom: $-toggle-padding;
+			content: "";
+			height: $-toggle-btn;
+			width: $-toggle-btn;
+			border-radius: 50%;
+			background: var(--txt-light);
+			transition: transform 0.1s ease-out;
+		}
+	}
+
+	// reverse switch (red)
+	&.reverse {
+		.toggle-btn::before {
+			left: $-toggle-padding + $-toggle-shift;
+		}
+
+		input[type="checkbox"] {
+			// CSS magic '+' next sibling! 
+			&:checked + .toggle-btn {
+				background: var(--btn-red);
+			}
+
+			&:checked + .toggle-btn::before {
+				transform: translateX(-$-toggle-shift);
+			}
+		}
+	}
+
+	// disable the toggle switch
+	&.disabled {
+		pointer-events: none;
+		opacity: 0.5;
+	}
+
+}

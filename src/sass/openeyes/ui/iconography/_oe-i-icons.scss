@@ -1,0 +1,363 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "sass:list";
+@use "../../var" as *;
+
+// oe icons: <i class="oe-i [name] [size] [...options]"></i>
+//	small: 	14px
+// 	medium:	16px
+//	large: 	18px (default size)
+
+.oe-i {
+	display: inline-flex;
+	line-height: 1;
+	vertical-align: middle; // fixes a layout issue in tables
+
+	$-size-large: 18px;
+	$-size-medium: 16px;
+	$-size-small: 14px;
+
+	// default size is large
+	width: $-size-large;
+	height: $-size-large;
+	background:center / $-size-large  no-repeat;
+
+	&.small {
+		width: $-size-small;
+		height: $-size-small;
+		background-size: $-size-small;
+		vertical-align: middle;
+	}
+
+	// large icon area but small icon
+	&.small-icon {
+		background-size: $-size-small;
+		vertical-align: text-top;
+	}
+
+	&.medium {
+		width: $-size-medium;
+		height: $-size-medium;
+		background-size: $-size-medium;
+		vertical-align: middle;
+	}
+
+	// large icon area but medium icon
+	&.medium-icon {
+		background-size: $-size-medium;
+		vertical-align: text-top;
+	}
+
+	// make icon hit-area match standard input/button
+	&.as-btn {
+		width: $oe-input-height;
+		height: $oe-input-height;
+	}
+
+	// used 'inline' to 'pad' out the icon
+	&.pad {
+		margin: 0 4px;
+	}
+
+	&:is(.pad-more, .pad-both) {
+		margin: 0 8px;
+	}
+
+	// icons before text
+	&:is(.pad-r, .pad-right ) {
+		margin: 0 8px 0 0;
+	}
+
+	// icons after text
+	&:is(.pad-l, .pad-left) {
+		margin: 0 0 0 8px;
+	}
+
+	// show interaction
+	cursor: pointer;
+	opacity: $oe-icon-opacity;
+
+	// same affect but different classes 
+	// as unable to decide on best naming strategy
+
+	&:is(:hover, :focus, :active, .active, .no-hover) {
+		opacity: 1;
+	}
+
+	// selected state changes the cursor
+	&.selected {
+		opacity: 1;
+		cursor: default;
+	}
+
+	// Generally icons will be used for interaction
+	// sometimes however they are only used for graphical purposes
+	// use 'no-click' to turn off interaction behaviour
+
+	&:is(.start, .stop, .d-slash, .line-break, .paragraph, .no-click) {
+		cursor: default;
+		pointer-events: none;
+	}
+
+	&.disabled {
+		cursor: default;
+		pointer-events: none;
+		opacity: 0.25;
+	}
+
+	// special typographic icons, this are only for grammatical usage
+	// line-break = single diagonal line
+	// paragraph = +1 line breaks. a double diagonal line
+	&.line-break {
+		opacity: 1;
+		width: $-size-small;
+		height: $-size-small;
+		margin:0 0.4em;
+		background-size: 0.8em;
+		background-image: url(svg-fixed("ui/type-linebreak"));
+	}
+
+	&.paragraph {
+		opacity: 1;
+		width: $-size-small;
+		height: $-size-small;
+		margin:0 0.5em;
+		background-size: 1em;
+		background-image: url(svg-fixed("ui/type-paragraph"));
+	}
+
+
+	// CSS class | SVG file name
+	$themed_icons: (
+		"plus": "plus",
+		"plus-bold": "plus-bold",
+		"plus-circle": "plus-circle",
+		"minus": "minus",
+		"minus-bold": "minus-bold",
+		"arrow-down": "arrow-down",
+		"arrow-up": "arrow-up",
+		"arrow-down-bold": "arrow-down-bold",
+		"arrow-up-bold": "arrow-up-bold",
+		"arrow-right-bold": "arrow-right-bold",
+		"arrow-left-bold": "arrow-left-bold",
+		"assist": "assist",
+		"direction-right": "direction-right",
+		"direction-left": "direction-left",
+		"direction-up": "direction-up",
+		"direction-down": "direction-down",
+		"direction-horizontal": "direction-horizontal",
+		"direction-right-circle": "direction-right-circle",
+		"direction-left-circle": "direction-left-circle",
+		"direction-up-circle": "direction-up-circle",
+		"direction-down-circle": "direction-down-circle",
+		"interval": "interval",
+		"move": "move",
+		"child-arrow": "child-arrow",
+		"parent-arrow": "parent-arrow",
+		"menu": "menu",
+		"trash": "trash",
+		"trash-blue": "trash-blue",
+		"print": "print",
+		"search": "search",
+		"zoom-in": "zoom-in",
+		"zoom-out": "zoom-out",
+		"filter": "filter",
+		"remove": "remove",
+		"remove-circle": "remove-circle",
+		"duplicate": "duplicate",
+		"copy-forward": "copy-forward",
+		"copy-over": "copy-over",
+		"info": "info",
+		"info-blue": "info-blue",
+		"eye": "eye",
+		"eye-circle": "eye-circle",
+		"comments": "comments",
+		"comments-added": "comments-added",
+		"comments-who": "comments-who",
+		"comments-clear": "comments-clear",
+		"start": "start",
+		"stop": "stop",
+		"range": "range",
+		"change": "change",
+		"d-slash": "double-slash",
+		"expand": "expand",
+		"collapse": "collapse",
+		"top":"top",
+		"reduce-height": "reduce-height",
+		"increase-height": "increase-height",
+		"increase-height-orange": "increase-height-orange",
+		"downup": "downup",
+		"history": "rotate-left", // rotate-left
+		"rewind": "rotate-left", // rotate-left
+		"rotate-left": "rotate-left", // rotate-left
+		"forward": "rotate-right", // rotate-right
+		"rotate-right": "rotate-right", // rotate-right
+		"tick": "tick",
+		"tick-circle": "tick-circle",
+		"triangle": "triangle",
+		"time": "time",
+		"audit-trail": "audit-trail",
+		"download": "download",
+		"asterisk": "asterisk",
+		"asterisk-blue": "asterisk-blue",
+		"asterisk-red": "asterisk-red",
+		"pencil": "pencil",
+		"pencil-blue": "pencil-blue",
+		"draft":"draft",
+		"exclamation": "exclamation",
+		"male": "male",
+		"female": "female",
+		"drug-rx": "drug-rx",
+		"formulary": "formulary",
+		"injection": "injection",
+		"drop": "drop",
+		"drop-done": "drop-done",
+		"star": "star",
+		"starline": "starline",
+		"star-blue": "star-blue",
+		"flag": "flag",
+		"flagline": "flagline",
+		"letter-1": "letter-1",
+		"letter-2": "letter-2",
+		"letter-in": "letter-invitation",
+		"letter-GP": "letter-GP",
+		"no-permissions": "no-permissions",
+		"waiting": "waiting",
+		"more-v": "more-v",
+		"more-h": "more-h",
+		"more-h-orange": "more-h-orange",
+		"status-urgent": "status-urgent",
+		"status-query": "status-query",
+		"status-query-reply": "status-query-reply",
+		"whiteboard": "whiteboard",
+		"doubt": "doubt",
+		"doubt-active": "doubt-active",
+		"person": "person",
+		"person-green": "person-green",
+		"person-split": "person-split",
+		"reset": "reset",
+		"undo": "undo",
+		"sync": "sync",
+		"flux": "flux",
+		"cog": "cog",
+		"padlock": "padlock",
+		"fork": "fork",
+		"merge": "merge",
+		"path-break": "path-break",
+		"happy": "happy",
+		"crying": "crying",
+		"eyelat-L": "lat-L", // monochromatic Eye Lat icons:
+		"eyelat-R": "lat-R", // monochromatic Eye Lat icons:
+		"lat-R": "lat-R-green",
+		"lat-L": "lat-L-red",
+		"lat-n": "lat-NA",
+		"lat-Ri": "lat-R-inactive",
+		"lat-Li": "lat-L-inactive",
+		"lat-Rq": "lat-R-query",
+		"lat-Lq": "lat-L-query",
+		// note: laterality icon set did use TWO classes: e.g class="oe-i laterality R"
+		"laterality.R": "lat-R-green",
+		"laterality.L": "lat-L-red",
+		"laterality.NA": "lat-NA",
+		"beo": "beo", // Both Eyes Open
+		"NA":"lat-NA", // basic a grey dot, used with Systemic icon
+		"patient": "patient", // nav icons that may be required in the IU
+		"trials": "trials",
+		"team": "team",
+		"save": "save",
+		"save-blue": "save-blue",
+		"save-team": "save-team",
+		"save-plus": "add",
+		"add": "add",
+		"add-blue": "add-blue",
+		"edit": "edit",
+		"edit-blue": "edit-blue",
+		"cancel": "cancel",
+		"finish": "finish",
+		"mpr": "mpr",
+		"tick-green": "tick-green",
+		"accessibility": "accessibility"
+	);
+
+	// red orange green icons
+	$ROG_icons: (
+		"circle-green": "circle-green",
+		"circle-yellow": "circle-yellow",
+		"circle-amber": "circle-orange", // amber => orange
+		"circle-orange": "circle-orange",
+		"circle-red": "circle-red",
+		"circle-grey": "circle-grey",
+		"flag-green": "flag-green",
+		"flag-amber": "flag-orange", // amber => orange
+		"flag-orange": "flag-orange",
+		"flag-red": "flag-red",
+		"flag-grey": "flag-grey",
+		"triangle-green": "triangle-green",
+		"triangle-amber": "triangle-orange", // amber => orange
+		"triangle-orange": "triangle-orange",
+		"triangle-red": "triangle-red",
+		"triangle-grey": "triangle-grey",
+		"mpr-red": "mpr-red",
+		"mpr-amber": "mpr-orange",
+		"mpr-orange": "mpr-orange",
+		"mpr-green": "mpr-green",
+		"time-red": "time-red",
+		"time-orange": "time-orange",
+		"time-green": "time-green",
+		"exclamation-green": "exclamation-green",
+		"exclamation-amber": "exclamation-orange", // amber => orange
+		"exclamation-orange": "exclamation-orange",
+		"exclamation-red": "exclamation-red",
+		"a11ty-green": "a11ty-green",
+		"a11ty-orange": "a11ty-orange",
+		"a11ty-red": "a11ty-red",
+		"warning": "warning", // RED Risk/Alert triangle
+		"warning-none": "warning-none",
+		"cross-red": "cross-red"
+	);
+
+	$eyedraw_icons: (
+		"ed-zoom": "ed-zoom",
+		"ed-lock": "ed-lock",
+		"ed-trash": "ed-trash",
+		"ed-move-backward": "ed-backward",
+		"ed-move-forward": "ed-forward",
+		"ed-info": "ed-info",
+	);
+
+	// these icons need to always be at full opacity by default
+	$no-opacity: "laterality.R", "laterality.L", "laterality.NA", "lat-R", "lat-L", "lat-n", "lat-Ri", "lat-Li", "beo", "doubt-active", "circle-green", "circle-yellow", "circle-amber", "circle-orange", "circle-red", "circle-grey", "time-red", "time-orange", "time-green", "flag-green", "flag-amber", "flag-orange", "flag-red", "flag-grey", "triangle-green", "triangle-amber", "triangle-orange", "triangle-red", "triangle-grey", "triangle-urgent", "mpr", "mpr-red", "mpr-amber", "mpr-orange", "mpr-green", "exclamation-green", "exclamation-amber", "exclamation-orange", "exclamation-red", "tick-green", "cross-red", "warning", "warning-none", "person-green", "status-urgent", "asterisk-red", "a11ty-green","a11ty-orange","a11ty-red", "assist";
+
+	// @mixin - build specific icon classes
+	// $map: see lists above
+	// $set: SVG icon type
+	@mixin oe-i( $map, $set:"themed" ) {
+		@each $name, $svg in $map {
+			// extend .oe-i
+			&.#{$name} {
+
+				// select SVG set to use
+				@if $set == "themed" {
+					background-image: var(--i-#{$svg});
+				}
+
+				@if( $set == "ed3"){
+					background-image: var(--i-ed3-#{$svg});
+				}
+
+				// set opacity to 1?
+				@if list.index($no-opacity, $name) {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	// Build icon classes using @mixin oe-i
+	// Map | Icon set to use | sub-directory (optional)
+	@include oe-i($themed_icons, "themed");
+	@include oe-i($ROG_icons, "themed");
+	@include oe-i($eyedraw_icons, "ed3");
+
+}

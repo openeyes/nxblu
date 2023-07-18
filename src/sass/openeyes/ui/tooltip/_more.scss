@@ -1,0 +1,25 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+// 'more' is a tooltip preview of associated popup content.
+// The popup data is too much for a tooltip, but the preview may
+// have enough info to negate the need to view the popup data.
+// note: on touch devices this enhancement will be skipped and
+// the popup will open directly, tooltip 'more' is an enhancement.
+
+.oe-tooltip {
+	&.more {
+		padding-bottom: 21px;
+		&::before {
+			content: "";
+			position:absolute;
+			bottom:0;
+			left:0;
+			right:0;
+			height:15px;
+			background: center/13px var(--btn-blue-hint) url(svg-white-icon("i/more-h")) no-repeat;
+		}
+	}
+}

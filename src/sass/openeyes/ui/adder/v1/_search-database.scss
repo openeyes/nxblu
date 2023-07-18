@@ -1,0 +1,23 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "base" as *;
+
+.oe-add-select-search {
+		
+	// AJAX searching of database
+	.search-database {
+		width:$oe-ass-restricted-width-extended + 10px; 
+		
+		.search-placeholder {
+			margin:0 0 2px 0;
+			padding:3px 18px 3px 8px;
+			overflow-wrap: break-word;
+			font-style: italic;
+			color:var(--txt-light);
+		}
+		
+	}
+}
+
+

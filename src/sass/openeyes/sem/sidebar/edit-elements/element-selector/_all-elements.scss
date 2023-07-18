@@ -1,0 +1,29 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+@use "base" as *;
+
+.oe-element-selector {
+	
+	.all-elements {
+		display:flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		
+		// match container
+		width:$oe-event-main-default-width;
+		height: #{$element-selector-height - $element-close-btn-height}; // allow for the big close button
+		
+		padding:5px 10px;
+	}		
+	
+}
+
+
+
+
+
+

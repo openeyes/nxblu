@@ -1,0 +1,74 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-hotlist-panel {
+
+	// group overview wrapper
+	// e.g. "Open 4", h3 + count; or Closed with data selectors
+	.overview {
+		padding: 10px 10px 5px 10px;
+	}
+
+	h3 {
+		@include flex(center, flex-start);
+		@include font-size(15);
+		font-weight:var(--font-light);
+
+		pointer-events: none;
+
+		// <small>
+		.count {
+			@include flex(center, center);
+			height: 16px;
+			width: 16px;
+			border-radius: 3px;
+			@include font-size(10);
+			font-weight:500;
+			color: var(--btn-text);
+			background: var(--color-grey);
+			margin:0 0 0 10px;
+
+			&.issue {
+				background: var(--color-orange);
+				opacity: 1;
+			}
+
+		}
+	}
+
+	// in closed date searches for 'today and search'
+	.closed-search {
+		position: relative;
+		@include font-size(12);
+
+		.closed-date {
+			display: inline-block;
+			padding: 0 15px 0 0;
+			cursor: pointer;
+
+			&:last-child {
+				padding: 0 0 0 0;
+			}
+
+			&:is(:hover,:focus) {
+				color: var(--txt-highlight);
+			}
+		}
+
+		// wrapper for pickmeup js
+		// js adds the dom to this element
+		// CSS then can control it's position
+		#js-pickmeup-datepicker {
+			position: absolute;
+			top: 15px;
+			right: 0;
+		}
+	}
+
+
+
+}
+
+

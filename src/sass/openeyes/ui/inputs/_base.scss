@@ -1,0 +1,46 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+:is(input, textarea, select) {
+	// override browser defaults:
+	border:0;
+	outline:none;
+	font-family: inherit; // otherwise uses system-ui fonts
+	margin:0;
+	padding:0;
+
+	// user-agent will reset OE line-height to "normal"
+	// it will also vertically center the text
+	line-height: normal;
+
+	// all set at 24px
+	// JS textAreaResize uses inline style to adjust this
+	height: $oe-input-height;
+
+	@include font-size(12);
+	font-weight: var(--font-medium);
+	color: var(--input-text);
+	background-color: var(--input-base);
+
+	&.default-val {
+		outline:2px solid var(--color-green);
+	}
+
+	// flag OE prefilled data to Users
+	&.prefilled {
+		outline:2px solid var(--color-orange);
+	}
+
+	// provide subtle keyboard accessibility
+	&:focus-visible {
+		outline: 1px dotted var(--input-focus-outline);
+		outline-offset: 1px;
+	}
+}
+
+
+
+

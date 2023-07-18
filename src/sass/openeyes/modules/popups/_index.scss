@@ -1,0 +1,47 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// DOM structure
+// .oe-popup-wrap -|- .oe-popup -|- .title
+//                               |- .close-icon-btn
+//                               |- .oe-popup-content  (wraps all popup content)
+//                               |- .popup-actions (can be outside of the content wrap, then they are fixed)
+
+@use "base";
+
+@use "title_close";
+// Content wrap. Handle scrolling for content (min res displays)
+@use "popup-content";
+@use "popup-actions";
+
+// block layout for clinic manager
+@use "block-layout";
+
+// popup UI elements
+@use "table";
+@use "typography";
+
+@use "context-help-overlay";
+
+// Specific content: 
+@use "content-specific/previous-elements";  // Previous Elements (popup for coping data from previous elements)
+@use "content-specific/build-psd"; // Popup Add to PSD
+@use "content-specific/popup-search-query"; // Popup Search Query (save and load)
+@use "content-specific/meds-mx";
+@use "content-specific/signature-pad";
+
+// event audit trail popup v3
+@use "oe-audit-trail-popup";	// User audit trail popup
+
+// when updated to v5 version __base can be removed
+//@use "events-user-trail/_all";
+
+// standardised version of Add new event widget
+@use "add-new-event/v1";
+@use "add-new-event/v2";
+
+// attachments
+@use "attachments";
+
+// user activity history
+@use "user-activity-history";

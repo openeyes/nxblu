@@ -1,0 +1,19 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+.oe-wb-widget {
+	.data-issue {
+		position: absolute;
+		top: 2.8vw; // a bit weird, but it needs to relate to the header font-size
+		left: 0;
+		font-size: 0.9vw;
+		font-weight: 700;
+		color: #000;
+		background: rgb(230, 190, 20, 0.9);
+		padding: 0.4em;
+	}
+}
+
+
+
+

@@ -1,0 +1,64 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.sidebar
+	// displayed on rollover of icon on left side
+.tooltip.quicklook {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 19px;
+	z-index: 1;
+	width: 100%;
+	pointer-events: none;
+
+	@include font-size(12);
+	font-weight: var(--font-medium);
+	background: var(--bg-popup);
+	border-bottom: 1px solid var(--txt-active);
+	padding: 8px 0;
+
+	// animation were previously in JS (jQuery)
+	// moved into the CSS for speed
+	&.fade-in {
+		display: block;
+		animation: 0.1s ease-out forwards fadein;
+	}
+
+	&.fade-out {
+		display: none;
+	}
+
+	.event-name {
+		padding: 3px 5px 2px 8px;
+	}
+
+	.event-info {
+		@include font-size(10);
+		padding: 0 5px 2px 8px;
+	}
+
+	// same SVGs as alert and ready (above)
+	.event-issue {
+		@include font-size(10);
+		color: #fff;
+		background-color: var(--color-grey);
+		margin: 2px 0 0 0;
+		padding: 5px 5px 5px 9px;
+
+		&:is(.cancelled, .alert) {
+			background-color: var(--color-red);
+		}
+
+		&:is(.confirmed, .edit-done, .done, .ready) {
+			background-color: var(--color-green);
+		}
+
+		&.urgent {
+			background-color: var(--color-orange);
+		}
+	}
+}
+

@@ -1,0 +1,111 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-queue-mgmt {
+	// layout queues	
+	@include flex( stretch, flex-start );
+	
+	.queue {
+		//background: var(--gui-line);
+		border-right:1px solid var(--gui-line);
+		border-left:1px solid var(--gui-line);
+		margin:0 5px 0 0;
+		width:300px;
+		
+		height: calc( 100vh - #{$oe-header-height + $oe-event-header-height });
+		overflow-y: auto;
+		
+		&::-webkit-scrollbar { display: none; } // Chrome, Safari
+		-ms-overflow-style: none;  //  Edge
+		
+		header {
+			position: sticky;
+			top:0;
+			z-index:1;
+			border-bottom:2px solid var(--gui-line);
+			
+			
+			@include flex(center, center);
+			height:50px;
+			
+			@include font-size(14);
+			font-weight: var(--font-medium);
+			
+			&.in-flow {
+				color: var(--txt-active);
+			}
+			
+		}
+		
+		.patient-list {
+			position: relative;
+			&.add-to-end {
+				&:after {
+					pointer-events: none; // need to stop the flickering
+					content:'';
+					position: absolute;
+					top: 100%;
+					left:0;
+					width:100%;
+					height:35px;
+					background: center / 13px url( svg-white-icon( 'i/plus-bold' ) ) var(--btn-blue-hint) no-repeat;
+				}
+			}
+			
+			.patient {
+				cursor: grab;
+				position:relative;
+				
+				@include flex( center, flex-start );
+				height: 35px; // need to use a height for CSS animation
+				
+				@include font-size(11);
+				font-weight: var(--font-medium);
+				border:1px solid transparent;
+				border-top-color: var(--gui-line);
+				
+				&:last-child{
+					border-bottom-color: var(--gui-line);
+				}
+				
+				padding:0 5px;
+				
+				
+				background: url( svg-all('ui/patient-grey')) right 5px bottom 9px no-repeat;
+				background-size: 15px;
+				
+	
+				transition: height .2s ease-out;
+				
+				&.over {
+					color: #fff;
+					background-color: var(--btn-blue-hint);
+				}
+				
+				&.moving {
+					cursor: grabbing;
+					background-color: var(--bg-max);
+					border:1px dotted var(--txt-highlight);
+				}
+				
+				&.add-above {
+					padding-top: 35px;
+					height: 75px; 
+					
+					&:after {
+						content:'';
+						position: absolute;
+						top: 0;
+						left:0;
+						width:100%;
+						height:40px;
+						background: center / 13px url( svg-white-icon( 'i/plus-bold' ) ) var(--btn-blue-hint) no-repeat;
+					}
+				}
+			}
+		}
+	}
+}

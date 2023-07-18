@@ -1,0 +1,45 @@
+{
+  "name": "newblue",
+  "version": "4.0.0",
+  "description": "newblue for OpenEyes",
+  "private": true,
+  "author": {
+    "name": "Toby Fisher",
+    "url": "https://knowego.com"
+  },
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openeyes/newblue"
+  },
+  "browserslist": [
+    "Chrome > 84",
+    "Edge > 84",
+    "Safari > 15"
+  ],
+  "scripts": {
+    "css": "node node_scripts/sass-to-css.js",
+    "css:blocker": "node node_scripts/sass-to-css.js blocker",
+    "css:print": "node node_scripts/sass-to-css.js print",
+    "css:eyedraw": "node node_scripts/sass-to-css.js eyedraw",
+    "css:bluesky": "node node_scripts/x-bluesky-css.js",
+    "svg": "node node_scripts/svg-optimise.js",
+    "svg:all": "node node_scripts/svg-optimise.js rebuild-all",
+    "build:event-icons": "node ./node_scripts/build-iconset.js events",
+    "build:eyedraw-icons": "node ./node_scripts/build-iconset.js eyedraw"
+  },
+  "devDependencies": {
+    "chalk": "4.1.1",
+    "chokidar": "3.5.3",
+    "dotenv": "16.0.3",
+    "fast-glob": "3.2.11",
+    "jimp": "0.16.1",
+    "spritesmith": "3.4.0",
+    "sass": "1.62.1",
+    "svgo": "2.8.0"
+  },
+  "engines": {
+    "node": ">= 14.17.2",
+    "npm": ">= 7.19.1"
+  }
+}

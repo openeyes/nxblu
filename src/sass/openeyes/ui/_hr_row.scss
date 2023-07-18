@@ -1,0 +1,60 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// need a generic div class to 
+// space out a 'rows' of data within 
+// a container
+.row {
+	margin: 0 0 15px 0;
+
+	&:last-child:not(:only-child) {
+		margin-bottom: 0;
+	}
+
+	&.divider {
+		border-bottom: 2px solid var(--gui-line);
+		padding: 0 0 15px 0;
+	}
+}
+
+// match a standard list
+.small-row {
+	margin: 0 0 6px 0;
+
+	&:last-child:not(:only-child) {
+		margin-bottom: 0;
+	}
+
+}
+
+// <hr>
+// always used with .divider or .soft
+hr {
+	display: block;
+	border: 0;
+	margin: 5px 0;
+	border-bottom: 1px solid var(--gui-line);
+
+	&.divider {
+		margin: 15px 0;
+		border-bottom: 2px solid var(--gui-line);
+
+		.oe-pathstep-popup &,
+		.oe-tooltip & {
+			margin: 5px 0;
+		}
+
+		// when used in elements
+		.element & {
+			margin: 12px 0;
+			border-bottom-width: 3px;
+		}
+	}
+
+	&.soft {
+		margin:5px 0;
+		border-bottom:1px dotted var(--gui-line);
+	}
+
+}

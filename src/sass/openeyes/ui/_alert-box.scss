@@ -1,0 +1,93 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+@use "openeyes/var" as *;
+
+.alert-box {
+	padding:4px 10px;
+	margin:3px 1px;
+
+	// when used in the hotlist looks too tight, so:
+	.oe-hotlist-panel & {
+		margin:3px;
+	}
+
+	// default alert
+	@include font-size(13);
+
+	// default, to "info"
+	color:rgba(250,250,250,0.9); // tints to colour of alert
+	background: var(--color-grey);
+	
+	border-radius:5px;
+
+	// default
+	// &.info {}
+	
+	&.success {
+		background:var(--color-green);
+	}
+
+	&:is(.alert, .issue) {
+		background:var(--color-orange);
+	}
+
+	&:is(.warning, .error, .injection-warning){
+		background:var(--color-red);
+	}
+	
+	// used for Risks and Allergies
+	&.patient {
+		background:var(--color-burgundy);
+	}
+	
+	a {
+		text-decoration: underline;
+	}
+	
+	// if there are list of issues or warnings:
+	ul {
+		list-style: disc inside;
+		margin:5px 0;
+		li {
+			margin-bottom: 3px; 
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	
+	// actions, buttons and close icons
+	&.has-actions {
+		position:relative;
+		padding-right:200px; 	// allow space for a long named button 
+		min-height: 32px;  		// otherwise button overlaps button background
+		
+		.alert-actions {
+			position: absolute;
+			right:8px;
+			top:4px;
+
+		}
+	}
+
+	// make buttons more obvious on the colour backgrounds:
+	button {
+		border: 1px solid var(--bg-html);
+	}
+
+	// dismissible
+	&.dismissible {
+		cursor: pointer;
+		background-repeat: no-repeat;
+		background-position: top 5px right 5px;
+		background-image: url(svg-white-icon("i/remove-circle"));
+		background-size:17px;
+		padding-right:30px; // allow for the background icon
+
+		&:is(:focus, :hover) {
+			background-color:var(--btn-blue-hint);
+		}
+	}
+}

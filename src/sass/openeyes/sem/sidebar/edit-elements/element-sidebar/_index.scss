@@ -1,0 +1,98 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// OE Sidebar Element overlay - only available in EDIT mode
+// New selector does the same thing but in a different way. Both still used.
+// 
+// DOM for Element:
+// <li class="element"><a href="#" class="[error selected]">Element</a></li>
+
+.sidebar {
+	
+	// <ul>
+	.oe-element-list {
+		// vertical spacing required to maintain layout
+		// <ul> are used with single <li> without being grouped
+		padding:0 0 10px 0;
+		
+		// <li>
+		.element {
+			margin:0;
+		}
+		
+		// Elements <a>
+		// link to elements position within the event e.g. #element-name
+		// as well as adding and removing them
+		a {
+			position: relative;
+			display: block;
+			margin: 0 0 1px 0;
+			padding: 0 12px 0 8px;
+			min-height: $oe-event-icon-size; // min-height to allow long names to wrap
+			line-height: $oe-event-icon-size;
+
+			@include font-size(11);
+			font-weight: var(--font-medium);
+			font-style: italic;
+			color: var(--btn-text);
+			background: var(--btn-base);
+
+			&:hover, &:focus {
+				color: rgb(255, 255, 255);
+				background-color: var(--btn-blue);
+			}
+
+			// added matches new Element Selector
+			&.added,
+			&.selected {
+				color: var(--btn-text-active);
+				background: var(--btn-green-hint);
+			}
+
+			&.added {
+				// if added it can be removed
+				&:hover,
+				&:focus {
+					background: center right 3px / 11px url(svg-white-icon("i/remove")) var(--btn-red-hint) no-repeat;
+				}
+
+				&:active {
+					background: var(--btn-red);
+				}
+			}
+
+			&.locked {
+				color: var(--txt-light);
+				background: var(--btn-disabled);
+				pointer-events: none;
+
+				&::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 3px;
+					width: 11px;
+					background: center / 11px var(--i-no-permissions) no-repeat;
+					opacity: $oe-icon-opacity;
+				}
+			}
+
+			&.mandatory {
+				font-style: italic;
+				color: var(--btn-text-active);
+				background: center right 3px / 11px url(svg-white-icon("i/asterisk")) var(--btn-green) no-repeat;
+			}
+
+			&.error {
+				color: #fff;
+				background-color: var(--color-red); // flag error with element
+			}
+		}
+	}
+}
+
+

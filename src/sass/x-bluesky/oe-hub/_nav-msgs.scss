@@ -1,0 +1,27 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+
+.unread-msgs {
+	position: absolute;
+	top: 12px;
+	right: 10%;
+
+	@include font-size(8);
+	font-weight: 500;
+	line-height: 1;
+
+	color: #fff;
+	background: var(--color-orange);
+	border: 1px solid var(--bg-html);
+
+	@include flex(center, center);
+	height: 16px;
+	min-width: 16px;
+	padding: 0 4px;
+	border-radius: 8px;
+
+	pointer-events: none;
+
+}
+

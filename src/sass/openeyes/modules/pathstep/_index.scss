@@ -1,0 +1,11 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// OE Path Steps, used in:
+// Worklist (v1) - PSDs (Drug Admin path-steps)
+// Clinic manager (worklist v2), builds and manage all pathways for a clinic
+// Events (via Sidebar), specific patient path can also be edited.
+
+@use "pathstep-btn";
+@use "pathstep-popup";

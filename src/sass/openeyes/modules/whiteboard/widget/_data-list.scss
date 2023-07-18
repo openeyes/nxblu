@@ -1,0 +1,28 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+.data-list {
+	.wb-data {
+		// for a data list we can assume it will probably scroll
+		overflow-y: auto;
+		padding: 0 4px 10px 8px;
+
+		font-size: $wb3-font-base;
+		font-weight: var(--font-medium);
+		line-height: 1;
+
+		ul {
+			padding-bottom: 0.5em;
+			li {
+				padding-bottom:0.3em;
+			}
+		}
+	}
+}
+
+
+
+
+

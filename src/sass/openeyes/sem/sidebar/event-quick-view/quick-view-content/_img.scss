@@ -1,0 +1,18 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+.oe-event-quickview {
+	
+	.quick-view-content {
+		&.img {
+			padding:10px; // to push scrollbars out
+			// <img>		
+			img {
+				width: 100%; // this was '537px' but <img> data was unreadable.
+				height :auto;
+			}
+		}
+	}
+}
+

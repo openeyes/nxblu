@@ -1,0 +1,45 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// Q & A group
+// A question with optional answers 
+// like a checklist, to match the portal layout
+
+.main-event {
+	
+	.element {
+		
+		// wrapper for Q & A group
+		.qa-g {
+			@include flex( flex-start, space-between );
+			
+			.question {
+				position:relative;
+				width: 40%;
+				padding:0 0 0 25px; // allow for the Number
+				@include font-size( 14 );
+				
+				.num {
+					position:absolute; 
+					top: 1px;
+					left: 0;
+					@include font-size( 14 );
+					font-weight: var(--font-light);
+					color:var(--txt-light);
+				}
+			}
+			// answer options
+			.answers {
+				width: 50%;
+			}
+			
+			// in View
+			.answer {
+				width: 50%;
+				@include font-size( 14 );
+			}
+		}
+	}
+}

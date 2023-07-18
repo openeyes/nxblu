@@ -1,0 +1,19 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-event-quickview {
+	
+	.quick-view-content {
+		// a JS text message there is no lightning preview available
+		.not-available {
+			margin:$oe-event-header-height;
+			@include font-size(18);
+			color: rgba(255,255,255,0.5);
+			font-weight: 300;
+		}
+	}
+}
+

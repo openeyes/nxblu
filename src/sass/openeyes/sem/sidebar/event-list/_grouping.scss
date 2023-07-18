@@ -1,0 +1,68 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.sidebar {
+	// <select> - modify the default
+	// e.g. move the background arrow and slightly resize
+	.grouping-picker {
+		color: var(--txt-light);
+		height: 28px;
+		padding: 0;
+		margin:0 0 1px 0;
+		@include font-size(11);
+		text-align: center;
+		background: var(--bg-event-list);
+	}
+
+
+	// wrapper for Events by... groups
+	// and, in Edit, Element structure groups (Examination)
+	.groupings {
+		// allow space for the event quicklook info popup
+		padding-bottom: 30px;
+	}
+
+	// variation of "compress", not using the generic
+	// collapse-group class because the sidebar is uniquely
+	// styled, better to have it's own class IMO
+	.sidebar-group {
+		.header-icon {
+			position: relative;
+			@include font-size(12);
+			padding: 0 30px 0 5px;
+			margin: 12px 0 6px 0;
+			color: var(--txt-light);
+			font-weight: var(--font-light);
+			cursor: pointer;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 1px;
+				bottom: 0; // fill vertical area
+				right: 2px; // visual alignment tweak
+				width: 19px; // allow for bigger icons (if needed)
+
+				// put the expand collapse icon into the background
+				background: right top / 15px var(--i-plus) no-repeat;
+
+				// set opacity to match oe-i
+				opacity: $oe-icon-opacity;
+			}
+
+			&.is-expanded {
+				&::after {
+					background-image: var(--i-arrow-up);
+				}
+			}
+
+			&:is(:hover, :active) {
+				color: var(--txt-base);
+			}
+		}
+	}
+}
+

@@ -1,0 +1,44 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// clips capture (OE Meet)
+.capture-clip {
+	@include inline-flex( flex-start, space-between );
+	margin:0 15px 10px 0;
+	.details {
+		padding:0 5px;
+		
+		table {
+			margin:5px 0 0 0;
+			th,
+			td {
+				@include font-size(10);
+				height: auto;
+			}
+		}
+	}
+
+	// stack the clips rather than inline
+	// added for DRV device import captures
+	&.stack {
+		@include flex( flex-start, space-between);
+		gap:10px;
+		.details {
+			flex: 1 1 0;
+			table,
+			button {
+				width:100%;
+			}
+
+		}
+	}
+
+}
+
+
+
+
+

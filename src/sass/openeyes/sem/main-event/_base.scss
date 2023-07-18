@@ -1,0 +1,26 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// <main>
+.main-event {
+	position: relative;
+	padding: 0 0 40px 0; // 40px allows for banner if shown
+	@include font-size(12);
+	background: var(--bg-event);
+
+	// Pathways & Examination Edit Search
+	// this is so doesn't cover any page data
+	&.allow-for-pathway,
+	&.examination-search-active {
+		margin-top:80px;
+	}
+
+	// Enable smooth scrolling on Events for
+	// anchor links to elements (if user is cool with it)
+	scroll-behavior: smooth;
+	@media only screen and (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	}
+}

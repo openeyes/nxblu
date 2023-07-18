@@ -1,0 +1,53 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-popup {
+	// wrapper for content.
+	// handles overflow.
+	.oe-popup-content {
+		// height is unknown for AJAX content load
+		// however need a minimum otherwise it is 
+		// then allow content to expand if needed
+		min-height: 100px; // also the spinner needs space.
+		max-height: calc(100vh - 200px);  // make use of available height, but allow for title and fix actions
+		overflow-y: auto;	// scroll overflow
+		overflow-x: hidden; // otherwise breaks out of popup.
+		
+		@include font-size(12);
+
+		// oe-popup min-width is set at min:600px max:1080px
+		&.wide {
+			width:800px;
+		}
+
+		&.min {
+			width:600px;
+		}
+
+		&.max {
+			width: #{$oe-minimum-viewport-width - 40px}; // allow for padding 20px
+		}
+		
+		&.max-height {
+			height: calc(100vh - 200px); // force to max height;	
+		}
+		
+		// added this to track when scolling (small data column)
+		.sticky {
+			position: sticky; 
+			top:0; 
+		}
+		
+		// printouts use an iFrame in the content: 
+		iframe {
+			border:0; // remove the default border;
+		}
+
+
+		// don't allow content to push right up to scrollbar
+		padding:0 5px 0 0;
+	}	
+}

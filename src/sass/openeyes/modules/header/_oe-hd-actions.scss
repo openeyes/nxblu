@@ -1,0 +1,29 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+@use "openeyes/var" as *;
+
+// right' area for 'actions'
+.oe-hd-actions {
+	position:absolute;
+	top:0; 
+	right:10px; 
+	height:$oe-header-height;
+	@include flex(center, flex-start);
+	
+	@include font-size(16);
+	color: var(--txt-light);
+	
+	button {
+		margin:0 8px 0 0;
+		&:last-child {
+			margin-right:0;
+		}
+	}
+	
+	// provide a "grouping" mechanism
+	.group {
+		margin:0 32px 0 0;
+	}
+}

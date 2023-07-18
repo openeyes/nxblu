@@ -1,0 +1,57 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.btx-inj {
+	.inj-marker {
+		position: absolute;
+		pointer-events: none;
+		height: 30px;
+
+		color: var(--txt-active);
+		background: var(--bg-data);
+
+		// adjusting padding will affect the cross position!
+		padding: 2px 2px 8px 2px;
+		border-radius:2px;
+
+		@include font-size(12);
+		font-weight: 500;
+		line-height: 1;
+
+		.agent {
+			@include font-size(9);
+			font-weight: 400;
+		}
+
+		// just for editing, need to know which is which
+		.inj-num {
+			position: absolute;
+			top: 100%;
+			left: 10px;
+			transform: translateY(-6px);
+			@include font-size(10);
+			font-weight: 700;
+			background: var(--bg-data);
+			padding:1px;
+		}
+
+		// X marks the injection position
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			bottom: 0;
+			transform: translate(-10px, 8px);
+			width: 18px;
+			height: 18px;
+			background: center / 14px url(svg-black-icon("i/remove")) var(--color-highlighter) no-repeat;
+			border-radius: 50%;
+
+		}
+	}
+}
+

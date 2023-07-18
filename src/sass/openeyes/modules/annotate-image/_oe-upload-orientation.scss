@@ -1,0 +1,28 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-upload-orientation {
+	position: relative;
+	@include flex(center, center);
+
+	.adjustments {
+		position: absolute;
+		margin: auto;
+		@include font-size(14);
+		color: #fff;
+		background: rgba(0, 0, 0, 0.8);
+		padding: 5px;
+		border-radius: 5px;
+		text-align: center;
+
+		.flex-btns {
+			margin: 10px 0 0 0;
+		}
+
+	}
+}
+
+

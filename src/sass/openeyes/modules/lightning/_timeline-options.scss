@@ -1,0 +1,67 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.lightning-timeline {
+	z-index:$oe-z-event-quick-view; // for the timeline options popup.
+
+	$_btn-width:40px;
+
+	// in front of the icon timeline is the 'switcher'
+	// panel. Shows current doc type and the provides
+	// a dropdown list to switch the lightning viewre
+	.timeline-options {
+		position:absolute;
+		top:0;
+		left:10px; // pad
+		height:100%;
+		width:$_btn-width + 10px;
+
+		// fancy button for Lightning options
+		// based on the Shortcuts...
+		.lightning-btn {
+			width:$_btn-width;
+			height:100%;
+
+			// re-create 'button'
+			background:var(--btn-base);
+			cursor: pointer;
+
+			// JS controlled interaction
+			// to allow mouse enhancments to touch.
+			&.active {
+				background:var(--btn-blue);
+				.oe-i {
+					opacity: 1;
+				}
+			}
+
+			// use flex to center the SVG
+			display:flex;
+			justify-content: center;
+			align-items: center;
+
+			// <svg>
+			.lightning-icon {
+				width:20px;
+				height:20px;
+				fill:var(--txt-highlight);
+				position:relative;
+				top:-5px;
+			}
+
+			// use position to position the arrow icon
+			position:relative;
+			.oe-i {
+				pointer-events: none;
+				position:absolute;
+				bottom:0;
+				left:11px; // arbitrary (by eye)
+			}
+
+
+		}
+	}
+}

@@ -1,0 +1,45 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+.ed3-tools {
+
+	position: relative; // hook for reset
+	display: flex;
+	flex-direction: column;
+
+	.show-stack {
+		flex:1 1 0;
+	}
+
+	// modify icon defaults for use in ED3
+	.oe-i {
+		width: 38px;
+
+		&:hover,
+		&:focus {
+			background-color: var(--ed3-icon-area);
+		}
+
+		&.copy-over,
+		&.reset {
+			background-size: 17px;
+			height: 38px;
+		}
+
+		&.copy-over {
+			background-image: url(svg-black-icon("i/copy-over"));
+		}
+
+		&.reset {
+			background-image: url(svg-black-icon("i/reset"));
+		}
+
+		&.menu {
+			background-image: url(svg-black-icon("i/menu"));
+			height: 100%;
+		}
+	}
+}
+

@@ -1,0 +1,96 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.sidebar {
+
+	// <li> 
+	.event {
+		position: relative;
+		display: block;
+		margin: 0 0 1px 0;
+
+		// Event anchor link
+		// this DOM needs rebuilding so that the <a> is only
+		// wrapping the actual link part, the quicklook should be
+		// should be outside this, currently JS is handling it tho
+		a {
+			position: relative;
+			@include flex(center, flex-start);
+
+			height: $oe-event-icon-size;
+			line-height: $oe-event-icon-size;
+
+			@include font-size(12);
+			font-weight: 400;
+			color: var(--txt-light);
+			background: var(--bg-event-list);
+
+			&:is(:hover, :focus, :active) {
+				color: var(--btn-text-active);
+				background: var(--btn-blue);
+
+				.event-type {
+					background-color: var(--bg-max);
+					&::after {
+						opacity: 0.8;
+					}
+				}
+
+
+				.oe-i.laterality {
+					&.R {
+						background-image: url(svg-white-icon("i/lat-R"));
+					}
+
+					&.L {
+						background-image: url(svg-white-icon("i/lat-L"));
+					}
+				}
+
+				.tag {
+					color: #fff;
+					background: transparent;
+				}
+			}
+		}
+
+		// Selected Event (as in, viewing it)
+		&.selected {
+			a {
+				color: var(--btn-text-active);
+				background: var(--btn-blue-hint);
+
+				.event-type {
+					background-color: var(--btn-base-light);
+					&::after {
+						opacity: 0.8;
+					}
+				}
+
+				// slightly dull the laterality icons when selected
+				.event-extra {
+					opacity: 0.8;
+				}
+
+				.oe-i.laterality {
+					&.R {
+						background-image: url(svg-white-icon("i/lat-R"));
+					}
+
+					&.L {
+						background-image: url(svg-white-icon("i/lat-L"));
+					}
+				}
+
+				.tag {
+					background: transparent;
+				}
+			}
+		}
+	}
+}
+
+

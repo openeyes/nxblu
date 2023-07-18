@@ -1,0 +1,21 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// do not add any list styling here
+// way to many cascades!
+
+ul {
+	list-style: none;
+	
+	li {
+		padding:0;
+		margin:0;
+	}
+}
+
+// not actually using <ol>, only using <ul>
+ol {
+	list-style-position: inside;
+}
+

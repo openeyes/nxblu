@@ -1,0 +1,30 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// when first introduced this was called "listview-expand-collapse"
+// now it's "oe-pro-data-view" (as this is more descriptive)
+.pro-data-view {
+	@include flex(flex-start, space-between);
+
+	// wrapper for Pro / Standard DOMs
+	// contains both Pro and Standard view of data
+	.pro-standard-views {
+		flex: 1 1 0;
+	}
+	// toggle the view
+	.pro-standard-btn {
+		// make the icon expand to fill the area
+		align-self: stretch;
+		margin:0 0 0 5px;
+		.oe-i {
+			width: 25px;
+			height: 100%;
+			min-height: 19px;
+			background-position-y: 0;
+		}
+	}
+}
+
+

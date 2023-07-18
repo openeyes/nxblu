@@ -1,0 +1,25 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-patient-popup {
+	
+	.patient-numbers {
+		@include font-size(13);
+		color:var(--txt-light);
+		padding:5px 10px 6px 5px;	
+		margin:0 0 10px 0;	
+		background: pink;
+		
+		border-bottom:1px solid deeppink;
+
+		.num {
+			display:inline-block;
+			padding:0 20px 0 0;
+			margin:0 20px 0 0;
+			border-right:1px solid var(--gui-line);
+		}
+	}
+}

@@ -1,0 +1,81 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// https://google-webfonts-helper.herokuapp.com/
+// pushing WOFF2, included Greek to allow for Medical terms
+
+/* WOFF2 for Chrome 26+, Opera 23+, Firefox 39+ */
+/* FONT: Roboto - latin_greek, local hosting */
+
+/* roboto-100 - latin_greek */
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 100;
+	src: url("../fonts/roboto-subset/100-thin.woff2") format("woff2");
+	font-display: swap;
+}
+
+/* roboto-300 - latin_greek */
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 300;
+	src: url("../fonts/roboto-subset/300-light.woff2") format("woff2");
+	font-display: swap;
+}
+
+/* roboto-regular - latin_greek */
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../fonts/roboto-subset/400-latin-greek.woff2") format("woff2");
+	font-display: swap;
+
+}
+
+/* roboto-italic - latin_greek */
+@font-face {
+	font-family: "Roboto";
+	font-style: italic;
+	font-weight: 400;
+	src: url("../fonts/roboto-subset/400i-latin-greek.woff2") format("woff2");
+	font-display: swap;
+}
+
+/* roboto-500 - latin_greek */
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	src: url("../fonts/roboto-subset/500-latin-greek.woff2") format("woff2");
+	font-display: swap;
+}
+
+/* roboto-500italic - latin_greek */
+@font-face {
+	font-family: "Roboto";
+	font-style: italic;
+	font-weight: 500;
+	src: url("../fonts/roboto-subset/500i-latin-greek.woff2") format("woff2");
+	font-display: swap;
+}
+
+/* roboto-700 - latin_greek */
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/roboto-subset/700-latin-greek.woff2") format("woff2");
+	font-display: swap;
+}
+
+/* roboto-700italic - latin_greek */
+@font-face {
+	font-family: "Roboto";
+	font-style: italic;
+	font-weight: 700;
+	src: url("../fonts/roboto-subset/700i-latin-greek.woff2") format("woff2");
+	font-display: swap;
+}

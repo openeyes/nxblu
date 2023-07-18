@@ -1,0 +1,109 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// OE Element - Strabismus
+// Custom layout for 9 Positions in Strabismus
+
+.main-event {
+	.element {
+		
+		// 9 positions requires a bespoke table layout
+		// look value | ocularmovement | canvas | ocularmovement | look value | ocularmovement | canvas | ocularmovement | look value
+		table.nine-positions {
+			width:100%;
+			
+			> tbody {
+				// control the layout
+				// only target the first <tr>
+				// because of the canvas rowspan
+				> tr:first-child {					
+					> td {
+						// ocular no pattern:
+						width:10%;
+						
+						// look-values
+						&:nth-child(4n+1){
+							width:15%;
+						}
+						// canvas
+						&:nth-child(4n+3){
+							width:175px;
+						}					
+					}
+				}
+				
+				
+				// styling for all
+				> td {
+					padding:0; 
+					text-align: center;
+				}					
+			}
+			
+		}
+		
+		table.nine-positions {
+		
+			// special data
+			.ninepositions-look-value {
+				margin:2px auto;
+				// controls the line width
+				width:80px;
+				.ninepositions-look-h {
+					height:25px;
+					padding:2px 0;
+					border-bottom:1.5px solid var(--txt-light);
+				}
+				.ninepositions-look-v {
+					height:25px;
+					padding:2px 0;
+				}
+				
+				// this is a dash placeholder
+				.fade {
+					opacity:0.4;
+				}
+			}
+			
+		
+			.ocular {
+				font-size:110%;
+				// this is a zero placeholder
+				.fade {
+					opacity:0.2;
+				}
+			}
+			
+			.ed-ninepos-canvas {
+				border-radius:5px; // a touch! to bring inline with ED view UI
+			}
+			
+			td {
+				
+				.ninepositions-look-value {
+					width:60px;
+					position:relative;
+					left:-8px;
+				}
+				
+				
+				position: relative;
+				
+				button.thin {
+					position:absolute;
+					bottom:17px;
+					right:0;
+					padding: 0 3px;
+				}
+			}
+		
+		}
+		
+		// eyedraw-controls
+		.eyedraw-controls {
+			margin:10px 0;
+		}
+			
+	}
+}

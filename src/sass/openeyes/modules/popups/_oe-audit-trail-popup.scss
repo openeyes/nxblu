@@ -1,0 +1,58 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// Specific mini popup for Events audit trails
+// Used by icon next to Event title
+.oe-popup-event-audit-trail {
+	z-index:#{$oe-z-quicklook - 1}; // make sure it's under the Patient popups
+	position: absolute;
+	top:38px ;
+	left:0;
+	width:400px; // arbitrary (by eye)
+	background: pink;
+	padding:0 10px 10px 11px;
+	
+	border-right: 6px solid pink;
+	border-bottom: 6px solid pink;
+
+	table {
+		width: 100%;		
+		tbody tr {
+			border-bottom:1px solid var(--color-grey);
+			&:last-child { 
+				border-bottom: none;
+			}	
+		}	
+		
+		// <td>
+		td {
+			padding:2px 0;
+			@include font-size(12);
+			
+			&.title {
+				padding:4px 0;
+				@include font-size(12);
+				font-weight: var(--font-light);
+				color:var(--txt-highlight);
+			}
+			
+			&:last-child {
+				text-align: right;
+			}
+			
+			&:first-child {
+				text-align: left;
+			}
+			
+		}
+	}
+	
+} 
+
+
+
+

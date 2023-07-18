@@ -1,0 +1,13 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// You can't restart a CSS animation
+// need 2 keyframes to do this:
+@keyframes fadein {
+	from 	{ opacity:0; }
+	to 		{ opacity:1; } 
+}
+@keyframes fadeout {
+	from 	{ opacity:1; }
+	to 		{ opacity:0; } 
+}

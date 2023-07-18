@@ -1,0 +1,61 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.lightning-timeline {
+
+	// Timeline has options (dropdown)
+	// and icons in <table> to create the timeline
+	position: relative;
+	background:var(--bg-title);
+	padding:5px 4px 5px 10px;
+
+	// icon timeline
+	.timeline {
+		padding:0 0 0 50px; // 'button' width + 10px for a bit of padding.
+
+		// only 2 <tr>
+		// top <tr> is for dates...
+		table {
+			td {
+				padding:6px 6px 3px 4px;
+				border-left:1px solid var(--gui-line);
+				vertical-align: top;
+				color:var(--txt-light);
+				@include font-size(11); // number when collapsed
+
+				&.date-divider {
+					white-space: nowrap;
+					@include font-size(15);
+					font-weight:300;
+					min-width:70px; // don't squash the date (and collapse icon)
+
+					.oe-i {
+						position:relative;
+						top:-2px;
+						margin:0 0 0 5px;
+						// i think this is only going to be required in this instance.
+						// so I'm leaving it here rather than adding it to all icons
+						opacity:0.25;
+
+						&:is(:hover, :focus, :active) {
+							opacity:1;
+						}
+					}
+
+				}
+
+				// wrapper for .icon-event
+				// make sure at least 4 icons are on a row
+				// this is hidden by JS to collapse part of a timeline
+				.icon-group {
+					min-width:90px;
+				}
+
+			}
+		}
+	}
+
+}

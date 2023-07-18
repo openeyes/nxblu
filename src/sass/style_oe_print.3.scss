@@ -1,0 +1,54 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// * OE v3.0 Print styles
+@charset "UTF-8";
+
+// localhost for Roboto https://fonts.google.com/specimen/Roboto
+@use "local_fonts";
+
+@use "base/resets";		// reset (selected normalize)
+@use "base/h5bp";		// H5BP, some opinionated defaults
+@use "base/cols";		// Simple grid layout
+@use "base/helpers";    // Helpers
+
+/* OpenEyes UI v3.0 */
+@use "print/base";
+
+@use "print/flex";
+@use "print/header";
+@use "print/lists";
+@use "print/tables";
+@use "print/checkbox";
+@use "print/tickbox";
+@use "print/dotted";
+@use "print/post-sign-qr";
+
+/* font sizes */
+@use "print/type/typography";
+@use "print/type/normal-font";
+@use "print/type/large-font";
+@use "print/type/impaired-vision";
+
+/* JS esign canvas area */
+@use "print/esign-canvas";
+
+/* esign external device */
+@use "print/esign-device";
+
+/* UI element required in PRINT */
+@use "print/ui/oe-eye-lat-icons";
+@use "print/ui/oe-date";
+
+/* icons - note _config-print setup to use '_classic' icon set */
+@use "print/icons";
+
+/* SEM (basic) */
+// All Element styling
+@use "print/sem/elements";
+
+// Quick fixes required for v3.0 for existing DOMs
+@use "print/sem/event/prescription";
+
+
+

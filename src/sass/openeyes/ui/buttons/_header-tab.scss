@@ -1,0 +1,47 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+:is( button, .button) {
+	// Header Tab Buttons, make buttons work like tabs
+	// (e.g. Event Header, Theatre Diaries, etc
+	&.header-tab {
+		margin:0;
+		color: var(--txt-light);
+		background: none;
+		.oe-i {
+			filter: none;
+		}
+
+		&:is(:hover, :focus, :active ) {
+			color: #fff;
+			background: var(--btn-blue);
+			.oe-i {
+				filter: var(--btn-icon-hover-filter);
+			}
+
+		}
+		&.selected {
+			cursor:default;
+			color:var(--txt-highlight);
+			font-weight: var(--font-bold);
+			// create the tab effect
+			background-color: var(--bg-event);
+		}
+
+		//&.disabled,
+		//&.inactive {
+		//}
+
+		// icon-bg buttons may help with reducing widths by replacing some text
+		// e.g. "Display" or "Go to" replace with an icon background to represent the action
+		// this adds a small up arrow to the corner, e.g. for Whiteboard
+		&.icon-bg {
+			background-repeat: no-repeat;
+			&.goto {
+				background-size: 12px; // in SVG rotate is linked to this!!!
+				background-image: var( --i-btn-goto );
+				background-position: top 1px right -1px;
+			}
+		}
+	}
+}

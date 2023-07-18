@@ -1,0 +1,54 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// show OE Portal Checklist Summary
+.oe-patient-quick-overview {
+	.oe-portal-summary {
+		
+		background: lightpink;
+		@include font-size(12);
+		padding: 10px; 
+		border-radius: 5px;
+		margin:5px 0;
+		
+		h3 {
+			@include font-size( 12 );
+			font-weight: var(--font-light);
+			padding: 0 0 5px 0;
+		}
+		
+		// confirmation page 
+		ul.checklist {
+			list-style: none;
+			
+			li {
+				@include font-size( 14 );
+				font-weight: 500;
+				margin:0 0 5px 0;
+				padding: 0 0 0 15px; // icon
+				background: top 4px left / 8px var(--i-tick-chunky) transparent no-repeat;
+				
+				&:last-child{
+					margin:0;
+				}	
+				
+				table {
+					width: 100%;
+					margin:5px 0 0 10px;
+					th {
+						font-weight: var(--font-light);
+						font-size: 80%;
+					}
+				}
+			}	
+		}		
+	}
+}
+
+
+
+
+

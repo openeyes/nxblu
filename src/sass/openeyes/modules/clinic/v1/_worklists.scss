@@ -1,0 +1,39 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// OE Worklist (v1)
+// Before "Clinic", worklists were more basic
+// extends standard oe-full-layout
+.oe-worklists {
+	
+	.worklist-group {
+		padding:0 20px 0 0;
+	}
+	
+	.worklist-summary {
+		padding:20px 20px 0 0;
+		
+		h2 {
+			@include font-size(19);
+			font-weight:var(--font-light);
+			color:var(--txt-highlight);
+		}
+		// 1-8 of 8 
+		// actually not needed (all data is shown for lists)
+		.summary {
+			@include font-size(14);
+			font-weight:var(--font-medium);
+			color:var(--txt-light);
+		}	
+	}
+	
+	// extend standard default table
+	table.standard {
+		margin:10px 0 40px 0;
+	}
+}
+
+
+

@@ -1,0 +1,23 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// Very common UI pattern
+// Header with expandable data area
+// uses: expand/collapse icons
+@use "collapse-data/data";
+@use "collapse-data/header-icon";
+
+// Load on Request resolves to collapse-data (or maybe pro-view)
+@use "load-on-request";
+
+// Pro-data-view
+// Toggle views between pro/standard views
+@use "pro-view/pro-data-view";
+
+// sidebar groups in Events/Element
+// & admin sidebar nav
+@use "nav-group/nav-grp-hd-i";
+
+
+
+

@@ -1,0 +1,114 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// decoupled (as could be used in new home hub concept)
+.favourites {
+
+	// Lists title
+	h3 {
+		@include font-size(11);
+		color: var(--txt-light);
+		font-weight: var(--font-medium);
+		padding: 10px;
+	}
+
+	.fav {
+
+		@include flex(stretch, space-between);
+		margin: 2px 0;
+
+
+		.details {
+			flex: 1;
+			background: var(--btn-base-light);
+			padding: 5px 10px 10px 30px;
+
+			@include font-size(11);
+			font-weight: var(--font-medium);
+			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				color: #fff;
+				background: top 10px left 10px / 14px url(svg-fixed("ui/shortcut-arrow")) var(--btn-blue) no-repeat;
+			}
+
+			// Favourite name, as selected by User
+			.name {
+				padding: 5px 0 0 0;
+				@include font-size(12);
+				font-weight: var(--font-medium);
+			}
+
+			// full details on expansion
+			.site {
+				padding: 8px 0 0 0;
+				opacity: 0.5;
+			}
+
+			.context {
+				padding: 3px 0;
+				font-weight: var(--font-light);
+			}
+
+			ul.lists {
+				padding: 5px 0;
+
+				li {
+					padding: 3px 0;
+					@include font-size(13);
+					border-bottom: 1px dotted var(--txt-light);
+
+					&:first-child {
+						border-top: 1px dotted var(--txt-light);
+					}
+				}
+			}
+
+			.date-range {
+				padding: 2px 0 0 0;
+			}
+
+		}
+
+		.expand-fav,
+		.remove-fav {
+			width: 30px;
+			background: var(--btn-base-light);
+			margin: 0 0 0 1px;
+			@include flex(center, center);
+
+			.oe-i {
+				height: 100%;
+				width: 30px;
+			}
+
+			&:hover,
+			&:focus-within {
+				.oe-i {
+					filter: var(--btn-icon-hover-filter);
+				}
+			}
+		}
+
+		.expand-fav {
+			&:hover,
+			&:focus-within {
+				background-color: var(--btn-blue);
+			}
+		}
+
+		.remove-fav {
+			&:hover,
+			&:focus-within {
+				background-color: var(--btn-red);
+			}
+		}
+	}
+}	
+
+
+

@@ -1,0 +1,23 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.sent-to-mailbox {
+	position:relative;
+	padding:3px 0 0 15px;
+	@include font-size(11);
+	opacity:0.5;
+
+	&::before{
+		content:"";
+		position: absolute;
+		top:3px;
+		left:0;
+		bottom:0;
+		width:11px;
+		background: center center / 11px var(--i-download) no-repeat;
+		pointer-events: none;
+	}
+}

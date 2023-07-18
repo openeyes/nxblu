@@ -1,0 +1,41 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.table-sort-order {
+	// Design to sit above table to handle in column sorting
+	// can also wrap 'pagination'
+
+	@include flex(center, space-between);
+
+	// put this in here for now, limited usage
+	// and is only currently used in this wrapper
+	// may have to review this again.
+	.sort-by {
+		@include flex(center, space-between);
+		color: var(--txt-light);
+		@include font-size(12);
+		font-weight: var(--font-bold);
+
+		// to make sure <select> doesn't collapse down
+		width:320px;
+
+		.sort-options {
+			@include flex(center, space-between);
+			flex: 1 1 0;
+		}
+
+		select {
+			flex: 1 1 0;
+			margin:0 5px;
+		}
+
+		.direction {
+			white-space: nowrap;
+			label {
+				margin: 0;
+			}
+		}
+	}
+}

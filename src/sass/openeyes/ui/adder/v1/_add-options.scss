@@ -1,0 +1,111 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+@use "base" as *;
+
+.oe-add-select-search {
+
+	// All options lists <ul>:
+	.add-options {
+		// fix height (based on 0-9, shows all options without scroll!)  
+		// also, needs fixing because there may be hidden columns! multi-choice pathways!
+		height: $oe-add-insert-popup-height + 20;
+		overflow-y: auto;
+		overflow-x: hidden;
+		margin: 0 2px 0 0;
+		max-width: 400px; // Med names can be very long
+
+		// multi-selectable list
+		&.multi {
+			li {
+				background-image: linear-gradient(to right, var(--btn-blue-hint) 2px, var(--btn-base-light) 3px);
+			}
+		}
+
+		&.category-filter {
+			li {
+				background: right 2px center / 8px url(svg-fixed("ui/arrow-right-blue")) no-repeat;
+				padding-right: 14px;
+			}
+		}
+
+		&.input-templates {
+			li {
+				background: right 2px center / 13px var(--i-pencil) no-repeat;
+				padding-right: 14px;
+			}
+		}
+
+		// Numbers:
+		&.number {
+			li {
+				min-width: 32px; // provide a minimal hit area for touch
+				text-align: center;
+				font-weight: var(--font-bold);
+			}
+		}
+
+		// + - % etc:
+		&.symbols {
+			li {
+				padding: 10px 8px;
+				min-width: 32px; // provide a minimal hit area for touch
+				text-align: center;
+				@include font-size(16);
+			}
+		}
+
+		li {
+			display: block;
+			cursor: pointer;
+			padding: 3px 8px; // do not change this!
+			margin: 0 0 2px 0;
+			// border-radius:3px;
+			background-color: var(--btn-base-light);
+			min-width: 60px; // provide a minimum for things like "No DR"
+
+			// this is to make sure 0-9 (10) options are shown before scroll
+			// needs updating to flex and a height setting to ensure perfect fit!
+			line-height: 1.2;
+
+
+			// data has a span wrapper to control the width
+			// not possible through the li css
+			// this assumes a text value:
+
+			// for some reason this was originally called: "restrict-"
+			// (I guess because originally it restricted the width)
+			// but now  "fixed-" makes more sense. Allowing both:
+			.fixed-width,
+			.restrict-width {
+				display: inline-block;
+				width: $oe-ass-restricted-width;
+				overflow-wrap: break-word;
+
+				&.extended {
+					width: $oe-ass-restricted-width-extended;
+				}
+			}
+
+			&:hover,
+			&:focus,
+			&:active,
+			&.selected {
+				color: var(--btn-text);
+				background: var(--btn-base);
+			}
+
+			&.selected {
+				color: var(--btn-text-active);
+				background: var(--btn-blue-active);
+			}
+
+			&.active {
+				color: var(--txt-highlight);
+			}
+		}
+	}
+}
+

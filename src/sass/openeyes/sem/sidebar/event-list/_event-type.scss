@@ -1,0 +1,126 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// OE Sidebar Event types
+// note: also, used in hotlist Draft list
+
+.event-type {
+	$_state-opacity: 0.5;
+
+	position: relative;
+	display: inline-block   ;
+	height: 19px; // match
+	width: 45px;
+
+	.oe-i-e {
+		// fix y-offset position issue
+		pointer-events: none; // JS needs this for the lightning previews
+		vertical-align: top;
+	}
+
+	&::after {
+		content: "";
+		position:absolute;
+		top: 0;
+		bottom:0;
+		right:4px;
+		width: 19px;
+		// default eye icon for quicklook
+		background: center / #{$oe-event-icon-size - 6px} var(--i-eye) no-repeat;
+		opacity: 0.3;
+	}
+
+	&.alert {
+		&::after {
+			opacity: $_state-opacity;
+			background-image: var(--i-warning-standard);
+		}
+	}
+
+	&.done,
+	&.ready {
+		&::after {
+			opacity: $_state-opacity;
+			background-image: var(--i-tick);
+		}
+	}
+
+	&.cancelled {
+		&::after {
+			opacity: $_state-opacity;
+			background-image: var(--i-remove);
+		}
+	}
+
+	&.pause {
+		&::after {
+			opacity: $_state-opacity;
+			background-image: var(--i-pause);
+		}
+	}
+
+	&.flag {
+		&::after {
+			opacity: $_state-opacity;
+			background-image: var(--i-flag);
+		}
+	}
+
+	&.draft {
+		&::after {
+			opacity: 1;
+			background-image: var(--i-draft-orange);
+		}
+	}
+
+	&.edit {
+		&::after {
+			opacity: $_state-opacity;
+			background-image: var(--i-draft);
+		}
+	}
+
+	&.edit-done {
+		&::after {
+			opacity: 1;
+			background-image: var(--i-draft-green);
+		}
+	}
+
+	&.clock,
+	&.scheduled {
+		&::after {
+			opacity: $_state-opacity;
+			background-image: var(--i-time);
+		}
+	}
+
+	&.urgent {
+		&::after {
+			opacity: $_state-opacity;
+			background-image: var(--i-urgent);
+		}
+	}
+
+	&.virtual-clinic {
+		&::after {
+			opacity: 1;
+			background-image: var(--i-vc);
+		}
+	}
+
+	// currently unused, but might be useful in the future
+	&.confirmed {
+		&::after {
+			opacity: $_state-opacity;
+			background-image: var(--i-tick-double);
+		}
+	}
+}
+
+
+
+

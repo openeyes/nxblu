@@ -1,0 +1,69 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// Custom layout for Nystagmus in Strabismus
+
+.main-event {
+	.element {
+
+		table.nystagmus {
+			width: 100%;
+
+			td {
+
+				//border-right:1px solid var(--gui-line);
+				&:last-child {
+					text-align: center; // gaze UP / DOWN
+				}
+
+
+				// Nysta graphic annotation
+				// wrapped in a flex
+				.nysta-graphic {
+					text-align: center;
+					margin: 5px 0;
+
+					.nysta-text {
+						@include font-size(10);
+
+					}
+
+					.nysta-h-arrow {
+						width: 60px;
+						height: 12px;
+						background-size: 60px 12px;
+						background-image: var(--i-nystagmus-arrow-h-3);
+						background-repeat: no-repeat;
+						background-position: center center;
+
+						&.amp1 {
+							background-image: var(--i-nystagmus-arrow-h-1);
+						}
+
+						&.amp2 {
+							background-image: var(--i-nystagmus-arrow-h-2);
+						}
+
+						&.amp3 {
+							background-image: var(--i-nystagmus-arrow-h-3);
+						}
+
+						// change direction 
+						&.to-left {
+							transform: rotate(180deg);
+						}
+
+					}
+
+
+				}
+
+			}
+
+		}
+
+
+	}
+}

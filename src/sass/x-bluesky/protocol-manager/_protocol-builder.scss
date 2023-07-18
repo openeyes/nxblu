@@ -1,0 +1,50 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-protocol-manager {
+	
+	.protocol-builder {
+		
+		// extend standard <table> UI
+		table.standard {
+			
+			@include font-size(12);
+			
+			tbody {
+				tr {
+					// switch the borders around
+					// then a repeating row can join  
+					// with the <tr> above
+					border-bottom:none;
+					border-top:1px solid var(--gui-line);
+					
+					&:first-child { 
+						border-top: none;
+					}
+					
+					&.repeat-part { 
+						border-top: none;
+						font-style: italic;
+						input {
+							display:inline-block;
+							margin:0 10px;
+						}
+					}	
+				}
+				
+				td {
+					
+					&:last-child {
+						text-align: right;
+						padding-right:0;
+					}
+				}
+			}
+			
+		}
+		
+	}
+}

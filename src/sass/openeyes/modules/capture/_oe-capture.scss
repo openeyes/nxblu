@@ -1,0 +1,65 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// for OE Meet
+.oe-capture {
+	position: relative;
+	min-height: 350px; // otherwise the toolbox will overflow
+	max-height: calc(100vh - #{$oe-header-height + $oe-event-header-height});
+
+	@include flex(stretch, flex-start);
+
+	video {
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+	.controls {
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 150px;
+
+		hr {
+			display: block;
+			border: 0;
+			margin: 5px 0; // reduced was 20px 0 15px 0;
+			border-bottom: 1px dotted var(--gui-line);
+		}
+
+		.rec-duration {
+			border-radius: 5px;
+			padding: 10px 5px;
+			background: rgba(0, 0, 0, 0.1);
+
+			text-align: center;
+			@include font-size(16);
+		}
+
+		button {
+			width: 100%;
+			margin: 0 0 5px 0;
+
+			&.rec {
+				height: auto; // overwrite the default
+
+				@include flex(center, center);
+				flex-direction: column;
+				padding: 15px 0;
+
+				@include font-size(16);
+				font-weight: var(--font-bold);
+				border: 3px solid var(--btn-blue-hint);
+			}
+		}
+	}
+}
+
+
+
+
+

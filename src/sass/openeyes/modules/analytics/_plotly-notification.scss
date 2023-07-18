@@ -1,0 +1,33 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// Plot.ly generate DOM 
+// <div class="plotly-notifier">
+// - <div class="notifier-note" style="opacity: 1;">
+// - - <button class="notifier-close">×</button>
+// - - <p><span>Double-click to zoom back out</span></p>
+
+div.plotly-notifier {
+	border: none;
+	background: var(--bg-popup);
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+
+	.notifier-note {
+		border: none;
+		background: var(--bg-popup);
+		padding: 10px;
+
+		p {
+			font-weight: var(--font-medium);
+			@include font-size(12);
+		}
+
+		button {
+			display: none;
+		}
+	}
+}
+
+

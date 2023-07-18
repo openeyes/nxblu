@@ -1,0 +1,64 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+@use "openeyes/var" as *;
+
+td, th {
+	@include font-size(12); // match SEM font-size
+	font-weight: var(--font-medium);
+	vertical-align: top;
+	text-align: left;
+
+	// squeeze data, 4px provides a visual column gap
+	// as cells don't have a vertical line to divide them
+	padding: 2px 0 2px 4px;
+
+	// increase font size and padding for standard
+	.standard tbody & {
+		@include font-size(14);
+	}
+	.standard & {
+		padding: 4px 0 4px 8px;
+		// generally this looks better, to change it would be hassle
+		vertical-align: middle;
+	}
+
+	&:first-child {
+		// allow 1px for use of clickable-rows/hover-rows
+		// otherwise the data appears cropped.
+		padding-left:1px;
+	}
+
+	// last column alignment
+	// within SEM context (default table layout)
+	// the last <td> is right aligned, to handle the common UI pattern
+	// e.g. icons/action are in this column.
+	// 'standard' was added later, it is used a great deal in Admin
+	// it's alignment default is the reverse
+	&:last-child:not(:first-child) {
+		text-align: right;
+
+		.standard:not(.last-right) & {
+			text-align: left;
+		}
+	}
+
+	// show a vertical line for a column sometimes done
+	// with CSS nth-child for specific layouts
+	&.line-l {
+		border-left:2px solid var(--gui-line);
+		padding-left:8px;
+	}
+
+	// Required cell
+	&.required {
+		background:center right 4px /11px var(--i-asterisk) no-repeat;
+		padding-right:20px;
+	}
+
+}
+
+th {
+	color: var(--txt-light);
+}

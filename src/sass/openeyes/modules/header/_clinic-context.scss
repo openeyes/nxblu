@@ -1,0 +1,65 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.clinic-context {
+	position:absolute;
+	top:0; 
+	left: #{$oe-event-sidebar-width - 22px};
+	height:$oe-header-height;
+	width:545px;
+	
+	@include flex( center, flex-start );
+	
+	color:var(--txt-light);
+	font-weight: var(--font-medium);
+	
+	// add / remove as favourite
+	.favourite-btn{
+		@include flex( center, center );
+		height:100%;
+		width:30px;
+		padding:0;
+		margin:0 10px 0 0;
+		border-right:1px solid var(--gui-line);
+		cursor:pointer;
+		
+		&:after {
+			content:'';
+			height:16px;
+			width:16px;
+			margin:0 auto;
+			background: center / contain var(--i-starline) no-repeat;
+			opacity:0.5;
+		}	
+		
+		&:hover, 
+		&:focus {
+			background-color: var(--btn-blue);
+			&:after {
+				opacity: 1;
+				background-image: url( svg-white-icon('i/starline'));
+			}
+		}	
+	}
+	
+	.context {
+		@include font-size(16);	
+		.lists {
+			padding:0 0 0 5px;
+			@include font-size(11);
+			b {
+				color: var(--txt-highlight);
+			}
+		}
+	}
+	
+	.date-range {
+		@include font-size(14);
+		margin:3px 0 0 0;	
+		font-weight: var(--font-bold);
+	}
+}
+

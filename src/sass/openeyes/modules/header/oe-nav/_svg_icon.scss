@@ -1,0 +1,31 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-nav-btn {
+	.icon {
+		display: block;
+		width: 42px;
+		height: 21px;
+		fill: var(--txt-light);
+
+		&.open {
+			fill: var(--txt-highlight);
+		}
+
+		// hotlist in VC mode:
+		&.hotlist.vc {
+			fill: var(--gui-vc);
+		}
+
+		// turn off for JS
+		pointer-events: none;
+
+		// when used on a tablet increase the visual size of the SVG icon
+		@include handheld() {
+			width: 60px;
+			height: 30px;
+		}
+	}
+}

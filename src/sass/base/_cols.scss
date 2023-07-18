@@ -1,0 +1,83 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// This provides a basic 12 column grid 
+// with some extra column options
+// OE v3 makes use of flex and the cols-n are 
+// useful to help with consistent data layouts
+
+// Left Right Split (provides a central gap)
+// use cols-6 for no gap
+// this is used with flex-layout
+.cols-left, .cols-right {
+	// note: no padding required with this approach. could change it to calc(50% - 15px) but for now leaving it
+	width: 49%;
+}
+
+// not covered by 12 col grid
+.cols-fifth {
+	width: 20%;
+}
+
+// center a single column contents
+.cols-center {
+	margin: 0 auto;
+}
+
+// where a table column just has an icon, 
+// use this (only used in <colgroup>)
+.cols-icon {
+	width: 40px;
+	white-space: nowrap;
+}
+
+.cols-1 {
+	width: 8.33333%;
+}
+
+.cols-2 {
+	width: 16.66667%;
+}
+
+.cols-3, .cols-quarter {
+	width: 25%;
+}
+
+.cols-4 {
+	width: 33.33333%;
+}
+
+.cols-5 {
+	width: 41.66667%;
+}
+
+.cols-6, .cols-half {
+	width: 50%;
+}
+
+.cols-7 {
+	width: 58.33333%;
+}
+
+.cols-8 {
+	width: 66.66667%;
+}
+
+.cols-9 {
+	width: 75%;
+}
+
+.cols-10 {
+	width: 83.33333%;
+}
+
+.cols-11 {
+	width: 91.66667%;
+}
+
+.cols-12, .cols-full {
+	width: 100%;
+}
+
+
+

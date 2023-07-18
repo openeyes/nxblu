@@ -1,0 +1,35 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.schedule-group {
+
+	.theatre-overview {
+		@include font-size(12);
+		width: 20%;
+		border-right: 4px solid var(--gui-line);
+
+		// stretch content to ensure that colour
+		// indicators are the same height as table of bookings
+		align-self: stretch;
+
+		// colors to show that minutes are available
+		&.available {
+			background-color: var(--color-hint-green); // mostly this color
+		}
+
+		&.near-full {
+			background-color: var(--color-hint-orange); // only so-many minutes left
+		}
+
+		// "session-unavailable" was the old class
+		// keeping it here in case the JS is hooked in (although it shouldn't be)
+		&.full,
+		&.session-unavailable {
+			background-color: var(--color-hint-red);
+		}
+	}
+}
+
+

@@ -1,0 +1,75 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.wait-duration {
+	position: relative;
+	@include flex( center, space-between );
+	
+	&.stopped {
+		padding:0 0 0 25px;
+		
+		&:after {
+			content:"";
+			position: absolute;
+			top:50%;
+			left:0;
+			width:14px;
+			height:14px;
+			background: center left / contain var(--i-stop)  no-repeat;
+			opacity:0.5;
+			transform: translateY(-7px);
+		}
+	}
+	
+	
+	// svg circle
+	.duration-graphic {
+		circle {
+			fill: rgba( 150,150,150,0.2 );
+		}
+		
+		&.green {
+			circle {
+				&.c0 { fill: var(--color-green); }
+			}
+		}
+		
+		&.yellow {
+			circle {
+				&.c0 { fill: var(--color-yellow); opacity: 0.5; }
+				&.c1 { fill: var(--color-yellow) }
+			}
+		}
+		
+		&.orange {
+			circle {
+				&.c0 { fill: var(--color-orange); opacity: 0.3; }
+				&.c1 { fill: var(--color-orange); opacity: 0.6; }
+				&.c2 { fill: var(--color-orange); }
+			}
+		}
+		
+		&.red {
+			circle {
+				&.c0 { fill: var(--color-red); opacity: 0.2; }
+				&.c1 { fill: var(--color-red); opacity: 0.4; }
+				&.c2 { fill: var(--color-red); opacity: 0.7; }
+				&.c3 { fill: var(--color-red); }
+			}
+		}
+	}
+
+	// min count
+	// could be days, so changed to .units
+	.units,
+	.mins { 
+		small {
+			color: var(--txt-light);
+		}
+	}
+	
+}
+	
+

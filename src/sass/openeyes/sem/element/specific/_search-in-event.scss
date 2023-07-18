@@ -1,0 +1,139 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// Examination Search in Event Edit
+// I've take the existing v2 DOM and just wrapped it
+// this could do with the DOM being updated at some point
+
+.search-in-event {
+	
+	z-index:$oe-z-element-search;
+	position: fixed;
+	top:$oe-header-height + $oe-event-header-height;
+	left:$oe-event-sidebar-width;
+	width: calc(  100vw - #{$oe-event-sidebar-width });
+	border-bottom:3px solid var(--bg-popup);
+	border-top:1px solid var(--bg-popup);
+	
+	background:var(--colour-grey);
+	padding:10px;
+	
+	// this needs to match the padding added to the Events 
+	min-height: 80px; 
+
+	width: calc(  100vw - #{$oe-event-sidebar-width });
+	// adjust to always fill the <main> Event width
+	@include fix-hotlist(){
+		width: $oe-event-main-extended-width;
+	}
+	@include super-wide(){
+		width: $oe-event-main-max;
+	}
+	
+	.close-icon-btn {
+		position:absolute;
+		top:15px;
+		right:15px;
+	}
+	
+	
+	.search-inputs {
+		padding:0 0 10px 0;
+		
+		input.search {
+			width:28%;
+			margin:0 20px;
+		}
+		
+		label {
+			@include font-size(11);
+		}
+	}
+	
+	.search-results {
+		.search-criteria {
+			@include font-size(16);
+			font-weight: var(--font-light);
+			padding:10px 0;
+			margin:0 0 0 5px;
+		}
+		
+		max-height:400px;
+		overflow-y:auto;
+	}
+	
+	// DOM & Classes taken from existing DOM
+	// <ul>
+	.results_list {
+		
+		li {
+			margin:0 0 2px 0;
+			
+			.index_row {
+				margin:0 0 4px 0;
+			}
+		}
+
+		:is(.lvl1, .lvl2, .lvl3) {
+			display:inline-block;
+			height:21px;
+			line-height:21px;
+			@include font-size(12);
+			font-weight:400;
+			color: var(--txt-light);
+			background:var(--btn-blue);
+			vertical-align:middle;
+			padding:0 5px; 
+			margin:1px 0 2px 0; 
+			cursor:pointer;
+
+			&:is(:hover, :focus, :active) {
+				color:var(--btn-text);
+				background:var(--btn-blue);
+			}
+			
+		}
+		
+		.lvl2 {
+			margin-left:15px; 
+		}
+		
+		.alias {
+			@include font-size(11);
+			font-weight:400;
+			font-style: italic;
+			color: var(--txt-light);
+			margin-left:10px; 
+		}
+		
+		.search_highlight {
+			color:#fff;
+		}
+		
+		.row {
+			@include flex(flex-start, space-between);
+		}
+		
+		.index_col_left_lvl1 {
+			width:30%;
+		}
+		
+		.index_col_right {
+			width:60%;
+		}
+		
+		p {
+			@include font-size(11);
+			font-weight:400;
+			color: var(--txt-light);
+			margin:0 0 1rem 0;
+		}	
+	}
+} 
+
+
+
+

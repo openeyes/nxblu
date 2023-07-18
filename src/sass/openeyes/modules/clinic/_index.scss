@@ -1,0 +1,23 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "base";
+@use "landing";
+@use "group";
+@use "clock";
+@use "table";
+@use "patient-checkbox";
+@use "wait-duration";
+@use "pathway";
+@use "filters";
+@use "adder";
+@use "pathway-in-patient";
+
+// Main Worklist nav  button behaves as a link, but
+// when you land on the actual page it toggles to
+// to a panel to control the worklists:
+@use "worklists-panel/index";
+
+// Work-lists v1 (standard, simple layout)
+// "Clinic Manager" (a.k.a Worklists) is the update of original worklist
+@use "v1/worklists";

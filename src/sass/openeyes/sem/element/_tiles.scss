@@ -1,0 +1,59 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// <div> wrapper for the tiled elements
+// controls layout of the 3 tiles in a row
+.element-tile-group {
+	@include flex(stretch, flex-start);
+
+	// reduce expand all tile elements in group
+	// icon at the end of the row.
+	// adjust defaults so that icon hit area matches
+	// element heights
+	.collapse-tile-group {
+		.oe-i {
+			width: 25px;
+			height: 100%;
+			background-position-y: 5px;
+		}
+	}
+}
+
+// Element as a "tile" in a row of 3
+.element.tile {
+	flex: 1 1 0;
+	background-color: none;
+
+	// create a visual border around the elements
+	margin: 0 3px 3px 0;
+
+	// JS, user can click on the title to expand group
+	.element-title small {
+		cursor: pointer;
+		pointer-events: none;
+	}
+
+	// maximise horizontal space
+	padding-right: 0; // override base
+	// adjust padding for 'tile' elements
+	.element-data.full-width {
+		  padding: 0;
+	}
+
+	// tile elements have a restriction on the amount
+	// of data they can show to limit huge med lists
+	// this approach was generalised with "restrict-data-height"
+	// but "tile-data-overflow" is still used on the event tiles though
+	.tile-data-overflow {
+		position: relative;
+		max-height: 180px;
+		overflow-y: auto;
+		padding: 0 5px 0 0;
+	}
+}
+
+
+

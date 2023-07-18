@@ -1,0 +1,21 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.openeyes-brand {
+	z-index: $oe-z-logo;
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	// when info is hidden, this DOM collapses
+	// down to a height 0, removing the background
+	// but still showing the logo DOM for interaction
+	width: 280px;
+	background: var(--bg-popup);
+
+	// needs a strong divider from the workspace
+	border-right:1px solid var(--txt-active);
+}

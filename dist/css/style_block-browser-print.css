@@ -1,0 +1,16 @@
+/**
+*  (C) OpenEyes Foundation, 2018 
+*  This file is part of OpenEyes. 
+*
+* OpenEyes is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+* OpenEyes is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+* You should have received a copy of the GNU Affero General Public License along with OpenEyes in a file titled COPYING. If not, see www.gnu.org/licenses.
+*
+* @link www.openeyes.org.uk
+* @author OpenEyes info@openeyes.org.uk
+* @copyright Copyright (C) 2018, OpenEyes Foundation
+* @license www.gnu.org/licenses/agpl-3.0.html The GNU Affero General Public License V3.0
+*/
+
+/* 6.0.0 - Sat Jul 08 2023 13:09:01 GMT+0100 (British Summer Time) */ 
+html{background:#fff}body.open-eyes{display:block;background:#fff;color:#000;padding:2em}body.open-eyes>*{display:none}body.open-eyes #oe-restrict-print{display:block}body.open-eyes #oe-restrict-print h1{font:16pt system-ui}body.open-eyes .openeyes-brand{display:block;position:static}body.open-eyes .openeyes-brand .oe-openeyes{fill:#000;width:50%}body.open-eyes .openeyes-brand .oe-product-info{display:none}

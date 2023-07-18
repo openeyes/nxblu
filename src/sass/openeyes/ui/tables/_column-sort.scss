@@ -1,0 +1,29 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// used in <thead><th>
+a.column-sort {
+	// handle icons for states
+	// assuming these won't need to wrap
+	display: inline-block;
+
+	font-weight: var(--font-bold);
+	color: var(--txt-base);
+	opacity: 0.6;
+
+	// allow for background icon
+	padding: 0 16px 0 0;
+
+	// set up for 'ascend': A to Z sorting
+	background: right top/13px var(--i-direction-up) no-repeat;
+
+	// Z to A  sorting
+	&.descend {
+		background-image: var(--i-direction-down) ;
+	}
+
+	&:is(:hover, :focus, .active) {
+		opacity: 1;
+	}
+}

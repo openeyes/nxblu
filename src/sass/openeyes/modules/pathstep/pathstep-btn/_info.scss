@@ -1,0 +1,13 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-pathstep-btn {
+	.info {
+		margin:1px 0 0 0;
+		@include font-size(9.5);
+		font-weight: var(--font-medium);
+		opacity:0.7;
+	}
+}

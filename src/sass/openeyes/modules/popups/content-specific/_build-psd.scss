@@ -1,0 +1,72 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-popup-content {
+	
+	// modifying the standard "oe-popup-content" class
+	// Build PSD is used in Worklists.
+	&.build-psd {
+		@include flex( stretch, space-between );
+		width:1040px; // max width (same as "max" class)
+	
+		// step sub-titles
+		h3 {
+			@include font-size(13);
+		}
+		
+		// control width of sections
+		.psd-selected-patients {		
+			flex:1;
+			
+			ul {
+				li {
+					@include font-size(11);
+					padding:3px 0;
+				}
+			}
+		}
+		
+		// widths in here are limited by btn-list.fixed-width
+		.psd-options {
+			flex:2;
+			padding:0 10px;
+			margin:0 10px;
+			border-left:1px solid var(--gui-line);
+			border-right:1px solid var(--gui-line);
+		}
+		
+		// widths in here are limited by btn-list.fixed-width
+		.psd-laterality {
+			flex:1;
+			padding:0 10px 0 0;
+			margin:0 10px 0 0;
+			border-right:1px solid var(--gui-line);
+		}
+		
+		.psd-build {
+			flex:2;
+			table {
+				margin:0 0 10px 0;
+				
+				td {
+					// drug name in case i need the hook
+					.drug {
+						@include font-size(12);
+					}
+						
+					// route R/L Oral, etc
+					&:last-child {
+						text-align: right;
+					}		
+				}
+			}
+		}
+	
+		
+	
+	}
+
+}

@@ -1,0 +1,83 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+.oe-pathstep-btn {
+	
+	span[class^="step i-"]{
+		display: block;
+		width:15px;
+		height:15px;
+		background: center center no-repeat;
+		background-size: contain;
+	}
+	
+	// step
+	.step {
+		&.i-break { 
+			background-image: var(--i-path-break);
+		}
+		&.i-fork {
+			background-image: var(--i-fork);
+		}
+		&.i-redflag {
+			background-image: var(--i-flag-red);
+		}
+		&.i-arr {
+			background-image: var(--i-direction-right);
+		}
+		&.i-wait {
+			background-image: var(--i-waiting);
+		}
+		&.i-drug-admin{
+			background-image: var(--i-drop);
+		}
+		&.i-comments {
+			background-image: var(--i-comments);
+			opacity: 0.5;
+		}
+		&.i-a11ty {
+			background-image: var(--i-a11ty-orange);
+		}
+		&.i-fin {
+			background-image: var(--i-tick);
+		}
+		&.i-discharge {
+			background-image: var(--i-stop);
+		}
+		&.i-delayed {
+			background-image: url( svg-white-icon('i/waiting')); // on solid colour background, use white icon
+		}	
+	}
+	
+	// icons on solid steps need to have always have a white icon:
+	&.active {
+		.step {
+			&.i-arr {
+				background-image: url( svg-white-icon('i/direction-right'));
+			}
+			&.i-discharge {
+				background-image: url( svg-white-icon('i/stop'));
+			} 
+			&.i-drug-admin {
+				background-image: url( svg-white-icon('i/drop'));
+			}	
+		}
+	}
+	
+	&.done { 
+		.step {
+			&.i-arr {
+				background-image: url( svg-white-icon('i/direction-right'));
+			}
+			&.i-discharge {
+				background-image: url( svg-white-icon('i/stop'));
+			} 
+			&.i-drug-admin {
+				background-image: url( svg-white-icon('i/drop-done'));
+			}	
+		}		
+	}
+}
+

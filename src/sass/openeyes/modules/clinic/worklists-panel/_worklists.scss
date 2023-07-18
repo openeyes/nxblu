@@ -1,0 +1,30 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-worklists-panel {
+	.context-lists {		
+		// Lists title
+		h3 {
+			@include font-size(11);
+			color: var(--txt-light);
+			font-weight: var(--font-medium);
+			padding:5px 10px; 
+		}
+		
+		
+		// combine lists checkbox
+		.combine-lists {
+			padding:5px 10px;
+		}
+		
+		// all, single, multi
+		.list-mode {
+			border-bottom: 2px solid var(--btn-blue);
+		}
+		
+	}	
+}
+
+

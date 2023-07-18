@@ -1,0 +1,46 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "base";
+@use "active-inactive";
+@use "add-user-comments";
+@use "data-grouping";
+@use "element-actions";
+@use "element-both-eyes";
+@use "element-data-view";
+@use "element-eyes";
+@use "element-fields-edit";
+@use "element-header";
+@use "eye-divider";
+@use "eye-icon-header";
+@use "full-extended";
+@use "header-actions";
+@use "restrict-data-height";
+@use "tables";
+@use "tiles";
+@use "typography";
+
+// Specific elements
+@use "specific/botox";  // injection management
+@use "specific/correspondence"; // letter layout for correspondence
+@use "specific/injection-mgmt"; // injection management
+@use "specific/strabismus"; // Strabismus custom elements
+@use "specific/attachments";
+@use "specific/diagnosis-mgmt";
+@use "specific/drug-admin"; // injection management
+@use "specific/message";
+@use "specific/question-answer";
+@use "specific/search-in-event"; // only used in Examination (at the moment)
+@use "specific/table-calendar"; // Schedule Op Calendar table
+@use "specific/table-medications"; // Schedule Op Calendar table
+@use "specific/upload-box"; // only used in Document Upload
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// Boilerplate:some opinionated defaults
+
+// Remove text-shadow in selection highlight: h5bp.com/i
+// These selection rule sets have to be separate.
+// Customize the background color to match your design.
+::selection {
+	color:#fff;
+	background: #009;
+    text-shadow: none;
+}
+
+// A better looking default horizontal rule
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #999;
+    margin: 1em 0;
+    padding: 0;
+}
+
+// Remove the gap between images, videos, audio and canvas and the bottom of
+// their containers: h5bp.com/i/440
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+// Remove default fieldset styles.
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+// Allow only vertical resizing of textareas.
+textarea {
+    resize: vertical;
+}

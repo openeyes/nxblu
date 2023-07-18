@@ -1,0 +1,34 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-new-patient {
+	padding: 0 20px 20px 20px;
+
+	background: bottom right / 160px var(--i-watermark-patient) no-repeat;
+
+	.patient-inputs-column {
+		width: 45%;
+		margin-right: 5%;
+	}
+
+	// modify <table> '.standard'
+	.standard {
+		td {
+			@include font-size(12);
+
+			&:first-child {
+				padding-right: 8px;
+				white-space: nowrap;
+			}
+		}
+	}
+
+	input:not([type=date]) {
+		width: 100%;
+		&.postcode {
+			width: 50%;
+		}
+	}
+}

@@ -1,0 +1,28 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// <ul>
+.vc-steps {
+	li {
+		color: var(--txt-light);
+		font-weight: var(--font-medium);
+		padding: 2px 0 2px 18px;
+
+		&.completed {
+			color: var(--txt-base);
+			// if a user name then wrap with <em>
+			em {
+				opacity: 0.5;
+				font-style: italic;
+			}
+		}
+
+		&.selected {
+			color: var(--gui-vc);
+			background: left center/ 14px var(--i-direction-right) no-repeat;
+		}
+	}
+}
+
+
+

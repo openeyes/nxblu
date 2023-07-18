@@ -1,0 +1,31 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-user {
+	// anchored to right of screen so that it 
+	// can expand with screen (pushed to right)
+	position: absolute;
+	top: 0;
+	right: 210px; // positioned allow for the big icon nav!
+	display: flex; // use flex to position user-profile
+	height: $oe-header-height;
+
+	@include extended() {
+		right: 250px;
+	}
+
+	// No space for User info in handheld mode!!
+	// Turning this off makes changing context impossible!
+	// But, this should be dealt with in a different way.
+	// Note: Officially still not supporting tablets.
+	@include handheld() {
+		display: none;
+	}
+
+	// animate
+	transition: right 0.5s ease-out;
+}
+

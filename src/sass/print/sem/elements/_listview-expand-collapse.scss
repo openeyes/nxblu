@@ -1,0 +1,36 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// --- PRINT
+
+.element {
+
+	// listview expand / collapse
+	// "oe-pro-data-view," updated class name for wrapper
+	// still support old class
+	.oe-pro-data-view,
+	.listview-expand-collapse {
+
+		// hide this icon
+		.expand-collapse-icon-btn {
+			display: none;
+		}
+
+		// wrappers and CSS hooks for the different views
+		// not used in UI but v.useful in PRINT!
+		.data-pro-view,
+		.listview-pro {
+			display: none;
+		}
+
+		// I use 'hidden' in IDG
+		// (OE may be different.)
+		.data-standard-view,
+		.listview-full,
+		.hidden {
+			display: block;
+		}
+	}
+}
+
+

@@ -1,0 +1,43 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-popup-content {
+	@include font-size(14);
+	
+	// not sure <p> is really used but may be useful
+	p {
+		@include font-size(14);
+	}
+		
+	h3 {
+		@include font-size(15);
+		color:var(--txt-light);
+		font-weight: var(--font-medium);
+	}
+	
+	h4 {
+		@include font-size(13);
+		color:var(--txt-light);
+		font-weight: 500;
+	}
+	
+	p, 
+	h4, 
+	h3 {
+		margin:10px 0;
+		&:first-child{
+			margin-top:0;
+		}
+	}
+	
+	// standardise HR divider
+	hr.divider {
+		display:block;
+		border: 0;
+		margin:15px 0;  // reduced was 20px 0 15px 0;
+		border-bottom:2px solid var(--gui-line);
+	}
+	
+}

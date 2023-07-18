@@ -1,0 +1,12 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// OE Hotlist Panel (RHS)
+// On minimum 1280px displays hidden, on 1800px+ fixed displayed 
+
+@use "base";
+@use "overview";
+@use "activity-list";
+@use "patient-activity";
+@use "flag-urgent-messages";

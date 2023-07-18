@@ -1,0 +1,41 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.clinic-pathway-btn {
+	// button shows state of clinic pathway for patient (shows wait time and status)
+	@include flex(center, center);
+	width: $oe-event-sidebar-width - 4px;
+	height: $oe-event-header-height;
+
+	// align with Event title better
+	margin: 2px 2px;
+	border-radius: 3px;
+
+	@include font-size(12);
+	font-weight: var(--font-medium);
+
+	background: var(--bg-popup);
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		color: #fff;
+		background-color: var(--btn-blue);
+	}
+
+	&.active {
+		background-color: var(--btn-blue-hint);
+	}
+
+	// Show wait duration from Clinic
+	.wait-duration {
+		padding: 0 0 0 10px;
+		pointer-events: none; // JS!
+	}
+
+}
+
+

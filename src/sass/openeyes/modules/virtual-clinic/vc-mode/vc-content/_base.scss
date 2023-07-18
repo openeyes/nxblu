@@ -1,0 +1,23 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// wrapper in the hotlist (when in VC mode)
+.vc-content {
+	position: relative;
+
+	// hotlist in "VC" mode
+	.oe-hotlist-panel & {
+		// allow space for Priorities and ScratchPad hide/show button
+		padding: 35px 10px 10px 10px;
+		margin: 2px 0 0 0;
+		border-top: 2px solid var(--gui-vc);
+	}
+
+	// also used in the "ScratchPad" to wrap the notes <textarea>
+	.vc-floating-input & {
+		max-height: 300px; // keep it up under some control
+		overflow-y: auto; // scroll overflow
+		overflow-x: hidden;
+		padding: 0 8px 2px 8px; // allow for scrollbar
+	}
+}

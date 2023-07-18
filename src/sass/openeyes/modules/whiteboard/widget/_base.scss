@@ -1,0 +1,26 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// OE Whiteboard
+.oe-wb-widget,
+.oe-wb-special {
+	position: relative; // see: colours, data-issue, overflow-icon-btn
+
+	@include flex( stretch, flex-start);
+	flex-direction: column;
+
+	background: var(--bg-data);
+	line-height:1.2;
+
+	// long medical terms will break layout
+	overflow-wrap: break-word;
+
+	// overflows will break the widgets
+	overflow: hidden;
+}
+
+
+

@@ -1,0 +1,117 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.ed2-doodle-popup {
+	width: 225px;
+	min-height:80px; // no idea why this is needed?
+	
+	position: absolute;
+	top:0;
+	right:-225px; 
+	z-index: #{$oe-z-ed-v2 + 4};
+	
+	&.sideview,
+	&.left { 
+		right:auto;
+		left:-225px;
+	}
+	
+	box-shadow: 2px 5px 14px -4px rgba(0, 0, 0, 0.7);
+	background: var(--ed3-panels);
+	padding: 4px 2px 10px 4px;
+	
+	// info, move forward, etc, and trash icons
+	.ed2-doodle-popup-toolbar {
+		margin:0 0 6px 0;
+	}
+	
+	// doodle info string
+	.ed2-doodle-info {
+		padding:8px 4px;
+		color: rgb(50, 50, 50);
+		@include font-size(11);
+		font-weight: 400;
+		font-style: italic;
+	}
+	
+	// Doodle specific options in the popup
+	.ed2-doodle-controls {
+		max-height: 250px; // huh?
+		overflow: auto;
+		
+		// 
+		
+		// generic DIV wraps all the options
+		> div {
+			@include flex( center, space-between );
+			margin:0 0 3px 0;
+			padding:0 3px 0 0;
+			
+			label {
+				margin: 0 3px 0 0;
+				display:block;
+				flex:1;
+			}
+			
+			input, 
+			select {
+				flex:1;
+			}
+			
+			&.opt-stack {
+				display:block;
+				margin: 3px 0 6px 0;
+				
+				textarea,
+				input, 
+				select {
+					width:95%;
+				}
+			}
+			
+			&.opt-checkbox {
+				margin:3px 0 6px 0;
+				justify-content:flex-start;
+				label {
+					flex: none;
+					margin: 0 12px 0 0;
+				}
+				input[type='checkbox'] {
+					flex: none;
+					height: 16px;
+					width: 16px;
+				}
+			}
+			
+		}
+		
+		// these are wrapped by the above div
+		label {
+			
+			color: rgb(50, 50, 50);
+			@include font-size(11);
+			font-weight: 500;
+			
+			.validation-msg {
+				color: red;
+				padding-left: 5px;
+			}
+		}
+
+	}
+
+	// add this class to 'hide' the popup
+	&.closed {
+		display: none;
+		.ed2-button {
+			.label {
+				display: none;
+			}
+		}
+	}
+}
+
+

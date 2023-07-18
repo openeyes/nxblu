@@ -1,0 +1,63 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// large patient search banner
+//
+.oe-search-patient {
+	height: $oe-event-header-height * 2;
+	@include flex( center, center );
+	background: var(--bg-title);
+
+	// new grid layout added in 6.0.0 for the big patient search
+	// to use it requires a DOM change
+	grid-area: search;
+	
+	.search-patient {
+		position: relative;
+		@include flex( center, space-between );
+		width:560px;
+		padding:8px 0 16px 0;
+		
+		// increase the defaults for input
+		input {
+			flex: 1 1 0;
+			border-radius: 0;
+			height: 36px;
+			@include font-size(18);
+			font-weight:400;
+
+			&:focus-visible {
+				// adjust the default to zero
+				outline-offset: 0;
+			}
+		}
+		
+		// increase the defaults for buttons
+		button {
+			@include font-size(16);
+			height: 36px;
+			width: 160px;
+			padding:0 10px;
+		}
+		
+		// notes for acceptable search terms
+		.find-by {
+			position:absolute;
+			left:0; 
+			right:0; 
+			bottom:0;
+			text-align: center;
+			@include font-size(10);
+			font-weight: 500;
+			color: var(--txt-light);
+			
+		}
+	}
+	
+	
+}
+
+

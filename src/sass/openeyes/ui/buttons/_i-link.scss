@@ -1,0 +1,27 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+button,
+.button {
+	// "direction-right-circle" icon is used as way to "goto" a URL
+	// this adds that icon to a <button> to enable extra text (e.g. Injection Management)
+	&.i-link {
+		position: relative;
+		padding-right:25px;
+
+		&:after {
+			content: "";
+			pointer-events: none;
+			position: absolute;
+			top:0;
+			right:0;
+			bottom:0;
+			width: 23px;
+			background: center / 13px url( svg-white-icon("i/direction-right-circle")) no-repeat;
+			opacity: $oe-icon-opacity;
+		}
+
+	}
+}

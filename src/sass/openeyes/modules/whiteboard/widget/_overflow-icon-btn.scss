@@ -1,0 +1,25 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+.oe-wb-widget {
+	.overflow-icon-btn {
+		position: absolute;
+		bottom: 1px;
+		right: 1px;
+
+		background: center / 30px url(svg-white-icon("i/more-h")) var(--btn-blue) no-repeat;
+
+		width: 45px;
+		height: 35px;
+		border-radius: 10px;
+		cursor: pointer;
+	}
+
+}
+
+
+
+
+

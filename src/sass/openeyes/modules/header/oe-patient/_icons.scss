@@ -1,0 +1,91 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// OE Header - Patient
+
+.oe-patient {
+
+
+
+	// icons buttons for...
+	:is(
+	.patient-quicklook,
+	.patient-demographics, 
+	.patient-management,
+	.patient-local-edit,
+	.patient-extra ){
+		position:absolute;
+		padding:6px 8px; // increase icon hit-area
+		cursor:pointer;
+		
+		// svg icon btn
+		.icon {
+			display:inline-block;
+			fill: var(--txt-base);
+			opacity: 0.8;
+			width:16px;
+			height:16px;
+			pointer-events: none; // allow JS delegation
+		}	
+		
+		// js controlled interaction... 
+		&.open,
+		&.active {
+			background: var(--btn-blue-hint);
+			.icon {
+				fill: #fff;
+			}
+		}
+		
+	}
+	
+	// info 
+	.patient-demographics {
+		bottom:0;
+		right:111px;
+	}
+	
+	// dude
+	.patient-management {
+		bottom:0;
+		right:79px;
+		padding:5px 7px; // increase icon hit-area
+
+		.icon {
+			width:18px;
+			height:18px;
+		}
+	}
+
+	// Eye
+	.patient-quicklook {
+		bottom:0;
+		right:47px;
+	}
+	
+	// Extra space for 4th Patient icon
+	// created for trials (CERA) not v3 core 
+	// but left as generic container for future use
+	.patient-extra {
+		bottom:0;
+		right:-8px; // allows for the padding
+	}
+	
+	// Edit Patient when (local)
+	// i.e, they are not a PAS integrated patient.
+	.patient-local-edit {
+		top:5px;
+		right:-8px;
+		
+		.icon {
+			&:is(:hover, :focus, :active ){
+				opacity: 1;
+			}
+			
+		}
+	}
+
+
+}
+

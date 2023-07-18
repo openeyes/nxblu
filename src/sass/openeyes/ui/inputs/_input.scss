@@ -1,0 +1,50 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// <input>
+// note: the default type, if not set is type="text"
+// In the UI, input (text) and textarea, should look identical
+// when on a single "row" i.e the same height.
+input {
+	// match <textarea>
+	padding:0 5px;
+	border-radius: 3px;
+
+	&::placeholder {
+		color: var(--input-placeholder);
+	}
+	&:disabled {
+		opacity:0.4;
+	}
+
+	// add SEARCH icon to input	
+	&.search {
+		padding-left:30px;
+		background: left 5px center / 18px var(--i-ui-search) var(--input-base) no-repeat;
+	}
+	// add FILTER icon to input
+	&.filter {
+		padding-left:30px;
+		background: left 5px center / 18px var(--i-ui-filter) var(--input-base) no-repeat;
+	}
+
+	&[type="checkbox"],
+	&[type="radio"]{
+		height:auto;
+		margin:0; // override user-agent
+	}
+
+	// Normalize for range
+	&[type="range"] {
+		height:auto;
+		width: 100%;
+	}
+	// Normalize file input width
+	&[type="file"] {
+		height:auto;
+		width: 100%;
+	}
+}
+
+
+

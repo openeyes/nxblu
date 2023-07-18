@@ -1,0 +1,98 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "../_var" as *;
+
+// Page title 
+// could be used in main but not encouraged
+h1 {
+    font-size: $fontsize-h1;
+    font-weight:500;
+    line-height: 1.3;
+    margin: 0 0 1.3rem 0;
+}
+
+h2 {
+	font-size: $fontsize-h2;
+	font-weight:400;
+	line-height: 1.3;
+	margin:0.5rem 0 0.8rem 0;
+}
+
+h3 {
+	font-size: $fontsize-h3;
+	font-weight:500;
+	line-height: 1.3;
+	margin:0.4rem 0 0.6rem 0;
+}
+
+h4 {
+	font-size: $fontsize-base;
+	font-weight:500;
+	line-height: 1.3;
+	margin:0.4rem 0;
+	
+	// correspondence letter
+	&.subtitle {
+		margin-top: 0.8em;
+	}
+}
+
+p {
+	font-size: $fontsize-base;
+	font-weight:400;
+	line-height: 1.4;
+	margin:0.8rem 0;
+}
+
+// small text 
+h5 {
+	font-size: $fontsize-small;
+	font-weight:700;
+	line-height: 1.3;
+	margin:0.5rem 0;
+}
+
+// small text 
+h6 {
+	font-size: $fontsize-tiny;
+	font-weight:500;
+	line-height: 1.2;
+	margin:0.5rem 0;
+}
+
+
+// add emphasis
+b, strong {
+	font-weight: 700;
+}
+
+.text-c {
+	text-align: center
+}
+
+.text-r,
+.right-align {
+	text-align: right;
+}
+
+.indent {
+	padding:0.2rem 0 0 2rem;
+	margin:0 0 1rem 0;
+	border-left:1px solid #ddd;
+}
+
+// highlighter
+.highlighter {
+	background: #ddd;
+	border:2px solid #ddd; // by default Chrome print knocks out the backgrounds
+	padding:4px 6px;
+	font-weight:500;
+	line-height: 1.2;
+	
+	&.large-text {
+		font-size: $fontsize-sem-large;
+	}
+}
+
+

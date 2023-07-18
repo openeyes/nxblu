@@ -1,0 +1,51 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// <select>
+// default set up for all selects
+select {
+	// selects can not be padded but height 
+	// can be set. This feels a bit hacky but
+	// it achieves the visual goal of getting
+	// <input> and <selects> looking the same
+	padding: 0 15px 0 4px; // allow for the background
+
+	// turn off browser UI defaults
+	// (basically because of Safari!)
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	// this fixes the issues where the browser
+	// will use the system-ui fonts:
+	font-family: inherit;
+
+	cursor: pointer;
+	width: 100%;
+	max-width: 350px; // nothing should longer than this, surely!
+
+	// if text input value is too long, cut and add "..."
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
+	// UI to indicate it's a dropdown vanishes, looks like an input, add a custom arrow
+	background: right 2px center / 13px var(--i-arrow-down-bold) var(--input-base) no-repeat;
+
+	// make select look like basic text with an arrow button next to the text
+	// a "discreet" select dropdown, added to handle a dense UI of multiple
+	// dropdowns e.g. Diagnosis 2
+	&.discreet {
+		background-color: transparent;
+		background-image:  var(--i-arrow-down-bold-blue);
+
+	}
+
+	&.inline {
+		width: auto;
+	}
+
+	&:disabled {
+		opacity: 0.4;
+	}
+}

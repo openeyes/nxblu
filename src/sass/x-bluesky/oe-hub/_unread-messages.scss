@@ -1,0 +1,107 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-hub {
+	.unread-messages {
+		grid-area: messages;
+		border-right: 1px solid var(--gui-line);
+		overflow-y: auto;
+
+		.msg-row {
+			padding:10px 20px 10px 20px;
+			border-bottom: 1px solid var(--gui-line);
+
+
+			&:hover,
+			&:focus-within {
+				background: var(--bg-hover-row);
+			}
+		}
+
+		header {
+			@include flex(center, flex-start);
+			padding:10px 0 10px 20px;
+
+			h3 {
+				@include font-size(15);
+				color: var(--txt-light);
+				font-weight: var(--font-light);
+			}
+		}
+
+		// handle the actual messages within the <td>
+		// DOM: <div class="message">Message</div>
+		.message {
+			// message has 2 states: collapsed (single line with ellipsis) and expanded (multi-line)
+			// in order to get the single line overflow working the container
+			// needs to be width restricted (could NOT get it to work on the <td>!)
+
+			position: relative;
+			padding: 0 25px 0 0;
+			margin: 10px 0 5px 0;
+
+			width: $oe-hotlist-panel-width - 50px;
+			@include font-size(13);
+			font-weight: var(--font-medium);
+			font-style: italic;
+
+			// truncate text
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+
+			// set the height to increase the hit-area for the expand icon
+			height: 24px;
+
+			// expand and read full message (if truncated)
+			// reset the height and allow the message text to wrap
+			&.expand {
+				height: auto;
+				white-space: normal;
+			}
+
+			// position the expand/collapse icon
+			.expand-message {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				width: 20px;
+
+				.oe-i {
+					width: 20px;
+					height: 100%;
+					min-height: 50px;
+					background-position: top right;
+				}
+			}
+		}
+
+		.status-date {
+			@include font-size(13);
+			font-weight: var(--font-medium);
+			@include flex(center, space-between);
+			gap: 10px;
+		}
+
+		.sender {
+			position: relative;
+			.sent-from {
+				@include font-size(13);
+				font-weight: var(--font-bold);
+			}
+
+			.goto-message {
+				position:absolute;
+				bottom:0;
+				right:0;
+			}
+		}
+
+	}
+
+}
+
+
+
+

@@ -1,0 +1,97 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.schedule-group {
+
+	table.theatre-bookings {
+		// it's a flex item.
+		// 20% is for the overview column
+		width: 80%;
+
+		color: var(--txt-base);
+		margin: 0 0 10px 0;
+		@include font-size(13);
+
+
+		tbody {
+			tr {
+				border-top-width: 4px;
+				border-top-color: var(--gui-line);
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+
+			td {
+				@include font-size(13);
+				font-weight: var(--font-medium);
+				padding: 10px 5px 10px 0;
+
+				vertical-align: top;
+
+				// hack to deal with the input being too small
+				// when you switch to edit mode (time)
+				input[type=text] {
+					width: 90%;
+				}
+
+				&:first-child {
+					text-align: center;
+
+					label {
+						@include font-size(11);
+					}
+
+					.op-time {
+						@include font-size(18);
+						font-weight: var(--font-bold);
+						margin: 0 0 5px 0;
+					}
+
+					.op-duration {
+						@include font-size(12);
+						font-weight: var(--font-bold);
+						margin: 5px 0 0 0;
+					}
+				}
+
+				&.edit-order-icon {
+					vertical-align: middle;
+				}
+
+				// div wrapper for meta and extra patient icons under Patient name
+				.theatre-patient-icons {
+					margin: 10px 0 0 0;
+				}
+
+				.operation {
+					@include font-size(14);
+					margin: 0 0 5px 0;
+				}
+
+				// biometry icon is pulled out of <a>
+				// to allow tooltip
+				.operation-actions {
+					> i {
+						margin: 2.5px 2px; // match button height
+					}
+				}
+
+
+			}
+		}
+
+		// use for comments
+		tfoot {
+			.session-comments {
+				padding: 15px 10px 10px 10px;
+
+			}
+		}
+	}
+}
+

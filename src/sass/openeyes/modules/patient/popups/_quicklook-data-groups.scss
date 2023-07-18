@@ -1,0 +1,80 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// OE Popup - Quicklook Data Groups
+// De-coupled for use in Patient Popups and Quick Overview
+// Note: all set to pro-theme, Mini Overview has to overide this
+
+.quicklook-data-groups {
+	width:33.333%;		// 3 columns in patient popup (default)
+	margin:0 8px 0 0;
+			
+	@include font-size(11);
+	font-weight:400;
+	
+	.group {
+		margin:0 0 3px 0;
+		background: var(--bg-data);
+		
+		.label { 
+			padding:8px 9px;
+			@include font-size(14);
+			font-weight: var(--font-light);
+		 	color: var(--txt-hd);
+		}
+		
+		// basic data list, uses <br>
+		.data {
+			padding:0 10px 5px 10px;
+			
+			.not-recorded {
+				opacity:0.4;
+				text-align: center;
+			}
+			
+		}
+	} 
+	
+	// table layout for more complex data:
+	table {
+		margin:0 0 10px 0; 
+		width:100%;
+		
+		th { color:var(--txt-light); }
+		td { color:var(--txt-base); }
+		
+		th, td {
+			vertical-align: top;
+			@include font-size(11);
+			font-weight: var(--font-medium);
+			padding:2px 0 2px 5px;
+			text-align: left;
+			
+			&:last-child {
+				text-align: right;
+			}
+			
+			&:first-child {
+				text-align: left;
+				padding-left:0;
+			}
+			
+		}
+		
+		// matches the default align for tables in Elements
+		&.last-left {
+			th, td {
+				&:last-child {
+					text-align: left;
+				}
+			}
+		}
+		
+		
+		strong { font-weight: 400; }
+	}
+}
+

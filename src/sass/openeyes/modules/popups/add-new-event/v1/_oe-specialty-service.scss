@@ -1,0 +1,63 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+
+// Extends the basic <li> styling
+// coupling is required to create a greater
+// specificity or CSS won't style
+.oe-specialty-service {
+	position: relative;
+	flex-direction: column;
+	align-items: flex-start;
+	@include font-size(13);
+	padding: 10px;
+
+	// <span> wrap 'service'
+	.service {
+		display: block; // to push to new line
+		@include font-size(11);
+	}
+
+	// select dropdown (sometimes needed)
+	select {
+		margin: 5px 0 0 0;
+	}
+
+	// User selects a new subspeciality, this replaces the select option
+	// and flags that it's new with a border
+	// <div> outside of the <ul>
+	.new-added-subspecialty-service & {
+		margin: 10px 0 0 0;
+		border:2px solid var(--btn-green);
+
+		// remove "x" button (JS will remove this element and show options again)
+		.change-new-specialty {
+			position: absolute;
+			bottom: 4px;
+			right: 4px;
+
+		}
+	}
+
+	// 2 letter code for SubSpeciality
+	.tag {
+		position: absolute;
+		top: 0;
+		right: 0;
+		// tag is a bit bigger
+		width: 21px;
+		height: 21px;
+
+		@include flex(center, center);
+
+		@include font-size(11);
+		font-weight: var(--font-medium);
+
+		color: var(--txt-light);
+		background: var(--btn-base-light);
+	}
+
+}

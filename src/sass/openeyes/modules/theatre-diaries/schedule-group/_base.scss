@@ -1,0 +1,26 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.schedule-group {
+	// required for the Edit button
+	position: relative;
+
+	// layout the 2 main columns:
+	// "theatre-overview" & table.theatre-bookings
+	@include flex(flex-start, space-between);
+
+	background: var(--bg-data);
+	margin: 0 0 30px 0;
+
+	// highlighter used to flag data
+	// such as Overbooked number & Urgent Op
+	// reduce padding so the layout isn't affected
+	.highlighter {
+		padding: 0 4px;
+	}
+}
+
+
+

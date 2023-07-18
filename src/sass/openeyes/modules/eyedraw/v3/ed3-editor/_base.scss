@@ -1,0 +1,26 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.ed3-editor {
+	@include flex(stretch, space-between);
+	@include font-size(11);
+	font-weight: 500;
+	color: var(--ed3-text);
+
+	// left eye
+	.eye-l & {
+		flex-direction: row-reverse;
+	}
+
+	.main {
+		flex: 1 1 0;
+		@include flex(stretch, space-between);
+	}
+
+	.ed3-front,
+	.ed3-side {
+		cursor: pointer;
+	}
+}

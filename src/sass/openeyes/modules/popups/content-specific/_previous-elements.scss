@@ -1,0 +1,70 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+
+// SEM Edit mode: copy data from "Previous Element"
+// 'download' icon next to close.
+.oe-popup-content {
+	
+	// modify popup table default
+	&.previous-elements {
+		
+		table {
+			width:100%;	
+			
+			tr {
+			border-bottom:1px solid var(--gui-line);
+				&:last-child { 
+					border-bottom: none;
+				}
+			}
+				
+			td {
+				vertical-align: top;
+				padding:10px 10px 10px 0;  
+				@include font-size(12);
+				
+				
+				// notes
+				&:first-child {
+					@include font-size(13);
+				}
+				
+				.metadata {
+					color:var(--txt-light);
+					
+					.info {
+						margin:0 0 5px 0;
+					}
+					
+					.user {
+						color:var(--txt-base);
+					}
+				}
+				
+			}
+		}
+		
+		// eyedraw elements added to popup can't use the CSS 
+		// from elements (because it brings to much baggage)
+		// therefore added the flex classes here.
+		.element-eyes {
+			@include flex(flex-start, space-between);
+			
+			.right-eye {
+				width:490px;
+				margin:0 10px 0 0;
+			}
+			.left-eye {
+				width:490px;
+			}
+		}
+		
+		
+	}
+
+	
+}

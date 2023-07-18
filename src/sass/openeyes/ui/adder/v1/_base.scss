@@ -1,0 +1,45 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// Adder popup v1
+// "oe-add-select-search"
+
+$oe-ass-restricted-width: 130px;
+$oe-ass-restricted-width-extended: 250px;
+
+.oe-add-select-search {	
+	position:fixed; // Fixed take it out of the Grid.
+	bottom:0; // JS will position
+	z-index:$oe-z-add-insert;
+	background: var(--bg-popup);
+
+	// allow for bottom 'btn' bar 
+	// note: Do not increase vertical padding because of Logo overlap issues
+	padding:5px 10px 35px 10px; 
+	
+	// min-width based on testing
+	// be careful if changing ;)
+	min-width: 190px;
+	
+	
+	// set to allow 0-9 input WITHOUT scroll	
+	// height is restricted but not here.
+	// min-height set to help with AJAX loading
+	// content lists restrict themselves
+	// height MAY push up if table headers wrap	
+	min-height:$oe-add-insert-popup-height;
+
+	// JS needs to control Ypos so that the popup 
+	// doesn't go above (over) the header
+	max-height:290px;
+		
+	@include font-size(11);			
+	font-weight:400;
+	
+	@include boxshadow();
+}
+
+

@@ -1,0 +1,53 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// OE Patient Mini Overview
+.oe-patient-quick-overview {
+	
+	// space out a bit sidepanel view
+	&.side-panel {
+		.data-group {
+			margin-bottom:6px;
+			&:last-child {
+				margin-bottom:6px;
+			}
+		}
+	}
+
+	.data-group {
+		// sub-headers 
+		h3 {
+			@include font-size(13);
+			font-weight: var(--font-medium);
+			margin:8px 0 6px 0;
+		}
+		
+		// uses the same DOM as Quick Look Popup 
+		// but this IS themed (as in page)
+		// for use here it needs to change with the theme
+		.quicklook-data-groups {
+			// override: popup is set to 33.3% to create the 3 columns
+			width:100%;
+		}
+		
+		// provide a 2 column data layout option
+		// split assumes 2 quicklook-data-groups
+		&.split-data {
+			display:flex;
+			justify-content:space-between; 
+			align-items:flex-start;
+			
+			> .quicklook-data-groups {
+				width:50%;					// create 2 column layout
+			}	
+		} 	
+	}
+}
+
+
+
+
+

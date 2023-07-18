@@ -1,0 +1,36 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+.ed3 {
+	// need to hook off this:
+	// search doodles & doodle context options
+	position: relative;
+
+	// restrict ed3 width, if there is space show
+	// doodle context stack it can remain open.
+	// also helps with remove side icon overlapping
+	// max-width is set to fit row of doo-btns
+	// (33px * n) +  more (41px) + eye icon bg (38px)
+	//
+	max-width:541px;
+
+	// center within the element.
+	// gives more space for the doodle-stack
+	margin: 0 auto;
+	background: var(--ed3-blue);
+
+	// view mode
+	&.view {
+		border-radius: 5px;
+		padding:5px 0; // otherwise border-radius won't work
+	}
+
+}
+
+
+
+ 
+
+
+
+

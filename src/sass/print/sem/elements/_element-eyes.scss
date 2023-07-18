@@ -1,0 +1,39 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "src/sass/print/_mix" as *;
+
+// --- PRINT
+
+.element-eyes {
+	@include flex(flex-start, space-between);
+
+	// these are were tricky to get right
+	// had to tweak the 'left' side to get the + icon
+	// to line up with the full width + icon
+	.right-eye {
+		width: 50%;
+		padding-left: 10px; // indent data
+		padding-right: 29px; // L / R not the same! - ED 490px
+	}
+
+	.left-eye {
+		width: 50%;
+		padding-left: 17px; // indent data
+		padding-right: 20px; // L / R not the same! - ED 491px (+1px)
+	}
+}
+
+.element {
+	.element-eyes {
+		.right-eye {
+			padding-left: 5px; // indent data
+			padding-right: 9px;
+		}
+
+		.left-eye {
+			padding-left: 12px; // indent data 
+			padding-right: 0;
+		}
+	}
+}

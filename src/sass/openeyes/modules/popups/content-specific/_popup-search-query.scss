@@ -1,0 +1,26 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// Specific: Add to PSD
+.oe-popup-content {
+	
+	// modifying the standard "oe-popup-content" class
+	&.popup-search-query {
+
+		// step sub-titles
+		// control width of sections
+		.all-searches {
+			width:420px;
+			margin:0 30px 0 0;
+		}
+		
+		.search-queries {			
+			width:360px;
+			margin:0 30px 0 0;
+		}
+		
+		.show-query {
+			width:360px;
+		}
+	}
+}

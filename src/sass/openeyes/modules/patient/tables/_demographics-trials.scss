@@ -1,0 +1,19 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// table layouts for two popups
+// Demographics (multiple tables in the popup)
+// Trials was added later (and uses exactly the same UI)
+// but with a different CSS hook in case need to hook into it
+
+// Used in two places:
+// .oe-patient-popup,
+// .quick-overview-content
+
+table.patient-trials,
+table.patient-demographics {
+	td:last-child {
+		// override the default
+		text-align: left;
+	}
+}

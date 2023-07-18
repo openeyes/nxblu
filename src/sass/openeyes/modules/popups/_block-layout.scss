@@ -1,0 +1,51 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-popup-content {
+	
+	// generalised approach based on build-psd
+	// used on <div> wrapper within content area
+	// this allow things above and below it
+	.block-layout {
+		@include flex( flex-start, space-between );
+	
+		// step sub-titles
+		h3 {
+			@include font-size(13);
+		}
+		
+		// flex blocks
+		.block {
+			flex:1 0 0;
+
+			&.wide {
+				flex:2 0 0; 
+			}
+			
+			padding:0 10px 10px 10px;
+			border-left:1px solid var(--gui-line);
+			
+			&:first-child {
+				padding-left: 0;
+				border-left: none;
+			}
+			
+			&:last-child {
+				padding-right: 0;
+			}
+			
+			// slight tweaks
+			table {
+				th {
+					@include font-size(11);
+				}
+			}
+			
+		}
+	
+	}
+
+}

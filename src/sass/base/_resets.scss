@@ -1,0 +1,98 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+/* normalize (opinionated version) */
+// normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css
+
+// Correct the line height in all browsers.
+// Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS
+html {
+	line-height: 1.15; // note! Print CSS uses this reset as well, do not change this
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-kerning: normal; // use font kerning
+}
+
+// Universal Box Sizing with Inheritance - CSS Tricks Box-sizing.
+html {
+	box-sizing: border-box;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+// correct strong styling
+b,
+strong {
+	font-weight: bolder;
+}
+
+// use small
+small {
+	font-size: 80%;
+}
+
+// Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+// Show the overflow in IE and Show the overflow in Edge.
+button,
+input {
+	overflow: visible;
+}
+
+// Remove the inheritance of text transform in Edge, Firefox, and IE.
+button,
+select {
+	text-transform: none;
+}
+
+// layout resets
+section,
+nav,
+header,
+footer,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+// table defaults
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+

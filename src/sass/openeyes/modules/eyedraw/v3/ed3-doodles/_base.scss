@@ -1,0 +1,57 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+@use "openeyes/var" as *;
+
+.ed3-doodles {
+	position: relative;
+	@include flex(stretch, space-between);
+
+	padding:0 0 2px 0;
+	border-bottom:1px dotted var(--ed3-icon-area);
+
+	// reverse if on Left eye side
+	.eye-l & {
+		flex-direction: row-reverse;
+		background: top 7px left 9px/19px url(svg-white-icon("i/lat-L")) no-repeat;
+		.quick {
+			padding-left:38px;
+		}
+	}
+
+	.eye-r & {
+		background: top 7px right 9px/19px url(svg-white-icon("i/lat-R")) no-repeat;
+		.quick {
+			padding-right:38px;
+		}
+	}
+
+	// icon only with popup labels, common doodles...
+	.quick {
+		flex: 1 1 0;
+		@include flex( flex-start, flex-start);
+		flex-wrap: wrap;
+	}
+
+	// show all available icons with text, with groups
+	// and can text searched, no-doodle elements too - see: "more-doodles"
+	.more {
+		display: flex; // remove any white space
+		padding:0 1px 1px 0; // match the doo-btn
+
+		// modify the default icon
+		.oe-i.more-h {
+			width: 40px; // this needs to be wide to make space for the remove cross icon
+			height: 100%;
+			background-image: url(svg-black-icon("i/more-h"));
+
+			&:hover,
+			&:focus {
+				background-color: var(--ed3-icon-area);
+			}
+		}
+	}
+
+
+}

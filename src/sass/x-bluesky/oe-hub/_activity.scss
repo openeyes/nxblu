@@ -1,0 +1,29 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-hub {
+	.known,
+	.activity {
+		height: calc( 100vh - 185px);
+		overflow-y: auto;
+		padding:0 0  40px 0; // allow for admin banner
+
+		table.standard {
+			th,
+			td {
+				padding: 8px 0 8px 8px;
+			}
+		}
+	}
+
+	.known {
+		table.standard {
+			td {
+				@include font-size(13);
+				vertical-align: top;
+				padding: 20px 20px 20px 8px;
+			}
+		}
+	}
+}
+

@@ -1,0 +1,56 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-nav-shortcuts {
+	display: none; // js controlled.
+	position: absolute;
+	top: $oe-header-height;
+	right: 0;
+	z-index: $oe-z-shortcuts;
+	width: 250px; // allow enough space for all text
+	background: var(--btn-blue-hint);
+	padding: 10px 0;
+
+	// shouldn't be that many shortcut nav links
+	// however if too many are added handle the overflow
+	overflow-y: auto;
+	max-height: calc(100vh - #{$oe-header-height});
+
+	li > a {
+		display: block;
+		color: var(--btn-text);
+		@include font-size(11);
+		font-weight: 400;
+		padding: 6px 30px 6px 12px;
+		background: right 8px center / 10px url(svg-fixed("ui/shortcut-arrow")) no-repeat;
+
+		// instead of shortcut link this is for opening a popup
+		// introduced for e-Sign QR tablet sign-in (required anywhere)
+		&.popup {
+			background-image: url(svg-white-icon("i/duplicate"));
+			background-size: 12px;
+		}
+
+		@include handheld() {
+			@include font-size(13);
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--btn-text-active);
+			background-color: var(--btn-blue-active);
+		}
+
+		&:active {
+			background-color: var(--btn-blue);
+		}
+	}
+}
+	
+
+

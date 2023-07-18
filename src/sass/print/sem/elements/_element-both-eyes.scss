@@ -1,0 +1,16 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// --- PRINT
+
+.element {
+
+	.element-both-eyes {
+		margin: 0 0 0.5em 0; // 20px matches the full-width class
+		padding: 10px; // the right 0px padding means that collapse icons line up!
+		// border-radius:13px; 			// create a bracket effect
+		border-bottom: 2px dotted #eee;
+	}
+}
+
+

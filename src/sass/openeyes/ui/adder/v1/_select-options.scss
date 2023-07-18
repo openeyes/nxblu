@@ -1,0 +1,53 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// <table> with a single <tr>
+// used to layout the adder (because this is pre-flex)
+// This can be an issue when inserted into another <table>
+// Some cascades may need overwriting here
+
+.oe-add-select-search {
+	
+	table.select-options {
+			
+		thead {
+			th {
+				@include font-size(10);
+				text-align: left;
+				padding:0 2px 3px 5px;
+			}
+		}
+		
+		tbody {
+			td {
+				// used for horizontal layout of lists
+				vertical-align: top;
+
+				@include font-size(12);
+				text-align: left;
+				padding:0 5px 0 6px; // space the list groups 
+				
+				border-left:2px solid var(--gui-line);
+				
+				&:last-child {
+					padding:0 0 0 6px;
+					text-align: left; // overwrite default
+				}
+
+				&:first-child {
+					padding:0 5px 0 0;
+					border-left:none;
+				}
+
+				// cascade issue: if used within <td> with 'nowrap' this needs overwriting
+				white-space: normal;
+			}
+		}		
+	}
+}
+
+
+

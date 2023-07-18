@@ -1,0 +1,17 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+ul {
+	// Use "large-text" (as more obvious)
+	// ... in relation to normal text size
+	&.large-text, 
+	&.large {
+		li {
+			@include font-size(14);
+		}
+	}
+	
+}
+

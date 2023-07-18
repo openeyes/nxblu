@@ -1,0 +1,12 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// special tooltip to show a small preview of a signature
+.oe-tooltip {
+	&.esign {
+		width:210px; // 3:1 ratio area
+		height:70px;
+		// the signature PNG is added via DOM: style="background-image..."
+		background: center / contain no-repeat white;
+	}
+}

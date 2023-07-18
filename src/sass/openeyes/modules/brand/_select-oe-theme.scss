@@ -1,0 +1,34 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// single CSS file, buttons to toggle theme setting
+.select-oe-theme {
+	@include flex(center, space-between);
+
+	button {
+		flex: 1 1 0;
+		border: 2px solid transparent;
+		font-weight: 700;
+	}
+
+	// fix buttons to always show the theme colours
+	.light-theme {
+		background-color: rgb(221, 220, 220);
+		color: #333;
+
+		.theme-light & {
+			border-color: var(--txt-active);
+		}
+	}
+
+	.dark-theme {
+		background-color: #191e24;
+		color: #ddd;
+
+		.theme-dark & {
+			border-color: var(--txt-active);
+		}
+	}
+}

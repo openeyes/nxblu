@@ -1,0 +1,166 @@
+// OE has yet to replace all date inputs with <input type="date">
+// so, unfortunately we have to still cover this UI... sigh
+
+@use "openeyes/mix" as *;
+@use "openeyes/var" as *;
+
+// @package   PickMeUp
+// @author    Nazar Mokrynskyi <nazar@mokrynskyi.com>
+// @author    Stefan Petre <www.eyecon.ro>
+// @copyright Copyright (c) 2013-2017, Nazar Mokrynskyi
+// @copyright Copyright (c) 2008-2009, Stefan Petre
+// @license   MIT License, see license.txt
+
+.pickmeup {
+
+	$_border-radius                    : 3px;
+	$_background                       : var(--input-base);
+	$_color                            : var(--input-text);
+	$_background-hover                 : var(--btn-green-hint);
+	$_color-hover                      : #fff;
+	$_nav-color                        : $_color;
+	$_nav-color-hover                  : $_color-hover;
+	$_not-in-month                     : #666;
+	$_not-in-month-hover               : #999;
+	$_disabled                         : #333;
+	$_selected                         : var(--input-base);
+	$_selected-background              : var(--txt-highlight);
+	$_not-in-month-selected-background : #666;
+	$_day-of-week                      : $_not-in-month-hover;
+	$_today-background                 : $_not-in-month-selected-background;
+	$_today-color                      : $_color-hover;
+
+
+	background      : $_background;
+	border-radius   : $_border-radius;
+	display         : inline-block;
+	position        : absolute;
+	touch-action    : manipulation;
+	z-index			: $oe-z-tooltip; // quick fix to ensure it works in hotlist
+	
+	@include font-size(12);
+
+	&.pmu-flat {
+		position : relative;
+	}
+
+	&.pmu-hidden {
+		display : none;
+	}
+
+	.pmu-instance {
+		display    : inline-block;
+		height     : 13.8em;
+		padding    : .5em;
+		text-align : center;
+		width      : 15em;
+
+		.pmu-button {
+			color           : $_color;
+			cursor          : pointer;
+			outline         : none;
+			text-decoration : none;
+		}
+
+		.pmu-today {
+			background : $_today-background;
+			color      : $_today-color;
+		}
+
+		.pmu-button:hover {
+			background : $_background-hover;
+			color      : $_color-hover;
+		}
+
+		.pmu-not-in-month {
+			color : $_not-in-month;
+		}
+
+		.pmu-disabled,
+		.pmu-disabled:hover {
+			color  : $_disabled;
+			cursor : default;
+		}
+
+		.pmu-selected {
+			background : $_selected-background;
+			color      : $_selected;
+		}
+
+		.pmu-not-in-month.pmu-selected {
+			background : $_not-in-month-selected-background;
+		}
+
+		nav {
+			color       : $_nav-color;
+			display     : -ms-flexbox;
+			display     : -webkit-flex;
+			display     : flex;
+			line-height : 2em;
+
+			*:first-child :hover {
+				color : $_nav-color-hover;
+			}
+
+			.pmu-prev,
+			.pmu-next {
+				display : none;
+				height  : 2em;
+				width   : 1em;
+			}
+			.pmu-month {
+				width : 14em;
+			}
+		}
+
+		.pmu-years,
+		.pmu-months {
+			* {
+				display     : inline-block;
+				line-height : 3.6em;
+				width       : 3.5em;
+			}
+		}
+
+		.pmu-day-of-week {
+			color  : $_day-of-week;
+			cursor : default;
+		}
+
+		.pmu-day-of-week,
+		.pmu-days {
+			* {
+				display     : inline-block;
+				line-height : 1.5em;
+				width       : 2em;
+			}
+		}
+
+		.pmu-day-of-week * {
+			line-height : 1.8em;
+		}
+	}
+
+	.pmu-instance:first-child .pmu-prev,
+	.pmu-instance:last-child .pmu-next {
+		display : block;
+	}
+
+	.pmu-instance:first-child,
+	.pmu-instance:last-child {
+		.pmu-month {
+			width : 13em;
+		}
+	}
+
+	.pmu-instance:first-child:last-child .pmu-month {
+		width : 12em;
+	}
+
+	&:not(.pmu-view-days) .pmu-days,
+	&:not(.pmu-view-days) .pmu-day-of-week,
+	&:not(.pmu-view-months) .pmu-months,
+	&:not(.pmu-view-years) .pmu-years {
+		display : none;
+	}
+}

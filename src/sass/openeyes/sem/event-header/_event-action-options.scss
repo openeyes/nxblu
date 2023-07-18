@@ -1,0 +1,23 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+.event-header {
+		
+	// event-action-options covers Event header 
+	// extra funcitonality - such "save as default'
+	// essentially it provides a space next to a button...
+	.event-action-options {
+		display:inline-flex;
+		justify-content:center;
+		align-items: center;
+		
+		height:$oe-event-header-height;
+		padding:0 16px 0 8px; // assume it's placed to the right
+		
+		@include font-size(10);
+		font-weight:400;
+		color: var(--txt-light);
+	}
+}
+

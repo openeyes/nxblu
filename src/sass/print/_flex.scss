@@ -1,0 +1,40 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "_mix" as *;
+
+// simplified flex classes
+.flex {
+	@include flex( flex-start, space-between );
+}
+
+.flex-r {
+	@include flex( flex-start, flex-end );
+}
+
+.flex-l {
+	@include flex( flex-start, flex-start );
+}
+
+.flex-c {
+	@include flex( flex-start, center );
+}
+
+// old, more verbose classes for the above layouts
+// depreciating these, gradually.
+.flex-layout {
+	@include flex( flex-start, space-between );
+	
+	// horizontal alignments
+	&.flex-right {
+		justify-content:flex-end; 		// group items to the right
+	}
+	
+	&.flex-left {
+		justify-content:flex-start; 	// group items to the left
+	}
+	
+	&.flex-center {
+		justify-content:center; 		// group items in the center
+	}
+}

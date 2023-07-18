@@ -1,0 +1,42 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-worklists-panel {
+	display:none; 					// js controlled.
+	z-index:#{$oe-z-hotlist + 1}; 	// as hotlist can be locked open
+			
+	position:fixed;
+	top:$oe-header-height;
+	right:0;
+	height: calc(100vh - #{$oe-header-height}); 	
+	overflow-y:auto;// otherwise this over-flow doesn't work.
+	
+	@include font-size(11);
+	
+	// match Hotlist width behaviour!
+	// this panel will total obscure hotlist when open!!
+	width:#{$oe-hotlist-panel-width};	
+	
+	@include fix-hotlist(){	// 1890px
+		// as we are going up to 1920px we have an extra 30px... use them
+		width: calc(100vw - #{$oe-js-browser-fix-size - $oe-hotlist-panel-width}); 			
+	}
+	
+	// the 100px improves the screen balance between the content and the hotlist
+	@include super-wide(){	// 2048px+
+		width: $oe-hotlist-panel-max; 
+	}
+
+	// soft visual link to nav button
+	border-top:1px solid var(--btn-blue-hint);
+
+	background: var(--bg-popup);
+	padding:0 0 20px 0;	
+	border-left:2px solid var(--gui-line);
+	
+}
+
+

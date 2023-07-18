@@ -1,0 +1,16 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+.oe-step-progress {
+	// ::before and ::after are used in completed steps
+	// Empty <div> is used needed to flag selected
+	div.selected-step {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		height:12px;
+		background: top 1px center/11px var(--i-arrow-up-bold) no-repeat;
+		pointer-events: none;
+	}
+}

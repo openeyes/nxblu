@@ -1,0 +1,39 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.admin-correspondence-letterhead {
+	// keep the width reasonable.
+	max-width: $oe-event-main-default-width;
+
+	&.view {
+		padding: 40px; // letter margin
+		@include font-size(13);
+		color: black;
+
+		// create a paper background effect
+		background: linear-gradient(
+				to top,
+				rgba(255, 255, 255, 0),
+				rgb(255, 255, 255) 30px
+		);
+		// table DOM created by TinyMCE
+		table, td {
+			width: 100%;
+			border: 1px dotted rgb(200, 200, 200);
+		}
+	}
+
+	// TinyMCE editor
+	&.edit {
+		// quick insert buttons
+		.editor-quick-insert-btns {
+			button {
+				margin: 5px;
+			}
+		}
+	}
+}
+

@@ -1,0 +1,29 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-hub {
+	grid-area: main;
+
+	// layout the contents in a subgrid
+	height: calc( 100vh - #{$oe-header-height + ($oe-event-header-height * 2)});
+	display: grid;
+	grid:
+		"profile areas" auto
+		"messages areas" 1fr / #{$oe-hotlist-panel-width} 1fr;
+
+	.areas {
+		grid-area: areas;
+		padding: 10px;
+	}
+
+
+	@include fix-hotlist() {
+		width: $oe-extended-browser-size; // 1440px;
+	}
+
+	// stretch to fill on super wide displays
+	// works for most standard page layouts
+	@include super-wide() { // 2048px+
+		width: 69vw;
+	}
+}

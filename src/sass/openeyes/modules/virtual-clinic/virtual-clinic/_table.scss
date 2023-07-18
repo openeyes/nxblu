@@ -1,0 +1,67 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// extend 'standard' default table
+table.virtual-clinic {
+
+	tbody {
+		td {
+			@include font-size(13);
+			vertical-align: top;
+
+			// to help with readability:
+			// use long annotation to keep "standard" padding
+			padding-top: 10px;
+			padding-bottom: 10px;
+
+			&:last-child{
+				padding-right: 0;
+			}
+
+			// could be multi 'button' or <buttons> in the last column
+			.actions {
+				@include flex(flex-start, flex-end);
+				padding:10px 0 5px 0;
+				button, a {
+					margin:0 2px;
+				}
+			}
+		}
+
+		// replace "clamp" css in v2
+		// line-clamp is not supported in Edge
+		// used for Referral notes and clinic info
+		.scroll-content {
+			@include font-size(11);
+			max-height: 100px;
+			overflow-y: auto;
+			overflow-wrap: break-word; // break up long words.
+		}
+
+		// clinic info is complicated <td>
+		// and the data isn't well wrapped
+		.clinic-info {
+			// table in specfic <td>
+
+			table {
+				margin: 10px 0 0 0;
+				width: 100%;
+
+				tr {
+					td, th {
+						padding: 5px 0;
+						@include font-size(11);
+						line-height: 1;
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+

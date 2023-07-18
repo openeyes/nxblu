@@ -1,0 +1,77 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-patient {
+
+	// Allergies and Risks has 3 states: 
+	// 1 allergy OR risk = 'risk-warning' (red)
+	// NO allergies and NO risks (confirmed) = 'no-risk' (green)
+	// No risk data collected = 'unknown' (text)
+
+	.patient-allergies-risks {
+		position: absolute;
+		bottom: 0;
+		right: 143px;
+		cursor: pointer;
+
+		// reduce this down to create a little more horizontal space
+		@include font-size(10);
+		color: #ddd;
+		font-weight: 500;
+
+		@include flex(center, center);
+		height: 28px;
+		padding: 0 23px 0 5px; // padding matches the data padding to align text
+
+		&:after {
+			content: "";
+			pointer-events: none;
+			position: absolute;
+			top: 0;
+			right: 4px;
+			bottom: 0;
+			width: 15px;
+			background: center / contain url(svg-white-icon("i/triangle")) no-repeat;
+			opacity: 0.5;
+		}
+
+		// default state is "unknown"
+		background: var(--btn-base);
+
+		&.risk-warning {
+			background: var(--color-burgundy);
+		}
+
+		&.no-risk {
+			background: var(--color-green);
+		}
+
+		// js controlled interaction...
+		&:is(.open, .active) {
+			background: var(--btn-blue-hint);
+		}
+
+		// txt and icon
+		&:is(.risk-warning, .no-risk, .open, .active) {
+			color: #fff;
+
+			&:after {
+				opacity: 1;
+			}
+		}
+
+		// lose the text when its tight
+		@include squeeze() {
+			text-indent: -9999px;
+			padding: 0;
+			width: 23px;
+		}
+
+	}
+
+
+}
+

@@ -1,0 +1,47 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+@use "openeyes/var" as *;
+
+.oe-sem-no-events {
+	grid-area: 2 / 1 / 4 / 3;
+	@include flex(center, center);
+	flex-direction: column;
+
+	background: var(--bg-data);
+	text-align: center;
+
+	// when the hotlist fixes open it's needs offsetting
+	// to maintain a centered position
+	@include fix-hotlist(){
+		// this doesn't need to be precise, but maintains a balanced layout when hotlist fixes open
+		padding-right: 28vw;
+	}
+
+	// nice bit of typography...
+	h3 {
+		@include font-size(32);
+		font-weight:100;
+		color: var(--txt-light);
+		padding:0 0 10px 0;
+	}
+
+	// fix width these to improve the layout
+	.sidebar-header,
+	.alert-box {
+		width:400px;
+	}
+
+	// uses same dom for "Add Event"
+	.sidebar-header {
+		margin-top:20px;
+		button {
+			width: 100%;
+			height: $oe-event-header-height;
+			@include font-size(18);
+			// needs an outline in light theme or it's a bit lost
+			border: 1px solid var(--gui-line);
+		}
+	}
+}

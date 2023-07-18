@@ -1,0 +1,17 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-event-quickview {
+	// JS drops a spinner in here
+	.quick-view-content {
+		position:relative;
+		// need a height setting to center the spinner
+		height: calc( 100vh - #{$oe-header-height + $oe-event-header-height}); 
+		// scrolls, user can now click to "lock" it open
+		overflow-y: auto;
+	}
+}
+

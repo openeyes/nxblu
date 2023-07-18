@@ -1,0 +1,34 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.ed2-no-doodle-elements {
+	margin:1px 0 1px 0;
+	
+	// ul
+	.no-doodles {
+		background: var(--ed3-panels);
+		li {
+			display:inline-flex;
+			align-items: center;
+			justify-content: space-between;
+			height:23px;
+			padding:0 3px 0 5px; 
+			margin:2px 2px 0 0;
+			color: var(--input-text);
+			background: var(--input-base);
+			
+			&.has-options {
+				cursor: pointer;
+				&:hover,
+				&:focus,
+				&:active,
+				&.selected {
+					background:var(--btn-blue);
+					color:var(--btn-text);
+				}
+			}
+		}
+	}
+}

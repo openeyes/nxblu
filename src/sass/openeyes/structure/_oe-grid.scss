@@ -1,0 +1,133 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-grid {
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+
+	// anything outside the grid should be hidden
+	overflow: hidden;
+
+	// General "basic" page structure: 3 rows
+	grid:
+		"header" #{$oe-header-height}
+		"pageheader" #{$oe-event-header-height}
+		"main" 1fr / 1fr;
+
+	// Big patient search banner
+	&.big-search {
+		grid:
+			"header" #{$oe-header-height}
+			"search" $oe-event-header-height * 2
+			"main" 1fr / 1fr;
+	}
+
+
+	// SEM pages (Overview/Events) require a different structure
+	// 3 rows, 2 columns:
+	&.sem {
+		grid:
+			"header header" #{$oe-header-height}
+			"addevent eventheader" #{$oe-event-header-height}
+			"sidebar main" 1fr / #{$oe-event-sidebar-width} 1fr;
+	}
+
+	// --------------------------------------- Restrict Widths
+
+	// 2 fix widths to better handle complex data layouts in SEM and lightning viewer
+	:is(.event-header, .oe-lightning-viewer, .main-event) {
+		width: 100%; // $oe-event-main-default-width;
+
+		// must allow space for the hotlist being fixed
+		@include fix-hotlist() {
+			width: $oe-event-main-extended-width; // 1240px (not including sidebar: 200px = 1440px )
+		}
+
+		// the 100px improves the screen balance between the content and the hotlist
+		@include super-wide() { // 2048px+
+			width: $oe-event-main-max;
+		}
+
+
+		@include below-minimum() {
+			// this is now below anything supported 
+			// now restrict the width
+			width: #{$oe-minimum-viewport-width - $oe-event-sidebar-width};
+		}
+	}
+
+	// full width header and content allows for the 
+	// hotlist panel which is fixed at large resolutions. 
+	// JS controls the fixing: fixed at 1800px;
+	:is(.oe-full-header, .oe-full-content, .oe-allow-for-fixing-hotlist) {
+		// "oe-allow-fixing-hotlist" - is probably now redundant
+		// however, it might be used somewhere in production! (this needs reviewing)
+		// -
+		// "oe-full" layouts by default will allow for the hotlist panel to fix
+		// in place (when there is enough width), however many layouts now need to use the full width
+		// and hotlist can not fix open. Adding "use-full-screen" will override the default
+		// behaviour and allow the content to use full width. JS will look for this
+		// class to see if can fix open the hotlist panel or not
+
+		&:not(.use-full-screen) {
+
+			@include fix-hotlist() {
+				width: $oe-extended-browser-size; // 1440px;
+			}
+
+			// stretch to fill on super wide displays
+			// works for most standard page layouts
+			@include super-wide() { // 2048px+
+				width: 69vw;
+			}
+		}
+	}
+
+	// Home & Whiteboard
+	// Content covers: "pageheader" & "main"
+	:is(.oe-home, .oe-whiteboard) {
+		grid-area: 2 / 1 / 4 / 3;
+		overflow-y: auto;
+	}
+
+	// Event Header (View, Edit, Print, Save, etc)
+	.event-header {
+		z-index: 1;
+		height: $oe-event-header-height;
+		// CSS3
+		grid-area: eventheader;
+	}
+
+	.main-event {
+		// CSS3
+		grid-area: main;
+		overflow-y: auto;
+	}
+
+	// Lightening Viewer
+	// replaces event-header & main-event area
+	.oe-lightning-viewer {
+		grid-area: 2 / 2 / 4 / 3; // can't use the areas (areas are setup for SEM layout)
+		overflow-y: auto;
+	}
+
+
+	// --------------------------------------- OE Full width (allows for activity panel to be fixed)
+	// --------------------------------------- + OEscape, Analytics
+	// OE Full Width, OEscape, Analytics
+	// full width header
+	:is(.oescape-header, .analytics-header) {
+		grid-area: 2 / 1 / 3 / 3;
+	}
+
+	// & full width content area
+	:is(.oescape, .oe-analytics) {
+		grid-area: 3 / 1 / 4 / 3;
+		overflow-y: auto;
+	}
+
+}

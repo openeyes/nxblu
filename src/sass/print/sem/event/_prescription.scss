@@ -1,0 +1,138 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// OE PRINT - Prescription Event
+
+.print-form-div {
+	padding: 0 0 0 0;
+	page-break-after: always;
+	font-size: 10pt;
+}
+
+
+.from-address {
+	float: right;
+	width: 300px;
+	text-align: right;
+	font-size: 6pt;
+	padding-bottom: 10px;
+}
+
+.watermark {
+	position: relative;
+
+	img {
+		position: absolute;
+		z-index: -1;
+		top: 120px;
+		left: 60px;
+	}
+}
+
+.banner {
+	position: relative;
+	max-height: 100px;
+	margin-bottom: 20px;
+
+	.letter-seal {
+		width: 50% !important;
+		display: inline-block;
+
+		img {
+			width: 80px !important;
+		}
+	}
+
+	.letter-logo {
+		float: right;
+	}
+
+	.ophdrprescription-letter-logo {
+		width: 49%;
+		display: inline-block;
+
+		img {
+			width: 350px;
+		}
+
+	}
+}
+
+.prescription_header {
+	th {
+		width: 20%;
+	}
+
+	td {
+		width: 30%;
+	}
+}
+
+tr.handWritten td {
+	height: 30px;
+}
+
+.done_bys {
+	th {
+		width: 22%;
+	}
+
+	td {
+		width: 28%;
+	}
+}
+
+
+.prescription_header .prescription_items td,
+.prescription_items th {
+	width: 12%;
+}
+
+.prescription_items {
+	.prescriptionLabel {
+		width: 28%;
+	}
+
+	.prescriptionTaper {
+
+		td {
+			border-top: none;
+
+			&.prescriptionLabel {
+				text-align: left;
+				padding-left: 5px !important;
+				font-weight: 500;
+				font-style: italic;
+
+				&:before {
+					content: "\2026 ";
+				}
+			}
+		}
+	}
+
+	.prescriptionComments {
+		td {
+			border-top: none;
+			font-weight: 500;
+			font-style: italic;
+
+			&.prescriptionLabel {
+				text-align: right;
+				padding-right: 5px !important;
+			}
+		}
+	}
+}
+
+.pharmacy_checkboxes {
+	th {
+		width: 30%;
+	}
+
+	td {
+		width: 20%;
+	}
+}
+

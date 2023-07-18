@@ -1,0 +1,26 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "../../mix" as *;
+
+// Viewing a removed Event is clinically un-safe
+// watermark must be add to make it clear what is going on
+.removed-record-watermark {
+	position: fixed; 
+	z-index: 10;
+	top: 50%;
+	left: 50%;
+	
+	font-size: 6vh;
+	font-weight: 700;
+	color: #f00;
+	padding:1vh 1vw;
+	border:15px solid #f00;
+	opacity:0.5;
+	
+	transform: translateX(-50%);
+	
+	@include fix-hotlist(){
+		left: 33%;
+	}	
+}

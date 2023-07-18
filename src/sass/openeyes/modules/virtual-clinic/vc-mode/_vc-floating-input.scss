@@ -1,0 +1,34 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// OE VC floating inputs 
+// ScatchPad
+
+.vc-floating-input {
+	z-index: $oe-z-top;
+	position:fixed;
+	// default start position
+	top:$oe-header-height + 15px;
+	left: $oe-event-sidebar-width + 50px;
+	width:300px;
+	padding:8px 0 8px 0; // allow for scrolling
+
+	// add SVG icon to show that it is draggable:
+	border: 2px solid var(--gui-vc);
+	border-radius: 12px;
+	background:top 6px right 6px / 21px url( svg-fixed('ui/vc-move') ) var(--bg-vc)  no-repeat;
+	
+	@include boxshadow();
+
+	// "ScratchPad"
+	.title {
+		@include font-size(13);
+		font-weight:var(--font-light);
+		padding:0 0 10px 10px;
+	}
+}
+
+

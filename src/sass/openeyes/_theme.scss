@@ -1,0 +1,406 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// defaults groups for "dark" theme settings
+// "Dark": interaction is subtle
+// "Light": interaction is more obvious, with more contrast
+
+// ---- Backgrounds
+$bg: (
+	"max": #000,
+	"html": #191e24,
+	"popup":#181c21,
+	"hover-row": #191c1f,
+	"data": rgb(23, 25, 28),
+	"title": #212830,
+	"event": #26292b,
+	"event-list":#1e2933,
+	"vc": #150b1e,
+	"invert":#adafb2
+);
+
+$bg-light: (
+	"max": #fff,
+	"html": #dad8d8,
+	"popup": #e2e1e1,
+	"hover-row": #e6e6e6,
+	"data": rgb(240, 239, 239),
+	"title": #c9c8c8,
+	"event": #fbfafa,
+	"event-list": #f0f0f0,
+	"vc": #ebe0e6,
+	"invert": #656464,
+);
+
+// ---- Text
+$txt: (
+	"base": #cccccc,
+	"light": #969696,
+	"hd": #5a8291,
+	"active": #46a0b4,
+	"highlight": #00c8cd,
+	"invert": #0d0d0d
+);
+
+$txt-light: (
+	"base": #0a0a0a,
+	"light": #5a5a64,
+	"hd": #2846c8,
+	"active": #2346c8,
+	"highlight": #2846fa,
+	"invert": #f0f0f0
+);
+
+// ---- Font weights (because white on dark bleeds and looks thicker)
+$font-weight: (
+	"thin": 100,
+	"light": 300,
+	"medium": 400,
+	"bold": 500
+);
+
+$font-weight-light: (
+	"thin": 300,
+	"light": 400,
+	"medium": 500,
+	"bold": 700
+);
+
+// ---- GUI
+$gui: (
+	"spinner": #00ffff,
+	"vc": #008ec9,
+	"line": #303436,
+	"line-hard": #3c4144,
+	"line-soft": #262c36,
+	"scroll-track":#0a0a0f,
+	"scroll-thumb":#37373c,
+);
+
+$gui-light: (
+	"spinner": #001191,
+	"vc": #0059ff,
+	"line": #c1bebe,
+	"line-hard": #827d7d,
+	"line-soft": #a6acac,
+	"scroll-track":#5f5f64,
+	"scroll-thumb":#aaaaaa,
+);
+
+// ---- Buttons
+// "Dark" - interaction is subtle
+$btn: (
+	"base": #1e2933,
+	"base-light": #1c2d40, // a 'light' (or subtle) version (can be used with default text colour)
+	"text":#bbb,
+	"text-active":#ddd,
+	"blue-hint": #0e4886,
+	"blue": #093386,
+	"blue-active": #1139b0,
+	"green-hint": #1a4f1b,
+	"green": #0a6b11,
+	"green-active": #171,
+	"red-hint": #721d1d,
+	"red": #8c0909,
+	"red-active": #911,
+	"disabled": #23292f,
+	"icon-hover-filter": none,
+	"icon-opacity": 0.6,
+);
+
+// "Light" - interaction is more obvious, with more contrast
+$btn-light: (
+	"base":#7c8c9c,
+	"base-light": #e2ebfd, // v5 button color (can be used with default text colour)
+	"text":#fff,
+	"text-active":#fff,
+	"blue-hint": #4285e0,
+	"blue": #2381e7,
+	"blue-active": #0c62bd,
+	"green-hint": #0c7915,
+	"green": #191,
+	"green-active": #1a1,
+	"red-hint": #a50d0d,
+	"red": #c20a0a,
+	"red-active": #e60000,
+	"disabled": #acb2b9,
+	"icon-hover-filter": invert(100%) grayscale(100%),
+	"icon-opacity": 0.8,
+);
+
+// ---- Inputs
+$input: (
+	"scheme": "dark",
+	"focus-outline": #096c9a,
+	"base": #24303d,
+	"hint": rgba(36, 49, 61, 0.3),
+	"text": #ccc,
+	"placeholder": #787878,
+);
+
+$input-light: (
+	"scheme": "light",
+	"focus-outline": #0701e0,
+	"base": #fff,
+	"hint": rgba(255, 255, 255, 0.5),
+	"text": #222,
+	"placeholder": #959595,
+);
+
+// ---- Colors (alerts, flags, pathsteps, wait, etc)
+$color: (
+	"highlighter": #b8ab88,
+	"green": #056105,
+	"red": #890606,
+	"burgundy": #551507,
+	"orange": #955104,
+	"yellow": #c8b432,
+	"grey": #4b4141,
+	"hint-green": #304034, // hint colours work with standard theme text
+	"hint-red": #570f0f,
+	"hint-orange": #603b0b,
+);
+
+$color-light: (
+	"highlighter": #ebd37b,
+	"green": #009b00,
+	"red": #e10505,
+	"burgundy": #731e0d,
+	"orange": #ce6e09,
+	"yellow": #d2aa14,
+	"grey": #918282,
+	"hint-green": #afd0af,
+	"hint-red": #f38686,
+	"hint-orange": #e7b492,
+);
+
+// ---- Path Steps
+$step: (
+	"blue": #1464c8,
+	"green": #323532, // was green": rgb(45,70,45
+	"orange": #a03200,
+	"yellow": #a28c0a,
+	"red": #a0280a,
+	"grey": #1e1e20,
+	"text": #f0f0f0,
+	"outline": rgba(170, 170, 170, 0.4),
+);
+
+$step-light: (
+	"blue": #1464c8,
+	"green": #8c938c,
+	"orange": #b45000,
+	"yellow": #b6a011,
+	"red": #c8280a,
+	"grey": #ebebeb,
+	"text": #f5f5f5,
+	"outline": rgba(120, 120, 130, 0.4),
+);
+
+// ---- EyeDraw (v3 & v2.5) colours
+$ed3: (
+	"blue": #dae6f1, // note": used in Elements too!
+	"panels": #a6adb4,
+	"text": #32323c,
+	"btn": #118afb,
+	"icon-area": #bdcdde,
+	"doo-bg": #ccc,
+);
+
+$ed3-light: (
+	"blue": #dae6f1,
+	"panels": #dce6f0,
+	"text": #32323c,
+	"btn": #118afb,
+	"icon-area": #bdcdde,
+	"doo-bg": #ccc,
+);
+
+
+// ---- SVG icons
+
+$themedIcons: (
+	"accessibility",
+	"add", "add-blue",
+	"arrow-down-bold", "arrow-down-bold-blue", "arrow-down", "arrow-left-bold", "arrow-right-bold", "arrow-up-bold", "arrow-up",
+	"asterisk", "asterisk-blue", "asterisk-red",
+	"assist",
+	"audit-trail",
+	"beo",
+	"cancel",
+	"change",
+	"child-arrow", "parent-arrow",
+	"cog",
+	"collapse", "expand",
+	"comments", "comments-added", "comments-who", "comments-clear",
+	"copy-forward", "copy-over",
+	"cross-red",
+	"crying", "happy",
+	"direction-down", "direction-left", "direction-right", "direction-up",
+	"direction-down-circle", "direction-left-circle", "direction-right-circle", "direction-up-circle",
+	"direction-horizontal", "range", "interval",
+	"downup",
+	"doubt", "doubt-active",
+	"download",
+	"draft", "draft-orange", "draft-green",
+	"drop", "drop-done",
+	"drug-rx",
+	"duplicate",
+	"edit", "edit-blue",
+	"exclamation",
+	"eye", "eye-circle",
+	"filter",
+	"flag", "flagline",
+	"flux",
+	"fork", "merge",
+	"formulary",
+	"increase-height", "reduce-height", "increase-height-orange",
+	"info", "info-blue",
+	"injection",
+	"lat-L", "lat-L-inactive", "lat-L-query", "lat-L-red",
+	"lat-R", "lat-R-green", "lat-R-inactive", "lat-R-query",
+	"lat-NA",
+	"letter-1", "letter-2", "letter-GP", "letter-invitation",
+	"line-break", "double-slash",
+	"menu",
+	"minus", "minus-bold",
+	"more-v", "more-h", "more-h-orange",
+	"move",
+	"mpr",
+	"no-permissions",
+	"padlock",
+	"path-break",
+	"patient",
+	"pause",
+	"pencil", "pencil-blue",
+	"person", "person-green", "person-inactive", "person-query", "person-split",
+	"plus", "plus-bold", "plus-circle",
+	"print",
+	"remove", "remove-circle",
+	"reset",
+	"rotate-left", "rotate-right",
+	"save", "save-blue", "save-team",
+	"search",
+	"star", "starline", "star-blue",
+	"start", "stop", "finish",
+	"status-query-reply", "status-query", "status-urgent",
+	"sync",
+	"tick", "tick-green", "tick-double", "tick-chunky", "tick-circle",
+	"time",
+	"top",
+	"trash", "trash-blue",
+	"trials",
+	"team",
+	"triangle",
+	"undo",
+	"urgent",
+	"vc",
+	"waiting",
+	"warning", "warning-standard", "warning-none",
+	"whiteboard",
+	"zoom-in", "zoom-out" );
+
+// red, orange green flavours of icons
+$rogIcons: (
+	"a11ty-green", "a11ty-orange", "a11ty-red",
+	"circle-blue", "circle-green", "circle-yellow", "circle-orange", "circle-red", "circle-grey",
+	"exclamation-green", "exclamation-orange", "exclamation-red",
+	"flag-green", "flag-orange", "flag-red", "flag-grey",
+	"mpr-green", "mpr-orange", "mpr-red",
+	"time-green", "time-orange", "time-red",
+	"triangle-blue", "triangle-green", "triangle-orange", "triangle-red", "triangle-grey"
+);
+
+
+// not available via <i>, only for internal CSS usage (backgrounds)
+$uiThemedIcons: ("face", "elem-rl-vertical", "event-elements", "btn-goto", "tab-more-h", "tab-whiteboard", "tab-print", "tab-trash", "watermark-patient",
+"nystagmus-arrow-h-1", "nystagmus-arrow-h-2", "nystagmus-arrow-h-3");
+
+// universal icons
+$uiIcons: ("asterisk-white", "filter", "list-dot", "arrow-right-blue", "no-permissions-white",
+"search-white", "search", "shortcut-arrow", "sidebar-audit-trail", "sidebar-switcher-elements", "sidebar-switcher-events",
+"sidebar", "type-linebreak", "type-paragraph", "vc-move", "watermark-clinic");
+
+// eyedraw specific icons
+$edIcons: ("ed-backward", "ed-forward", "ed-info", "ed-lock", "ed-trash", "ed-zoom");
+
+// *********************
+// CSS custom properties
+:root {
+
+	@each $icon in $uiIcons {
+		--i-ui-#{$icon}: url("../svg/v6/all/ui/#{$icon}.svg");
+	}
+
+	@each $icon in $edIcons {
+		--i-ed3-#{$icon}: url("../svg/v6/all/eyedraw/#{$icon}.svg");
+	}
+}
+
+// CSS Vars (Custom selectors) for theme colours.
+// set <HTML> class to theme
+// e.g. class="theme-light" or "theme-dark"
+@mixin cssVars( $group, $map ) {
+	@each $type, $prop in $map {
+		--#{$group}-#{$type}: #{$prop};
+	}
+}
+
+// *********************
+// "dark": requires "theme-dark" class on <HTML>
+html.theme-dark {
+
+	@each $icon in $themedIcons {
+		--i-#{$icon}: url("../svg/v6/dark/i/#{$icon}.svg");
+	}
+
+	@each $icon in $rogIcons {
+		--i-#{$icon}: url("../svg/v6/dark/i/#{$icon}.svg");
+	}
+
+	@each $icon in $uiThemedIcons {
+		--i-#{$icon}: url("../svg/v6/dark/ui/#{$icon}.svg");
+	}
+
+	@include cssVars("bg", $bg);
+	@include cssVars("txt", $txt);
+	@include cssVars("font", $font-weight);
+	@include cssVars("gui", $gui);
+	@include cssVars("btn", $btn);
+	@include cssVars("color", $color);
+	@include cssVars("input", $input);
+	@include cssVars("step", $step);
+	@include cssVars("ed3", $ed3);
+}
+
+
+// *********************
+// "light": requires "theme-light" class on <HTML>
+html.theme-light {
+
+	@each $icon in $themedIcons {
+		--i-#{$icon}: url("../svg/v6/light/i/#{$icon}.svg");
+	}
+
+	@each $icon in $rogIcons {
+		--i-#{$icon}: url("../svg/v6/light/i/#{$icon}.svg");
+	}
+
+	@each $icon in $uiThemedIcons {
+		--i-#{$icon}: url("../svg/v6/light/ui/#{$icon}.svg");
+	}
+
+	@include cssVars("bg", $bg-light);
+	@include cssVars("txt", $txt-light);
+	@include cssVars("font", $font-weight-light);
+	@include cssVars("gui", $gui-light);
+	@include cssVars("btn", $btn-light);
+	@include cssVars("color", $color-light);
+	@include cssVars("input", $input-light);
+	@include cssVars("step", $step-light);
+	@include cssVars("ed3", $ed3-light);
+
+
+}
+
+

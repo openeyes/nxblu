@@ -1,0 +1,36 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+@use "base" as *;
+
+.oe-add-select-search {
+		
+	// input-text
+	// is a simpler stucture: 
+	// <div> with <input> and or <textarea> with 
+	.input-text {
+		margin:0 3px 0 0;
+		overflow-wrap: break-word;
+		font-style: italic;
+		
+		// standard width settings for columns
+		width:$oe-ass-restricted-width;
+		&.extended {
+			width:$oe-ass-restricted-width-extended;
+		}
+		
+		input, 
+		textarea {
+			width:100%;
+			margin:0 0 5px 0;
+		}
+		
+		.help-text {
+			@include font-size(10);
+			opacity:0.6;
+		}
+	}
+}
+
+

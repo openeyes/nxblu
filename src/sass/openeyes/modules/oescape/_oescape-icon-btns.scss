@@ -1,0 +1,80 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// OEscape Type-icons - 2 letter blocks (i.e. GL for Glaucoma)
+// Maximum: 4 per User + Lightning + Overview
+// used in V1 and V2 OESscape layouts and in Event sidebar
+// <ul>
+.oescape-icon-btns {
+	@include flex(center, space-between);
+
+	// OEScape and Analytics header
+	.oe-full-header & {
+		margin: 0 10px;
+	}
+
+	// <li>
+	.icon-btn {
+		display: block;
+		flex: 1 1 0;
+
+		// OEScape and Analytics header
+		.oe-full-header & {
+			margin-bottom: 0;
+		}
+
+		a {
+			@include flex(center, center);
+			height: 31px; // was 28px
+			width: 100%;
+
+			// OEScape and Analytics header
+			.oe-full-header & {
+				height: $oe-event-header-height;
+				width: $oe-event-header-height;
+				@include font-size(15);
+			}
+
+			@include font-size(14);
+			font-weight: var(--font-medium);
+			color: var(--txt-light);
+			background: var(--bg-popup);
+
+			// lightning viewer icon added to oescape group
+			// Patient Overview icons added too.
+			&:is(.lightning-viewer-icon, .patient-overview-icon) {
+				svg {
+					display: block;
+					fill: var(--txt-light);
+					width: 16px;
+					height: 16px;
+				}
+			}
+
+			// inactive means that the patient doesn't
+			// have any active episode under that sub-speciality
+			// "inactive" was a misnomer on my part, it still links
+			// through to an OEscape/Summary page
+			&.inactive {
+				font-weight: var(--font-light);
+			}
+
+			&:is(:hover,:focus,.selected) {
+				color: var(--btn-text-active);
+				background: var(--btn-blue);
+
+				svg {
+					fill: var(--btn-text-active);
+				}
+			}
+
+			&:active {
+				color: var(--btn-text-active);
+				background: var(--btn-blue-active);
+			}
+		}
+	}
+}

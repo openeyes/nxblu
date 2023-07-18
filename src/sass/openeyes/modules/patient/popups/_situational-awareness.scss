@@ -1,0 +1,35 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// OE Popup - Situational Awareness
+// can be used in any patient popup box
+
+.oe-patient-popup {
+	
+	.situational-awareness {
+		@include font-size(13);
+		padding:0 0 10px 0;	
+		
+		.group {
+			border-right:1px solid var(--gui-line);
+			padding:0 10px 0 0;
+			margin:0 15px 0 0;
+			
+			.label {
+				opacity:0.7;
+				margin-right: 3px;
+			}
+			
+			.data {
+				font-weight:500;
+				margin:0 8px 0 0 ;
+				&:last-child {
+					margin:0 0 0 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,109 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "var" as *;
+@use 'sass:math';
+
+// Create REM font-sizes. based on 16px base font-size
+// @access public
+// @param {sizePixel} $sizePixel - size as px
+@mixin font-size($sizePixel) {
+  $rem: math.div($sizePixel, 16);
+  font-size: #{$rem}rem;
+}
+
+// Specific widths
+// OE needs to work on Galaxy Tabs and iPad (Pro)
+// HTML viewport scaling gives us: 1200 (600) and 768 (1536)
+// note: Although, it fits fine on iPad, it will be half sized
+// therefore, handheld modifications need to be below 1600 
+// BUT only if it's in portrait.
+@mixin handheld() {
+	@media only screen 
+		and (min-width: $oe-minimum-viewport-width)
+		and (orientation: portrait){
+		@content;
+	}	
+}
+
+// Stretching width
+// There is a layout "grey" area between 1280px and 1200px 
+// some elements in this size need to be flexible 
+@mixin stretching(){
+	@media only screen 
+		and (min-width: $oe-minimum-viewport-width - 1px)
+		and (max-width: #{$oe-event-main-default-width + $oe-event-sidebar-width} ){
+		@content;
+	}
+}
+
+// Squeeze (special elements)
+// Elements that have to be squeezed to make the UI work below 1265px.
+// (1280px is actually 1265px, allowing for old skool scroll bars)
+@mixin squeeze(){
+	@media only screen 
+		and (max-width: 1265px ){
+		@content;
+	}
+}
+
+// Extended width 
+@mixin extended(){
+	@media only screen 
+		and (min-width: $oe-extended-browser-size){
+		@content;
+	}
+}
+
+// Flag a minimum width issue on any device
+@mixin below-minimum(){
+	@media only screen 
+		and (max-width: #{$oe-minimum-viewport-width - 1px}){
+		@content;
+	}
+}
+
+// Fix hotlist
+@mixin fix-hotlist(){
+	@media only screen
+		and (min-width: $oe-js-browser-fix-size){
+		@content;	
+	}
+}
+
+// Super Wide!
+@mixin super-wide(){
+	@media only screen
+		and (min-width: $oe-super-wide-display){
+		@content;	
+	}
+}
+
+// Media queries
+// Generic media query for minimum width
+@mixin media($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+// ------------------------------ Helpers
+
+// flex - vertical | horizontal
+@mixin flex($v,$h){
+	display:flex;
+	justify-content: $h;
+	align-items: $v;	
+}
+
+@mixin inline-flex($v,$h){
+	display:inline-flex;
+	justify-content: $h;
+	align-items: $v;	
+}
+
+// standardise box-shadows for popups
+@mixin boxshadow(){
+	// offset-x | offset-y | blur-radius | spread-radius | color
+	box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.4);
+}

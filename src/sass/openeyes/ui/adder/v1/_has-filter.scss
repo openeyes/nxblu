@@ -1,0 +1,22 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-add-select-search {	
+	// if the list has a filter input search input:
+	.has-input-text,
+	.has-filter {
+		
+		input {
+			margin:0 2px 4px 0;
+		}
+		
+		.add-options {
+			max-height:$oe-add-insert-popup-height - 10px;	// limit the displayed results - input 
+		}
+	}
+}
+
+

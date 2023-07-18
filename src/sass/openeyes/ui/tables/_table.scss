@@ -1,0 +1,24 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// The most common use of <table> is in SEM Elements
+// Therefore, the starting point for styling is with
+// tables as used in SEM Elements (default DOM)
+
+table {
+	// all tables must fill there container
+	// width control is via a <div> wrapper
+	width: 100%;
+
+	// Although using 'table-layout:fixed' optimises the speed
+	// at which the browser can layout tabular data it messes up the current
+	// approach to layouts which makes use of the flexibility of not specifying some columns
+	// table-layout: fixed; -- if using all <colgroup> approaches will need reviewing!! (prob. need 24 column grid!)
+
+	// provide vertical spacing around table by default
+	// unless 'no-pad' is requested
+	&.standard:not(.no-pad) {
+		margin:20px 0 10px 0;
+	}
+
+}

@@ -1,0 +1,19 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// UI flag for copy to clipboard
+
+.oe-tooltip {
+	&.copied {
+		background-color: var(--btn-green);
+		color:#fff;
+		text-align: center;
+	}
+
+	// flag and then fade out
+	// JS cleans up the DOM
+	&.fade-out {
+		display:block;
+		animation: 2s ease-in forwards fadeout;
+	}
+}

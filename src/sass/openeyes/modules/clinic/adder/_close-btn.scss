@@ -1,0 +1,16 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+.oec-adder {
+	.close-btn {
+		position: absolute;
+		top:0;
+		bottom:0;
+		left: -30px;
+		width: 30px; 
+		background: center / 13px url( svg-white-icon('i/remove-circle')) var(--btn-blue-hint) no-repeat;
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,63 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-pathstep-popup {
+	
+	.step-actions {
+		pointer-events: all; // JS needs this
+		@include flex( center, center );
+		padding:5px 0 0 0;	
+		
+		button { 
+			flex:1 0 0; 
+			margin:0 0 0 1px;
+			&:first-child {
+				margin-left:0;
+			}
+			
+			&.i-btn {
+				position:relative;
+				flex: none;
+				width: 60px; 
+				height: 24px;
+				
+				&::after {
+					content: "";
+					position: absolute;
+					top:0;
+					left:0; 
+					right:0;
+					bottom:0;
+					background: transparent center center no-repeat;
+					background-size: 15px;
+					opacity:0.8;
+				}
+				
+				&.trash {
+					&::after {
+						background-image: url( svg-white-icon('i/trash'));
+						background-size: 19px;
+					}
+				}
+				
+				&.right {
+					&::after {
+						background-image: url( svg-white-icon('i/direction-right-circle'));
+					}
+				}
+				
+				&.left {
+					&::after {
+						background-image: url( svg-white-icon('i/direction-left-circle'));
+					}
+				}
+			}
+			
+		}
+	}
+	
+}
+

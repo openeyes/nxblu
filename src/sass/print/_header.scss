@@ -1,0 +1,18 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// OE Header
+// <header> 
+// - div.seal (letterhead seal, not sure why we have this but it's above the logo area)
+// - logo (trust logo and NHS logo) 
+.print-header {
+	margin: 0 0 20px 0;
+	
+	// so far only has a logo
+	// logo img is in this wrapper
+	.logo {
+		text-align: right;
+	}
+	
+}

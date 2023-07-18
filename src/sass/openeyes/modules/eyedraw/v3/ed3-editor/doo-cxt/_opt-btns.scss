@@ -1,0 +1,47 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.doo-cxt {
+
+	.opt-btns {
+		@include flex(stretch, space-between);
+		background-color: #e4eef7;
+		margin: 4px 0 0 0;
+
+		.btn {
+			flex: 1 1 0;
+			@include flex(center, center);
+
+			text-align: center;
+			@include font-size(10);
+			font-weight: 500;
+			background: center/15px no-repeat;
+			height: 24px;
+
+			.oe-i {
+				width: 27px;
+				height: 100%;
+				background-size: 15px;
+
+				&.ed-trash {
+					border-radius: 3px;
+					background-size: 19px;
+
+					&:hover,
+					&:focus {
+						background-color: red;
+						background-image: url(svg-white-icon("i/trash"));
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+
+

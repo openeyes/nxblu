@@ -1,0 +1,35 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+.element {
+
+	// These are now depreciated, but are still in use in the DOM
+	// look to use "row" or "hr.divider"
+
+	// note: CSS :first-child applies to the <DOM> not the use of 'class'
+	// i.e <div> ... <div class="data-group"> (second <div> does is NOT 'first-child')
+	.data-group {
+		padding-top: 12px;
+
+		&:first-child {
+			padding-top: 0;
+		}
+	}
+
+	// Comments require the same spacing as data-group
+	// but because of the DOM structure, can not use this class
+	// (:first-child) so...
+	.comment-row,
+	.comment-group {
+		padding-top: 12px;
+	}
+
+	// comments looked weird as right-aligned in tables
+	// added a wrapper to sort this
+	.comments-block {
+		text-align: left;
+		overflow-wrap: break-word;
+	}
+
+}
+

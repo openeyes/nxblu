@@ -1,0 +1,24 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+.clinic-filters {
+	// buttons in the filters than open popups
+	
+	.changeable-filter {
+		position: relative;
+		nav.options {
+			position: absolute;
+			top: $oe-event-header-height;
+			z-index:10;
+			
+			.filter-btn {
+				width: 160px; 
+				justify-content: flex-end;
+			}
+			
+		}
+	}
+	
+}

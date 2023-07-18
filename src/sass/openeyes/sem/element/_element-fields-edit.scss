@@ -1,0 +1,33 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+.element {
+
+	// EDIT !
+	// .element-fields is only used in EDIT mode
+	// (view uses 'element-data')
+	.element-fields {
+
+		// full-width (not split into R / L sides)
+		// or element-eyes (split) data must aligned to the right
+		&.full-width,
+		&.element-eyes {
+			padding: 0 10px 0 5px; // allow for "remove" side icon
+		}
+
+		&.element-ed3 {
+			margin-top: 15px;
+		}
+
+		.data-label {
+			color: var(--txt-light);
+		}
+
+		.add-data-actions {
+			margin: 10px 0 0 0; // must match add-user-comments padding
+			text-align: right; // think it's OK to do this?
+		}
+
+	}
+}
+

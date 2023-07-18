@@ -1,0 +1,27 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// OE VC mode
+// Not Themed!!
+// used in Hotlist
+
+.oe-vc-mode {
+	background-color: var(--bg-vc);
+	
+	// some data is also pulled into Elements
+	// e.g. Follow up, where it's wrapped with this class
+	// but needs a bit mode help
+	&.in-element {
+		padding:8px 4px;
+		border-radius: 3px;
+		
+		border:1px solid var(--gui-vc);
+		
+		// when used in Follow Up Element tile:
+		.tile & {
+			padding:3px 6px
+		}
+	}
+	
+}

@@ -1,0 +1,105 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// Path path step btn
+// Used in Worklists, Clinic list, etc
+// e.g. PSDs
+// status: config, todo, todo-later, active, done
+// type: person, process
+
+// <span>
+.oe-pathstep-btn {
+	color: var(--txt-base);
+
+	// flag any in-correct CSS classes! ;)  
+	background: pink; 
+	
+	// all steps have a border for consistent layout	
+	border:2px solid transparent;
+
+	// icon: person
+	&.person {
+		.step {
+			padding-left:13px;
+			background: center left / 11px var(--i-person) no-repeat;
+		}
+	}
+	// icon: config
+	&.config {
+		background: left 3px top 3px / 11px var(--i-cog)  no-repeat;
+		padding-left: 16px;
+	}
+	// icon: flag comments
+	&.has-comments {
+		background: right 3px top 3px / 11px var(--i-comments-added) no-repeat;
+		padding-right: 16px;
+	}
+	
+	// todo or todo-next
+	// conceptually the same but "next" is a different colour
+	&.todo {
+		background-color: var(--step-grey);
+		border-color: var(--step-outline);
+	}
+	&.todo-next {
+		background: var(--step-grey);
+		border-color:  var(--step-orange);
+	}
+	
+	&.config,
+	&.todo-later,
+	&.todo {
+		&:hover, 
+		&:focus {
+			border-color: var(--txt-base)-light;
+		}
+	}
+
+	// --- Solid steps
+	// active then done
+	&.active,
+	&.done { 
+		color: var(--step-text);
+		&:hover, 
+		&:focus {
+			border-color: rgba(200,200,200,0.3);
+		}
+		
+		// person icon, needs to be white
+		&.person {
+			.step {
+				background-image: url( svg-white-icon('i/person'));
+			}
+		}
+
+		&.config {
+			background-image: url( svg-white-icon('i/cog'));
+		}
+
+		&.has-comments {
+			background-image: url( svg-white-icon('i/comments-added'));
+		}
+	}
+	
+	&.active {
+		background-color: var(--step-blue);
+	}
+	
+	&.done {
+		background-color: var(--step-green);
+	}
+	
+	// locked! another user is using this step
+	&.locked {
+		background-color: transparent;
+		border-style: dotted;
+		border-color: var(--step-outline);
+		.step {
+			opacity:0.5; // use opacity because of the icons
+		}
+	}
+}
+

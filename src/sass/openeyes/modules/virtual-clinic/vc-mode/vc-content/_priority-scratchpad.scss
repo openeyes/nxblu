@@ -1,0 +1,22 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+// OE VC content
+
+.vc-content {
+
+	// button to show / hide scratchpad
+	.scratchpad {
+		position: absolute;
+		top: 5px;
+		right: 5px
+	}
+
+	// HIGH / MEDIUM / LOW
+	.priority {
+		position: absolute;
+		top: 8px;
+		left: 8px
+	}
+}

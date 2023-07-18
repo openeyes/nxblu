@@ -1,0 +1,33 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+// Adder popup only!
+button.adder {
+	contain: strict;
+	width: 34px;
+	padding: 0;
+	background: var(--btn-green-hint);
+
+	// smaller width, required in tight spaces
+	&.square {
+		width: $oe-input-height;
+	}
+
+	&::after {
+		content: "";
+		pointer-events: none;
+		height: 100%;
+		width: 100%;
+		background: center / 20px url(svg-white-icon("i/plus")) no-repeat;
+		opacity: 0.8;
+	}
+
+	&:is(:hover, :focus){
+		background: var(--btn-green);
+		&::after {
+			opacity: 1;
+		}
+	}
+}

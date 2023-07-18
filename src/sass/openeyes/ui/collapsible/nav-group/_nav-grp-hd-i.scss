@@ -1,0 +1,81 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// nav-group
+.nav-grp-hd-i {
+	position: relative;
+	@include font-size(12);
+	color: var(--txt-light);
+	font-weight: var(--font-medium);
+	padding: 10px 25px 8px 0; // allow for icon background
+	cursor: pointer;
+
+	// Event & Element structure sidebar tweaks
+	.sidebar & {
+		font-weight: var(--font-light);
+		padding-left:5px;
+	}
+
+	// as User regularly interact with this turn off selection
+	user-select: none;
+
+	// JS, only hook into events on the <div>
+	* {
+		pointer-events: none;
+	}
+
+	// no background-opacity in CSS ...
+	// using collapse-data approach
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0; // fill vertical area
+		right: 5px; // visual alignment tweak
+		width: 15px; // allow for bigger icons (if needed)
+
+		// put the expand collapse icon into the background
+		background: right center / 15px var(--i-plus-bold) no-repeat;
+		// mimic oe-i
+		opacity: $oe-icon-opacity;
+
+		// visual icon tweak
+		.oe-hotlist-panel &,
+		.sidebar & {
+			background-image: var(--i-plus);
+		}
+	}
+
+	// '.expand' is the default icon state, as content should be hidden
+	// no need to explicitly state the 'expand class', JS will add this.
+	&.collapse {
+		&::after {
+			background-image: var(--i-arrow-up-bold);
+
+			.oe-hotlist-panel &,
+			.sidebar & {
+				background-image: var(--i-arrow-up);
+			}
+		}
+	}
+
+	// show user interaction
+	&:hover,
+	&:active {
+		color: var(--txt-highlight);
+
+		// when used in hotlist with ".overview"
+		// need to trump the specificity set there
+		h3 {
+			color: var(--txt-highlight) !important;
+		}
+
+		&::after {
+			// icon
+			opacity: 1;
+		}
+	}
+}

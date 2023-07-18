@@ -1,0 +1,20 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+.esign-check {
+	// expected signature image ratio: 3:1
+	display: inline-block;
+	height: 24px; // match button height
+	width: 72px; // 3:1
+	background: center / contain no-repeat white;
+	border: 2px solid white;
+	border-radius: 3px;
+
+	// JS will show a full size view
+	cursor: pointer;
+
+	&:focus,
+	&:hover {
+		border-color: rgba(10, 100, 10, 0.7);
+	}
+}

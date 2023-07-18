@@ -1,0 +1,35 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+.sidebar {
+	grid-area: sidebar;
+	width: $oe-event-sidebar-width;
+	overflow-y: auto;
+	background:var(--bg-html);
+	
+	&.subgrid {
+		display: grid;
+		grid: auto 1fr / 1fr;
+
+		.sidebar-eventlist {
+			padding:0 0 80px 0; // padding required to allow for last event popup (quicklook) info
+			overflow-y:auto;
+		}
+	}
+
+	// a separate <nav> element added over the standard <nav> sidebar
+	&.element-overlay {
+		z-index: $oe-z-element-search;
+		.element-structure {
+			padding:0 0 20px 0;
+		}
+	}
+}
+
+
+
+
+
+

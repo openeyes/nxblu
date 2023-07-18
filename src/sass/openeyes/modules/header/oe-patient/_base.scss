@@ -1,0 +1,22 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-patient {
+	position:absolute;
+	top:0; 
+	left:$oe-event-sidebar-width;
+	
+	height:$oe-header-height;
+	width:605px;
+	
+	// Alerts and Allergies text is hidden
+	@include squeeze(){
+		width:530px;
+	}
+	
+	background: top -4px right 18px  / 90px var( --i-watermark-patient)  no-repeat;
+}
+

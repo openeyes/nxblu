@@ -1,0 +1,44 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// OE date - formatted layout
+// Ensures date widths are consistent for:
+// dd Mth YYYY || Mth YYYY || YYYY
+.oe-date {
+	white-space: nowrap; // must not wrap
+	display:inline-flex;
+	width: 10.5ch;
+	
+	.day {
+		// right aligned so that single digits "1" lines up with "11" correctly
+		text-align: right;
+		width:2ch;
+		margin:0 0.5ch 0 0;
+	}
+	.mth{
+		// if used in last <td> table it will pick up
+		// aligned right cascade
+		text-align: left !important;
+		width:4ch;
+	} 
+	.yr {
+		text-align: right;
+		width:4ch;
+	}
+
+	// contextual adjustment
+	.situational-awareness & {
+		@include font-size(11);
+		opacity:0.5;
+	}
+}
+
+// Wrapper to handle alt date text (e.g. "New", or "On-going")
+.oe-no-date-msg {
+	width: 10.5ch;
+	text-align: right;
+	font-style: italic;
+}
+

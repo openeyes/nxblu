@@ -1,0 +1,116 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "_var" as *;
+
+table {
+    width: 100%;
+    border:2px solid $table-border-color;
+    margin:0.5em 0 1em 0;
+    
+    // try to avoid breaking up tabular data
+    page-break-inside:avoid !important;
+	break-inside:avoid !important;
+    
+    // Worklist tables could be long 
+    // add option to break on page
+    &.allow-page-break {
+	    page-break-inside: auto !important;
+		break-inside: auto !important;
+    }
+    
+    // setup defaults
+    td, th {
+	    padding: 4px;
+	    font-size: $fontsize-small; 		// 8pt was set in v2
+	 	text-align:left; 
+	 	vertical-align: top;  
+	}
+	
+	th { 
+		font-weight:400;				// header less prominent
+	}
+	td {
+		font-weight:500;				// make data more readable than headers
+		border-bottom: none !important; // remove bottom border, solves a layout issue.
+	}
+	
+	&.row-lines {
+		td, th {
+			padding:6px 4px;
+		}
+		tr {
+			border-top:1px solid #ddd;
+			
+			&.no-line,
+			&:first-child { 
+				border-top: none;
+			}
+		}
+	}
+	
+	// add borders to the data (standard table)
+	&.borders {
+		// need this here again, because of TinyMCE editor
+		border:2px solid $table-border-color;
+		td, th {
+			border: 2px solid $table-line-color;
+		}
+		
+		// merge data in <tr> with <tr> above
+		tr {
+			&.no-borders {
+				td {
+					border-top: none;	
+				}
+			}
+		}
+	} 
+	
+	// make text "normal"
+	&.large,
+	&.normal-text {
+		td, th {
+			font-size: $fontsize-sem-large; 
+		}
+	}
+	
+	// label - view layout
+	// to replace tab layouts
+	// structure is <tr><th>Label<th><td>Data<td></tr>
+	&.label-item {
+		border: none;
+		td, th {
+			font-size: $fontsize-base; 
+			padding-bottom:1em;
+		}
+		
+		th {
+			width:26% !important;
+		}
+		
+	}
+	
+	// label - right - left layout
+	// to replace tab layouts
+	// structure is <tr><th>Label<th><td>Right<td><td>Left</td></tr>
+	&.label-r-l {
+		border: none;
+		td, th {
+			font-size: $fontsize-base; 
+			padding-bottom:1em;
+		}
+		
+		th {
+			width:26% !important;
+		}
+		
+		td {
+			width:37% !important;
+		}	
+	} 
+}
+
+
+
+

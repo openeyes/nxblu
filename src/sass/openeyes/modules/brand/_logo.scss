@@ -1,0 +1,38 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-logo {
+	position:absolute;
+	top:0; 			// allow for padding
+	left:25px;
+	height: $oe-header-height;
+	padding:0 20px; 	// increase hit area
+	cursor: pointer;
+
+	@include flex(center, center );
+
+	// little sexy touch.
+	transition:left 0.5s ease;
+
+	&.open {
+		left:0;
+	}
+}
+
+// SVG logo
+svg.oe-openeyes {
+	pointer-events: none; // otherwise it will block JS event delegation
+	display:inline-block;
+	// SVG logo maintain aspect ratio
+	$-svg-width: 100px;
+	width:$-svg-width;
+	height:( $-svg-width * 0.1844 );
+	fill: var(--txt-light);
+	.active &,
+	.open & {
+		fill:var(--txt-active);
+	}
+}

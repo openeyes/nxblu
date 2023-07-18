@@ -1,0 +1,44 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// <ul>
+.oe-user-profile-context {
+	// uses flex to vertically center
+	// the user profile info within container
+	margin: auto 0; // flex magic.
+	width: 255px;
+	padding: 0 0 0 8px;
+	color: var(--txt-light);
+
+	// restricted to stop over-lap with icons
+	@include extended() {
+		width: 365px;
+		border-left: 3px solid var(--gui-line);
+	}
+
+	// animate
+	transition: width 0.5s ease-out; // smooth it
+
+	li {
+		@include font-size(10);
+
+		a {
+			@include font-size(9);
+
+			font-weight: var(--font-bold);
+			margin-left: 10px;
+
+			&:is(:hover, :focus, :active) {
+				color: var(--txt-highlight);
+			}
+
+		}
+
+	}
+
+}
+
+
+

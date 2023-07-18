@@ -1,0 +1,45 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// Not sure if this was ever implemented in the Admin
+// unable to find it in v6.2 admin, needs checking.
+.admin-data-set {
+	position: relative;
+	border: 4px solid var(--gui-line);
+	padding: 20px 5px 10px 5px;
+	margin: 10px 0 20px 0;
+
+	.admin-data-set {
+		margin: 15px 10px;
+	}
+
+	.data-set-header {
+		@include flex(center, space-between);
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 25px;
+		padding: 0 10px 5px 10px;
+
+		@include font-size(14);
+		font-weight: var(--font-medium);
+		background: var(--btn-blue-hint);
+	}
+
+	.data-set-actions {
+		@include flex(center, flex-end);
+		padding: 0 10px 0 0;
+
+		button {
+			margin-left: 5px;
+		}
+	}
+}
+	
+
+
+

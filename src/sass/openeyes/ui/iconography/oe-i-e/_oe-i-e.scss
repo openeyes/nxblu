@@ -1,0 +1,42 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// note!
+// background-size - when a new sprite-sheet is created the background-size
+// needs updating manually here, node will output the updated size and notes in terminal
+
+@use "openeyes/var" as *;
+
+// <i class="oe-i-e CiExamination [large]"></i>
+.oe-i-e {
+	display: inline-block;
+	vertical-align: middle;
+
+	background-image: url("../img/oe-i-e-76x76.png");
+	background-repeat: no-repeat;
+	background-size: 228px 209px; // important: must match SpriteSmith output!
+	width: $oe-event-icon-size;
+	height: $oe-event-icon-size;
+
+	&.large {
+		background-size: 456px 418px; // important: must match SpriteSmith output!
+		width: #{$oe-event-icon-size + $oe-event-icon-size};
+		height: #{$oe-event-icon-size + $oe-event-icon-size};
+	}
+
+	// used 'inline' to 'pad' out the icon
+	&.pad {
+		margin: 0 4px;
+	}
+
+	// icons before text
+	&.pad-right {
+		margin: 0 8px 0 0;
+	}
+
+	// icons after text
+	&.pad-left {
+		margin: 0 0 0 8px;
+	}
+}
+
