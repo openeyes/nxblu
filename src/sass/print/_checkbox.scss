@@ -1,6 +1,7 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
+@use "print/mix" as *;
 
 // this was [ x ] but made it into a proper box
 .checkbox {
@@ -13,9 +14,6 @@
 	margin:0 0.3em 0 0.7em; // move the checkbox closer to the text
 
 	&.checked {
-		background-image:url("../../svg/v6/print/checkbox-cross.svg");
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size:83%;
+		background: center / 83% url( build-svg-path('print','checkbox-cross')) no-repeat;
 	}
 }

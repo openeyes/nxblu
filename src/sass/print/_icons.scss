@@ -2,7 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
 @use "sass:list";
-@use "_mix" as *;
+@use "mix" as *;
 
 // oe icons: <i class="oe-i [name] [size] [...options]"></i>
 //	small: 	13px 
@@ -276,7 +276,8 @@
 		"triangle-red": "triangle-red",
 		"triangle-grey": "triangle-grey",
 		"mpr-red": "mpr-red",
-		"mpr-amber": "mpr-amber",
+		"mpr-amber": "mpr-orange",
+		"mpr-orange": "mpr-orange",
 		"mpr-green": "mpr-green",
 		"exclamation-green": "exclamation-green",
 		"exclamation-amber": "exclamation-orange", // amber = orange
@@ -318,7 +319,7 @@
 	// Build icon classes using @mixin oe-i
 	// Map | Icon set to use | sub-directory (optional)
 	@include oe-i($themed_icons, "themed");
-	@include oe-i($universal_icons, "all");
+	@include oe-i($universal_icons, "themed");
 	@include oe-i($eyedraw_icons, "all", "eyedraw/");
 
 }

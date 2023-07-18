@@ -29,7 +29,7 @@ const tag = process.env.VERSION_TAG;
 
 const nodeArg = process.argv[2];
 if( nodeArg !== undefined ){
-	if(nodeArg === "print") buildMode = "style_oe_print.3";
+	if(nodeArg === "print") buildMode = "oe_print";
 	if(nodeArg === "eyedraw") {
 		versionTagFile = false;
 		buildMode = "style_eyedraw_doodles";
