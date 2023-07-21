@@ -36,7 +36,7 @@ td, th {
 	// e.g. icons/action are in this column.
 	// 'standard' was added later, it is used a great deal in Admin
 	// it's alignment default is the reverse
-	&:last-child:not(:first-child) {
+	&:last-child {
 		text-align: right;
 
 		.standard:not(.last-right) & {
