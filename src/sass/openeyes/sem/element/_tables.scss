@@ -234,7 +234,7 @@
 		// <td>
 		td {
 			vertical-align: middle;
-			height: 28px;
+			min-height: 28px;
 
 			&.line-r {
 				border-right:2px solid var(--gui-line);

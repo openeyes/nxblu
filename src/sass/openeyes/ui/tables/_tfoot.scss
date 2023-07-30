@@ -4,7 +4,8 @@
 @use "openeyes/mix" as *;
 
 tfoot {
-	tr {
-		border-top: 3px solid var(--gui-line);
+	border-top: 2px solid var(--gui-line);
+	&.soft {
+		border-top-style: dotted;
 	}
 }
