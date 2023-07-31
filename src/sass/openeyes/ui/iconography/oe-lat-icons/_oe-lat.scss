@@ -70,7 +70,6 @@
 	&.Rq-Li {
 		@include bg("lat-R-query","lat-L-inactive");
 	}
-
 	&.Rq-Lq {
 		@include bg("lat-R-query","lat-L-query");
 	}
@@ -82,9 +81,6 @@
 	}
 	&.n-Lq {
 		@include bg("lat-NA","lat-L-query");
-	}
-	&.n-L {
-		@include bg("lat-NA","lat-L-red");
 	}
 
 	&.beo {
