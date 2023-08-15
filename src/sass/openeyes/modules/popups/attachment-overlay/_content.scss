@@ -6,8 +6,9 @@
 	.attachment-content {
 		grid-area: viewer;
 
-		// default to showing a PDF
+		// defaults to showing a PDF
 		// to show an image we need to do a little work
+		// JS will add appropriate classes
 		&.is-img {
 			overflow: auto;
 			display: flex;

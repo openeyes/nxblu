@@ -90,7 +90,7 @@
 
 	&.sys {
 		background-position:center center;
-		background-image: var(--person-green);
+		background-image: var(--i-person-green);
 	}
 	&.sys-i {
 		background-position:center center;
@@ -104,4 +104,53 @@
 		background-position:center center;
 		background-image: var(--i-lat-NA);
 	}
+
+	// qualifier flags!
+	position: relative;
+
+	&.qL {
+		&::after {
+			content: "";
+			z-index: 1;
+			position: absolute;
+			top: -2px;
+			right: -1px;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			border:1px solid var(--color-orange);
+			background: var(--color-highlighter);
+		}
+	}
+
+	&.qR {
+		&::before {
+			content: "";
+			z-index: 1;
+			position: absolute;
+			top: -2px;
+			left: -2px;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			border:1px solid var(--color-orange);
+			background: var(--color-highlighter);
+		}
+	}
+
+	&.qS {
+		&::after {
+			content: "";
+			z-index: 1;
+			position: absolute;
+			top: -2px;
+			left: calc( 50% + 3px);
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			border:1px solid var(--color-orange);
+			background: var(--color-highlighter);
+		}
+	}
+
 }

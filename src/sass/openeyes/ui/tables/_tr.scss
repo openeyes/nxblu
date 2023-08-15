@@ -28,8 +28,8 @@ tbody {
 		// this can be combined with those below
 		// so it needs to be first
 		.oddeven-rows & {
-			&:nth-child(odd){
-				background:var(--bg-title);
+			&:nth-child(odd) {
+				background: var(--bg-title);
 			}
 		}
 
@@ -45,9 +45,25 @@ tbody {
 		}
 
 		// All table rows react to focus/hover to help with using the data
-		.highlight-rows & {
+		:is(.highlight-rows, .highlight-tr) & {
 			&:is(:hover, :focus-within) {
 				background: var(--bg-hover-row);
+			}
+		}
+
+		:is(.rows-focus, .focus-tr) & {
+			&:last-child {
+				// without this, get a pixel jump
+				border-bottom: 1px solid transparent;
+			}
+
+			&:is(:hover, :focus-within) {
+				background-color: var(--bg-hover-row);
+				border-bottom: 1px solid var(--gui-line-hard);
+			}
+
+			td {
+				padding-block: 5px;
 			}
 		}
 
@@ -55,6 +71,7 @@ tbody {
 		// but should probably be depreciated and replaced
 		&.selected-row {
 			background: var(--btn-blue-hint);
+
 			td {
 				color: #fff;
 			}
