@@ -7,15 +7,16 @@
 // nav-group
 .nav-grp-hd-i {
 	position: relative;
-	@include font-size(12);
 	color: var(--txt-light);
-	font-weight: var(--font-medium);
+	@include font-size(12);
+	font-weight: var(--font-bold);
 	padding: 10px 25px 8px 0; // allow for icon background
 	cursor: pointer;
 
 	// Event & Element structure sidebar tweaks
 	.sidebar & {
-		font-weight: var(--font-light);
+		@include font-size(11);
+		line-height: 1;
 		padding-left:5px;
 	}
 
@@ -63,8 +64,7 @@
 	}
 
 	// show user interaction
-	&:hover,
-	&:active {
+	&:is(:hover, :active) {
 		color: var(--txt-highlight);
 
 		// when used in hotlist with ".overview"

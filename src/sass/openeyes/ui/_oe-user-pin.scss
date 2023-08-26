@@ -23,7 +23,8 @@
 		}
 	}
 
-	&.wrong-pin {
+	// 'wrong' is depreciated but still supported
+	&:is(.wrong-pin, .declined-pin) {
 		background-color: var(--color-red);
 		.user-pin-entry {
 			outline-color: var(--color-red);
