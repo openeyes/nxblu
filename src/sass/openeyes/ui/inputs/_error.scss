@@ -1,14 +1,24 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-input, textarea, select, label {
+
+:is(input, textarea, select, label.highlight ) {
+	// 'error-all' use on a group of inputs wrapper; e.g. <fieldset>
+	// 'error' is for single input
+	.error-all &,
 	&.error {
-		background-color: var(--color-hint-red);
+		color: #fff;
+		// important will overide the :hover <label> highlight
+		background-color: var(--color-red) !important;
 	}
 }
 
-input, textarea {
-	&.error::placeholder  {
-		color:var(--txt-light);
-	}
+:is(input, textarea).error::placeholder {
+	color: #aaa;
+}
+
+// highlighted-error, used on a wrapper e.g. on <fieldset>
+// the updated approach is 'error-all'
+.highlighted-error {
+	outline: 2px solid var(--color-red);
 }
