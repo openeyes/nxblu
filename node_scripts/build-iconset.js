@@ -104,7 +104,7 @@ const spritePNG = ( buffer ) => {
 				.write(`${config.png}`); // write out 
 			
 			log( cyan('>>> png created: ') + config.png );
-			log('(needs copying over to iDG)');
+			log( red('(needs copying over to iDG)'));
 		})
 		.catch( err => log( red('Jimp error: ') +  err ));
 };
@@ -149,7 +149,7 @@ const buildSCSS = ( coordinates, properties ) => {
 	  }
 
 	  log( cyan('>>> scss created: ') + config.scss);
-	  log( cyan('>>> Notes'));
+	  log( cyan(red('>>> Notes')));
 	  if( iconset == "events" ){
 		  log('Newblue CSS will now need rebuilding ... (then a quick check on iDG that they look OK!)');
 		  log('Run: npm run css');
