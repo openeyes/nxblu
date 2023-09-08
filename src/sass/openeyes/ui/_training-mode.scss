@@ -59,10 +59,16 @@
 		}
 	}
 
+
 	// Patient name in SEM
 	.oe-patient .patient-name {
-		outline: 2px dotted var(--color-orange);
-		outline-offset: 4px;
+		background: $_bg;
+		color:$_yellow;
+		padding:4px;
+		border-radius:3px;
+
+		//outline: 2px dotted var(--txt-light);
+		//outline-offset: 4px;
 	}
 
 }

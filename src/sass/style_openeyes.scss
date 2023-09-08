@@ -35,6 +35,8 @@
 // General UI (maintain order, changing it may affect the cascade)
 @use "openeyes/ui/typography";
 @use "openeyes/ui/flex";
+@use "openeyes/ui/flex-collapse";
+@use "openeyes/ui/pad";
 @use "openeyes/ui/inputs";
 @use "openeyes/ui/buttons";
 @use "openeyes/ui/tables";

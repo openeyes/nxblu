@@ -7,20 +7,6 @@
 	@include font-size(11);
 	font-weight:var(--font-medium);
 	
-	.patient-name {
-		position:absolute;
-		top:12px; 
-		left:0;
-		@include font-size(17);
-		line-height: 1; // reset here
-		
-		a {
-			&:is(:hover, :focus, :active) {
-				color: var(--txt-active);
-			}
-		}
-	}
-	
 	.patient-details {
 		position:absolute;
 		bottom:0; 
@@ -43,12 +29,12 @@
 			span:first-of-type {
 				opacity:0.5;
 			}
+		}
 
-			// Sex, Age, etc
-			em {
-				opacity:0.5;
-				@include font-size(10);
-			}
+		// Sex, Age, etc
+		em {
+			opacity:0.5;
+			@include font-size(10);
 		}
 
 		// NHS Number Trace warning
@@ -61,29 +47,5 @@
 			top:-1px;
 		}
 	}
-	
-	// DECEASED
-	&.deceased {
-		.patient-name {
-			color:rgb(255,0,0);
-			font-weight:400;
-		}
-	}
-	
-	// replaces patient-age
-	.patient-died {
-		@include font-size(13);
-		color:rgb(255,0,0);
-		em {
-			opacity:0.75;
-			@include font-size(12);
-			&:nth-child(2){
-				em {
-					padding:0 0 0 3px;
-				}
-			}
-		}
-	}
-	
 }
 

@@ -1,0 +1,31 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-patient {
+	// Aware is for 2 things
+	// accessibility and klaxon level alerts
+	.patient-aware {
+		position: absolute;
+		top: 0;
+		left: -36px;
+		height: 100%;
+
+		// need to keep vertical alignment centered
+		// so if only the accessibility icon is displayed
+		// the tooltip isn't obscured by the logo
+		@include flex(center, center);
+		flex-direction: column;
+
+		// only ever
+		.oe-i {
+			width: 30px;
+			height: 28px;
+		}
+	}
+}
+
+
+
+

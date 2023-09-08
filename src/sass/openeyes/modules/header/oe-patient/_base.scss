@@ -6,12 +6,16 @@
 
 .oe-patient {
 	position:absolute;
-	top:0; 
+	top:0;
 	left:$oe-event-sidebar-width;
-	
+
 	height:$oe-header-height;
 	width:605px;
-	
+
+	display: grid;
+	// 2 rows, then a grid space for icons at the end
+	grid: 30px 30px / 1fr repeat(4, 32px);
+
 	// Alerts and Allergies text is hidden
 	@include squeeze(){
 		width:530px;
