@@ -15,6 +15,7 @@
 	display: grid;
 	// 2 rows, then a grid space for icons at the end
 	grid: 30px 30px / 1fr repeat(4, 32px);
+	align-items: stretch;
 
 	// Alerts and Allergies text is hidden
 	@include squeeze(){

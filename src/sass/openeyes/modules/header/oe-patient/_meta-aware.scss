@@ -1,13 +1,15 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-@use "base";
-@use "patient-aware";
-@use "patient-name";
-@use "patient-details";
-@use "patient-died";
-@use "meta-aware";
-@use "aware-alerts";
-@use "icons";
+@use 'openeyes/mix' as *;
 
-@use "old/allergies-risks";
+.oe-patient {
+	// layout wrapper
+	.meta-aware {
+		grid-row: 2;
+		grid-column: 1;
+		@include flex(flex-end, space-between);
+	}
+
+}
+

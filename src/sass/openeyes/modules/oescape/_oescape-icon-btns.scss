@@ -64,7 +64,7 @@
 
 			&:is(:hover,:focus,.selected) {
 				color: var(--btn-text-active);
-				background: var(--btn-blue);
+				background: var(--btn-blue-hint);
 
 				svg {
 					fill: var(--btn-text-active);

@@ -1,32 +1,31 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-
-// OE Header - Patient
+@use "openeyes/mix" as *;
 
 .oe-patient {
-
-
-
-	// icons buttons for...
+	// icons buttons for patient
 	:is(
 	.patient-quicklook,
 	.patient-demographics, 
 	.patient-management,
 	.patient-local-edit,
-	.patient-extra ){
-		position:absolute;
-		padding:6px 8px; // increase icon hit-area
+	.patient-extra,
+	.patient-oescape ){
 		cursor:pointer;
+		@include flex( center, center);
+
 		
 		// svg icon btn
 		.icon {
-			display:inline-block;
+			display:block;
 			fill: var(--txt-base);
 			opacity: 0.8;
 			width:16px;
 			height:16px;
-			pointer-events: none; // allow JS delegation
+
+			// delegate Events to parent wrapper
+			pointer-events: none;
 		}	
 		
 		// js controlled interaction... 
@@ -37,7 +36,21 @@
 				fill: #fff;
 			}
 		}
-		
+	}
+
+	// assign icons a grid position
+
+	// OEscape
+	.patient-oescape {
+		grid-row: 1 ;
+		grid-column: -3;
+	}
+
+	// Edit Patient when (local)
+	// i.e, they are not a PAS integrated patient and have been created within OE
+	.patient-local-edit {
+		grid-row: 1 ;
+		grid-column: -2;
 	}
 	
 	// info 
@@ -72,19 +85,7 @@
 		right:-8px; // allows for the padding
 	}
 	
-	// Edit Patient when (local)
-	// i.e, they are not a PAS integrated patient.
-	.patient-local-edit {
-		top:5px;
-		right:-8px;
-		
-		.icon {
-			&:is(:hover, :focus, :active ){
-				opacity: 1;
-			}
-			
-		}
-	}
+
 
 
 }
