@@ -195,7 +195,7 @@
 		"rotate-right": "rotate-right", // rotate-right
 		"tick": "tick",
 		"tick-circle": "tick-circle",
-		"triangle": "triangle",
+		"triangle": "warning-standard", // changed to "warning-standard" but still supported
 		"time": "time",
 		"audit-trail": "audit-trail",
 		"download": "download",
@@ -314,10 +314,12 @@
 		"a11ty-red": "a11ty-red",
 		"warning": "warning", // RED Risk/Alert triangle
 		"warning-none": "warning-none",
+		"warning-standard": "warning-standard",
 		"cross-red": "cross-red",
 		"klax": "klax",
 		"allergy": "allergy",
-		"allergy-none": "allergy-none"
+		"allergy-none": "allergy-none",
+		"allergy-standard": "allergy-standard"
 	);
 
 	$eyedraw_icons: (

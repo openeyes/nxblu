@@ -50,7 +50,7 @@
 		}
 
 		// js controlled interaction...
-		&:is(.open, .active) {
+		&.open {
 			background: var(--btn-blue-hint);
 		}
 

@@ -9,6 +9,7 @@
 		align-self: end;
 
 		@include font-size(17);
+		font-weight: var(--font-medium);
 		// reset line to help with vertical alignment
 		line-height: 1;
 
