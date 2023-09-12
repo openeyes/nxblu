@@ -17,7 +17,21 @@
 		@include flex(flex-start, flex-start);
 		position: relative;
 
+		// "unknown: is the default
 		background: var(--color-grey);
+
+		&.issue {
+			background: var(--color-orange);
+		}
+
+		&.warning {
+			background: var(--color-red);
+		}
+
+		&.none {
+			background: var(--color-green);
+		}
+
 
 		// js controlled interaction...
 		&.open {
@@ -54,19 +68,20 @@
 		}
 	}
 
-	.aware-label {
-		pointer-events: none;
-		@include font-size(9);
-		font-weight: var(--font-bold);
-		color: #fff;
-		padding: 3px 1px 0 0;
-		transform: translateX( -3px );
-	}
 
-	// lose the text when its tight
-	@include squeeze() {
-		.aware-label {
-			display: none;
-		}
-	}
+	//.aware-label {
+	//	pointer-events: none;
+	//	@include font-size(8);
+	//	font-weight: var(--font-bold);
+	//	color: #fff;
+	//	transform: translate(-4px, 9px );
+	//
+	//}
+	//
+	//// lose the text when its tight
+	//@include squeeze() {
+	//	.aware-label {
+	//		display: none;
+	//	}
+	//}
 }

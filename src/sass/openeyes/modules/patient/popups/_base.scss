@@ -13,6 +13,14 @@
 	right: 0;
 	// height: 435px;  // height is controlled by the overflow (i.e. its flexible), see below
 
+	// with single Alert & Allergy info use a single
+	// column "slim" format, matches the meta-quickview popup
+	&.slim {
+		left:#{$oe-event-sidebar-width + 240px};
+		right: auto;
+		width:420px;
+	}
+
 	@include font-size(12);
 
 	background: var(--bg-html);

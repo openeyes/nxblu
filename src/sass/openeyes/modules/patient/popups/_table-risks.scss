@@ -1,0 +1,27 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// Patient Allergies & Risks
+// table list of risk data
+// shown in the popup and then
+// also used in the quick overview
+
+// decoupled from wrappers for areas
+// .oe-patient-popup,
+// .quick-overview-content {
+
+	
+table.risks {
+	width:100%;
+	td {
+		padding-block:6px;
+
+		&:last-child {
+			text-align: left;
+		}
+	}
+}
+

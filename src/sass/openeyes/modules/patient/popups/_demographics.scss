@@ -18,7 +18,7 @@ table.demographics {
 			padding:4px 0;
 		}
 	}
-	
+
 	td {
 		margin:0;
 		padding:6px 0;
@@ -28,7 +28,7 @@ table.demographics {
 		// handled by <th> but anyway... 
 		&:first-child {
 			@include font-size(10);
-			width:20%;
+			width: 22ch;
 			opacity:0.6;
 		}
 
