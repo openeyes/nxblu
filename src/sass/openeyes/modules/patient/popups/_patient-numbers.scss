@@ -11,15 +11,19 @@
 		color:var(--txt-light);
 		padding:5px 10px 6px 5px;	
 		margin:0 0 10px 0;	
-		background: pink;
-		
-		border-bottom:1px solid deeppink;
+		background: var(--bg-da);
+		border-bottom:1px solid var(--gui-line-hard);
 
 		.num {
 			display:inline-block;
 			padding:0 20px 0 0;
 			margin:0 20px 0 0;
 			border-right:1px solid var(--gui-line);
+		}
+
+		.num-id {
+			color: var(--txt-base);
+			font-weight: var(--font-bold);
 		}
 	}
 }

@@ -5,7 +5,8 @@
 // Allergies & risks, Quicklook, Management and Demographics
 @use "base";
 @use "quicklook-data-groups";
-@use "demographics-trials";
+@use "demographics";
+@use "old/trials";
 @use "allergies-risks";
 @use "situational-awareness";
 @use "patient-numbers";

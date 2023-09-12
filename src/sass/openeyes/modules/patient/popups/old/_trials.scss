@@ -1,24 +1,15 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
+
 @use "openeyes/var" as *;
 @use "openeyes/mix" as *;
 
-// Patient Demographics
-// table list of demographic data
-// shown in the popup and then
-// also used in the quick overview
+// New Trial UIX no longer uses this
+// when new IDG Trial work is implemented this can be removed
 
-// Used in two places:
-// .oe-patient-popup,
-// .quick-overview-content
-		
-// table layouts for two popups
-// Demographics (multiple tables in here)
-// Trials popup was added later (and uses exactly the same UI)
-// but with a different CSS hook in case need to hook into it
-table.patient-trials,	
-table.patient-demographics {
+table.patient-trials {
+
 	width:100%;
 	
 	// tweak: same DOM is used in .quick-view-content

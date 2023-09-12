@@ -1,0 +1,39 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// Used in two places:
+// .oe-patient-popup,
+// .quick-overview-content
+
+table.demographics {
+	width:100%;
+	
+	// tweak: same DOM is used in .quick-view-content
+	// but it's themed!... 
+	.quick-overview-content & {
+		td {
+			padding:4px 0;
+		}
+	}
+	
+	td {
+		margin:0;
+		padding:6px 0;
+		@include font-size(12);
+		
+		// Wasn't thinking, I should have made this 
+		// handled by <th> but anyway... 
+		&:first-child {
+			@include font-size(10);
+			width:20%;
+			opacity:0.6;
+		}
+
+		&:last-child {
+			text-align: left;
+		}
+	}
+}

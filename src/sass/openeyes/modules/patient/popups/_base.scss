@@ -11,7 +11,7 @@
 	top:$oe-header-height;
 	left:$oe-event-sidebar-width;
 	right: 0;
-	// height: 435px;  // height is controlled by the overflow (i.e. its flexible)
+	// height: 435px;  // height is controlled by the overflow (i.e. its flexible), see below
 
 	@include font-size(12);
 
