@@ -22,7 +22,6 @@
 			height: #{$oe-event-header-height - 2px};
 			@include font-size(15);
 			font-weight: 400;
-			color: #fff;
 
 			&:focus {
 				border-bottom-color: var(--txt-base);

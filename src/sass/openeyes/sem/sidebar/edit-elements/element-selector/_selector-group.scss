@@ -13,12 +13,12 @@
 
 		&.outline {
 			padding-top: 4px;
-			border: 1px solid var(--gui-line-hard);
+			border: 1px solid var(--gui-line);
 		}
 
 		h3 {
 			@include font-size(11);
-			font-weight: var(--font-light);
+			font-weight: var(--font-medium);
 			color:var(--txt-light);
 			margin: 0 0 4px 4px;
 		}
