@@ -5,24 +5,25 @@
 
 .oe-patient {
 
-	// DECEASED
-	&.deceased {
+	&.a11ty {
 		.patient-name {
-			outline: 2px dotted var(--txt-base);
+			outline: 2px dotted var(--color-orange);
 			outline-offset: 2px;
-			color: var(--txt-light);
 		}
 	}
 
-	// replaces patient-age
-	.patient-died {
-		background: var(--txt-base);
-		color: var(--txt-invert);
-		em {
-			opacity: 1 !important;
+	// klax(on) Level 1 Alert
+	&.klax {
+		.patient-name {
+			outline: 4px solid var(--color-red);
+			outline-offset: 0;
 			background: var(--color-red);
 			color: #fff;
-			padding-inline: 2px;
+
+			// <a> wraps patient name
+			a:is(:hover, :focus, :active) {
+				color: #fff
+			}
 		}
 	}
 }

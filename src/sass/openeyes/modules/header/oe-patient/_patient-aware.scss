@@ -23,6 +23,8 @@
 			width: 30px;
 			height: 28px;
 			background-size: 16px;
+			// help draw user-focus in light theme:
+			filter: drop-shadow(1px 1px 1px var(--bg-max));
 		}
 	}
 }

@@ -1,0 +1,34 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+@use "openeyes/var" as *;
+
+.oe-patient {
+
+	// DECEASED
+	&.deceased {
+		.patient-name {
+			background: 20px url(svg-fixed("patterns/pattern1"));
+			outline: 2px dotted var(--color-red);
+			outline-offset: 2px;
+		}
+	}
+
+	// replaces patient-age
+	.patient-died {
+		background: black;
+		color: white;
+
+		em {
+			opacity: 1 !important;
+			background: var(--color-red);
+			color: #fff;
+			padding-inline: 2px;
+		}
+	}
+}
+
+
+
+
