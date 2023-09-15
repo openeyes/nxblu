@@ -2,8 +2,39 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
 @use "openeyes/mix" as *;
+@use "openeyes/var" as *;
 
 .oe-patient-meta {
+
+	&.a11ty {
+		.patient-name a {
+			outline: 2px dotted var(--color-orange);
+			outline-offset: 2px;
+		}
+	}
+
+	// klax(on) Level 1 Alert
+	&.klax {
+		.patient-name a {
+			outline: 2px solid var(--color-red);
+			outline-offset: 0;
+			background: var(--color-red);
+			color: #fff;
+
+			// <a> wraps patient name
+			a:is(:hover, :focus, :active) {
+				color: #fff
+			}
+		}
+	}
+
+	&.deceased {
+		.patient-name a {
+			outline: 2px dotted var(--color-red);
+			outline-offset: 2px;
+		}
+	}
+
 
 	.patient-name {
 		@include font-size(14);
@@ -24,8 +55,10 @@
 		// duplicate name / safeguards (alerts/allergies / risks) / Flags, etc
 		.patient-icons {
 			@include inline-flex(center, flex-start);
+
 			.oe-i {
 				background-size: 12px;
+				width:20px;
 			}
 		}
 	}
