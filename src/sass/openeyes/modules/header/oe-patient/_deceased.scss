@@ -15,17 +15,18 @@
 		}
 	}
 
-	// replaces patient-age
-	.patient-died {
-		background: black;
-		color: white;
 
-		em {
-			opacity: 1 !important;
-			background: var(--color-red);
-			color: #fff;
-			padding-inline: 2px;
-		}
+}
+
+// replaces patient-age
+.patient-died {
+	background: black;
+	color: white;
+
+	em {
+		opacity: 1 !important;
+		background: var(--color-red);
+		color: #fff;
 	}
 }
 

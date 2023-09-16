@@ -8,7 +8,7 @@
 
 	&.a11ty {
 		.patient-name a {
-			outline: 2px dotted var(--color-orange);
+			outline: 2px solid var(--color-orange);
 			outline-offset: 2px;
 		}
 	}
@@ -30,8 +30,10 @@
 
 	&.deceased {
 		.patient-name a {
-			outline: 2px dotted var(--color-red);
-			outline-offset: 2px;
+			outline: 2px solid var(--txt-base);
+			outline-offset: 0;
+			background: var(--txt-base);
+			color: var(--txt-invert);
 		}
 	}
 

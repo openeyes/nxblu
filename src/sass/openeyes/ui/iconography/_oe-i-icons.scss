@@ -113,18 +113,18 @@
 		opacity: 1;
 		width: $-size-small;
 		height: $-size-small;
-		margin:0 0.4em;
-		background-size: 0.8em;
-		background-image: url(svg-fixed("ui/type-linebreak"));
+		margin-inline: 0.2em;
+		background-size: 1em;
+		background-image: var(--i-type-linebreak);
 	}
 
 	&.paragraph {
 		opacity: 1;
 		width: $-size-small;
 		height: $-size-small;
-		margin:0 0.5em;
+		margin-inline: 0.5em;
 		background-size: 1em;
-		background-image: url(svg-fixed("ui/type-paragraph"));
+		background-image: var(--i-type-paragraph);
 	}
 
 
