@@ -1,0 +1,15 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// support existing v1 DOM
+.oescape-header {
+
+	// target the <i>
+	.oe-i.remove-circle {
+		width:50px;
+		height: $oe-event-header-height;
+	}
+}

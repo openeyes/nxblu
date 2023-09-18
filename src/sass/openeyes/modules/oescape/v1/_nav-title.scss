@@ -1,0 +1,43 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oescape-header {
+
+	.nav-title {
+		//position: absolute;
+		//top:0;
+		//right:60px;
+		height:$oe-event-header-height;
+		
+		display:flex;
+		align-items: center;
+		
+		.title {
+			color: var(--txt-light);
+			text-transform: uppercase;
+			@include font-size(24);
+			font-weight:100;
+			margin:0 25px 0 0; 
+			
+			// Need to restrict Title length to make room 
+			width:15vw;
+			white-space: nowrap; 
+			overflow: hidden;
+			text-overflow: ellipsis;
+			
+			@include extended(){
+				width:auto;
+			}
+		}
+
+		.oescape-icon-btns {
+			width: $oe-event-sidebar-width;
+		}
+	}
+}
+
+
+

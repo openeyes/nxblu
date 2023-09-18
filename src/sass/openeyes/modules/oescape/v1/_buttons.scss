@@ -1,0 +1,36 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// support existing v1 DOM
+.oescape-header {
+	// create 'tab' buttons
+	button {
+		vertical-align: top; // overwrite default 'bottom' to fix alignment issues
+		height: $oe-event-header-height;
+
+		transition: padding 0.5s ease-out;
+
+		// squeeze padding on minimum spec
+		padding: 0 10px;
+
+		@include extended() {
+			padding: 0 15px;
+		}
+
+		&.selected {
+			.svg-size-icon {
+				stroke: #fff;
+			}
+		}
+	}
+
+	// inline SVG icons for resizing the chart
+	.svg-size-icon {
+		fill:none;
+		stroke:var(--txt-base);
+		stroke-miterlimit:10;
+	}
+}

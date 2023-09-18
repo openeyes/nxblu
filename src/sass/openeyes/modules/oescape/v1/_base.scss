@@ -1,11 +1,12 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-@use "oes-v2";
-@use "data-awareness";
-@use "oes-ui-change-layout";
-@use "oes-layout-icons";
-@use "oescape-icon-btns";
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
 
-// DOM still(!) not updated so need to support v1
-@use "v1";
+// support existing v1 DOM
+.oescape-header {
+
+	background: var(--bg-title);
+
+}
