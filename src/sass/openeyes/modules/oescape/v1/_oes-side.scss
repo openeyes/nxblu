@@ -1,0 +1,31 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// DOM in v6 was a mess
+// lots of inline styling and no classes
+// had to remove the inline styling then
+// hook into the id's to make this work
+
+// RIGHT EYE (left side)
+.oes-side-indicator {
+	@include flex(center, space-between);
+	height: 25px;
+	margin-block: 5px;
+
+	h4 {
+		@include font-size(14);
+		font-weight: var(--font-bold);
+		padding-inline-start: 20px;
+
+	}
+
+	//#oes-side-indicator-left {
+	//	background: red;
+	//}
+	//#oes-side-indicator-right {
+	//	background: green;
+	//}
+}
