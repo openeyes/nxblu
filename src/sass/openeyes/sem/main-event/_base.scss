@@ -20,7 +20,8 @@
 	// Enable smooth scrolling on Events for
 	// anchor links to elements (if user is cool with it)
 	scroll-behavior: smooth;
-	@media only screen and (prefers-reduced-motion: reduce) {
-		scroll-behavior: auto;
-	}
+
+	//@media only screen and (prefers-reduced-motion: reduce) {
+	//	scroll-behavior: auto;
+	//}
 }

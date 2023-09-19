@@ -25,9 +25,10 @@
 		}
 		
 		scroll-behavior: smooth;
-		@media only screen and (prefers-reduced-motion: reduce) {
-			scroll-behavior: auto;
-		} 
+
+		//@media only screen and (prefers-reduced-motion: reduce) {
+		//	scroll-behavior: auto;
+		//}
 	}
 }
 

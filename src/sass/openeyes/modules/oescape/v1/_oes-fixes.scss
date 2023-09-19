@@ -1,0 +1,59 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oes-stack-select {
+	text-align: center;
+	padding:5px;
+}
+
+// images stacks
+.oes-image-stack {
+	cursor:crosshair;
+	width:100%;
+	img {
+		width:100%;
+	}
+
+	// layout is designed for landscape images by default
+	&.portrait-images {
+		text-align: center;
+		width:100%;
+		img {
+			width:70%;
+		}
+	}
+}
+
+.oes-visual-fields {
+	width:80%;				// make plots a bit smaller (arbitrary)
+	margin:10px auto;
+	.vfcolorplot, .vfgreyplot {
+		svg {
+			width:100%;		// SVG fill space
+		}
+		// users mouse over or clicks on a plot
+		.selected-plot {
+			stroke-width:6;
+			stroke: rgb(255,255,255);
+		}
+	}
+	// space out the plots
+	// it assumes color plot is on the left
+	.vfcolorplot {
+		margin:0 40px 0 0;
+	}
+	.vfgreyplot {
+		margin:0 0 0 40px;
+	}
+
+	// vfimage was replaced by SVG grey plot
+	.vfimage {
+		background:#fff; // tidy up jpegs
+		padding:0 3px;
+		border-radius:3px;
+		width:55%;
+	}
+}
