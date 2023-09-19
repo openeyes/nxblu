@@ -1,0 +1,65 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.admin-panels {
+	.collapse-group {
+		position: relative;
+		margin-block-start: 10px;
+
+		// not correctly linked up with JS interaction
+		// so take it out of the game
+		h3.collapse-group-header {
+			pointer-events: none;
+			position: absolute;
+			top:0;
+			left:0;
+			margin:0; // override h3 cascade
+
+			@include font-size(13);
+			font-weight: var(--font-medium);
+		}
+
+		// JS interaction is all on the <i>
+		.collapse-group-icon {
+			.oe-i {
+				width:100%;
+				height:24px;
+				background-position: right 5px center;
+
+				&.minus {
+					background-image: var(--i-arrow-up-bold);
+				}
+			}
+		}
+	}
+
+	// list controls
+	.js-groups {
+		@include flex( stretch, flex-end);
+		gap: 10px;
+	}
+
+	.js-expand-all {
+		.oe-i.plus {
+			width:28px;
+			background-image: var(--i-increase-height);
+			background-size: 14px;
+		}
+	}
+
+	.js-collapse-all {
+		.oe-i.minus {
+			width:28px;
+			background-image: var(--i-reduce-height);
+			background-size: 14px;
+		}
+	}
+
+}
+
+
+
+

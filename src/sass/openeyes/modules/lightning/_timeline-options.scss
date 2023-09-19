@@ -5,7 +5,7 @@
 @use "openeyes/mix" as *;
 
 .lightning-timeline {
-	z-index:$oe-z-event-quick-view; // for the timeline options popup.
+	z-index: #{ $oe-z-quicklook - 1}; // for the timeline options popup.
 
 	$_btn-width:40px;
 
