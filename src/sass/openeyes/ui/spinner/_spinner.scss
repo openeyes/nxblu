@@ -1,6 +1,8 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
+@use "openeyes/var" as *;
+
 // OE load spinner
 @keyframes spinner {
 	to {
@@ -8,23 +10,24 @@
 	}
 }
 
-.spinner {
+// DOM is used by DEVs in this way
+// <i class="spinner" display="none">
+
+i.spinner {
 	$-large: 60px;
 	$-icon: 16px;
 
-	// Large spinner restricted to full overlay
-	// i.e. OE app is shut down whilst something is going on
-	position: relative;
-	display: block;
-	width: $-large;
-	height: $-large;
+	z-index: $oe-z-spinner;
+	position: fixed;
+	inset: 0;
+	background: rgba(100,100,100,0.5);
 
-	// flex centering, when used in isolation in oe-popup-wrap
-	margin:auto;
+	display: flex;
+
 
 	&::before {
 		content: "";
-		position: absolute;
+		margin:auto; // flex magic
 		width: $-large;
 		height: $-large;
 		border-radius: 50%;
@@ -33,19 +36,20 @@
 		animation: spinner 1s linear infinite;
 	}
 
-	// small spinner, used in context to indicate isolated asnyc activity
+	// small spinner, used as an icon to indicate isolated ASYNC activity
 	// e.g. in a popup or on a button to show loading.
-	// Generally uses <i>, to follow "oe-i" approach
 	&.as-icon {
-		display: inline-block;
+		position: relative;
+		display: inline-flex;
+		background: none;
 		width: 18px;
 		height: 18px;
 		margin: 0 5px;
 		vertical-align: middle;
 
 		&::before {
-			width: $-icon;
-			height: $-icon;
+			width: 14px;
+			height: 14px;
 			border-width: 2px;
 		}
 	}
