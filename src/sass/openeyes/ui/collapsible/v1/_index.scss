@@ -4,7 +4,7 @@
 @use "openeyes/var" as *;
 @use "openeyes/mix" as *;
 
-.admin-panels {
+:is(.admin-panels, .reports-panels) {
 	.collapse-group {
 		position: relative;
 		margin-block-start: 10px;
@@ -18,7 +18,7 @@
 			left:0;
 			margin:0; // override h3 cascade
 
-			@include font-size(13);
+			@include font-size(14);
 			font-weight: var(--font-medium);
 		}
 
