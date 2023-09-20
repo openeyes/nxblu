@@ -10,41 +10,51 @@
 	}
 }
 
-// DOM is used by DEVs in this way
+// DOM is mis-used by DEVs in this way
 // <i class="spinner" display="none">
+// however, should be using "full-overlay" most of the time
 
 i.spinner {
-	$-large: 60px;
-	$-icon: 16px;
+	$_default: 36px;
+	$_overlay: 60px;
 
-	z-index: $oe-z-spinner;
-	position: fixed;
-	inset: 0;
-	background: rgba(100,100,100,0.5);
-
+	// default usage DOM
+	// (not recommended, use either 'full-overlay' or 'as-icon')
+	position: relative;
 	display: flex;
-
 
 	&::before {
 		content: "";
 		margin:auto; // flex magic
-		width: $-large;
-		height: $-large;
+		width: $_default;
+		height: $_default;
 		border-radius: 50%;
 		border: 4px solid var(--gui-spinner);
 		border-top-color: rgba(0, 0, 0, 0);
 		animation: spinner 1s linear infinite;
 	}
 
+	// total UI overlay, freeze interaction
+	&.full-overlay {
+		z-index: $oe-z-spinner;
+		position: fixed;
+		inset: 0;
+		background: var(--input-hint);
+		backdrop-filter: blur(2px);
+
+		&::before {
+			width: $_overlay;
+			height: $_overlay;
+		}
+	}
+
 	// small spinner, used as an icon to indicate isolated ASYNC activity
 	// e.g. in a popup or on a button to show loading.
 	&.as-icon {
-		position: relative;
 		display: inline-flex;
-		background: none;
 		width: 18px;
 		height: 18px;
-		margin: 0 5px;
+		margin-inline: 5px;
 		vertical-align: middle;
 
 		&::before {
