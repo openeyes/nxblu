@@ -17,9 +17,17 @@
 	// little sexy touch.
 	transition:left 0.5s ease;
 
-	&.open {
+	// JS adds on click
+	&.active {
 		left:0;
 	}
+	
+	&:is(:hover, .active) {
+		svg.oe-openeyes {
+			fill:var(--txt-active);
+		}
+	}
+
 }
 
 // SVG logo
@@ -31,8 +39,4 @@ svg.oe-openeyes {
 	width:$-svg-width;
 	height:( $-svg-width * 0.1844 );
 	fill: var(--txt-light);
-	.active &,
-	.open & {
-		fill:var(--txt-active);
-	}
 }

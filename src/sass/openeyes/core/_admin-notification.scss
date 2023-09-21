@@ -10,6 +10,9 @@
 
 // Ooops! Old spelling error in the name.
 // Don't fix it, unless the production DOM can be updated too!
+
+// note: DOM incorrectly implemented on OE for this
+
 #oe-admin-notifcation {
 	position:fixed;
 	bottom:8px;
@@ -21,8 +24,8 @@
 	@include font-size(13);
 	@include flex( center, flex-start);
 
-	// Full screen it on Login
-	.user-login & {
+	// based on current OE DOM implementation not iDG
+	.oe-login & {
 		justify-content: center;
 		left:3px;
 	}
