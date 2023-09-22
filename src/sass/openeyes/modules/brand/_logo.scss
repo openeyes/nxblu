@@ -21,7 +21,7 @@
 	&.active {
 		left:0;
 	}
-	
+
 	&:is(:hover, .active) {
 		svg.oe-openeyes {
 			fill:var(--txt-active);

@@ -15,16 +15,16 @@
 		h3.collapse-group-header {
 			pointer-events: none;
 			position: absolute;
-			top:0;
+			top:5px; // a bit hacky to get this look right
 			left:5px;
 			margin:0; // override h3 cascade
 
 			@include font-size(13);
-			font-weight: var(--font-bold);
+			font-weight: var(--font-medium);
 			color: var(--txt-base);
 
 			.count {
-				vertical-align: 50%;
+				vertical-align: 25%;
 				@include font-size(10);
 				font-weight: var(--font-bold);
 			}
