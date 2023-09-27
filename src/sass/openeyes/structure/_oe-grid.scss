@@ -12,11 +12,21 @@
 	// anything outside the grid should be hidden
 	overflow: hidden;
 
-	// General "basic" page structure: 3 rows
+	// Generally most used "basic" page structure: 3 rows
+	// header.oe-header
+	// div.oe-full-header
+	// div.oe-full-content
 	grid:
 		"header" #{$oe-header-height}
 		"pageheader" #{$oe-event-header-height}
 		"main" 1fr / 1fr;
+
+	// Login & whiteboard have no page header
+	&.minimal {
+		grid:
+			"header" #{$oe-header-height}
+			"main" 1fr / 1fr;
+	}
 
 	// Big patient search banner
 	&.big-search {
@@ -25,7 +35,6 @@
 			"search" $oe-event-header-height * 2
 			"main" 1fr / 1fr;
 	}
-
 
 	// SEM pages (Overview/Events) require a different structure
 	// 3 rows, 2 columns:
