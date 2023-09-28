@@ -3,6 +3,24 @@
 
 @use "openeyes/var" as *;
 
+// new classes to replace oe-full-content subgrid wide-side-panel
+// got to maintain support for old approach
+
+// to replace .oe-full-content.subgrid
+.oe-full-split {
+	display: grid;
+	grid: "fullside fullmain" 1fr / 300px 1fr;
+	grid-column-gap: 20px;
+
+	&.wide-side {
+		grid-template-columns: 400px 1fr;
+	}
+
+	&.narrow-side {
+		grid-template-columns: 260px 1fr;
+	}
+}
+
 .oe-full-content {
 	// see 'oe-grid' for media width restrictions
 	grid-area: main;
@@ -10,6 +28,7 @@
 	overflow-y:auto;
 
 	// subgrid if side panel area is required
+	// this is being replaced by oe-full-split (abover)
 	&.subgrid {
 		display: grid;
 		grid: "fullside fullmain" 1fr / 300px 1fr;
@@ -18,20 +37,6 @@
 		// extend side panel width
 		&.wide-side-panel {
 			grid-template-columns: 400px 1fr;
-		}
-
-		// subgrid areas
-		.oe-full-side-panel,
-		.oe-full-main {
-			overflow-y:auto;
-		}
-
-		.oe-full-side-panel {
-			grid-area: fullside;
-		}
-
-		.oe-full-main {
-			grid-area: fullmain;
 		}
 	}
 }

@@ -6,6 +6,9 @@
 
 .oe-full-side-panel {
 
+	grid-area: fullside;
+	overflow-y:auto;
+
 	// standardised styles for the side-panel
 	padding: 20px;
 
@@ -76,8 +79,6 @@
 				}
 			}
 		}
-
-
 	}
 }
 

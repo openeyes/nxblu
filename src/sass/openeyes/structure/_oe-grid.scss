@@ -16,33 +16,22 @@
 	// header.oe-header
 	// div.oe-full-header
 	// div.oe-full-content
-	grid:
-		"header" #{$oe-header-height}
-		"pageheader" #{$oe-event-header-height}
-		"main" 1fr / 1fr;
+	grid: "header" #{$oe-header-height} "pageheader" #{$oe-event-header-height} "main" 1fr / 1fr;
 
 	// Login & whiteboard have no page header
 	&.minimal {
-		grid:
-			"header" #{$oe-header-height}
-			"main" 1fr / 1fr;
+		grid: "header" #{$oe-header-height} "main" 1fr / 1fr;
 	}
 
 	// Big patient search banner
 	&.big-search {
-		grid:
-			"header" #{$oe-header-height}
-			"search" $oe-event-header-height * 2
-			"main" 1fr / 1fr;
+		grid: "header" #{$oe-header-height} "search" $oe-event-header-height * 2 "main" 1fr / 1fr;
 	}
 
 	// SEM pages (Overview/Events) require a different structure
 	// 3 rows, 2 columns:
 	&.sem {
-		grid:
-			"header header" #{$oe-header-height}
-			"addevent eventheader" #{$oe-event-header-height}
-			"sidebar main" 1fr / #{$oe-event-sidebar-width} 1fr;
+		grid: "header header" #{$oe-header-height} "addevent eventheader" #{$oe-event-header-height} "sidebar main" 1fr / #{$oe-event-sidebar-width} 1fr;
 	}
 
 	// --------------------------------------- Restrict Widths
@@ -72,15 +61,17 @@
 	// full width header and content allows for the 
 	// hotlist panel which is fixed at large resolutions. 
 	// JS controls the fixing: fixed at 1800px;
-	:is(.oe-full-header, .oe-full-content, .oe-allow-for-fixing-hotlist) {
-		// "oe-allow-fixing-hotlist" - is probably now redundant
-		// however, it might be used somewhere in production! (this needs reviewing)
+	:is(.oe-full-header, .oe-full-content, .oe-full-split, .oe-allow-for-fixing-hotlist) {
+		// "oe-allow-fixing-hotlist" - reverses the logic (!!).
+		// DOM elements are generally full width by default (accept these 'oe-full-*' ones)
+		// this classes restrict widths to stop the element flowing under a fixed hotlist panel overlay
+		// Not use very much but could be used with oe-search-patient banner if needed
+		//
 		// -
-		// "oe-full" layouts by default will allow for the hotlist panel to fix
-		// in place (when there is enough width), however many layouts now need to use the full width
-		// and hotlist can not fix open. Adding "use-full-screen" will override the default
-		// behaviour and allow the content to use full width. JS will look for this
-		// class to see if can fix open the hotlist panel or not
+		// "oe-full-*" layouts by default will allow for the hotlist panel to fix open (when there is enough width),
+		// however so layouts now need to use the full width and hotlist is not fixed open.
+		// Adding "use-full-screen" will override the default behaviour and allow the content to use full width.
+		// JS will look for this hook to see if can fix open the hotlist panel or not
 
 		&:not(.use-full-screen) {
 
