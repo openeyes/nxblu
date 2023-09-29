@@ -18,7 +18,7 @@
 	border-bottom:3px solid var(--bg-popup);
 	border-top:1px solid var(--bg-popup);
 	
-	background:var(--colour-grey);
+	background:var(--bg-title);
 	padding:10px;
 	
 	// this needs to match the padding added to the Events 
@@ -83,7 +83,7 @@
 			line-height:21px;
 			@include font-size(12);
 			font-weight:400;
-			color: var(--txt-light);
+			color: var(--btn-text);
 			background:var(--btn-blue);
 			vertical-align:middle;
 			padding:0 5px; 
