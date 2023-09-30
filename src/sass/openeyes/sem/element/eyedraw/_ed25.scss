@@ -1,0 +1,95 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// ---------------------------
+// Eyedraw element (v2.5) - VIEW (only i think)
+// ---------------------------
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.element {
+	// eyedraw either in 'element-eyes' (for popup 'previous' too)
+	// or; in 'full-width'... opnote
+	
+	// view and edit wrappers:
+	.element-fields, 
+	.element-data {
+		&.full-width {
+			.eyedraw {
+				.eyedraw-data {
+					width:450px; // fixed, but wider than default.
+				}
+			}
+		}
+	}
+	
+	// default set up for R / L
+	// ---- element - VIEW & EDIT
+	.eyedraw {
+		position:relative;
+		background:var(--ed3-blue); // eyedraw blue
+		padding:0 5px; 
+		border-radius:5px;
+		
+		.eyedraw-data {
+			// eyedraw has a width of 490px. 
+			// 2 canvas elements = 335px
+			// when used on R / L sides the data needs to be restricted
+			// so that it anchors to the right (if there is only 1 canvas)
+			// it won't stretch and will always be in the same place
+			width:150px; // fixed.
+			
+			@include font-size(10);
+			font-weight:500;
+			color:rgb(50,50,50); 		// Always on the Eyedraw blue bg
+			padding:10px 5px 20px 0; 	// pad bottom for + icon button
+			
+			// make the weighting in eyedraw elements
+			// is consistent for both themes
+			.data-value {
+				font-weight:500; 
+				overflow-wrap: break-word; // to handle: "pneumonoultramicroscopicsilicovolcanoconiosis"
+				
+				.priority-text {
+					font-weight:700;
+				}
+				
+				&.not-recorded {
+					text-align: left;
+					@include font-size(12);
+				}
+			}
+			
+			// when the data-label and data-values are stacked
+			&.stack {
+				.data-value {
+					padding:0 0 10px 0;
+				}
+			}
+			
+			.data-label {
+				color:rgb(120,120,140);; // Always on the Eyedraw blue bg
+			}
+		}
+	
+	}
+
+	// in V3 Eyedraw in EDIT mode is the same as
+	// in VIEW but with a launch icon as Eyedraw App
+	// opens in an overlay popup. 
+	&.edit {
+		// --- only EDIT 
+		.eyedraw {
+			padding-bottom:20px; 	
+			// position '+' button
+			.eyedraw-launch-edit-mode {
+				position: absolute;
+				bottom:5px;
+				right:0;
+			}
+		}	
+	}
+	
+}
+
