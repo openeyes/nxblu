@@ -13,11 +13,10 @@
 	top:38px ;
 	left:0;
 	width:400px; // arbitrary (by eye)
-	background: pink;
+	background: var(--bg-event);
 	padding:0 10px 10px 11px;
-	
-	border-right: 6px solid pink;
-	border-bottom: 6px solid pink;
+
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 
 	table {
 		width: 100%;		

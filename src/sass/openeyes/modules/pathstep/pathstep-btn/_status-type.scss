@@ -14,7 +14,8 @@
 .oe-pathstep-btn {
 	color: var(--txt-base);
 
-	// flag any in-correct CSS classes! ;)  
+	// pathstep MUST have a class type
+	// flag any in-correct CSS usage:
 	background: pink; 
 	
 	// all steps have a border for consistent layout	

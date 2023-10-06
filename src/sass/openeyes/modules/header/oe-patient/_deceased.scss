@@ -9,9 +9,11 @@
 	// DECEASED
 	&.deceased {
 		.patient-name {
-			background: 20px url(svg-fixed("patterns/pattern1"));
-			outline: 2px dotted var(--color-red);
-			outline-offset: 2px;
+			background: var(--txt-base);
+			color: var(--txt-invert);
+			padding:2px;
+			outline: 2px solid var(--color-red);
+			outline-offset: 0;
 		}
 	}
 
