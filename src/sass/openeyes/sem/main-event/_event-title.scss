@@ -16,6 +16,7 @@
 		padding: 8px 0 8px 11px;
 	}
 
+	// (new iDG DOM approach)
 	.event-details {
 		@include flex(center, flex-start);
 		height: $oe-event-header-height;
