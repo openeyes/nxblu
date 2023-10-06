@@ -19,14 +19,7 @@
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 
 	table {
-		width: 100%;		
-		tbody tr {
-			border-bottom:1px solid var(--color-grey);
-			&:last-child { 
-				border-bottom: none;
-			}	
-		}	
-		
+		width: 100%;
 		// <td>
 		td {
 			padding:2px 0;
