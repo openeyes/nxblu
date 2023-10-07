@@ -16,8 +16,17 @@
 		flex: 1 1 0;
 		background-color: var(--bg-event-list);
 
+		// override the default UI, because of the above background-colour
 		.oe-i {
+			pointer-events: none;
 			filter: none;
+		}
+
+		// but use the filter on hover/active:
+		&:is(:hover, :active){
+			.oe-i {
+				filter: var(--btn-icon-hover-filter)
+			}
 		}
 	}
 

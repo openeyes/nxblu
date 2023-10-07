@@ -30,7 +30,7 @@
 
 			&:is(:hover, :focus, :active) {
 				color: var(--btn-text-active);
-				background: var(--btn-blue);
+				background-color: var(--btn-blue);
 
 				.event-type {
 					background-color: var(--bg-max);
