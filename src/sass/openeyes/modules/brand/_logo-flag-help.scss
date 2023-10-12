@@ -21,10 +21,4 @@
 	background: left center / 12px transparent var(--i-direction-left) no-repeat;
 
 	opacity: 0.5;
-
-	// DOM still has <i> but, it needs removing but
-	// until that happens this will hide the DOM:
-	.oe-i {
-		display:none;
-	}
 }

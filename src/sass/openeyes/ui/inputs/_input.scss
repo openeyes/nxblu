@@ -39,10 +39,28 @@ input {
 		height:auto;
 		width: 100%;
 	}
-	// Normalize file input width
 	&[type="file"] {
 		height:auto;
 		width: 100%;
+
+		padding: 5px; // default is 5px
+		margin-block: 10px;
+
+		color: var(--btn-text);
+		background: var(--btn-base);
+
+		cursor: pointer;
+
+		&::file-selector-button {
+			all: unset;
+			font-style: italic;
+			color: var(--btn-text);
+			padding: 2px 8px;
+			margin-inline-end: 10px;
+			background-color: var(--btn-blue);
+			border: 2px solid var(--input-border);
+			border-radius: 5px;
+		}
 	}
 }
 
