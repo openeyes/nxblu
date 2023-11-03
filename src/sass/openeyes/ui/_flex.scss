@@ -27,6 +27,10 @@
 	@include flex( flex-start, space-between) ;
 }
 
+.flex-b {
+	@include flex( flex-end, space-between) ;
+}
+
 .flex-c {
 	@include flex( center, center );
 }

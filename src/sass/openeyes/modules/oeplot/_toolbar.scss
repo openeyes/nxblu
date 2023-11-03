@@ -22,7 +22,7 @@
 		bottom:0;
 		height: $oe-event-header-height; 
 		z-index: 1;
-		background: var(--bg-title);;
+		background: var(--bg-html);
 		
 		// center because of the "OE tag" bottom right:
 		@include flex( center, center );
