@@ -7,6 +7,7 @@
 // wrapper for clock and time-remaining
 .rtt-status {
 	@include inline-flex(center, space-between);
+	user-select: none;
 }
 
 .rtt-clock {
