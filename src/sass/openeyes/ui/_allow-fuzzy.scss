@@ -16,7 +16,11 @@
 	}
 }
 
-select.select-fuzzy-date {
-	width: 16ch;
+div.select-fuzzy-date {
+	width: 100px;
+	@include flex(center, space-between);
+	select {
+		flex:1 1 0;
+	}
 }
 
