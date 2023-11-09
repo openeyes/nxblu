@@ -20,7 +20,12 @@
 	font-weight: var(--font-bold);
 	color:#000;
 
-	padding:2px 8px 2px 25px; // allow for icon
+	padding:2px 4px 2px 25px; // allow for icon
+
+	&.unknown {
+		background-color: var(--color-grey);
+		//background-image: url( svg-white-icon("i/to-end"));
+	}
 }
 
 .rtt-time-left {
@@ -32,4 +37,11 @@
 	color:#000;
 
 	padding:2px 8px 2px 20px; // allow for icon
+
+	&.warning {
+		background-color: var(--color-red);
+		background-image: url( svg-white-icon("i/to-end"));
+		color: #fff;
+	}
+
 }
