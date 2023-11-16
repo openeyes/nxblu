@@ -19,11 +19,20 @@
 	overflow-y: auto;
 	max-height: calc(100vh - #{$oe-header-height});
 
+	.shortcut-grp {
+		@include font-size(10);
+		color: var(--btn-text);
+		font-weight: 300;
+		margin: 4px 0 0 0;
+		padding: 4px 12px 2px 12px;
+		border-top: 1px dotted var(--gui-line);
+	}
+
 	li > a {
 		display: block;
 		color: var(--btn-text);
 		@include font-size(11);
-		font-weight: 400;
+		font-weight: 500;
 		padding: 6px 30px 6px 12px;
 		background: right 8px center / 10px url(svg-fixed("ui/shortcut-arrow")) no-repeat;
 
@@ -31,6 +40,16 @@
 		// introduced for e-Sign QR tablet sign-in (required anywhere)
 		&.popup {
 			background-image: url(svg-white-icon("i/duplicate"));
+			background-size: 12px;
+		}
+
+		&.fav {
+			background-image: url(svg-white-icon("i/star"));
+			background-size: 12px;
+		}
+
+		&.team {
+			background-image: url(svg-white-icon("i/team"));
 			background-size: 12px;
 		}
 

@@ -28,14 +28,22 @@
 			background: center left / 11px var(--i-person) no-repeat;
 		}
 	}
+
 	// icon: config
 	&.config {
 		background: left 3px top 3px / 11px var(--i-cog)  no-repeat;
 		padding-left: 16px;
 	}
+
 	// icon: flag comments
 	&.has-comments {
 		background: right 3px top 3px / 11px var(--i-comments-added) no-repeat;
+		padding-right: 16px;
+	}
+
+	// can't be deleted
+	&.mandatory {
+		background: right 2px top 2px / 10px var(--i-asterisk) no-repeat;
 		padding-right: 16px;
 	}
 	
