@@ -1,0 +1,79 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.tree-node {
+	position: absolute;
+	width:110px;
+
+	display: grid;
+	grid: 20px 120px 20px / auto;
+	justify-items: center;
+
+	transition: left 0.1s ease-out;
+
+	.node {
+		position: relative; // for node-id
+		padding: 5px;
+
+		display: grid;
+		grid: 56px 26px 18px / auto;
+		gap:2px;
+
+		@include font-size(9.5);
+		font-weight: 500;
+
+		border: 2px solid var(--txt-light);
+		border-radius: 5px;
+
+		header {
+			overflow-y: hidden;
+		}
+	}
+
+	.node-id {
+		position: absolute;
+		top: -8px;
+		right: -8px;
+		color: var(--txt-invert);
+		background: var(--txt-light);
+		border-radius: 50%;
+
+		width: 18px;
+		height: 18px;
+
+		@include flex(center, center);
+
+		@include font-size(9);
+		font-weight: 500;
+	}
+
+	.end-node {
+		background: var(--gui-line-hard);
+		color: var(--txt-invert);
+		padding: 1px 4px;
+		border-radius: 5px;
+		@include font-size(9);
+
+	}
+
+	svg {
+		height:20px;
+	}
+	.svg-node-line {
+		stroke: var(--gui-line-hard);
+		stroke-width: 2;
+	}
+
+	.link-h-line {
+		position: absolute;
+		left: 55px;
+		bottom: 0;
+		height: 2px;
+		min-width: 40px;
+		border-top: 2px solid var(--gui-line-hard);
+	}
+
+}

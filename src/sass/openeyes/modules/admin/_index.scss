@@ -11,3 +11,6 @@
 @use "components/correspondence-letterhead";
 @use "components/data-set";
 @use "components/restrict-filename";
+
+// Admin Queues (node trees)
+@use "queues";
