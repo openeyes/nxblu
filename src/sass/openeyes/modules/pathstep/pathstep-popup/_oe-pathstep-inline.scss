@@ -1,0 +1,45 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-pathstep-inline {
+	margin-block: 10px 20px;
+	padding:10px;
+	border: 2px solid var(--gui-line-hard);
+	border-radius: 3px;
+
+	.pathstep-name {
+		margin-block-end:5px;
+		border-bottom: 2px solid pink;
+
+		.step {
+			height:26px;
+			padding:0 10px;
+			@include inline-flex( center, center );
+			@include font-size(12);
+			font-style: italic;
+			font-weight: var(--font-medium);
+		}
+
+		&.active {
+			border-bottom-color:  var(--step-blue);
+
+			.step {
+				color: var(--step-text);
+				background-color: var(--step-blue);
+			}
+		}
+
+		&.done {
+			border-bottom-color: var(--step-green);
+
+			.step {
+				color: var(--step-text);
+				background-color: var(--step-green);
+			}
+		}
+
+	}
+}

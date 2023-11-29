@@ -3,31 +3,53 @@
 
 @use "openeyes/var" as *;
 @use "openeyes/mix" as *;
+@use "./var" as *;
 
 .tree-node {
-	position: absolute;
-	width:110px;
-
-	display: grid;
-	grid: 20px 120px 20px / auto;
-	justify-items: center;
-
-	transition: left 0.1s ease-out;
-
 	.node {
 		position: relative; // for node-id
 		width: 100%;
 		padding: 5px;
 
 		display: grid;
-		grid: 56px 26px 18px / auto;
-		gap:2px;
+		// node is assigned 110px: (120 - 10px padding);
+		grid: 56px 26px 20px / auto;
+		gap: 2px;
 
 		@include font-size(9.5);
 		font-weight: 500;
 
 		border: 2px solid var(--txt-light);
 		border-radius: 5px;
+
+		// jump or link node
+
+		&.link-to {
+			border-style: dotted;
+			@include flex(center, center);
+
+			.to-tag {
+
+			}
+
+			.oe-i.trash {
+				position: absolute;
+				bottom: 10px;
+				right: 10px;
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 20px;
+				left: #{$n_center - 10px};
+				background: center / contain var(--i-jump-to) no-repeat;
+				width: 16px;
+				height: 16px;
+				opacity: 0.5;
+			}
+
+		}
 
 		header {
 			overflow-y: hidden;
@@ -37,19 +59,19 @@
 			place-self: center;
 			background: center left / 12px var(--i-person) no-repeat;
 			padding-inline-start: 16px;
-			@include flex( center, center );
+			@include flex(center, center);
 			@include font-size(10);
 			font-weight: var(--font-bold);
 			opacity: 0.5;
 		}
 
 		.update-overlay {
-			position:absolute;
+			position: absolute;
 			z-index: 1;
 			inset: 0;
 			@include flex(center, center);
 			flex-direction: column;
-			gap:10px;
+			gap: 10px;
 			color: var(--txt-highlight);
 
 			background: var(--input-hint);
@@ -57,50 +79,4 @@
 			border-radius: 5px;
 		}
 	}
-
-	// JS - added
-	.node-tag {
-		position: absolute;
-		z-index: 2;
-		top: -10px;
-		right: -10px;
-		color: var(--txt-invert);
-		background: var(--txt-light);
-		border-radius: 50%;
-
-		width: 18px;
-		height: 18px;
-
-		@include flex(center, center);
-
-		@include font-size(9);
-		font-weight: 500;
-	}
-
-	.end-node {
-		background: var(--gui-line-hard);
-		color: var(--txt-invert);
-		padding: 1px 4px;
-		border-radius: 5px;
-		@include font-size(9);
-
-	}
-
-	svg {
-		height:20px;
-	}
-	.svg-node-line {
-		stroke: var(--gui-line-hard);
-		stroke-width: 2;
-	}
-
-	.link-h-line {
-		position: absolute;
-		left: 55px;
-		bottom: 0;
-		height: 2px;
-		min-width: 40px;
-		border-top: 2px solid var(--gui-line-hard);
-	}
-
 }

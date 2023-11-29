@@ -1,0 +1,32 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "./var" as *;
+
+.tree-node {
+
+	position: absolute;
+	width: $n_width;
+
+	display: grid;
+	grid: 20px 120px 20px / auto;
+	justify-items: center;
+
+	// when repositioned by JS animate the position change
+	transition: left 0.1s ease-out;
+
+	.node-tail {
+		position: absolute;
+		left: $n_center;
+		bottom: 0;
+		height: 2px;
+		min-width: 10px;
+		border-top: 2px solid var(--input-focus-outline);
+	}
+
+	&.branch-end {
+		.node-tail {
+			left: #{ $n_center - 5px};
+		}
+	}
+}

@@ -4,8 +4,7 @@
 @use "openeyes/var" as *;
 @use "openeyes/mix" as *;
 
-.oe-pathstep-popup {
-	
+
 	.step-actions {
 		pointer-events: all; // JS needs this
 		@include flex( center, center );
@@ -59,5 +58,5 @@
 		}
 	}
 	
-}
+
 

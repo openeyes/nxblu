@@ -4,7 +4,14 @@
 @use "openeyes/var" as *;
 @use "openeyes/mix" as *;
 
-.node-tree-area {
-	position: relative;
+.jump-tags {
+	position: absolute;
+	top:0;
+	left:0;
+	border: 2px solid var(--txt-light);
+	border-radius: 5px;
+	@include font-size(8);
+	font-weight: var(--font-bold);
+	padding:2px 3px;
+	backdrop-filter: blur(2px);
 }
-

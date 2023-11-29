@@ -1,0 +1,36 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+table.oec-patients {
+	// popup in events/overview
+	&.in-event {
+		td {
+			&:nth-child( 3 ) { // pathway
+				width: 650px; // match in-element, in clinic manager its a shorter
+			}
+
+
+			&:nth-child( 4 ), // Assigned person with an has an icon
+			&:nth-child( 5 ), // priority
+			&:nth-child( 6 ) { // comments
+				text-align: right;
+				width: 50px;
+			}
+
+			&:nth-child( 7 ) { // wait time
+				width: 115px;
+				padding-left: 20px;
+			}
+
+			// + adder button
+			&:nth-child( 8 ) {
+				text-align: right;
+				// roughly align this with the adder button in Next steps
+				// tricky because at various sizes it moves about
+				padding-right: 50px;
+				padding-left: 10px;
+			}
+		}
+	}
+}
+

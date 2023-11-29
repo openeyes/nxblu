@@ -30,7 +30,7 @@
 }
 
 .rtt-time-left {
-	background: left 3px center / 12px  url( svg-black-icon("i/to-end")) var(--color-highlighter) no-repeat;
+	background: left 3px center / 12px  url( svg-black-icon("i/start")) var(--color-highlighter) no-repeat;
 	border-radius:0 3px 3px 0;
 
 	@include font-size(13);
@@ -41,7 +41,7 @@
 
 	&.warning {
 		background-color: var(--color-red);
-		background-image: url( svg-white-icon("i/to-end"));
+		background-image: url( svg-white-icon("i/start"));
 		color: #fff;
 	}
 
