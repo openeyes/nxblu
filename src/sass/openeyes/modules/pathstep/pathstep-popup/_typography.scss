@@ -3,7 +3,7 @@
 
 @use "openeyes/mix" as *;
 
-.oe-pathstep-popup {
+:is( .oe-pathstep-popup, .ps-inline-task )  {
 	// all popups need to show the patient name 
 	.patient {
 		@include font-size(10);
