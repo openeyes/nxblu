@@ -6,6 +6,14 @@
 @use "./var" as *;
 
 .tree-node {
+
+	&.deactivate {
+		.node {
+			border-color: var(--color-orange);
+			background: top left / 10px url(svg-fixed("patterns/pattern1"));
+		}
+	}
+
 	.node {
 		position: relative; // for node-id
 		width: 100%;
@@ -16,20 +24,20 @@
 		grid: 56px 26px 20px / auto;
 		gap: 2px;
 
-		@include font-size(9.5);
+		@include font-size(10);
 		font-weight: 500;
 
 		border: 2px solid var(--txt-light);
 		border-radius: 5px;
 
-		// jump or link node
-
-		&.link-to {
+		// symlink to another node
+		&.symlink {
 			border-style: dotted;
 			@include flex(center, center);
 
 			.to-tag {
-
+				color: var(--txt-highlight);
+				font-weight: var(--font-bold);
 			}
 
 			.oe-i.trash {
@@ -62,7 +70,7 @@
 			@include flex(center, center);
 			@include font-size(10);
 			font-weight: var(--font-bold);
-			opacity: 0.5;
+			//opacity: 0.5;
 		}
 
 		.update-overlay {
