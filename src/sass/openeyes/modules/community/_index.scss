@@ -3,6 +3,20 @@
 
 @use "openeyes/mix" as *;
 
+// div alert-box at the login
+// has onclick link to Community Hub
+.community-hub-btn {
+	@include flex( center, center);
+	transform: translateY(-20px);
+	cursor: pointer;
+
+	// behaves like a button because of the onclick
+	// (not pushing click through, bit of an easter egg)
+	&:hover {
+		background: var(--btn-blue-active);
+	}
+}
+
 
 .oe-community {
 	place-self: center;
@@ -41,4 +55,6 @@
 		fill: var(--bg-title);
 	}
 }
+
+
 
