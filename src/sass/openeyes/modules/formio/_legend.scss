@@ -4,7 +4,6 @@
 @use "openeyes/mix" as *;
 
 .oe-formio {
-	.card-title,
 	legend {
 		@include font-size(13);
 		font-weight: var(--font-medium);

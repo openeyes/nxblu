@@ -4,15 +4,19 @@
 @use "openeyes/var" as *;
 @use "openeyes/mix" as *;
 
+.tree-node {
+	svg {
+		height: 20px;
 
-svg {
-	height: 20px;
+		.svg-node-line {
+			stroke: var(--input-focus-outline);
+			stroke-width: 4;
+		}
+	}
 }
 
-.svg-node-line {
-	stroke: var(--input-focus-outline);
-	stroke-width: 4;
-}
+
+
 
 
 
