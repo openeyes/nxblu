@@ -1,0 +1,65 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// Patient Ticketing using a very old JS library:
+
+.jOrgChart {
+
+	table {
+		width: auto !important;
+		td {
+			text-align: center !important;
+			padding: 0;
+		}
+		tr {
+			border-top: none !important;
+		}
+	}
+
+	.line {
+		height: 20px;
+		width: 4px;
+	}
+
+	.down {
+		background-color: var(--txt-light);
+		margin: 0px auto;
+	}
+
+	.top {
+		border-top: 3px solid var(--txt-light);
+	}
+
+	.left {
+		border-right: 2px solid var(--txt-light);
+	}
+
+	.right {
+		border-left: 2px solid var(--txt-light);
+	}
+
+	.node {
+		background-color: var(--btn-base);
+		display: inline-block;
+		width: 96px;
+		height: 60px;
+		margin: 0 4px;
+		border: 1px solid var(--gui-line);
+
+
+		&.queue {
+			display:inline-flex;
+			flex-direction: column;
+			gap: 5px;
+
+			.description{
+				flex:1 1 0;
+			}
+
+			.actions {
+				padding:3px 0;
+			}
+
+		}
+	}
+}
