@@ -10,16 +10,16 @@
 
 .doodle-nav {
 	position: absolute;
-	top: -5px; // shift up to overlay the remove side cross icon
+	top: -2px; // shift up to overflow the border
 	width: 300px;
 	z-index: 8;
 	// make the flyout taller that ed3 wrapper
 	// this visually helps links the flyout with
 	// the canvas area
-	min-height: 105%;
+	min-height: calc(100% + 4px);
 
 	background: var(--ed3-blue);
-	border: 2px solid var(--ed3-icon-area);
+	border: 2px solid var(--input-focus-outline);
 	padding: 1px;
 
 	// default state
@@ -35,7 +35,7 @@
 	.eye-l & {
 		right: calc(100% - 38px);
 		border-right: none;
-		box-shadow: -3px 0 3px var(--bg-data);
+		box-shadow: -5px 0 8px var(--bg-data);
 
 		.close-stack {
 			right: 100%;
@@ -46,7 +46,7 @@
 		flex-direction: row-reverse;
 		left: calc(100% - 38px);
 		border-left: none;
-		box-shadow: 3px 0 3px var(--bg-data);
+		box-shadow: 5px 0 8px var(--bg-data);
 
 		.close-stack {
 			left: 100%;
