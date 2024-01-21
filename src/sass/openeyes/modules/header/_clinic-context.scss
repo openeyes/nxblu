@@ -16,35 +16,6 @@
 	color:var(--txt-light);
 	font-weight: var(--font-medium);
 	
-	// add / remove as favourite
-	.favourite-btn{
-		@include flex( center, center );
-		height:100%;
-		width:30px;
-		padding:0;
-		margin:0 10px 0 0;
-		border-right:1px solid var(--gui-line);
-		cursor:pointer;
-		
-		&:after {
-			content:'';
-			height:16px;
-			width:16px;
-			margin:0 auto;
-			background: center / contain var(--i-starline) no-repeat;
-			opacity:0.5;
-		}	
-		
-		&:hover, 
-		&:focus {
-			background-color: var(--btn-blue);
-			&:after {
-				opacity: 1;
-				background-image: url( svg-white-icon('i/starline'));
-			}
-		}	
-	}
-	
 	.context {
 		@include font-size(16);	
 		.lists {
