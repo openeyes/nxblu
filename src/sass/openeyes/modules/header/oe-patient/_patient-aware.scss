@@ -11,20 +11,23 @@
 		top: 0;
 		left: -36px;
 		height: 100%;
+		width: 36px;
 
-		// need to keep vertical alignment centered
-		// so if only the accessibility icon is displayed
-		// the tooltip isn't obscured by the logo
-		@include flex(center, center);
-		flex-direction: column;
+		display: grid;
+		grid: "klax" 1fr "AIS" 1fr / 1fr;
 
 		// only ever
 		.oe-i {
 			width: 30px;
 			height: 28px;
-			background-size: 16px;
+			background-size: 14px;
 			// help draw user-focus in light theme:
 			filter: drop-shadow(1px 1px 1px var(--bg-max));
+
+			&.klax {
+				// align klax icon with patient name
+				background-position: center bottom;
+			}
 		}
 	}
 }
