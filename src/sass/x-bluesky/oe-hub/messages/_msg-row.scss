@@ -1,0 +1,23 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-widget {
+	.msg-row {
+		display: grid;
+		grid: 24px 1fr 40px / 2fr 1fr;
+		row-gap: 15px;
+
+		padding-block: 10px;
+		border-bottom: 1px solid var(--gui-line);
+
+		&:is(:hover, :focus-within){
+			background: var(--bg-hover-row);
+		}
+	}
+}
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-widget {
+	background: var(--bg-html);
+	border-radius: 5px;
+
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	padding:10px;
+	h2 {
+		@include font-size(12);
+		color: var(--txt-light);
+	}
+
+	&.double-h {
+		grid-row: span 2;
+	}
+
+	// always place top right, so that it's under the panel
+	&.user-summary {
+		grid-area: 1 / 3;
+		display: grid;
+		place-items: center;
+	}
+}

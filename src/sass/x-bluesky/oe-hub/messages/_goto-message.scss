@@ -1,0 +1,21 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.msg-row {
+	a.goto-message {
+		place-self: end end;
+
+		.oe-i {
+			height: 36px;
+			width: 36px;
+			background-position: right center;
+		}
+	}
+}
+
+
+
+
+
+
+

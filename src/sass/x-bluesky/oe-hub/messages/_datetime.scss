@@ -1,0 +1,16 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.msg-row {
+	time {
+		@include font-size(11);
+		color: var(--txt-light);
+	}
+}
+
+
+
+
+
+
+

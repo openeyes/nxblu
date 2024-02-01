@@ -16,8 +16,11 @@
 		}
 			
 		.worklists {
-			max-height: 200px;
+
+			max-height: 160px;
 			overflow-y: auto;
+
+			margin-block-start:2px; // provide a small gap with "All" button
 
 			fieldset {
 				background: var(--btn-base);

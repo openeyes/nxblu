@@ -2,7 +2,9 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
 @use "oe-hub";
-@use "unread-messages";
+@use "oe-widget";
+
+@use "messages";
 
 @use "user-initals";
 @use "oe-profile-panel";

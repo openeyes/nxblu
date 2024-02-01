@@ -12,25 +12,51 @@
 	width:545px;
 	
 	@include flex( center, flex-start );
-	
-	color:var(--txt-light);
+
 	font-weight: var(--font-medium);
-	
-	.context {
-		@include font-size(16);	
-		.lists {
-			padding:0 0 0 5px;
-			@include font-size(11);
-			b {
-				color: var(--txt-highlight);
-			}
+
+	.details {
+		width: 100%;
+		@include flex(center, space-between);
+
+		.date-range {
+			@include font-size(14);
+			font-weight: var(--font-bold);
+			margin: 0 10px 0 0;
+			padding: 0 10px 0 0;
 		}
+
+		.context {
+			flex: 1 1 0;
+			@include font-size(16);
+			padding-inline-start: 20px;
+
+			background: center left / 16px no-repeat;
+
+			&.fav {
+				background-image: var(--i-star);
+			}
+
+			&.team {
+				background-image: var(--i-team);
+			}
+
+
+			// this isn't currently used!
+			.lists {
+				padding:0 0 0 5px;
+				@include font-size(11);
+				b {
+					color: var(--txt-highlight);
+				}
+			}
+
+
+		}
+
+
 	}
 	
-	.date-range {
-		@include font-size(14);
-		margin:3px 0 0 0;	
-		font-weight: var(--font-bold);
-	}
+
 }
 

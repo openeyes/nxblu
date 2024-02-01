@@ -1,0 +1,37 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.msg-row {
+	.status-icons {
+		place-self: start end;
+		@include flex(center, space-between);
+		gap:8px;
+
+		.message-status {
+			display: grid;
+			grid: auto / auto-flow;
+			grid-auto-columns: 18px;
+			gap:8px;
+		}
+
+		.urgent-status {
+			display: grid;
+			grid: "team urgent" auto / 18px 18px;
+			gap:8px;
+
+			.status-urgent {
+				grid-area: urgent;
+			}
+			.team {
+				grid-area: team;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+

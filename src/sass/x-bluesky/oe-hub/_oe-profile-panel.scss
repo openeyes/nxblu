@@ -2,38 +2,6 @@
 @use "openeyes/mix" as *;
 @use "sass:math";
 
-
-.oe-profile-panel {
-	display: none; // js controlled
-	z-index: $oe-z-logo;
-
-	position: fixed;
-	top: $oe-header-height - 5px;
-	right: 10px;
-	//bottom:  35px;
-	width: math.div($oe-hotlist-panel-width, 1.33);
-
-	padding: 20px;
-
-	background: var(--bg-popup);
-	border: 1px solid var(--btn-blue-hint);
-
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-
-	overflow-y: auto; // scroll overflow
-
-	h4 {
-		@include font-size(11);
-		font-weight: var(--font-bold);
-		color: var(--txt-light);
-		margin: 0 0 10px 0;
-	}
-
-	.profile-action {
-		padding: 10px 0 0 0;
-	}
-}
-
 .profile-context {
 	@include font-size(13);
 	font-weight: var(--font-medium);
@@ -45,12 +13,11 @@
 
 	a {
 		display: inline-block;
-		margin:0 0 0 10px;
-		@include font-size(8);
+		margin-inline-start: 10px;
+		@include font-size(9);
 		font-weight: var(--font-bold);
 		color: var(--txt-active);
 	}
-
 
 	.label {
 		line-height: 1.1;
@@ -60,11 +27,38 @@
 	}
 }
 
-.profile-reminder {
-	margin:10px 20px 20px 20px;
-	padding: 10px 0; // line up with logo
-	border-bottom: solid 8px var(--gui-line-soft)
+
+.oe-profile-panel {
+	display: none; // js controlled
+	z-index: $oe-z-logo;
+
+	background: var(--bg-html);
+
+	position: fixed;
+	top: $oe-header-height - 5px;
+	right: 5px;
+	width: math.div($oe-hotlist-panel-width, 1.33);
+
+	padding: 20px;
+
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+
+	h2 {
+		@include font-size(13);
+		font-weight: var(--font-bold);
+		line-height:1.1;
+		color: var(--txt-light);
+		margin: 0 0 10px 0;
+	}
+
+	.profile-action {
+		padding-block-start: 20px;
+		@include flex( center, center );
+
+	}
 }
+
+
 
 
 

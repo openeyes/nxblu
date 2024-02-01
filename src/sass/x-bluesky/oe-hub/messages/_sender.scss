@@ -1,0 +1,16 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.msg-row {
+	.sent-from {
+		@include font-size(13);
+		font-weight: var(--font-bold);
+	}
+}
+
+
+
+
+
+
+
