@@ -1,0 +1,60 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-widget {
+	article {
+		@include font-size(12);
+		position: relative;
+
+		padding-block-end: 30px;
+		margin-block-end: 30px;
+		border-bottom: 3px solid var(--gui-line);
+
+		.date {
+			position: absolute;
+			top: 0;
+			right: 10px;
+			color: var(--txt-light);
+			@include font-size(12);
+		}
+
+		header {
+			padding-block-end: 10px;
+			margin-block-end: 10px;
+			border-bottom: 1px dotted var(--gui-line);
+		}
+
+		.split-columns {
+			@include flex(flex-start, space-between);
+			gap: 10px;
+
+			> div {
+				flex: 1 1 0;
+			}
+		}
+
+		// override default h2 for widgets
+		h2 {
+			@include font-size(18);
+			font-weight: var(--font-light);
+			color: var(--txt-base);
+
+			&.oe-version {
+				@include font-size(32);
+			}
+		}
+
+		h3 {
+			@include font-size(16);
+			font-weight: var(--font-light);
+			color: var(--txt-light);
+			padding-block-end: 5px;
+		}
+
+		p {
+			@include font-size(12);
+			line-height: 1.5;
+		}
+
+	}
+}
