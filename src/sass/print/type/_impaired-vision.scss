@@ -9,21 +9,23 @@
 .impaired-vision {
 	
 	// adjust all type sizes
-	$impaired-vision-increase: 8; 
+	$impaired-vision-increase: 8;
+	// push regular text up to 24pt, from 21pt for AIS
+	$base-increase: 3;
 	
-	font-size: $fontsize-base + $impaired-vision-increase;
+	font-size: $fontsize-base + $impaired-vision-increase + $base-increase;
 	
 	h3 {
 		font-size: $fontsize-h3 + $impaired-vision-increase;
 	}
 	h4 {
-		font-size: $fontsize-base + $impaired-vision-increase;
+		font-size: $fontsize-base + $impaired-vision-increase + $base-increase;
 	}
 	p {
-		font-size: $fontsize-base + $impaired-vision-increase;
+		font-size: $fontsize-base + $impaired-vision-increase + $base-increase;
 	}
 	h5 {
-		font-size: $fontsize-base + $impaired-vision-increase;
+		font-size: $fontsize-base + $impaired-vision-increase + $base-increase;
 	}
 
 	ul, ol {
@@ -33,7 +35,7 @@
  		}
  		&.normal {
  			li {
- 				font-size: $fontsize-base + $impaired-vision-increase; 
+ 				font-size: $fontsize-base + $impaired-vision-increase + $base-increase;
 			}
 		} 
 		&.large {
@@ -45,13 +47,13 @@
 	
 	table {
     	td, th {
-	    	font-size: $fontsize-small + $impaired-vision-increase;
+	    	font-size: $fontsize-small + $impaired-vision-increase + $base-increase;
 	    }
 	    
 	    &.label-item,
 	    &.label-r-l {
 			td, th {
-				font-size: $fontsize-base + $impaired-vision-increase; 
+				font-size: $fontsize-base + $impaired-vision-increase + $base-increase;
 			}
 		}
 	}
