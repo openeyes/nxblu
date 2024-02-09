@@ -2,6 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
 @use "openeyes/var" as *;
+@use "openeyes/mix" as *;
 
 .sidebar {
 	grid-area: sidebar;
@@ -24,6 +25,21 @@
 		z-index: $oe-z-element-search;
 		.element-structure {
 			padding:0 0 20px 0;
+		}
+
+		.header-icon {
+			cursor: pointer;
+			@include font-size(12);
+			font-weight: var(--font-medium);
+			color: var(--txt-base);
+			padding: 2px 10px 4px 5px;
+			background: right 5px center / 11px var(--i-plus-bold) no-repeat;
+
+			&.collapse {
+				background-image: var(--i-arrow-up-bold);
+			}
+
+
 		}
 	}
 }
