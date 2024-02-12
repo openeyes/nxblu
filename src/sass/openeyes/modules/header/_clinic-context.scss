@@ -12,24 +12,75 @@
 	width:545px;
 	
 	@include flex( center, flex-start );
-
 	font-weight: var(--font-medium);
 
-	.details {
+	.context {
+		@include font-size(16); // current implementation
+	}
+
+	// add favourite btn in the header
+	.favourite-btn{
+		@include flex( center, center );
+		height:100%;
+		width:30px;
+		padding:0;
+		margin:0 10px 0 0;
+		border-right:1px solid var(--gui-line);
+		cursor:pointer;
+
+		&:after {
+			content:'';
+			height:16px;
+			width:16px;
+			margin:0 auto;
+			background: center / contain var(--i-starline) no-repeat;
+			opacity:0.5;
+		}
+
+		&:hover,
+		&:focus {
+			background-color: var(--btn-blue);
+			&:after {
+				opacity: 1;
+				background-image: url( svg-white-icon('i/starline'));
+			}
+		}
+	}
+
+	// new UIX for basic UIX concept
+
+	.context-details {
 		width: 100%;
-		@include flex(center, space-between);
+		@include flex( stretch, space-between);
 
 		.date-range {
+			position: relative;
+			background: var(--bg-title);
+
+
 			@include font-size(14);
 			font-weight: var(--font-bold);
 			margin: 0 10px 0 0;
-			padding: 0 10px 0 0;
+			padding-inline: 20px;
+
+			.change-dates {
+				position: absolute;
+				top: $oe-header-height;
+				left: 0;
+				z-index: $oe-z-shortcuts;
+				background: var(--bg-title);
+				padding: 20px;
+				transform: translateX(-33%);
+
+			}
+
 		}
 
 		.context {
 			flex: 1 1 0;
-			@include font-size(16);
 			padding-inline-start: 20px;
+
+			align-self: center;
 
 			background: center left / 16px no-repeat;
 
@@ -41,22 +92,7 @@
 				background-image: var(--i-team);
 			}
 
-
-			// this isn't currently used!
-			.lists {
-				padding:0 0 0 5px;
-				@include font-size(11);
-				b {
-					color: var(--txt-highlight);
-				}
-			}
-
-
 		}
-
-
 	}
-	
-
 }
 

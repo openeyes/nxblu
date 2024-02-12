@@ -23,9 +23,7 @@
 	// a separate <nav> element added over the standard <nav> sidebar
 	&.element-overlay {
 		z-index: $oe-z-element-search;
-		.element-structure {
-			padding:0 0 20px 0;
-		}
+		padding-block: 32px;
 
 		.header-icon {
 			cursor: pointer;
