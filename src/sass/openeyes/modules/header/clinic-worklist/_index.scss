@@ -1,15 +1,9 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-@use "openeyes/mix" as *;
+@use "clinic-context";
+@use "favourite-btn";
+@use "context";
 
-.oe-worklists-panel {
-	.section-hd {
-		padding: 10px;
-		@include font-size(14);
-		font-weight:var(--font-light);
-		color: var(--txt-light);
-	}	
-}
-
-
+// rethinking the UIX
+@use "rethink/view-work";

@@ -11,9 +11,4 @@
 @use "oe-user";
 @use "oe-patient";
 
-// clinic (aka worklists)
-@use "clinic-context";
-//
-//// a basic header layout. created for Cataract Audit
-//// but made generic...
-//@use "basic/_base";
+@use "clinic-worklist";

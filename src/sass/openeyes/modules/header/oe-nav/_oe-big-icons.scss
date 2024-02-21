@@ -21,8 +21,7 @@ li.oe-nav-btn {
 	// For type 2) submenu position hooks
 	position: relative;
 
-	.icon-btn,
-	.nav-js-btn {
+	:is(.icon-btn, .nav-js-btn) {
 		@include flex(center, center);
 		height: $oe-header-height;
 		padding: 0 3px;
@@ -42,8 +41,7 @@ li.oe-nav-btn {
 
 	// <a> (basic link)
 	.icon-btn {
-		&:hover,
-		&:focus {
+		&:is(:hover, :focus ) {
 			background: var(--btn-blue-hint);
 			.icon {
 				fill:#fff;
