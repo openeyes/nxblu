@@ -11,36 +11,58 @@
 	width: 100%;
 	@include flex(stretch, space-between);
 
-	.date-range {
-		position: relative;
-		.change-dates-btn {
-			@include flex(center, center);
-			height: $oe-header-height;
-			padding: 10px 20px;
-			cursor: pointer;
 
-			@include font-size(13);
-			font-weight: var(--font-bold);
+	// this button is new in the rethink (and it's in the header)
+	.view-state-btn {
+		@include flex(flex-end, center);
+		height: $oe-header-height;
+		padding: 10px;
+		cursor: pointer;
 
-			* {
-				pointer-events: none;
-				user-select: none;
-			}
+		* {
+			pointer-events: none;
+			user-select: none;
+		}
 
+		color: var(--txt-highlight);
+		@include font-size(12);
+		font-weight: var(--font-bold);
+
+		background: 50% 13px / 15px none no-repeat;
+
+		&.i-menu {
+			background-image: var(--i-menu);
 			&:is(:hover, :focus, .active ) {
-				background-color: var(--btn-blue-active); // match ALL button
-				color: #fff;
+				background-image: url(svg-white-icon("i/menu"));
 			}
 		}
 
-		.change-dates {
+		&.i-calendar {
+			background-image: var(--i-calendar);
+			&:is(:hover, :focus, .active ) {
+				background-image: url(svg-white-icon("i/calendar"));
+			}
+		}
+
+		&:is(:hover, :focus, .active ) {
+			background-color: var(--btn-blue-active); // match ALL Worklist button
+			color: #fff;
+		}
+	}
+
+
+	.date-range {
+		position: relative;
+
+		.change-date-filter {
 			position: absolute;
 			top: $oe-header-height;
 			left: 0;
 			z-index: $oe-z-shortcuts;
-			background: var(--bg-title);
+			background: var(--bg-html);
 			padding: 20px;
-			transform: translateX(-33%);
+			border-top: 2px solid var(--btn-blue-active);
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 
 		}
 

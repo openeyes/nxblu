@@ -4,40 +4,9 @@
 @use "openeyes/mix" as *;
 @use "openeyes/var" as *;
 
-
-// a bit of hack
-// this continues to support the current DOM
-// whilst also for the new UIX re-think
-
-// this button is new in the rethink (and it's in the header)
-.list-view-btn {
-	@include flex(flex-end, center);
-	height: $oe-header-height;
-	padding: 10px;
-	cursor: pointer;
-
-	* {
-		pointer-events: none;
-		user-select: none;
-	}
-
-	color: var(--txt-highlight);
-	@include font-size(12);
-	font-weight: var(--font-bold);
-
-	background: 50% 13px / 15px var(--i-menu) no-repeat;
-
-	&:is(:hover, :focus, .active ) {
-		background-color: var(--btn-blue-active); // match ALL button
-		background-image: url(svg-white-icon("i/menu"));
-		color: #fff;
-	}
-}
-
-
+// a bit of hack, continues to support the current DOM
 // old and rethink DOM
 // old one is in the worklist panel and the new one is in the header!
-
 .list-view {
 	// v1 within worklist panel
 	.oe-worklists-panel & {
