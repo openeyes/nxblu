@@ -10,7 +10,16 @@
 
 	.patient-row {
 		display: grid;
-		grid: none / 70px 120px 290px 50px 1fr 100px 80px;
+		grid: none / 60px 120px 290px 48px 1fr repeat(4, 48px) 120px 48px;
+		gap:4px;
+		place-items: center;
+		:is(.list, .oe-patient-meta, .pathway ){
+			justify-self: start;
+		}
+
+		&.basic {
+			grid: none / 70px 120px 290px 48px 1fr 100px 80px;
+		}
 
 		// match <td> in table
 		border-top: 1px solid var(--gui-line);
@@ -25,15 +34,12 @@
 		}
 
 		time {
-			place-self: center;
 			@include font-size(12);
 			font-weight: var(--font-bold);
 		}
 
 		.list {
-			place-self: center start;
 			color: var(--txt-light);
-
 			.list-name {
 				font-weight: var(--font-medium);
 				line-height: 1;

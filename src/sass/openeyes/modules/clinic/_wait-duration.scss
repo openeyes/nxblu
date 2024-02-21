@@ -6,6 +6,7 @@
 .wait-duration {
 	position: relative;
 	@include flex( center, space-between );
+	width: 100%;
 	
 	&.stopped {
 		padding:0 0 0 25px;

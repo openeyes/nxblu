@@ -9,8 +9,9 @@
 	// show either User Context, or Favourite name (2 flavours)
 	.context {
 		flex: 1 1 0;
-		padding-inline-start: 20px;
 		align-self: center;
+		margin-inline-start: 10px;
+		padding-inline-start: 20px; // for icon
 
 		background: center left / 16px none no-repeat;
 

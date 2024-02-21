@@ -11,6 +11,7 @@
 		@include flex(center, center);
 		height: 40px;
 		width: 40px;
+		// margin:0; // override label defaults
 		background: rgba(0, 0, 0, 0); // without this the label hitarea for checkbox isn't used
 
 		> input[type="checkbox"] {
