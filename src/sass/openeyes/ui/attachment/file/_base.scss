@@ -59,7 +59,7 @@
 }
 
 .no-thumbnail {
-	height: 120px;
+	height: 150px;
 	background: 50% 30px/ 42px var(--i-doc) var(--btn-base-light) no-repeat;
 	@include flex(flex-end, center);
 	padding-block: 10px;
@@ -69,7 +69,7 @@
 .attachment-meta {
 	margin-block-start: 10px;
 	display: grid;
-	grid: 40px / auto-flow dense;
+	grid: auto / auto-flow dense;
 	grid-auto-columns: 1fr 30px;
 	gap: 5px;
 	place-items: start center;
@@ -81,6 +81,7 @@
 }
 
 .edit-attachment {
-	@include flex(center, flex-end);
+	margin-block-start:10px;
+	@include flex(center, center);
 	gap:10px;
 }
