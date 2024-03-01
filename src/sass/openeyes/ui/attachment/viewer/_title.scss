@@ -3,7 +3,7 @@
 
 @use "openeyes/mix" as *;
 
-.oe-attachment-overlay {
+.attachment-viewer {
 	.title {
 		grid-area: header;
 		place-self: center start;

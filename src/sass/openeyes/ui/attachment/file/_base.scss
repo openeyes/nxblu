@@ -30,6 +30,15 @@
 			background: center / 20px url(svg-white-icon("i/zoom-in")) var(--btn-blue-active) no-repeat;
 		}
 	}
+
+	&.portrait {
+		grid-column: span 2;
+	}
+
+	&.landscape {
+		grid-column: span 3;
+	}
+
 }
 
 .thumbnail {
@@ -41,7 +50,6 @@
 
 	.landscape & {
 		aspect-ratio: 16 / 9;
-		// grid-column: span 2;
 	}
 
 	img {
@@ -62,7 +70,7 @@
 	margin-block-start: 10px;
 	display: grid;
 	grid: 40px / auto-flow dense;
-	grid-auto-columns: 1fr 30px 30px 30px;
+	grid-auto-columns: 1fr 30px;
 	gap: 5px;
 	place-items: start center;
 
@@ -70,4 +78,9 @@
 		@include font-size(10);
 		color: var(--txt-light);
 	}
+}
+
+.edit-attachment {
+	@include flex(center, flex-end);
+	gap:10px;
 }

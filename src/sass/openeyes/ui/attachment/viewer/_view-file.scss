@@ -1,9 +1,9 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-.oe-attachment-overlay {
+.attachment-viewer {
 	// container for either PNG or PDF
-	.attachment-content {
+	.view-file {
 		grid-area: viewer;
 
 		// defaults to showing a PDF
