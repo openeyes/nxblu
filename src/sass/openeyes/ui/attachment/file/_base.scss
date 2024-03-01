@@ -8,9 +8,18 @@
 	position: relative;
 	width: min( 100%, 360px); // because thumbnails are 800w/900w
 
+	// when added to attachment-grid
+	grid-column: span 2;
+
+	&.landscape {
+		grid-column: span 3;
+	}
+
+	// show interaction only on these states
 	:is(.thumbnail, .no-thumbnail) {
 		cursor: zoom-in;
-		&:hover {
+		
+		&:is(:hover, :focus) {
 			outline: 1px solid var(--input-focus-outline);
 			outline-offset: 2px;
 		}
@@ -22,66 +31,13 @@
 			top: 3px;
 			right: 3px;
 			z-index: 1;
-
 			height: 27px;
 			width: 27px;
 			border-radius: 20%;
-
 			background: center / 20px url(svg-white-icon("i/zoom-in")) var(--btn-blue-active) no-repeat;
 		}
 	}
-
-	&.portrait {
-		grid-column: span 2;
-	}
-
-	&.landscape {
-		grid-column: span 3;
-	}
-
 }
 
-.thumbnail {
-	background: var(--btn-base-light);
 
-	.portrait & {
-		aspect-ratio: 3 / 2; // A4
-	}
 
-	.landscape & {
-		aspect-ratio: 16 / 9;
-	}
-
-	img {
-		width: 100%;
-		object-fit: cover;
-	}
-}
-
-.no-thumbnail {
-	height: 150px;
-	background: 50% 30px/ 42px var(--i-doc) var(--btn-base-light) no-repeat;
-	@include flex(flex-end, center);
-	padding-block: 10px;
-	font-size: 1.2rem;
-}
-
-.attachment-meta {
-	margin-block-start: 10px;
-	display: grid;
-	grid: auto / auto-flow dense;
-	grid-auto-columns: 1fr 30px;
-	gap: 5px;
-	place-items: start center;
-
-	.title {
-		@include font-size(10);
-		color: var(--txt-light);
-	}
-}
-
-.edit-attachment {
-	margin-block-start:10px;
-	@include flex(center, center);
-	gap:10px;
-}

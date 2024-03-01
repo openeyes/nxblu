@@ -1,0 +1,16 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.attachment-file {
+	.no-thumbnail {
+		height: 150px;
+		background: 50% 30px/ 42px var(--i-doc) var(--btn-base-light) no-repeat;
+		@include flex(flex-end, center);
+		padding-block: 10px;
+		font-size: 1.2rem;
+	}
+}
+
