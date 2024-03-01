@@ -6,7 +6,7 @@
 
 * Chrome > 89
 * Edge > 89
-* Safari > 15
+* Safari > 15.4
 
 ### Notes
 
