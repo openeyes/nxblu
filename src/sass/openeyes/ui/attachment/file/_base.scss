@@ -18,7 +18,8 @@
 	// show interaction only on these states
 	:is(.thumbnail, .no-thumbnail) {
 		cursor: zoom-in;
-		
+		* { pointer-events: none; } // for JS
+
 		&:is(:hover, :focus) {
 			outline: 1px solid var(--input-focus-outline);
 			outline-offset: 2px;
