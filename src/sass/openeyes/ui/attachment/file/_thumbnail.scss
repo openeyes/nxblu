@@ -8,9 +8,7 @@
 	.thumbnail {
 		background: var(--btn-base-light);
 
-		.portrait & {
-			aspect-ratio: 3 / 2; // A4
-		}
+		aspect-ratio: 3 / 2; // A4
 
 		.landscape & {
 			aspect-ratio: 16 / 9;

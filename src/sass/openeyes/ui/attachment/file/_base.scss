@@ -7,6 +7,7 @@
 .attachment-file {
 	position: relative;
 	width: min( 100%, 360px); // because thumbnails are 800w/900w
+	user-select: none;
 
 	// when added to attachment-grid
 	grid-column: span 2;

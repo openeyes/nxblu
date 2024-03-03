@@ -9,6 +9,8 @@
 		grid-area: footer;
 		place-self: center;
 
+		@include flex( center, center);
+		gap:30px;
 		background: var(--bg-popup);
 
 		// to change img view mode: "Fit to screen" or "Actual size"
@@ -16,10 +18,6 @@
 			@include font-size(16);
 			padding: 0 16px; // tab is 16px
 			height: 38px;    // tab is 38px
-			margin:0 32px 0 0;
-			&:last-child {
-				margin-right:0;
-			}
 		}
 	}
 }
