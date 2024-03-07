@@ -12,7 +12,7 @@
 	// when added to attachment-grid
 	grid-column: span 2;
 
-	&.landscape {
+	&:is(.landscape, .video){
 		grid-column: span 3;
 	}
 
