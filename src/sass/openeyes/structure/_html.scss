@@ -19,9 +19,13 @@ html {
 }
 
 body.open-eyes {
-	// Smallest monitor size is 1280px (1268px with scrollbars)
-	// so supporting down to 1200px (and this also provides some tablet device support)
-	min-width: 1199px;
+	// handheld UI added in v9
+	&:not(.handheld){
+		// Smallest monitor size is 1280px (1268px with scrollbars)
+		// so supporting down to 1200px (and this also provides some tablet device support)
+		min-width: 1199px;
+	}
+
 	padding:0;
 	margin:0;
 

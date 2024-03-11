@@ -4,8 +4,8 @@
 // this was only set up for type="date" and type="time"
 // but made more generic to handle other scenarios such
 // pre-populating a password field
-input {
-	@supports (color-scheme: dark) {
+@supports (color-scheme: dark) {
+	input {
 		color-scheme: var(--input-scheme);
 	}
 }
