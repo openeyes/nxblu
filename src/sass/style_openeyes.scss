@@ -97,6 +97,9 @@
 @use "openeyes/sem";
 @use "openeyes/non-standard-layouts";
 
+// handheld responsive UI
+@use "openeyes/handheld";
+
 // Waiting for this library to be depreciated.
 // it needs to be removed and replaced with <input type="date">
 // however, until that time...

@@ -1,0 +1,19 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-hh {
+	display: grid;
+	overflow: hidden;
+	
+	// default is landscape layout, shows all DOM elements
+	grid: "title page" 1fr "info page" 1fr / 2fr 3fr;
+
+	// portrait on tablet or phone, stack the DOM
+	// note "hh-info" will position itself outside the explicit grid below main content
+	@include tablet(){
+		grid: "title" auto "page" 50svh "info" auto / 1fr;
+	}
+}

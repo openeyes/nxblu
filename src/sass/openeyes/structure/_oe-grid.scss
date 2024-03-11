@@ -18,27 +18,16 @@
 	// div.oe-full-content
 	grid: "header" #{$oe-header-height} "pageheader" #{$oe-event-header-height} "main" 1fr / 1fr;
 
-	// Login & whiteboard have no page header
-	&.minimal {
-		grid: "header" #{$oe-header-height} "main" 1fr / 1fr;
-	}
-
 	// Handheld UI (introduced in v9, to provide a better UI structure for device specific content)
-
 	&.handheld {
 		@supports (height: 100svh) {
 			height: 100svh;
 		}
+	}
 
-		// default is landscape layout, shows all DOM elements
-		grid: "header header" 40px  "title main" auto "info main" 1fr / 1fr 3fr;
-		gap: 20px;
-
-		// portrait on tablet or phone, stack the DOM
-		// note "hh-info" will position itself outside the explicit grid below main content
-		@include tablet(){
-			grid: "header" 40px "info" auto "main" 1fr / 1fr;
-		}
+	// Login, whiteboard & handheld have no page header
+	&:is(.minimal, .handheld) {
+		grid: "header" #{$oe-header-height} "main" 1fr / 1fr;
 	}
 
 	// Big patient search banner
