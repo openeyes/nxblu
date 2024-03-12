@@ -20,22 +20,19 @@
 	background: var(--bg-popup);
 	cursor: pointer;
 
-	&:hover,
-	&:focus {
+	&:is(:hover, :focus, .active){
 		color: #fff;
-		background-color: var(--btn-blue);
-
 		.wait-duration {
 			filter:  grayscale(100%)
 		}
+	}
 
+	&:is(:hover, :focus) {
+		background-color: var(--btn-blue);
 	}
 
 	&.active {
 		background-color: var(--btn-blue-hint);
-		.wait-duration {
-			filter:  grayscale(100%)
-		}
 	}
 
 	// Show wait duration from Clinic
