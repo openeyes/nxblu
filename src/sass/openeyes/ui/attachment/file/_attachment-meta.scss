@@ -14,8 +14,16 @@
 		place-items: start center;
 
 		.title {
+			@include flex(flex-start, flex-start);
+			flex-wrap: wrap;
+			gap: 5px;
+
 			@include font-size(10);
 			color: var(--txt-light);
+
+			.oe-lat {
+				display: inline-flex;
+			}
 		}
 	}
 }
