@@ -1,0 +1,36 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-hh {
+	// collapses to a stack on small devices
+	// UI pattern
+	// |- <span class="label"> ...
+	// |- <div class="input"> ... wrap ALL items with this
+	
+	.f-c-l-i {
+		@include flex( flex-start, flex-start );
+		gap:10px;
+
+		@include tablet(){
+			flex-direction: column;
+			gap:2px;
+		}
+		
+		span.label {
+			flex: 1 1 0;
+			@include font-size(16);
+			font-weight: var(--font-medium);
+			color: var(--txt-light);
+		}
+		
+		// all input structures needs wrapping so that the
+		// layouts can be lined up
+		div.inputs {
+			flex: 2 1 0;
+			@include flex( flex-start, space-between );
+		}	
+	}
+}

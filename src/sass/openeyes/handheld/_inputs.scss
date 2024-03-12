@@ -4,8 +4,11 @@
 @use "openeyes/var" as *;
 @use "openeyes/mix" as *;
 
-.hh-main {
-	grid-area: page;
-	overflow-y: auto;
-	padding: 20px;
+.oe-hh {
+	:is(input, textarea, select ){
+		height: auto;
+		@include font-size(16);
+		border: 2px solid var(--txt-light);
+		border-radius: 5px;
+	}
 }

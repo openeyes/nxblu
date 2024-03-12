@@ -1,11 +1,12 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-@use "oe-hh";
-@use "hh-header";
-@use "hh-aside";
-@use "hh-main";
-@use "typography";
-@use "inputs";
-@use "buttons";
-@use "flex-label-input";
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-hh {
+	button {
+		height: 2rem;
+		@include font-size(16);
+	}
+}

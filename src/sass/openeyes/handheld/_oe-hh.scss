@@ -7,13 +7,13 @@
 .oe-hh {
 	display: grid;
 	overflow: hidden;
-	
+
 	// default is landscape layout, shows all DOM elements
-	grid: "title page" 1fr "info page" 1fr / 2fr 3fr;
+	grid: "title page" auto "info page" 1fr / 2fr 3fr;
 
 	// portrait on tablet or phone, stack the DOM
 	// note "hh-info" will position itself outside the explicit grid below main content
 	@include tablet(){
-		grid: "title" auto "page" 50svh "info" auto / 1fr;
+		grid: "title" auto "page" minmax(40svh, 1fr) "info" minmax(120px, 10svh) / 1fr;
 	}
 }
