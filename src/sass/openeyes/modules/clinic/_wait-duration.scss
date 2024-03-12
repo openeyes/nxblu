@@ -38,24 +38,24 @@
 		
 		&.yellow {
 			circle {
-				&.c0 { fill: var(--color-yellow); opacity: 0.5; }
+				&.c0 { fill: var(--color-yellow); opacity: 0.8; }
 				&.c1 { fill: var(--color-yellow) }
 			}
 		}
 		
 		&.orange {
 			circle {
-				&.c0 { fill: var(--color-orange); opacity: 0.3; }
-				&.c1 { fill: var(--color-orange); opacity: 0.6; }
+				&.c0 { fill: var(--color-orange); opacity: 0.6; }
+				&.c1 { fill: var(--color-orange); opacity: 0.8; }
 				&.c2 { fill: var(--color-orange); }
 			}
 		}
 		
 		&.red {
 			circle {
-				&.c0 { fill: var(--color-red); opacity: 0.2; }
-				&.c1 { fill: var(--color-red); opacity: 0.4; }
-				&.c2 { fill: var(--color-red); opacity: 0.7; }
+				&.c0 { fill: var(--color-red); opacity: 0.4; }
+				&.c1 { fill: var(--color-red); opacity: 0.6; }
+				&.c2 { fill: var(--color-red); opacity: 0.8; }
 				&.c3 { fill: var(--color-red); }
 			}
 		}
