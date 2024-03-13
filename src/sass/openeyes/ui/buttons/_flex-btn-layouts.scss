@@ -18,6 +18,10 @@
 	flex-direction: column;
 	gap: 10px;
 
+	.handheld &  {
+		gap: 25px;
+	}
+
 	button,
 	.button {
 		// assume that buttons should fill area width, kinda standard design

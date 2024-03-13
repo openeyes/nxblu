@@ -9,11 +9,11 @@
 		@include font-size(22);
 		font-weight: var(--font-light);
 		color: var(--txt-hd);
-		margin-block-end: 20px;
+		margin-block-end: 15px;
 	}
 
 	:is( h2, h3 ) {
-		margin-block-end: 15px;
+		margin-block-end: 10px;
 	}
 
 	h2 {

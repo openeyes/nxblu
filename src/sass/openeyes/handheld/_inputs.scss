@@ -8,6 +8,7 @@
 	:is(input, textarea, select ){
 		height: auto;
 		@include font-size(16);
+		padding-block: 0.5rem;
 		border: 2px solid var(--txt-light);
 		border-radius: 5px;
 	}
