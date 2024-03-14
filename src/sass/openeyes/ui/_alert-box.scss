@@ -57,6 +57,12 @@
 			}
 		}
 	}
+
+	// JS will need to clean up the DOM
+	&.fade-out {
+		display:block;
+		animation: 4s ease-in forwards fadeout;
+	}
 	
 	// actions, buttons and close icons
 	&.has-actions {

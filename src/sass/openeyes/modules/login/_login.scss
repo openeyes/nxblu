@@ -9,6 +9,10 @@
 	position: relative;
 	top: -5vh; // offset visual vertical balance
 
+	.handheld & {
+		top: 5vh;
+	}
+
 	h1 {
 		margin: 0 0 40px 0;
 		@include font-size(58);
