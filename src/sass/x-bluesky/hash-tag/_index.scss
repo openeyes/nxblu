@@ -1,0 +1,63 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// #tags concept work for OE
+
+.oe-qtags {
+	// container to show the qtags for adding to inputs
+	z-index: 2; // added via a wrapper around the input
+	position:absolute; // positioned by JS
+	width:300px;
+	padding: 4px 15px 4px 4px; // allow for the icon
+	background:#333 url( '/newblue/dist/svg/in-css/dark/i/remove-circle.svg') top 5px right 5px no-repeat;
+	background-size: 13px;
+	border:1px solid #000;
+	border-radius: 3px;
+
+	// JS add this DOM for: "No matching Patient Tags"
+	.no-matching-tags {
+		padding:4px;
+		font-size:11px;
+		color: #ccc;
+		font-style: italic;
+	}
+}
+
+// UI flag that tagging is available on this input
+// it can also be clicked to open the pane;
+.oe-qtags-flag {
+	z-index: 1; 
+	position:absolute; 	
+	left:0;
+
+	display:flex;
+	align-items:center;
+	justify-content:center;
+
+	height:25px;
+	width:25px;
+
+	border-radius: 50%;
+	
+	font-size:17px;
+	font-weight:500;
+	color:#fff; // fixed.
+	background: #00c;
+	cursor: pointer;
+}
+
+// qtags, used in the popup and used to highlight 
+// a successful matching #tag in a string.
+.qtag {
+	display: inline-block; 
+	color: #000;
+	padding:2px 6px;
+	border-radius:2px;
+	background:#ccc;
+	
+	// when showing all the tags in the popup
+	.oe-qtags & {
+		cursor: pointer;
+		font-size: 12px;
+	}
+}
