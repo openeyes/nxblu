@@ -4,6 +4,12 @@
 @use "openeyes/mix" as *;
 
 tbody {
+	// it's possible to use consecutive tbodys in table
+	&:not(:first-of-type){
+		// no padding or margin available, so to create vertical space...
+		border-top: 10px solid var(--bg-data);
+	}
+
 	// underline rows to help with data reading
 	tr {
 		border-top: 1px solid var(--gui-line);
