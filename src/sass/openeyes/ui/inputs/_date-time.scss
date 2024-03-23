@@ -1,17 +1,8 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes. 
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-// this was only set up for type="date" and type="time"
-// but made more generic to handle other scenarios such
-// pre-populating a password field
-@supports (color-scheme: dark) {
-	input {
-		color-scheme: var(--input-scheme);
-	}
-}
-
-// match oe-date: dd Mth YYYY
-// this approach hopefully replaced by the custom browser data input
+// DEPRECIATING (slowly) for <input type="date">
+// still in a few places... sigh.
 input.date {
 	text-align: center;
 	width: 13ch;

@@ -44,9 +44,8 @@
 	
 	// overflow wrappers for all data in Patient Popups
 	// only used in Patient Popups; in generic (centered!) popups 'oe-popup-content' handles this	
-	.oe-popup-overflow, 
-	.popup-overflow {
-		max-height: 415px; // this restricts the popup's vertical hieight (for lowest res monitors)
+	:is(.oe-popup-overflow, .popup-overflow) {
+		max-height: min(600px, 50vh); // this restricts the popup's vertical height (for lowest res monitors)
 		overflow: auto;
 		padding:0 5px 0 0; // breathing space next to scrollbar
 		margin:3px 0 0 0; // a bit of breathing space if alerts are added above content

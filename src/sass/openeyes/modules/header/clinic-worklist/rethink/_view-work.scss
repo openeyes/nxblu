@@ -64,6 +64,10 @@
 			border-top: 2px solid var(--btn-blue-active);
 			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 
+			width: 300px;
+
+			@include font-size(11);
+
 		}
 
 	}

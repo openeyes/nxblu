@@ -92,6 +92,17 @@ label {
 					opacity: 1;
 				}
 			}
+
+			// cancel - not required
+			&.is-cancel {
+				.oe-i {
+					background-image: var(--i-remove-circle);
+				}
+				input:checked + .oe-i {
+					background-image: var(--i-cancel);
+					opacity: 1;
+				}
+			}
 		}
 		
 		span.text {

@@ -1,0 +1,45 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.confirm-cancel {
+	all: unset;
+	width: 100%;
+	margin-inline: 10px;
+
+	@include flex( flex-start, flex-start);
+	flex-direction: column;
+	gap: 5px;
+
+	&.single-row {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.legend {
+		all: unset;
+		@include font-size(10);
+		font-weight: var(--font-medium);
+		flex: 1 1 0;
+		padding-inline:3px;
+
+		&.error {
+			color: #fff;
+			background-color: var(--color-red);
+		}
+	}
+
+	.input-opts {
+		@include flex( center, flex-start);
+		gap: 3px;
+	}
+
+	// "Not checked" or whatever text
+	.as-button {
+		.btn {
+			@include font-size(10);
+		}
+	}
+}

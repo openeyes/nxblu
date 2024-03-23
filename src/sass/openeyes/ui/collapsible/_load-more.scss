@@ -1,0 +1,46 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.load-more {
+	@include flex( center, center);
+
+	// match collapse-data styling, when it loads
+	// it will switch to that expanded DOM
+	margin: 5px 5px 10px 5px;
+	cursor: pointer;
+	padding: 8px;
+
+	// as User regularly interact with this turn off selection
+	user-select: none;
+
+	// use outline, rather than border to better balance visual
+	// vertical alignment with normal collapse-data layouts.
+	outline:2px dotted var(--txt-light);
+	outline-offset: -2px;
+
+	border-radius: 10px;
+
+	// JS
+	* {
+		pointer-events: none;
+	}
+
+	&:hover {
+		outline-color: var(--txt-highlight);
+		background: var(--bg-max);
+	}
+
+	&.loading {
+		outline-color: var(--txt-highlight);
+		color:  var(--txt-highlight);
+		background: var(--bg-max);
+	}
+
+
+}
+
+
+

@@ -5,65 +5,91 @@
 @use "openeyes/mix" as *;
 
 // OE Popup - Quicklook Data Groups
-// De-coupled for use in Patient Popups and Quick Overview
-// Note: all set to pro-theme, Mini Overview has to overide this
+// Used in 2 places: Patient Popup and Quick Overview
+// (patient popup maybe replaced by summary-grid)
 
-.quicklook-data-groups {
-	width:33.333%;		// 3 columns in patient popup (default)
-	margin:0 8px 0 0;
-			
-	@include font-size(11);
-	font-weight:400;
-	
+
+// new grid layout for eye & systemic grid
+.summary-grid {
+	display: grid;
+	grid:  repeat(2, auto) / repeat(3, 1fr);
+	overflow: hidden;
+	gap: 6px 3px;
+
 	.group {
-		margin:0 0 3px 0;
+		overflow-y: auto;
+		max-height: 250px;
+	}
+}
+
+// across both layouts
+:is(.quicklook-data-groups, .summary-grid) {
+	.group {
 		background: var(--bg-data);
-		
-		.label { 
-			padding:8px 9px;
+
+		.label {
+			padding: 8px 9px;
 			@include font-size(14);
 			font-weight: var(--font-light);
-		 	color: var(--txt-hd);
+			color: var(--txt-hd);
 		}
-		
+
 		// basic data list, uses <br>
 		.data {
-			padding:0 10px 5px 10px;
-			
+			padding: 0 10px 5px 10px;
+
 			.not-recorded {
-				opacity:0.4;
+				opacity: 0.4;
 				text-align: center;
 			}
-			
 		}
-	} 
-	
+	}
+}
+
+
+// current: in patient popup and quick overview (meta)
+.quicklook-data-groups {
+	width: 33.333%; // 3 columns in patient popup (default)
+	margin: 0 8px 0 0;
+
+	@include font-size(11);
+	font-weight: 400;
+
+	.group {
+		margin: 0 0 3px 0;
+	}
+
 	// table layout for more complex data:
 	table {
-		margin:0 0 10px 0; 
-		width:100%;
-		
-		th { color:var(--txt-light); }
-		td { color:var(--txt-base); }
-		
+		margin: 0 0 10px 0;
+		width: 100%;
+
+		th {
+			color: var(--txt-light);
+		}
+
+		td {
+			color: var(--txt-base);
+		}
+
 		th, td {
 			vertical-align: top;
 			@include font-size(11);
 			font-weight: var(--font-medium);
-			padding:2px 0 2px 5px;
+			padding: 2px 0 2px 5px;
 			text-align: left;
-			
+
 			&:last-child {
 				text-align: right;
 			}
-			
+
 			&:first-child {
 				text-align: left;
-				padding-left:0;
+				padding-left: 0;
 			}
-			
+
 		}
-		
+
 		// matches the default align for tables in Elements
 		&.last-left {
 			th, td {
@@ -72,9 +98,11 @@
 				}
 			}
 		}
-		
-		
-		strong { font-weight: 400; }
+
+
+		strong {
+			font-weight: 400;
+		}
 	}
 }
 

@@ -38,6 +38,11 @@ select {
 	&.discreet {
 		background-color: transparent;
 		background-image:  var(--i-arrow-down-bold-blue);
+		// match input focus
+		&:hover {
+			outline: 1px dotted var(--input-focus-outline);
+			outline-offset: 1px;
+		}
 
 	}
 

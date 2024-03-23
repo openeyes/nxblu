@@ -41,6 +41,12 @@
 	}
 }
 
+@supports (color-scheme: dark) {
+	input {
+		color-scheme: var(--input-scheme);
+	}
+}
+
 
 
 

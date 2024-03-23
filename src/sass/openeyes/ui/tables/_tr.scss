@@ -58,14 +58,10 @@ tbody {
 		}
 
 		:is(.rows-focus, .focus-tr) & {
-			&:last-child {
-				// without this, get a pixel jump
-				border-bottom: 1px solid transparent;
-			}
 
 			&:is(:hover, :focus-within) {
 				background-color: var(--bg-hover-row);
-				border-bottom: 1px solid var(--gui-line-hard);
+				outline: 1px solid var(--gui-line);
 			}
 
 			td {
