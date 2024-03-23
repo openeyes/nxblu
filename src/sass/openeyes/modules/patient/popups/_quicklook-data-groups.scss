@@ -22,6 +22,19 @@
 	}
 }
 
+// current: in patient popup and quick overview (meta)
+.quicklook-data-groups {
+	width: 33.333%; // 3 columns in patient popup (default)
+	margin: 0 8px 0 0;
+
+	@include font-size(11);
+	font-weight: 400;
+
+	.group {
+		margin: 0 0 3px 0;
+	}
+}
+
 // across both layouts
 :is(.quicklook-data-groups, .summary-grid) {
 	.group {
@@ -43,20 +56,6 @@
 				text-align: center;
 			}
 		}
-	}
-}
-
-
-// current: in patient popup and quick overview (meta)
-.quicklook-data-groups {
-	width: 33.333%; // 3 columns in patient popup (default)
-	margin: 0 8px 0 0;
-
-	@include font-size(11);
-	font-weight: 400;
-
-	.group {
-		margin: 0 0 3px 0;
 	}
 
 	// table layout for more complex data:
@@ -105,4 +104,7 @@
 		}
 	}
 }
+
+
+
 

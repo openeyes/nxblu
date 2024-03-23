@@ -38,7 +38,6 @@ td, th {
 	// it's alignment default is the reverse
 	&:last-child {
 		text-align: right;
-
 		.standard:not(.last-right) & {
 			text-align: left;
 		}
