@@ -5,11 +5,17 @@
 @use "openeyes/mix" as *;
 
 .uah {
-	padding: 70px 0 20px 0;
+	padding-block: 20px;
+	overflow-y: auto;
+
+	grid-area: 2 / 1 ;
+
+	$_w: 1300px;
+	$_w-small: 1160px;
 
 	// h3
 	.uah-view {
-		width: 1160px;
+		width: $_w-small;
 		margin: 0 auto 20px auto; // center this
 		@include font-size(17);
 		font-weight: var(--font-light);
@@ -17,7 +23,7 @@
 
 	.snapshot {
 		@include flex(flex-start, space-between);
-		width: 1160px;
+		width: $_w-small;
 		margin: 0 auto 20px auto; // center this
 		padding: 0 0 20px 0;
 		border-bottom: 1px dotted var(--txt-active);
@@ -61,10 +67,10 @@
 
 	@include extended() {
 		.uah-view {
-			width: 1300px;
+			width: $_w
 		}
 		.snapshot {
-			width: 1300px;
+			width: $_w;
 			.view-element {
 				width: 1100px;
 			}

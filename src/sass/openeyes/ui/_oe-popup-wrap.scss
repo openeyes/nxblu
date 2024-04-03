@@ -16,13 +16,16 @@
 	// generic effect to work across both themes
 	background: rgba(60,60,65, 0.6);
 
+	// full content block-out, timeout security help
 	&.block-out {
-		// full content block-out
 		background: var(--bg-html);
 	}
 
 	&.clear {
-		// invisible
 		background: transparent;
+	}
+
+	&.blur-bg {
+		backdrop-filter: blur(4px);
 	}
 }

@@ -9,12 +9,16 @@
 	position: relative;
 	background: var(--bg-html);
 
-	width: 100vw;
+	width: min(100vw, 1500px);
 	height: 100vh;
-	overflow-y: auto;
+	overflow: hidden;
+	margin: auto;
+
+	display: grid;
+	grid: 50px 1fr / 1fr;
 
 	.title {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
@@ -30,7 +34,7 @@
 	}
 
 	.close-popup-btn {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		right: 0;
 		height: 50px;
