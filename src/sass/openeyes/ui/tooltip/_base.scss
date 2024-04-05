@@ -17,6 +17,9 @@
 	color:var(--txt-base);
 	@include font-size(11);
 	font-weight: var(--font-medium);
+
+	// tooltips are never clickable
+	pointer-events: none;
 	
 	@include boxshadow();
 
