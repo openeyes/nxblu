@@ -1,0 +1,15 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.element-on-request {
+	@include font-size(13);
+	color: var(--txt-hd);
+	font-weight: var(--font-medium);
+	padding: 3px 3px 3px 9px;
+	margin: 0 0 3px 0;
+	border: 2px solid var(--bg-data);
+}
+
+

@@ -42,7 +42,7 @@
 }
 
 @supports (color-scheme: dark) {
-	input {
+	:is(input, textarea, select) {
 		color-scheme: var(--input-scheme);
 	}
 }
