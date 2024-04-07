@@ -64,6 +64,9 @@
 		text-align: center;
 		opacity: 0.5;
 		cursor: pointer;
+		.arrow-down-bold {
+			pointer-events: none;
+		}
 	}
 }
 
