@@ -54,6 +54,8 @@
 		padding: 0 5px 0 0;
 	}
 
+	// this little DOM appears when a tile content overflows
+	// it vanishes on scroll or when clicked
 	.tile-more-data-flag {
 		position: absolute;
 		bottom: 10px;

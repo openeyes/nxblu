@@ -6,9 +6,9 @@
 
 .oe-hh {
 	h1 {
-		@include font-size(22);
+		@include font-size(26);
 		font-weight: var(--font-light);
-		color: var(--txt-hd);
+		color: var(--txt-light);
 		margin-block-end: 15px;
 	}
 
