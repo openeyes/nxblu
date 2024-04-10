@@ -8,6 +8,10 @@
 	position:relative;
 	background: var(--bg-popup);
 	min-width: 600px;
-	max-width: $oe-minimum-viewport-width; 
+	max-width: $oe-minimum-viewport-width;
 	padding: 20px;
+
+	.handheld & {
+		min-width: auto;
+	}
 }
