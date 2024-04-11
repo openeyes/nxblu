@@ -17,6 +17,16 @@
         padding:10px 0;
 		// softly divide the both eyes from the split data
 		border-bottom: 2px dotted var(--gui-line);
+
+		&.divider {
+			padding: 20px 0 5px 0;
+			border-top: 2px solid var(--gui-line);
+
+			&:first-child {
+				border-top: none;
+				padding-top:10px;
+			}
+		}
 	}
 }
 
