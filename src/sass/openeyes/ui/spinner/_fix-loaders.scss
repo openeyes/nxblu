@@ -1,0 +1,23 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// The implementation of spinners is generally poorly and consistently implemented
+// until the loading UIX feedback can be properly manage the follow CSS fixes will work:
+
+// Add Event Popup
+.oe-create-event-step-through {
+	.event-type-list {
+		position: relative;
+		i.spinner {
+			position: absolute;
+			inset:0;
+			inset: 0;
+			background: var(--input-hint);
+			backdrop-filter: blur(2px);
+		}
+	}
+}
+
+
