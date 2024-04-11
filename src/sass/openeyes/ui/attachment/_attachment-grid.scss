@@ -5,4 +5,8 @@
 	display:grid;
 	grid: auto-flow dense / repeat(auto-fit, 80px);
 	gap:20px;
+
+	:is( .right-eye, .left-eye ) & {
+		grid-template-columns: repeat(auto-fit, 60px);
+	}
 }
