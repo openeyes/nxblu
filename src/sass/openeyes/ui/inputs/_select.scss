@@ -36,7 +36,7 @@ select {
 	// a "discreet" select dropdown, added to handle a dense UI of multiple
 	// dropdowns e.g. Diagnosis 2
 	&.discreet {
-		background-color: transparent;
+		background-color: var(--bg-popup);
 		background-image:  var(--i-arrow-down-bold-blue);
 		// match input focus
 		&:hover {
