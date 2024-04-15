@@ -1,0 +1,36 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.pqv-hotlist {
+
+	.view-pqv {
+		padding: 10px;
+		@include flex(center, center);
+		gap: 10px;
+
+		@include font-size(11);
+		font-weight: var(--font-bold);
+
+		.oe-i {
+			height: 24px;
+			width: 24px;
+		}
+	}
+
+	.pqv-hotlist-content {
+		margin: 0 10px 30px 10px;
+		padding: 5px 0 20px 0;
+		border-bottom: 2px dotted var(--gui-line);
+		border-top: 2px dotted var(--gui-line);
+	}
+}
+
+
+
+
+
+
+

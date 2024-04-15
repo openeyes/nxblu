@@ -5,7 +5,7 @@
 @use "openeyes/mix" as *;
 
 // OE Patient Mini Overview
-.oe-patient-quick-overview {
+:is(.oe-patient-quick-overview, .pqv-hotlist-content) {
 
 	// situational awareness
 	// flex-layout removed
