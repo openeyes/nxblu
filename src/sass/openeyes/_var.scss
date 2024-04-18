@@ -57,6 +57,7 @@ $ed3-icon-size: 32px;
 
 // z
 $oe-z-spinner: 200;
+$oe-z-tooltip: 170; // tooltips was 90... but now used all over the place in popups etc
 $oe-z-top: 160; // VC ScratchPad
 $oe-z-popup: 150; // was 100, switched to above logo because of attachments
 $oe-z-logo: 100; // was 150
@@ -65,7 +66,6 @@ $oe-z-patient-quick: 98; // Patient Quick View (side or float)
 $oe-z-fast-date: 97; // blueJS date picker
 $oe-z-hotlist: 95; // hotlist
 $oe-z-event-quick-view: 92;
-$oe-z-tooltip: 90; // tooltips are used in quicklook popups
 $oe-z-quicklook: 80; // quicklook, demographics, allergies & risks
 $oe-z-add-insert: 70;
 $oe-z-element-search: 65;

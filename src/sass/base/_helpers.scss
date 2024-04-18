@@ -12,6 +12,7 @@
 // 'display-...'
 // added to help out Vue which doesn't
 // like inline styles .e.g. style="display: block"
+// it is also used as a toggle with "hidden"
 .display-block {
 	display: block !important;
 }

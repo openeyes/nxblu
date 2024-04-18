@@ -1,0 +1,31 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.patient-icon-btns {
+	@include flex( center, space-between);
+	gap:3px;
+
+	margin-block:3px;
+
+	:is(button, a) {
+		flex: 1 1 0;
+		height: 30px;
+
+		&:is(:hover,:focus,.selected) {
+			background: var(--btn-blue-hint);
+			svg {
+				fill: #fff;
+			}
+		}
+	}
+
+	svg {
+		display: block;
+		fill: var(--txt-light);
+		width: 16px;
+		height: 16px;
+	}
+}
