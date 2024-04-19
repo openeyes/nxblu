@@ -6,9 +6,8 @@
 
 .patient-icon-btns {
 	@include flex( center, space-between);
-	gap:3px;
-
-	margin-block:3px;
+	gap:2px;
+	margin-block:2px;
 
 	:is(button, a) {
 		flex: 1 1 0;
@@ -24,7 +23,7 @@
 
 	svg {
 		display: block;
-		fill: var(--txt-light);
+		fill: var(--btn-text);
 		width: 16px;
 		height: 16px;
 	}
