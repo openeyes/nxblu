@@ -23,7 +23,6 @@
 		}
 
 		.extra-small-data {
-			font-size: $wb3-font-header;
 			line-height: 1;
 			margin-bottom: 0.3em;
 
@@ -38,12 +37,19 @@
 .data-single-extra {
 	.wb-data {
 		font-size: $wb3-font-large;
+		.extra-small-data {
+			font-size: $wb3-font-header;
+		}
 	}
 }
 
 .data-double-extra {
 	.wb-data {
 		font-size: $wb3-font-medium;
+		.extra-small-data {
+			font-size: $wb3-font-small-header;
+			font-weight: var(--font-medium);
+		}
 	}
 }
 

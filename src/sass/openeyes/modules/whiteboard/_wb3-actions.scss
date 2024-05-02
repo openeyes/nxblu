@@ -63,7 +63,7 @@
 	@include handheld() {
 		position: static;
 		margin:5px 0 0 0;
-		height:5vh;
+		height:200px;
 
 		// in portrait buttons may overflow!
 		overflow-x: auto;

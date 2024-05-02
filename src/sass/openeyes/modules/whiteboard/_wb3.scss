@@ -15,7 +15,6 @@
 	// Widgets fill in the grid as they are added into the DOM
 	// 3 x 3 widget grid:
 	grid: auto-flow 1fr / 1fr 1fr 1fr;
-	grid-auto-flow: row;
 
 	// create a gutter around widgets
 	gap: 4px;
@@ -26,10 +25,16 @@
 
 	@include handheld() {
 		height: calc(80vh - $oe-header-height);
+		@supports(height: 100svh) {
+			height: calc(100svh - $oe-header-height - 200px);
+		}
+
 		// switch to 5 x 2 widget layout
 		grid-template-columns: 1fr 1fr ;
 		grid-auto-flow: column;
 	}
+
+
 }
 
 
