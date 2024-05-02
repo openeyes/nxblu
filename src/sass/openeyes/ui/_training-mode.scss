@@ -19,6 +19,12 @@
 			fill: $_yellow;
 			opacity: 1;
 		}
+
+		&:is(:hover, .active) {
+			svg.oe-openeyes {
+				fill: $_yellow;
+			}
+		}
 	}
 
 	// Login header
