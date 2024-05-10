@@ -1,0 +1,65 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+@use "sass:math";
+
+.profile-context {
+	@include font-size(13);
+	font-weight: var(--font-medium);
+	padding:0 0 8px 0;
+
+	.row {
+		margin: 0 0 5px 0;
+	}
+
+	a {
+		display: inline-block;
+		margin-inline-start: 10px;
+		@include font-size(9);
+		font-weight: var(--font-bold);
+		color: var(--txt-active);
+	}
+
+	.label {
+		line-height: 1.1;
+		@include font-size(9);
+		font-weight: var(--font-light);
+		color: var(--txt-light);
+	}
+}
+
+
+.oe-profile-panel {
+	display: none; // js controlled
+	z-index: $oe-z-logo;
+
+	background: var(--bg-html);
+
+	position: fixed;
+	top: $oe-header-height - 5px;
+	right: 5px;
+	width: math.div($oe-hotlist-panel-width, 1.33);
+
+	padding: 20px;
+
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+
+	h2 {
+		@include font-size(13);
+		font-weight: var(--font-bold);
+		line-height:1.1;
+		color: var(--txt-light);
+		margin: 0 0 10px 0;
+	}
+
+	.profile-action {
+		padding-block-start: 20px;
+		@include flex( center, center );
+
+	}
+}
+
+
+
+
+
+

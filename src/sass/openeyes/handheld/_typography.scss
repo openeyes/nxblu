@@ -7,7 +7,7 @@
 .oe-hh {
 	h1 {
 		@include font-size(26);
-		font-weight: var(--font-light);
+		font-weight: 100;
 		color: var(--txt-light);
 		margin-block-end: 15px;
 	}
