@@ -23,7 +23,7 @@
 		pointer-events: none;
 
 		// when used on a tablet increase the visual size of the SVG icon
-		@include handheld() {
+		@include tablet-scaled() {
 			width: 60px;
 			height: 30px;
 		}

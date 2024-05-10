@@ -20,7 +20,7 @@
 		@include flex( flex-start, flex-start );
 		gap:10px;
 
-		@include tablet(){
+		@include handheld(){
 			display: block;
 
 			span.label {

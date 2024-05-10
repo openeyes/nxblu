@@ -60,7 +60,7 @@
 	}
 
 	// Tablet portrait handheld
-	@include handheld() {
+	@include tablet-scaled() {
 		position: static;
 		margin:5px 0 0 0;
 		height:200px;

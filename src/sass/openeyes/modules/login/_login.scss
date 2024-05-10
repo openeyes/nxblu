@@ -20,7 +20,7 @@
 		font-weight: 100;
 		color: var(--txt-light);
 
-		@include handheld() {
+		@include tablet-scaled() {
 			@include font-size(120);
 		}
 	}
@@ -28,7 +28,7 @@
 	.user {
 		width: 250px;
 		margin: 0 auto;
-		@include handheld() {
+		@include tablet-scaled() {
 			width: 50vw;
 		}
 
@@ -45,7 +45,7 @@
 			margin: 0 0 15px 0;
 			text-align: center;
 
-			@include handheld() {
+			@include tablet-scaled() {
 				height: 64px;
 				@include font-size(32);
 				margin: 0 0 45px 0;

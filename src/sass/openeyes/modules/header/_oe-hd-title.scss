@@ -16,7 +16,7 @@
 	color: var(--txt-light); 	// not themed
 	font-weight: var(--font-light);
 	
-	@include handheld(){
+	@include tablet-scaled(){
 		@include font-size(24);
 		font-weight: var(--font-medium);
 	}

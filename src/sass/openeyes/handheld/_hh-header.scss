@@ -13,7 +13,7 @@
 	overflow-y: auto;
 	overscroll-behavior: contain;
 
-	@include tablet(){
+	@include handheld(){
 		max-height: 25svh;
 	}
 }

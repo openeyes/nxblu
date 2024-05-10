@@ -16,7 +16,7 @@
 // making use of the pixel density on tablets:
 // HTML viewport initial-scaling (0.5) gives: 1200px (from 600) and 1536px from 768
 // therefore, handheld UI modifications need to be below 1600 BUT only if it's in portrait.
-@mixin handheld() {
+@mixin tablet-scaled() {
 	@media only screen and (min-width: $oe-minimum-viewport-width) and (orientation: portrait) {
 		@content;
 	}
@@ -25,8 +25,8 @@
 // v9 introduces a "lite" handheld UI that is optimised for tablets and large phones
 // e.g. e-sign and device image importing for attachments
 // DOM's initial-scale is 1, so classic responsive UI can be used...
-@mixin tablet() {
-	@media only screen and (max-width: 800px) and (orientation: portrait) {
+@mixin handheld() {
+	@media only screen and (max-width: 850px) and (orientation: portrait) {
 		@content;
 	}
 }

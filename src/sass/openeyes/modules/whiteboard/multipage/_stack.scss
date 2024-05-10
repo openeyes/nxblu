@@ -11,7 +11,7 @@
 		// set the height of page wrap
 		height:calc(100vh - $oe-header-height);
 		
-		@include handheld(){
+		@include tablet-scaled(){
 			height:calc(80vh - $oe-header-height);
 		}
 		

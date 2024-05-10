@@ -18,22 +18,41 @@
 	$-size-medium: 16px;
 	$-size-small: 14px;
 
+	// icons need to touch size
+	$-hh-size: 24px;
+
 	// default size is large
 	width: $-size-large;
 	height: $-size-large;
 	background:center / $-size-large  no-repeat;
+
+	.handheld & {
+		width: $-hh-size;
+		height: $-hh-size;
+	}
 
 	&.small {
 		width: $-size-small;
 		height: $-size-small;
 		background-size: $-size-small;
 		vertical-align: middle;
+
+		.handheld & {
+			width: $-hh-size;
+			height: $-hh-size;
+			background-size: $-size-large;
+		}
+
 	}
 
 	// large icon area but small icon
 	&.small-icon {
 		background-size: $-size-small;
 		vertical-align: text-top;
+
+		.handheld & {
+			background-size: $-size-large;
+		}
 	}
 
 	&.medium {
@@ -41,12 +60,22 @@
 		height: $-size-medium;
 		background-size: $-size-medium;
 		vertical-align: middle;
+
+		.handheld & {
+			width: $-hh-size;
+			height: $-hh-size;
+			background-size: $-size-large;
+		}
 	}
 
 	// large icon area but medium icon
 	&.medium-icon {
 		background-size: $-size-medium;
 		vertical-align: text-top;
+
+		.handheld & {
+			background-size: $-size-large;
+		}
 	}
 
 	// make icon hit-area match standard input/button

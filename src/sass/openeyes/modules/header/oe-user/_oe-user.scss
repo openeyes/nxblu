@@ -21,7 +21,7 @@
 	// Turning this off makes changing context impossible!
 	// But, this should be dealt with in a different way.
 	// Note: Officially still not supporting tablets.
-	@include handheld() {
+	@include tablet-scaled() {
 		display: none;
 	}
 

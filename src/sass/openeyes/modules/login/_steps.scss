@@ -15,6 +15,10 @@
 	overflow-y: auto;
 	min-height: 50px; // single option
 	max-height: calc( 100vh - 450px ); // check the layout at various scales
+
+	.handheld & {
+		max-height: 30svh;
+	}
 }
 
 // <ul>

@@ -34,7 +34,7 @@ li.oe-nav-btn {
 			padding: 0 7px;
 		}
 
-		@include handheld() {
+		@include tablet-scaled() {
 			padding: 0 5px;
 		}
 	}

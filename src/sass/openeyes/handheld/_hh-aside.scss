@@ -10,7 +10,7 @@
 	overflow-y: auto;
 	overscroll-behavior: contain;
 
-	@include tablet(){
+	@include handheld(){
 		border-top:2px solid var(--txt-base);
 	}
 }

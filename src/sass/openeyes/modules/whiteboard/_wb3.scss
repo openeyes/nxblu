@@ -23,7 +23,7 @@
 	// Risks and Allergies assigns itself to a column outside the explicit grid:
 	grid-auto-columns: 1fr;
 
-	@include handheld() {
+	@include tablet-scaled() {
 		height: calc(80vh - $oe-header-height);
 		@supports(height: 100svh) {
 			height: calc(100svh - $oe-header-height - 200px);
