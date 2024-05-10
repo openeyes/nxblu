@@ -5,7 +5,12 @@
 @use "openeyes/mix" as *;
 
 .hh-aside {
-	padding: 20px 20px 30px 20px;
+	padding: 20px;
 	background: var(--bg-title);
 	overflow-y: auto;
+	overscroll-behavior: contain;
+
+	@include tablet(){
+		border-top:2px solid var(--txt-base);
+	}
 }

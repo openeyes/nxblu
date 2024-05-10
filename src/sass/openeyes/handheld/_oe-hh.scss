@@ -14,6 +14,6 @@
 	// portrait on tablet or phone, stack the DOM
 	// note "hh-info" will position itself outside the explicit grid below main content
 	@include tablet(){
-		grid: "title" auto "page" minmax(40svh, 1fr) "info" minmax(110px, 10svh) / 1fr;
+		grid: "title" auto "page" minmax(40svh, 1fr) "info" 15svh / 1fr;
 	}
 }
