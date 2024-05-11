@@ -17,6 +17,7 @@
 	}
 	
 	.f-c-l-i {
+		width: 100%;
 		@include flex( flex-start, flex-start );
 		gap:10px;
 
