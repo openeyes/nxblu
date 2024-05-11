@@ -14,12 +14,35 @@
 	// new grid layout added in 6.0.0 for the big patient search
 	// to use it requires a DOM change
 	grid-area: search;
+
+	.handheld & {
+		height: auto;
+		padding:20px 10px ;
+		border-radius: 10px;
+		.search-patient {
+			width: 100%;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: stretch;
+			gap:30px;
+
+			padding:0 0 40px 0;
+
+			button {
+				width: auto;
+			}
+
+		}
+
+	}
 	
 	.search-patient {
 		position: relative;
 		@include flex( center, space-between );
 		width:560px;
 		padding:8px 0 16px 0;
+
+
 		
 		// increase the defaults for input
 		input {
