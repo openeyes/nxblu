@@ -4,7 +4,7 @@
 @use "openeyes/var" as *;
 @use "openeyes/mix" as *;
 
-.oe-hh {
+.handheld {
 	button {
 		height: 2rem;
 		@include font-size(16);
