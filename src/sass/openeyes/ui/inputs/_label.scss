@@ -125,10 +125,10 @@ label {
 		cursor:pointer;
 		color:var(--input-text);
 		background: var(--input-hint);
-		
-		&:hover,
-		&:active {
-			background:var(--input-base);
+
+		&:is(:hover, :active) {
+			background: var(--input-base);
+			outline: 1px dotted var(--input-focus-outline);
 			input {
 				opacity:1;
 			}
