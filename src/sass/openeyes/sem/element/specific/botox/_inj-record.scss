@@ -4,7 +4,7 @@
 @use "openeyes/mix" as *;
 
 .btx-inj-list {
-	padding-block:20px;
+	padding-block:10px;
 }
 
 .inj-record {
@@ -14,7 +14,7 @@
 	place-items: flex-start;
 
 	// match <td> in table
-	padding: 5px 0;
+	padding-block: 2px;
 	border-top: 1px solid var(--gui-line);
 
 	&:first-child {
@@ -23,6 +23,8 @@
 
 	// match too old <th>
 	&.hds {
+		border-top: none;
+		padding-block: 5px;
 		@include font-size(10);
 		color: var(--txt-light);
 	}

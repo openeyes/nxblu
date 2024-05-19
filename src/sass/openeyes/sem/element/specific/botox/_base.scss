@@ -5,15 +5,12 @@
 
 .btx-inj {
 	position: relative;
-
 	@include flex( flex-start, space-between);
 
 	.btx-muscles {
-		position: absolute;
-		z-index: 2;
-
-		@include flex(center, center);
+		@include flex(center, space-between);
 		padding: 1px 4px;
+		margin-block-end: 5px;
 		border-bottom: 1px dotted var(--color-grey);
 		background: var(--bg-event);
 
