@@ -1,0 +1,29 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.btx-inj-list {
+	padding-block:20px;
+}
+
+.inj-record {
+	display: grid;
+	grid: none / 30px 1fr repeat(3, 40px) 1fr 20px;
+	gap: 4px;
+	place-items: flex-start;
+
+	// match <td> in table
+	padding: 5px 0;
+	border-top: 1px solid var(--gui-line);
+
+	&:first-child {
+		border-top: none;
+	}
+
+	// match too old <th>
+	&.hds {
+		@include font-size(10);
+		color: var(--txt-light);
+	}
+}

@@ -14,8 +14,14 @@
 	}
 
 	svg {
-		// JS needs this to use Event delegation pattern
 		pointer-events: none;
+
+		// SVG group for JS muscle hitarea
+		.btx-muscle-areas {
+			path {
+				fill: rgba(0,0,0,0);
+			}
+		}
 
 		.eb {
 			fill: var(--txt-light); // eyebrows

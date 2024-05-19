@@ -6,51 +6,36 @@
 
 .btx-inj {
 	.inj-marker {
+		// JS to add and position:
 		position: absolute;
 		pointer-events: none;
-		height: 30px;
 
-		color: var(--txt-active);
-		background: var(--bg-data);
-
-		// adjusting padding will affect the cross position!
-		padding: 2px 2px 8px 2px;
-		border-radius:2px;
-
-		@include font-size(12);
-		font-weight: 500;
+		@include font-size(10);
+		font-weight: 700;
 		line-height: 1;
 
-		.agent {
-			@include font-size(9);
-			font-weight: 400;
-		}
+		transform: translate(-8px, -8px);
 
-		// just for editing, need to know which is which
 		.inj-num {
-			position: absolute;
-			top: 100%;
-			left: 10px;
-			transform: translateY(-6px);
-			@include font-size(10);
-			font-weight: 700;
-			background: var(--bg-data);
-			padding:1px;
+			height: 16px;
+			width: 16px;
+			background: var(--color-highlighter);
+			outline:1px solid var(--bg-data);
+			border-radius: 50%;
+			color:#000;
+
+			@include flex( center, center);
 		}
 
-		// X marks the injection position
-		&::after {
-			content: "";
+		.inj-units {
 			position: absolute;
-			z-index: 1;
-			left: 0;
-			bottom: 0;
-			transform: translate(-10px, 8px);
-			width: 18px;
-			height: 18px;
-			background: center / 14px url(svg-black-icon("i/remove")) var(--color-highlighter) no-repeat;
-			border-radius: 50%;
-
+			top:-8px;
+			left:10px;
+			font-size: 70%;
+			color: var(--txt-highlight);
+			padding-inline: 1px;
+			background: var(--bg-data);
+			opacity: 0.8;
 		}
 	}
 }

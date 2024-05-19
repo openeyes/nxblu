@@ -6,6 +6,8 @@
 .btx-inj {
 	position: relative;
 
+	@include flex( flex-start, space-between);
+
 	.btx-muscles {
 		position: absolute;
 		z-index: 2;

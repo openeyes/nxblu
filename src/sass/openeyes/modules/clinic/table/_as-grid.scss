@@ -36,7 +36,7 @@
 		}
 
 		// match too old <th>
-		&.headers {
+		&.hds {
 			@include font-size(10);
 			color: var(--txt-light);
 			padding: 8px 0 2px 0; // 8px allows for the gradient fade on the group header
