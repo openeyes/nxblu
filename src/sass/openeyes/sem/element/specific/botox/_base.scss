@@ -10,7 +10,7 @@
 	.btx-muscles {
 		@include flex(center, space-between);
 		padding: 1px 4px;
-		margin-block-end: 5px;
+		margin-block-end: 30px;
 		border-bottom: 1px dotted var(--color-grey);
 		background: var(--bg-event);
 

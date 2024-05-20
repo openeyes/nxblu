@@ -2,11 +2,11 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
 
-.btx-orbits {
+.btx-face {
 	position: relative;
 	cursor: crosshair;
 
-	:where( .a, .b, .d, .e, .f ){
+	:where( .a, .b, .c, .d, .f, .g, .h, .i ) {
 		fill: none;
 		stroke: var(--txt-light);
 		stroke-miterlimit: 10;
@@ -14,41 +14,39 @@
 	}
 
 	svg {
-		// JS needs this to use Event delegation pattern
 		pointer-events: none;
 
-		//.a, .b, .d, .e, .f {
-		//	fill: none;
-		//	stroke: var(--txt-light);
-		//	stroke-miterlimit: 10;
-		//	stroke-linecap: round;
-		//}
+		.eb {
+			fill: var(--txt-light); // eyebrows
+		}
 
 		.a {
 			stroke-width: 6px;
 		}
 
-		.b {
-			stroke-width: 4px;
-		}
-
-		.c {
-			fill: rgba(120, 120, 120, 0.5); // Iris
-		}
-
-		.d {
+		:where( .b, .c, .f ){
 			stroke-width: 2px;
 		}
 
-		.f {
+		.e {
+			fill: rgba(120, 120, 120, 0.5); // Iris
+		}
+
+		:where(.d, .f ){
+			stroke-linejoin: round;
+		}
+
+		.d {
+			stroke-width: 4px;
+		}
+
+		:where( .g, .h ){
 			stroke-width: 0.5px;
 		}
 
 		.glit {
-			fill: #ccc; // glint in the eye!
+			fill: #ccc; // glit in the eye!
 		}
-
 	}
-
 }
 
