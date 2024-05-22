@@ -1,0 +1,81 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+.btx-inj {
+
+	:is(.btx-face, .btx-orbits){
+		position: relative;
+		cursor: crosshair;
+	}
+
+	svg {
+		// JS needs this to use Event delegation pattern
+		pointer-events: none;
+
+		:where( .a, .b, .c, .d, .e, .f, .g, .h, .i ) {
+			fill: none;
+			stroke: var(--txt-light);
+			stroke-miterlimit: 10;
+			stroke-linecap: round;
+		}
+
+		.a {
+			stroke-width: 6px; // face outline
+		}
+
+		.glit {
+			fill: #ccc; // glint in the eye!
+		}
+
+		g {
+			&.btx-face-diagram {
+				.eb {
+					fill: var(--txt-light); // eyebrows
+				}
+
+				.d {
+					stroke-width: 4px;
+				}
+
+				:where( .b, .c, .f ) {
+					stroke-width: 2px;
+				}
+
+				.e {
+					stroke: none;
+					fill: rgba(120, 120, 120, 0.5); // Iris
+				}
+
+				:where(.d, .f ) {
+					stroke-linejoin: round;
+				}
+
+				:where( .g, .h ) {
+					stroke-width: 0.5px;
+				}
+			}
+
+			&.btx-orbits-diagram {
+				.b {
+					stroke-width: 4px;
+				}
+
+				.c {
+					stroke: none;
+					fill: rgba(120, 120, 120, 0.5); // Iris
+				}
+
+				.d {
+					stroke-width: 2px;
+				}
+
+				.f {
+					stroke-width: 0.5px;
+				}
+			}
+		}
+	}
+}
+
+
+

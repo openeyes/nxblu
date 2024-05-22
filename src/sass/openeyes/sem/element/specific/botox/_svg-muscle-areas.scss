@@ -2,7 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
 svg {
-	.btx-muscle-areas {
+	g.btx-muscle-areas {
 		:is(path, rect) {
 			fill: rgba(0, 0, 0, 0);
 		}
