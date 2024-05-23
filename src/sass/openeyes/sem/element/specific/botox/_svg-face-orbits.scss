@@ -3,7 +3,7 @@
 
 .btx-inj {
 
-	:is(.btx-face, .btx-orbits){
+	:is(.btx-face, .btx-orbits, .btx-view-injections){
 		position: relative;
 		cursor: crosshair;
 	}
@@ -71,6 +71,11 @@
 
 				.f {
 					stroke-width: 0.5px;
+				}
+
+				// view mode
+				&.fade {
+					opacity:0.4;
 				}
 			}
 		}
