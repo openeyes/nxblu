@@ -6,8 +6,7 @@
 .ed2-widget {
 	// <img> on IDG is place holder for <canvas>
 	// but style it in the same way... for demoing
-	canvas, 
-	img {
+	:is(canvas, img){
 		// Canvas element in edit mode
 		&.ed-canvas-edit {
 			background: var(--ed3-blue);
@@ -24,6 +23,7 @@
 			cursor: auto;
 			position: relative;
 			z-index: $oe-z-ed-v2;
+			background: var(--ed3-blue);
 		}
 		// Stop canvas being highlighted on mouse click
 		&.ed-canvas-edit, 
