@@ -11,6 +11,12 @@ a {
 	color:inherit;
 	text-decoration: none;
 
+	// in handheld however, they need to be visible (only in the content areas tho)
+	.oe-hh & {
+		text-decoration: underline dotted var(--input-focus-outline) 1.5px;
+		text-underline-offset: 2px;
+	}
+
 	&.restrict-64ch {
 		max-width: 64ch;
 		// if text input value is too long, cut and add "..."

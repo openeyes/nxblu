@@ -17,27 +17,18 @@ require('dotenv').config();
 let buildMode = "style_openeyes";
 
 /**
- * Create a tagged file for iDG UIX testing
- */
-let versionTagFile = true;
-
-/**
  * Get git tag version, this is the version CSS is aiming to release
  * next into the master branch (i.e. it's under development on iDG current)
  */
 const tag = process.env.VERSION_TAG;
+let idgPrefix = true;
 
 const nodeArg = process.argv[2];
-if( nodeArg !== undefined ){
-	if(nodeArg === "print") buildMode = "oe_print";
-	if(nodeArg === "eyedraw") {
-		versionTagFile = false;
-		buildMode = "style_eyedraw_doodles";
-	}
-	if(nodeArg === "blocker") {
-		versionTagFile = false;
-		buildMode = "style_block-browser-print";
-	}
+if ( nodeArg !== undefined ){
+	idgPrefix = false;
+	if ( nodeArg === "print" ) buildMode = "oe_print_arial";
+	if ( nodeArg === "eyedraw" ) buildMode = "style_eyedraw_doodles";
+	if ( nodeArg === "blocker" ) buildMode = "style_block-browser-print";
 }
 
 const config = {
@@ -45,8 +36,6 @@ const config = {
 	dist: './dist/css/',
 	idg: '../idg/src/build/nxblu/dist/css/'
 };
-
-
 
 const chalk = require('chalk');
 const cyan = chalk.bold.cyan;
@@ -82,6 +71,17 @@ const headerLegals = [
 	'', '' ].join('\n');
 
 /**
+ * Write files
+ */
+const writeCSSFile = ( resultCSS, output, distCSS = true, idgFile = false ) => {
+	log(cyan(`${distCSS ? 'CSS' : 'iDG css to nxblu'}: `) + `${idgFile ? idgFile : output}`);
+	const distStream = fs.createWriteStream(`${output}`);
+	distStream.write(headerLegals);
+	distStream.write(dateStamp);
+	distStream.end(resultCSS);
+}
+
+/**
  * Process the scss files with Dart Sass
  * "Dart Sass is the primary implementation of Sass"
  * https://sass-lang.com/dart-sass
@@ -89,39 +89,23 @@ const headerLegals = [
 const dartSass = ( style ) => {
 	log(cyan(`Build: ${style}`));
 
-	const tagFile = `${versionTagFile ? tag+'_' : ''}`;
-
-	const cssOutput = `${config.dist + style}.css`;
-	const cssIDG = `${config.idg}${tagFile}${style}.css`;
-
 	try {
 		/**
 		 * Dart-Sass recommends using RenderSync as it is faster.
 		 * Create compressed version for Production and a TAG prefixed
 		 * version for iDG to use
 		 */
-		const result = sass.compile(`${config.src}${style}.scss`,{
+		const result = sass.compile(`${config.src}${style}.scss`, {
 			style: 'compressed', // "expanded" or "compressed"
-			loadPaths: ['src/sass/']
+			loadPaths: [ 'src/sass/' ]
 		});
 
-		/**
-		 * Output CSS with headerLegals, datetime stamp
-		 */
-		log(cyan(`CSS: `) + `${cssOutput}`);
-		const distStream = fs.createWriteStream(`${cssOutput}`);
-		distStream.write(headerLegals);
-		distStream.write(dateStamp);
-		distStream.end(result.css);
+		/** Output CSS with headerLegals, datetime stamp */
+		writeCSSFile(result.css, `${config.dist + style}.css`);
 
-		/**
-		 * TAG prefixed file version for iDG development area
-		 */
-		log(cyan(`iDG copy: `) + `${tagFile}${style}`);
-		const idgStream = fs.createWriteStream(`${cssIDG}`);
-		idgStream.write(headerLegals);
-		idgStream.write(dateStamp);
-		idgStream.end(result.css);
+		/** prefixed with version tag for iDG */
+		const idfPrefixTag = idgPrefix ? `${tag}_` : '';
+		writeCSSFile(result.css,  `${config.idg}${idfPrefixTag}${style}.css`, false, `${idfPrefixTag}${style}`);
 
 	} catch (e) {
 		log(red('sass error: ') + e.name + ': ' + e.message);

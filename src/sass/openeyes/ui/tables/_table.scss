@@ -19,6 +19,16 @@ table {
 	// unless 'no-pad' is requested
 	&.standard:not(.no-pad) {
 		margin:20px 0 10px 0;
+
+		// handheld adjustments
+		.hh-header & {
+			margin: 0;
+		}
 	}
+
+
+
+
+
 
 }
