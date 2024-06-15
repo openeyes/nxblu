@@ -13,7 +13,7 @@ a {
 
 	// in handheld however, they need to be visible (only in the content areas tho)
 	.oe-hh & {
-		text-decoration: underline dotted var(--input-focus-outline) 1.5px;
+		text-decoration: underline;
 		text-underline-offset: 2px;
 	}
 

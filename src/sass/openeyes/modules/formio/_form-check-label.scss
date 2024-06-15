@@ -2,6 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
 @use "openeyes/mix" as *;
+@use "openeyes/var" as *;
 
 .oe-formio {
 	.form-check-label {
@@ -24,10 +25,16 @@
 
 		// checkbox or radio within the <label>
 		input {
+			all: unset;
+			display: inline-block;
+			height: 14px;
+			width: 14px;
+			border:1px solid var(--txt-light);
 			margin:0; // pad between input - text
-			opacity:0.8; // tone down the inputs slightly unless checked
+			opacity: 0.5;
 			&:checked {
 				opacity:1;
+				background: center / 80% var(--i-tick) no-repeat;
 			}
 		}
 	}
