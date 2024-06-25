@@ -26,7 +26,7 @@ let idgPrefix = true;
 const nodeArg = process.argv[2];
 if ( nodeArg !== undefined ){
 	idgPrefix = false;
-	if ( nodeArg === "print" ) buildMode = "oe_print_arial";
+	if ( nodeArg === "print" ) buildMode = "oe_print";
 	if ( nodeArg === "eyedraw" ) buildMode = "style_eyedraw_doodles";
 	if ( nodeArg === "blocker" ) buildMode = "style_block-browser-print";
 }
