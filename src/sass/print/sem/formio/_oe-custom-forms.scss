@@ -1,0 +1,32 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "print/var" as *;
+
+// OE Wrapper for Formio, to manage the collapse sections
+// Needs changing in PRINT, as collapsing doesn't work!
+
+.oe-custom-forms {
+	button {
+		display: none;
+	}
+
+	.collapse-data {
+		margin: 1em 0;
+		padding: 0.5em;
+		border: 2px solid $table-border-color;
+
+		table {
+			border: none;
+		}
+	}
+
+	.collapse-data-header-icon {
+		font-size: $fontsize-h3;
+		font-weight: 700;
+	}
+
+	.collapse-data-content {
+		padding: 0.5em;
+	}
+}

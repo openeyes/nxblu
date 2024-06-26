@@ -3,7 +3,8 @@
 
 @use "print/mix" as *;
 
-// this was [ x ] but made it into a proper box
+// this was '[x]'
+// changed to a proper box
 .checkbox {
 	display:inline-block;
 	vertical-align: bottom;
@@ -16,4 +17,10 @@
 	&.checked {
 		background: center / 83% url( build-svg-path('print','checkbox-cross')) no-repeat;
 	}
+}
+
+// formio DOM is using it by mistake!
+
+.oe-formio .checkbox {
+	all: unset;
 }
