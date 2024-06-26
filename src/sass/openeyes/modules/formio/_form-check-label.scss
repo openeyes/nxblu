@@ -17,6 +17,12 @@
 		background:var(--input-base);
 		white-space: normal;
 
+		.view & {
+			cursor: not-allowed;
+		}
+
+
+
 		&:is(:hover, :focus-within) {
 			input:not(:disabled) {
 				opacity:1;
