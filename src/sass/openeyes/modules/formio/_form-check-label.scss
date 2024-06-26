@@ -18,7 +18,7 @@
 		white-space: normal;
 
 		&:is(:hover, :focus-within) {
-			input {
+			input:not(:disabled) {
 				opacity:1;
 			}
 		}
@@ -34,7 +34,7 @@
 			opacity: 0.5;
 			&:checked {
 				opacity:1;
-				background: center / 80% var(--i-tick) no-repeat;
+				background: center / 80% var(--i-tick-chunky) no-repeat;
 			}
 		}
 	}
