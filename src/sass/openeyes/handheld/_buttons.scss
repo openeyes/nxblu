@@ -5,8 +5,9 @@
 @use "openeyes/mix" as *;
 
 .handheld {
-	button {
+	:is(button, .button){
 		height: 2rem;
 		@include font-size(16);
+		text-decoration: none;
 	}
 }

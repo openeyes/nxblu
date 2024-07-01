@@ -21,4 +21,10 @@
 	background: left center / 12px transparent var(--i-direction-left) no-repeat;
 
 	opacity: 0.5;
+
+	.handheld & {
+		@include font-size(10);
+		left:150px;
+	}
+
 }

@@ -5,9 +5,24 @@
 @use "openeyes/mix" as *;
 
 .event-footer-actions {
-	height:$oe-event-header-height;
+	height: $oe-event-header-height;
 	@include flex(center, flex-end);
-	margin:3px 0 15px 0;
-	background:var(--bg-data);
+	margin: 3px 0 15px 0;
+	background: var(--bg-data);
+
+	// Copy of button-stack
+	// handheld UI using the same DOM as desktop
+	// have to use this class to layout the buttons
+	.handheld & {
+		height: auto;
+		@include flex(flex-start, flex-start);
+		flex-direction: column;
+		gap: 25px;
+
+		:is(button, .button) {
+			width: 100%;
+			height: 2rem;
+		}
+	}
 }
 

@@ -29,6 +29,13 @@
 		justify-content: center;
 		left:3px;
 	}
+
+	.handheld & {
+		@include font-size(10);
+		height: 18px;
+		padding:0 5px;
+		bottom: 4px;
+	}
 	
 	// theme fixed color
 	background:var(--color-burgundy);
