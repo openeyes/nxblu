@@ -36,6 +36,10 @@
 		padding: 6px 30px 6px 12px;
 		background: right 8px center / 10px url(svg-fixed("ui/shortcut-arrow")) no-repeat;
 
+		.handheld & {
+			padding-block:10px; // for fingers!
+		}
+
 		// instead of shortcut link this is for opening a popup
 		// introduced for e-Sign QR tablet sign-in (required anywhere)
 		&.popup {

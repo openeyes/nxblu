@@ -4,4 +4,9 @@
 .oe-login {
 	display: flex;
 	height: 100%;
+
+	.handheld & {
+		display: block;
+		height: auto;
+	}
 }
