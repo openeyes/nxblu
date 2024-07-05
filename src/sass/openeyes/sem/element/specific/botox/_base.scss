@@ -7,8 +7,8 @@
 	position: relative;
 	@include flex( flex-start, space-between);
 
-	.btx-muscles {
-		@include flex(center, space-between);
+	.btx-svg-view {
+		@include flex(center, center);
 		padding: 1px 4px;
 		margin-block-end: 30px;
 		border-bottom: 1px dotted var(--color-grey);
