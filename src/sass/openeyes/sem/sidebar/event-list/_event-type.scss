@@ -11,7 +11,7 @@
 	$_state-opacity: 0.5;
 
 	position: relative;
-	display: inline-block   ;
+	display: inline-block;
 	height: 19px; // match
 	width: 45px;
 
@@ -23,15 +23,16 @@
 
 	&::after {
 		content: "";
-		position:absolute;
+		position: absolute;
 		top: 0;
-		bottom:0;
-		right:4px;
+		bottom: 0;
+		right: 4px;
 		width: 19px;
 		// default eye icon for quicklook
 		background: center / #{$oe-event-icon-size - 6px} var(--i-eye) no-repeat;
 		opacity: 0.3;
 	}
+
 
 	&.alert {
 		&::after {
@@ -40,11 +41,18 @@
 		}
 	}
 
-	&.done,
-	&.ready {
+	&:is( .done, .ready) {
 		&::after {
 			opacity: $_state-opacity;
 			background-image: var(--i-tick);
+		}
+	}
+
+	// currently unused, but might be useful in the future
+	&.confirmed {
+		&::after {
+			opacity: $_state-opacity;
+			background-image: var(--i-tick-double);
 		}
 	}
 
@@ -90,8 +98,7 @@
 		}
 	}
 
-	&.clock,
-	&.scheduled {
+	&:is(.clock, .scheduled) {
 		&::after {
 			opacity: $_state-opacity;
 			background-image: var(--i-time);
@@ -112,11 +119,10 @@
 		}
 	}
 
-	// currently unused, but might be useful in the future
-	&.confirmed {
+	&.linked {
 		&::after {
-			opacity: $_state-opacity;
-			background-image: var(--i-tick-double);
+			opacity: 1;
+			background-image: var(--i-linked-event);
 		}
 	}
 }

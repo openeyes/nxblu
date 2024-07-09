@@ -16,6 +16,7 @@
 				margin: auto; // flex center
 				&.fit-to-screen {
 					height: 100%;
+					width: 100%;
 					object-fit: scale-down;
 				}
 			}
