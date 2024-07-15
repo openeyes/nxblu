@@ -77,6 +77,13 @@
 		}
 	}
 
+	&.injection {
+		&::after {
+			opacity: $_state-opacity;
+			background-image: var(--i-injection);
+		}
+	}
+
 	&.draft {
 		&::after {
 			opacity: 1;
