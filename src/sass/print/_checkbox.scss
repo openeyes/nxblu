@@ -14,6 +14,10 @@
 	width:1.2em;
 	margin:0 0.3em 0 0.7em; // move the checkbox closer to the text
 
+	// this forces the Background Graphic print option (even if not selected by User)
+	-webkit-print-color-adjust: exact; // Chrome
+	print-color-adjust: exact;
+
 	&.checked {
 		background: center / 83% url( build-svg-path('print','checkbox-cross')) no-repeat;
 	}
