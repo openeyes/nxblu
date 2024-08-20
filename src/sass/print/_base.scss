@@ -32,6 +32,10 @@ body {
 	&.void {
 		background: center / 50% url(build-svg-path("print", "void")) repeat-y;
 	}
+
+	// this forces the Background Graphic print option (even if not selected by User)
+	-webkit-print-color-adjust: exact; // Chrome
+	print-color-adjust: exact;
 }
 
 // empty <div>

@@ -14,10 +14,6 @@
 	width:1.2em;
 	margin:0 0.3em 0 0.7em; // move the checkbox closer to the text
 
-	// this forces the Background Graphic print option (even if not selected by User)
-	-webkit-print-color-adjust: exact; // Chrome
-	print-color-adjust: exact;
-
 	&.checked {
 		background: top -4px right -4px / 120% url(build-svg-path("print", "tick")) no-repeat;
 	}

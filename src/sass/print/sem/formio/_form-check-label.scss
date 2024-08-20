@@ -24,6 +24,7 @@
 			border:1px solid #777;
 			margin:0; // pad between input - text
 			opacity: 0.5;
+
 			&:checked {
 				opacity:1;
 				background: center / 90% url( build-svg-path('print','tick-chunky')) no-repeat;
