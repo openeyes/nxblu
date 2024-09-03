@@ -7,8 +7,8 @@
  * Event icons must be 76px x 76px
  * They are used by CSS at 50% and at 25% e.g. 38px & 19px
  * - output:
- * - PNG: dist/img/event-icons-76x76.png
- * - SCSS: src/sass/spritesheet/_icons-events-sprites.scss
+ * - PNG: dist/img/oe-i-e-76x76.png
+ * - SCSS: src/sass/openeyes/ui/iconography/oe-i-e/_oe-i-e-spritesheet.scss
  *
  * 2) Eyedraw doodles
  * Eyedraw doodle icons are ancient, they are used by CSS at 100%
@@ -18,6 +18,7 @@
 
 const chalk = require('chalk'); // make some nice stdout with chalk! ;)
 const cyan = chalk.bold.cyan;
+const green  = chalk.bold.green;
 const red = chalk.bold.red;
 const log = console.log;
 
@@ -148,12 +149,12 @@ const buildSCSS = ( coordinates, properties ) => {
 		return;
 	  }
 
-	  log( cyan('>>> scss created: ') + config.scss);
-	  log( cyan(red('>>> Notes')));
+	  log( green('>>> scss file created: ') + config.scss);
+	  log( cyan('>>> Notes'));
 	  if( iconset == "events" ){
-		  log('Newblue CSS will now need rebuilding ... (then a quick check on iDG that they look OK!)');
+		  log('nxbluCSS now needs rebuilding ... (then a quick check on iDG that they look OK!)');
 		  log('Run: npm run css');
-		  log( red('Important: Update CSS background-size (see: _icons-events.scss)'));
+		  log( red('Important: Check/update CSS background-size (see: _oe-i-e.scss)'));
 		  log(`background-size: ${sheetSize.quarter.w}px ${sheetSize.quarter.h}px;`);
 		  log(`.large = background-size: ${sheetSize.half.w}px ${sheetSize.half.h}px;`,)
 	  } else {

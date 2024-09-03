@@ -57,4 +57,9 @@ hr {
 		border-bottom:1px dotted var(--gui-line);
 	}
 
+	&.break {
+		border-bottom: none;
+		height: 10px;
+	}
+
 }
