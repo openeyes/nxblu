@@ -1,0 +1,107 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.oe-partial-waiting {
+
+	// extend "oe-full-side-panel"
+	.partial-waiting-filters {
+		padding: 20px;
+
+		table {
+			@include font-size(12);
+		}
+	}
+
+	table.standard.waiting-list {
+		margin: 10px 0 40px 0;
+
+		th, td {
+			@include font-size(12);
+			padding-left: 3px;
+		}
+
+		tbody {
+
+			td {
+				padding: 8px 10px 8px 3px;
+				vertical-align: top;
+
+				// make sure icons (in,1,2,GP) don't wrap
+				&.letter-status {
+					white-space: nowrap;
+					// space out the icons
+					i {
+						margin-right: 1px;
+					}
+				}
+			}
+		}
+	}
+
+
+	// Key to show the letter icons
+	// and the colour states
+	.waiting-list-key {
+
+		// Flex: justify-content (h), align-items (v)
+		@include flex(flex-start, flex-start);
+		margin: 15px 0 0 0;
+
+		// "Key"
+		h3 {
+			@include font-size(14);
+			font-weight: 300;
+			color: var(--txt-light);
+			padding: 0 30px 0 0;
+		}
+
+		// Keys <ul>
+		// Seems to be a unique UI
+		// so bespoking it. 
+		ul {
+			margin: 0 20px 0 0;
+
+			li {
+				@include font-size(10);
+				margin: 0 0 8px 0;
+				color: var(--txt-light);
+				font-weight: var(--font-light);
+				vertical-align: bottom; // sort out the icon alignment
+				.oe-i {
+					vertical-align: bottom;
+					margin: 0 10px 0 0;
+				}
+			}
+		}
+	}
+
+	$colour-flag-w: 7px;
+
+	// waiting list colour flags
+	// add to <td> or <li>
+	.send-invitation-letter {
+		background: linear-gradient(to right, var(--color-green) $colour-flag-w, transparent $colour-flag-w);
+		padding-left: $colour-flag-w + 5px !important;
+	}
+
+	.send-another-reminder {
+		background: linear-gradient(to right, var(--color-yellow) $colour-flag-w, transparent $colour-flag-w);
+		padding-left: $colour-flag-w + 5px !important;
+	}
+
+	.send-gp-removal-letter {
+		background: linear-gradient(to right, var(--color-orange) $colour-flag-w, transparent $colour-flag-w);
+		padding-left: $colour-flag-w + 5px !important;
+	}
+
+	.patient-due-removed {
+		background: linear-gradient(to right, var(--color-burgundy) $colour-flag-w, transparent $colour-flag-w);
+		padding-left: $colour-flag-w + 5px !important;
+	}
+
+
+}
+
+
