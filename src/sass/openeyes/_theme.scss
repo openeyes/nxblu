@@ -243,7 +243,7 @@ $themedIcons: (
 	"doc",
 	"downup",
 	"doubt", "doubt-active",
-	"download", "upload", "link","paperclip", "linked-event",
+	"download", "upload", "link", "paperclip", "linked-event",
 	"draft", "draft-orange", "draft-green",
 	"drop", "drop-done",
 	"drug-rx",
@@ -254,7 +254,7 @@ $themedIcons: (
 	"filter",
 	"flag", "flagline",
 	"flux",
-	"fork", "merge", "tree",
+	"fork", "merge", "tree", "tree-grow",
 	"formulary",
 	"increase-height", "reduce-height", "increase-height-orange",
 	"info", "info-blue",
@@ -266,7 +266,7 @@ $themedIcons: (
 	"line-break", "double-slash",
 	"menu",
 	"minus", "minus-bold",
-	"more-v", "more-h", "more-h-orange","more-h-grey",
+	"more-v", "more-h", "more-h-orange", "more-h-grey",
 	"move",
 	"mpr",
 	"no-permissions",
@@ -289,8 +289,8 @@ $themedIcons: (
 	"status-query-reply", "status-query", "status-urgent",
 	"sync",
 	"tick", "tick-green", "tick-double", "tick-chunky", "tick-circle",
-	"time","clock",
-	"to-top","to-end","to-start",
+	"time", "clock",
+	"to-top", "to-end", "to-start",
 	"trash", "trash-blue",
 	"trials",
 	"team",
@@ -302,7 +302,7 @@ $themedIcons: (
 	"waiting",
 	"warning", "warning-standard", "warning-none", "klax", "allergy", "allergy-standard", "allergy-none",
 	"whiteboard",
-	"zoom-in", "zoom-out" );
+	"zoom-in", "zoom-out");
 
 // red, orange green flavours of icons
 $rogIcons: (
