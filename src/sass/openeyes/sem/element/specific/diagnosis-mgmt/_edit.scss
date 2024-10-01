@@ -9,5 +9,15 @@
 		@include flex(center, space-between);
 		flex-wrap: nowrap;
 		margin: 0 0 0 10px;
+
+		&.add-diag {
+			width: 85px;
+			justify-content: flex-start;
+
+			i.plus-bold {
+				background-size:10px;
+				width: 14px;
+			}
+		}
 	}
 }
