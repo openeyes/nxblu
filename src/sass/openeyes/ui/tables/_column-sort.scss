@@ -13,17 +13,22 @@ a.column-sort {
 	opacity: 0.6;
 
 	// allow for background icon
-	padding: 0 16px 0 0;
+	padding: 0 14px 0 0;
 
 	// set up for 'ascend': A to Z sorting
-	background: right top/13px var(--i-direction-up) no-repeat;
+	background: right top/12px var(--i-direction-up) no-repeat;
 
 	// Z to A  sorting
 	&.descend {
 		background-image: var(--i-direction-down) ;
 	}
 
-	&:is(:hover, :focus, .active) {
+	&.active{
 		opacity: 1;
+	}
+
+	&:is(:hover, :focus) {
+		opacity: 1;
+		color:var(--txt-active);
 	}
 }

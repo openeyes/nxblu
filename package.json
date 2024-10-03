@@ -25,7 +25,7 @@
     "css:bluesky": "node node_scripts/x-bluesky-css.js",
     "svg": "node node_scripts/svg-optimise.js",
     "svg:all": "node node_scripts/svg-optimise.js rebuild-all",
-    "build:event-icons": "node ./node_scripts/build-iconset.js events",
+    "build:event-icons": "node ./node_scripts/build-iconset-events.js",
     "build:eyedraw-icons": "node ./node_scripts/build-iconset.js eyedraw"
   },
   "devDependencies": {

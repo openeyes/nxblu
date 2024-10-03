@@ -12,18 +12,6 @@
 	display: inline-block;
 	vertical-align: middle;
 
-	background-image: url("../img/oe-i-e-76x76.png");
-	background-repeat: no-repeat;
-	background-size: 228px 209px; // important: must match SpriteSmith output!
-	width: $oe-event-icon-size;
-	height: $oe-event-icon-size;
-
-	&.large {
-		background-size: 456px 418px; // important: must match SpriteSmith output!
-		width: #{$oe-event-icon-size + $oe-event-icon-size};
-		height: #{$oe-event-icon-size + $oe-event-icon-size};
-	}
-
 	// used 'inline' to 'pad' out the icon
 	&.pad {
 		margin: 0 4px;
