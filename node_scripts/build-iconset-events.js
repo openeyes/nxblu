@@ -40,14 +40,14 @@ if ( tag === "6.x" ){
 	log(red(`!-!-! Must set the correct git tag, not: ${tag}`));
 	return;
 } else {
-	log( green( tag ));
+	log(green(tag));
 }
 
 const config = {
 	iconPath: './src/icons-events/76x76/',
 	glob: '*.png',
 	png: `oe-i-e-76x76-${tag}.png`,
-	scss: './src/sass/openeyes/ui/iconography/oe-i-e'
+	scss: './src/sass/openeyes/ui/iconography/oe-i-e/_events-spritesheet.scss'
 }
 
 /**
@@ -76,7 +76,7 @@ const spritePNG = ( buffer ) => {
  * sass template for sprites
  * @returns String;
  */
-const sassTemplate = ( sprite, sheetSize ) => {
+const sassTemplate = ( sprite ) => {
 	const name = sprite[0].slice(config.iconPath.length, -4);
 	const { x, y } = sprite[1];
 	// sass, not css
@@ -102,52 +102,29 @@ const buildSCSS = ( coordinates, properties ) => {
 		'',
 	].join('\n');
 
-	// background sizing for the sprite sheet
-	const sheetSize = {
-		quarter: {
-			w: properties.width / 4,
-			h: properties.height / 4
-		},
-		half: {
-			w: properties.width / 2,
-			h: properties.height / 2
-		}
-	};
-
-	// build all the Sass classes
-	let sassContents = [comments];
-	Object.entries(coordinates).forEach(sprite => {
-		// build file contents, using appropriate template
-		sassContents.push(sassTemplate(sprite, sheetSize));
-	});
-
-	/** write out spritesheet */
-	fs.writeFile(`${config.scss}/_oe-i-e-spritesheet.scss`, sassContents.join(''), err => {
-		if ( err ){
-			log(red('scss error: ') + err);
-		} else {
-			log(green('>>> _oe-i-e-spritesheet.scss: ') + config.scss);
-		}
-	})
-
-	/** write out base */
-	fs.writeFile(`${config.scss}/_oe-i-e-base.scss`, [
-		comments,
+	const base = [
 		'@use "openeyes/var" as *;',
 		'.oe-i-e {',
-		`background: center / ${sheetSize.quarter.w}px ${sheetSize.quarter.h}px url("../img/${config.png}") no-repeat;`,
+		`background: center / ${properties.width / 4}px ${properties.height / 4}px url("../img/${config.png}") no-repeat;`,
 		'width: $oe-event-icon-size;',
 		'height: $oe-event-icon-size;',
 		'&.large {',
-		`\tbackground-size: ${sheetSize.half.w}px ${sheetSize.half.h}px;`,
+		`\tbackground-size: ${properties.width / 2}px ${properties.height / 2}px;`,
 		'\twidth: #{$oe-event-icon-size + $oe-event-icon-size};',
 		'\theight: #{$oe-event-icon-size + $oe-event-icon-size};',
-		'}}'
-	].join('\n'), err => {
+		'}}',
+		''
+	].join('\n');
+
+	// Build CSS classes from coordinate object
+	const classes = Object.entries(coordinates).map(sprite => sassTemplate(sprite)).join('');
+
+	/** write out spritesheet */
+	fs.writeFile(`${config.scss}`, "".concat(comments, base, classes), err => {
 		if ( err ){
 			log(red('scss error: ') + err);
 		} else {
-			log(green('>>> _oe-i-e-base.scss: ') + config.scss);
+			log(green('>>> scss file created ') + config.scss);
 		}
 	});
 };

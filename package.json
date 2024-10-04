@@ -26,7 +26,7 @@
     "svg": "node node_scripts/svg-optimise.js",
     "svg:all": "node node_scripts/svg-optimise.js rebuild-all",
     "build:event-icons": "node ./node_scripts/build-iconset-events.js",
-    "build:eyedraw-icons": "node ./node_scripts/build-iconset.js eyedraw"
+    "build:eyedraw-icons": "node ./node_scripts/build-iconset-doodles.js"
   },
   "devDependencies": {
     "chalk": "4.1.1",
