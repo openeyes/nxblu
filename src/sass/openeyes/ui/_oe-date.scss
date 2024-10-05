@@ -17,13 +17,15 @@
 		width:2ch;
 		margin:0 0.5ch 0 0;
 	}
-	.mth{
+
+	:is(.mth, .month){
 		// if used in last <td> table it will pick up
 		// aligned right cascade
 		text-align: left !important;
 		width:4ch;
-	} 
-	.yr {
+	}
+
+	:is(.yr, .year){
 		text-align: right;
 		width:4ch;
 	}
