@@ -1,0 +1,36 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+.btx-setup-options {
+	display: grid;
+	grid: repeat(3, 1fr) / 90px 220px 1fr;
+	gap: 8px 4px; // match <td>
+	place-items: center stretch;
+
+	margin-block-end: 30px;
+
+	.vial-batch-date {
+		grid-row: span 2;
+		place-self: stretch;
+
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+
+		label {
+			display:block;
+			font-size: 80%;
+			width: 100%;
+			text-align: center;
+			opacity: 0.5;
+		}
+
+	}
+
+	.oe-multi-select {
+		margin: 0; // overide default or it blows the grid layout
+	}
+
+}
