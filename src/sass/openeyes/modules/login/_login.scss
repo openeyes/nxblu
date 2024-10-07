@@ -29,7 +29,7 @@
 
 		// bespoke adjustments just for the login
 		// real issue is Phones in landscape
-		@media only screen and (max-height: 600px) and (orientation: landscape) {
+		@media only screen and (max-height: 500px) and (orientation: landscape) {
 			display: none;
 		}
 	}

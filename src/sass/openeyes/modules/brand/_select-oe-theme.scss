@@ -2,6 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
 @use "openeyes/mix" as *;
+@use "openeyes/var" as *;
 
 // single CSS file, buttons to toggle theme setting
 .select-oe-theme {
@@ -11,6 +12,11 @@
 		flex: 1 1 0;
 		border: 2px solid transparent;
 		font-weight: 700;
+
+		.handheld & {
+			@include font-size(13);
+			height: #{$oe-input-height + 4px};
+		}
 	}
 
 	// fix buttons to always show the theme colours
