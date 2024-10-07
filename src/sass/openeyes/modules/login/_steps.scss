@@ -10,7 +10,8 @@
 .login-steps {
 	border: 3px solid var(--txt-light);
 	border-radius: 10px;
-	padding: 10px 20px;
+	padding: 10px 15px;
+	margin-inline: 5px;
 
 	overflow-y: auto;
 	min-height: 50px; // single option
@@ -30,11 +31,12 @@
 		@include flex(center, flex-start);
 		@include font-size(13);
 		font-weight: var(--font-medium);
+		line-height: 1.1;
 		color: var(--btn-text);
 		background: var(--btn-base);
 		cursor: pointer;
-		padding: 0 8px;
-		height: 24px;
+		padding: 2px 8px;
+		min-height: 24px;
 
 		&:is(:hover,:focus,.selected) {
 			color: #fff;

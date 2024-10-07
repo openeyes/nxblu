@@ -12,9 +12,15 @@
 	@include font-size(14);
 	font-weight: var(--font-medium);
 
+
+
 	ul.row-list {
 		li {
 			@include flex( center, center );
+
+			.oe-i.remove-circle {
+				background-size: 16px; // fix size (override handheld icon resizing)
+			}
 		}
 	}
 }

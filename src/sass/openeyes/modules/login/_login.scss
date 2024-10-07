@@ -14,14 +14,23 @@
 	}
 
 	h1 {
-		margin: 0 0 40px 0;
+		margin-block-end: 30px;
 		@include font-size(58);
 		text-align: center;
 		font-weight: 100;
 		color: var(--txt-light);
 
-		@include tablet-scaled() {
-			@include font-size(120);
+		// bespoke adjustments just for the login
+		// real issue is Phones in landscape
+		@media only screen and (max-width: 600px) and (orientation: portrait) {
+			@include font-size(48);
+			margin-block-end: 20px;
+		}
+
+		// bespoke adjustments just for the login
+		// real issue is Phones in landscape
+		@media only screen and (max-height: 600px) and (orientation: landscape) {
+			display: none;
 		}
 	}
 
