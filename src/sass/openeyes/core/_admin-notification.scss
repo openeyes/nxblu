@@ -15,11 +15,10 @@
 
 #oe-admin-notifcation {
 	position:fixed;
-	bottom:8px;
+	bottom: 8px;
 	right:3px;
 	z-index:999;
-	height:30px;
-	padding:0 15px;
+
 	border-radius:3px;
 	@include font-size(13);
 	@include flex( center, flex-start);
@@ -27,14 +26,20 @@
 	// based on current OE DOM implementation not iDG
 	.oe-login & {
 		justify-content: center;
-		left:3px;
+		left:3px; // full screen banner
 	}
 
-	.handheld & {
-		@include font-size(10);
-		height: 18px;
-		padding:0 5px;
-		bottom: 4px;
+	// notification is only used on login
+	#notification-full {
+		padding:5px 15px;
+	}
+
+	#notification-short {
+		padding:3px 12px;
+		.handheld & {
+			@include font-size(10);
+			padding: 1px 5px;
+		}
 	}
 	
 	// theme fixed color

@@ -1,10 +1,11 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-@use "base";
-@use "login";
-@use "details";
-@use "multisite";
-@use "steps";
-@use "timeout";
-@use "select-ui-mode";
+@use "openeyes/mix" as *;
+
+.select-ui-mode {
+	fieldset {
+		width: 100%;
+		@include flex( center, center );
+	}
+}

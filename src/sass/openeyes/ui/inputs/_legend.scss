@@ -1,0 +1,17 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+fieldset.with-legend {
+	// note! formio is using legend! target usage!
+	legend {
+		all: unset;
+		width: 100%;
+		@include font-size(10);
+		color: var(--txt-light);
+		opacity: 0.5;
+		margin-block-end:3px;
+		text-align: center;
+	}
+}
