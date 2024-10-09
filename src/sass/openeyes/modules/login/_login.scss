@@ -13,6 +13,21 @@
 		top: 2svh;
 	}
 
+	// step through
+	&.multisite {
+		@include letterbox(){
+			display: grid;
+			grid: 1fr 70px / repeat(2, 1fr);
+			gap: 5vmin;
+			max-width: 90%;
+
+			.info {
+				grid-column: span 2;
+				width: 100%;
+			}
+		}
+	}
+
 	h1 {
 		margin-block-end: 30px;
 		@include font-size(58);
@@ -20,16 +35,12 @@
 		font-weight: 100;
 		color: var(--txt-light);
 
-		// bespoke adjustments just for the login
-		// real issue is Phones in landscape
-		@media only screen and (max-width: 600px) and (orientation: portrait) {
+		@include handheld() {
 			@include font-size(48);
 			margin-block-end: 20px;
 		}
 
-		// bespoke adjustments just for the login
-		// real issue is Phones in landscape (allow for mode options and banner)
-		@media only screen and (max-height: 560px) and (orientation: landscape) {
+		@include letterbox(){
 			display: none;
 		}
 	}
@@ -65,11 +76,12 @@
 
 	.info {
 		width: 250px;
-		margin: 20px auto 0 auto;
+		margin: 25px auto 0 auto;
 		padding: 20px 0 20px 0;
 		border-top: 1px solid var(--gui-line);
 		color: var(--txt-light);
 		@include font-size(12);
+
 	}
 }
 

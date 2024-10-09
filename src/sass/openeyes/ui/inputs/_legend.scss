@@ -5,12 +5,17 @@
 
 fieldset.with-legend {
 	// note! formio is using legend! target usage!
+	position: relative;
 	legend {
 		all: unset;
+		display: block;
+		position: absolute;
+		top: calc(100% + 4px);
+
 		width: 100%;
-		@include font-size(10);
+		@include font-size(8);
 		color: var(--txt-light);
-		opacity: 0.5;
+		opacity: 0.6;
 		margin-block-end:3px;
 		text-align: center;
 	}

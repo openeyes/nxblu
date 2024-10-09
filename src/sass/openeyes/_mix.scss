@@ -25,8 +25,16 @@
 // v9 introduces a "lite" handheld UI that is optimised for tablets and large phones
 // e.g. e-sign and device image importing for attachments
 // DOM's initial-scale is 1, so classic responsive UI can be used...
+// 850px? iPad Portrait 810px
 @mixin handheld() {
-	@media only screen and (max-width: 850px) and (orientation: portrait) {
+	@media only screen and (max-width: 840px) and (orientation: portrait) {
+		@content;
+	}
+}
+
+// real issue is Phones in landscape (extreme letterbox view)
+@mixin letterbox(){
+	@media only screen and (max-height: 560px) and (orientation: landscape) {
 		@content;
 	}
 }

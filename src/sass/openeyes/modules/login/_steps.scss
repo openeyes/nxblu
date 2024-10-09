@@ -10,7 +10,7 @@
 .login-steps {
 	border: 3px solid var(--txt-light);
 	border-radius: 10px;
-	padding: 10px 15px;
+	padding: 10px 40px;
 	margin-inline: 5px;
 
 	overflow-y: auto;
@@ -18,7 +18,7 @@
 	max-height: calc( 100vh - 450px ); // check the layout at various scales
 
 	.handheld & {
-		max-height: 30svh;
+		max-height: 50svh;
 	}
 }
 
@@ -37,6 +37,7 @@
 		cursor: pointer;
 		padding: 2px 8px;
 		min-height: 24px;
+		user-select: none;
 
 		&:is(:hover,:focus,.selected) {
 			color: #fff;
