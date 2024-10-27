@@ -7,5 +7,24 @@
 	fieldset {
 		width: 100%;
 		@include flex( center, center );
+
+		// custom style "as-button"
+		label.as-button {
+			background-color: inherit;
+
+			.btn {
+				@include font-size(11);
+				font-weight: 500;
+				color: var(--color-grey);
+				border: 1px solid var(--gui-line-soft);
+				border-radius: 5px;
+			}
+
+			input:checked + .btn {
+				background-color: inherit;
+				color: var(--txt-active);
+				border-color: var(--btn-blue-hint);
+			}
+		}
 	}
 }

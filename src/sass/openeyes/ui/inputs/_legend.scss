@@ -13,9 +13,8 @@ fieldset.with-legend {
 		top: calc(100% + 4px);
 
 		width: 100%;
-		@include font-size(8);
+		@include font-size(9);
 		color: var(--txt-light);
-		opacity: 0.6;
 		margin-block-end:3px;
 		text-align: center;
 	}
