@@ -20,9 +20,14 @@
 		font-weight: var(--font-bold);
 		
 		span.num {
-			padding:0 4px 0 0;
-			color: var(--txt-highlight);
+			background: var(--btn-blue-active);
+			color:var(--btn-text-active);
+			padding:1px 4px;
+			font-weight:500;
+			border-radius:2px;
+			margin-inline-end: 2px;
 		}
+
 		// quick feedback of adding!
 		@keyframes flickGreen {
 		  from { background-color: var(--btn-green); }

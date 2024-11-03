@@ -1,0 +1,49 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "var" as *;
+@use "mix" as *;
+
+// indicate place to input data with 
+// dotted line - single line
+.dotted-write {
+	display: inline-block;
+	height: 2rem;
+	width: 98%;
+	margin: 0 1%;
+	border-bottom: 1px dashed rgb(120, 120, 120);
+
+	&.cols-half,
+	&.half {
+		width: 50%;
+	}
+}
+
+// assumes it will have a label
+.dotted-area {
+	position: relative;
+	@include flex(flex-end, flex-start);
+	flex: 1 1 0;
+
+	min-height: 50px; // needs to match esign img heights
+
+	img.signature {
+		height: 45px;
+		width: auto;
+		margin: 0 0 0 80px; // allow for label
+	}
+
+	font-weight: 500;
+	padding: 24px 0 5px 1rem; // padding allows for label
+	margin: 0.2rem 0.5rem;
+
+	border-bottom: 1px dashed rgb(120, 120, 120);
+
+	.label {
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 80%;
+		font-weight: 400;
+	}
+}

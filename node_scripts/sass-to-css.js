@@ -27,6 +27,7 @@ const nodeArg = process.argv[2];
 if ( nodeArg !== undefined ){
 	idgPrefix = false;
 	if ( nodeArg === "print" ) buildMode = "oe_print";
+	if ( nodeArg === "letter" ) buildMode = "oe_pdf-letter";
 	if ( nodeArg === "eyedraw" ) buildMode = "style_eyedraw_doodles";
 	if ( nodeArg === "blocker" ) buildMode = "style_block-browser-print";
 }
@@ -130,13 +131,5 @@ chokidar.watch(`${config.src}**/*.scss`, {
 	log(`updated: ${path}`);
 	buildCSS();
 });
-
-
-
-
-
-
-
-
 
 

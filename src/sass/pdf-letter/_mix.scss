@@ -1,0 +1,23 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@function build-svg-path($theme, $svg){
+	@return "../svg/v6/" + $theme + "/" + $svg + ".svg";
+}
+
+@function svg-fixed($svg){
+	@return build-svg-path("all", $svg);
+}
+
+// All print icons use "light" theme icons
+@function svg-themed($svg){
+	@return build-svg-path("light", $svg);
+}
+
+// ------------------------------ Patterns
+@mixin flex($v,$h){
+	display: flex;
+	justify-content: $h;
+	align-items: $v;	
+}
+

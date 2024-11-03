@@ -1,0 +1,20 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "print/mix" as *;
+
+// this was [ x ] but made it into a proper box
+.tickbox {
+	display:inline-block;
+	vertical-align: bottom;
+	
+	border:2px solid #999;
+	border-radius:50%;
+	height:1.2em;
+	width:1.2em;
+	margin:0 0.3em 0 0.7em; // move the checkbox closer to the text
+
+	&.checked {
+		background: top -4px right -4px / 120% url(build-svg-path("print", "tick")) no-repeat;
+	}
+}

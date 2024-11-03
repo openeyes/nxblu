@@ -21,6 +21,7 @@
     "css": "node node_scripts/sass-to-css.js",
     "css:blocker": "node node_scripts/sass-to-css.js blocker",
     "css:print": "node node_scripts/sass-to-css.js print",
+    "css:letter": "node node_scripts/sass-to-css.js letter",
     "css:eyedraw": "node node_scripts/sass-to-css.js eyedraw",
     "css:bluesky": "node node_scripts/x-bluesky-css.js",
     "svg": "node node_scripts/svg-optimise.js",
