@@ -1,17 +1,38 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
+@use "mix";
 
-// OE Header
-// <header> 
-// - div.seal (letterhead seal, not sure why we have this but it's above the logo area)
-// - logo (trust logo and NHS logo) 
 header.print-header {
-	margin: 0 0 1rem 0;
-	
-	// so far only has a logo
-	// logo img is in this wrapper
-	.logo {
+	margin: 0 0 10mm 0;
+
+	// must allow for the positioning of [to_address]
+	// 10mm top margin in Puppeteer, 10mm margin-bottom + this min height
+	// 90mm is the bottom of the window on most envelopes
+	min-height: 70mm;
+
+	@include mix.flex(flex-start, flex-end);
+
+	address {
+		font-size: 12pt; // fix font size
+		font-style: normal;
+		line-height: 1.2;
+	}
+
+	.primary-identity-address {
 		text-align: right;
+		margin-top: 1rem;
+	}
+
+	// [to_address]
+	.to-address-envelope {
+		position: absolute;
+		// default to 20mm, set in line in DOM to allow Admin to adjust this
+		top: 20mm;
+		left: 20mm;
+		font-weight: bold;
+		line-height: 1;
+		z-index: 1;
+		background: white;
 	}
 }

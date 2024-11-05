@@ -5,7 +5,7 @@
 
 table {
     width: 100%;
-    border:2px solid $table-border-color;
+    border:2px solid $line-color;
     margin:0.5em 0 1em 0;
     
     // try to avoid breaking up tabular data
@@ -43,9 +43,9 @@ table {
 	// add borders to the data (standard table)
 	&.borders {
 		// need this here again, because of TinyMCE editor
-		border:2px solid $table-border-color;
+		border:2px solid $line-color;
 		td, th {
-			border: 2px solid $table-line-color;
+			border: 2px solid $line-color;
 		}
 		
 		// merge data in <tr> with <tr> above
@@ -64,7 +64,6 @@ table {
 	&.label-item {
 		border: none;
 		td, th {
-			font-size: $fontsize-base; 
 			padding-bottom:1em;
 		}
 		
@@ -80,7 +79,6 @@ table {
 	&.label-r-l {
 		border: none;
 		td, th {
-			font-size: $fontsize-base; 
 			padding-bottom:1em;
 		}
 		

@@ -1,0 +1,64 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "var";
+
+// update hr slightly but support old DOM
+hr {
+	height:2mm;
+	margin: 4mm 0;
+	border-top: 1mm solid #666;
+
+	&.divider {
+		display: block;
+		margin: 1rem 0;
+		border: 0;
+		border-top: 2mm solid #bbb;
+	}
+
+	&.spacer {
+		border-top: none;
+		height: 2rem;
+	}
+}
+
+.no-page-break {
+	// try to avoid breaking up this content
+	page-break-inside: avoid !important;
+	break-inside: avoid !important;
+}
+
+// print v1, but supported in pdf-letter CSS
+.spacer {
+	height: 1rem;
+}
+
+.group {
+	margin: 2rem 0;
+}
+
+.pageBreak,
+.break {
+	page-break-after: always !important;
+}
+
+// match a hidden table with it's border
+.box {
+	width: 100%;
+	border: 2px solid var.$line-color; // match table
+	padding: 5px 8px;
+	margin: 0.5em 0 1em 0;
+
+	// try to avoid breaking up box data
+	page-break-inside: avoid !important;
+	break-inside: avoid !important;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+
+
+
+

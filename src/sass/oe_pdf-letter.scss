@@ -17,13 +17,12 @@
 
 @use "pdf-letter/flex";
 @use "pdf-letter/header";
+@use "pdf-letter/spacing";
 @use "pdf-letter/lists";
 @use "pdf-letter/tables";
 @use "pdf-letter/checkbox";
 @use "pdf-letter/tickbox";
 @use "pdf-letter/dotted";
-@use "pdf-letter/post-sign-qr";
-@use "pdf-letter/to-address-envelope";
 
 
 

@@ -1,9 +1,6 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-@use "var";
-@use "mix" as *;
-
 html {
 	background: #fff;
 }
@@ -12,10 +9,22 @@ body {
 	// "Arial" is official NHS Letter font, shouldn't fall back to Roboto ever
 	font-family: "Arial", "Roboto", sans-serif;
 	font-weight: 400;
-	font-size: var.$fontsize-base;
+	font-size: 12pt;
 	line-height: 1.2;
 
 	margin: 0;
+
+	&.letter-10pt {
+		font-size: 10pt;
+	}
+
+	&.letter-11pt {
+		font-size: 11pt;
+	}
+
+	&.letter-14pt {
+		font-size: 14pt;
+	}
 
 	// DOM is sometimes loaded into an <iframe>
 	// then it needs some padding
@@ -28,49 +37,10 @@ body {
 	}
 
 	// this forces the Background Graphic print option (even if not selected by User)
+	// for icons and "X" to appear in checkboxes, etc, although this would be set
+	// correctly in Puppeteer
 	-webkit-print-color-adjust: exact; // Chrome
 	print-color-adjust: exact;
-}
-
-// empty <div>
-.spacer {
-	height: 1rem;
-}
-
-.group {
-	margin: 2rem 0;
-}
-
-.pageBreak,
-.break {
-	page-break-after: always !important;
-}
-
-hr {
-	border-top: 2px solid #ddd;
-
-	&.divider {
-		display: block;
-		margin: 2rem 0;
-		border: 0;
-		border-top: 4px solid #bbb;
-	}
-}
-
-// match a hidden table with it's border
-.box {
-	width: 100%;
-	border: 2px solid var.$table-border-color;
-	padding: 5px 8px;
-	margin: 0.5em 0 1em 0;
-
-	// try to avoid breaking up box data
-	page-break-inside: avoid !important;
-	break-inside: avoid !important;
-}
-
-.nowrap {
-	white-space: nowrap;
 }
 
 
