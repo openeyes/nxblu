@@ -4,24 +4,26 @@
 @use "mix";
 
 header.print-header {
-	margin: 0 0 10mm 0;
-
 	// must allow for the positioning of [to_address]
-	// 10mm top margin in Puppeteer, 10mm margin-bottom + this min height
-	// 90mm is the bottom of the window on most envelopes
-	min-height: 70mm;
+	min-height: 70mm; // 10mm Puppeteer top-margin, 10mm margin gap = 70mm (don't reduce this!)
+	margin: 0 0 10mm 0;
 
 	@include mix.flex(flex-start, flex-end);
 
 	address {
-		font-size: 12pt; // fix font size
+		font-size: 11pt; // fix font size
 		font-style: normal;
 		line-height: 1.2;
+	}
+
+	.primary-logo {
+		text-align: right;
 	}
 
 	.primary-identity-address {
 		text-align: right;
 		margin-top: 1rem;
+		font-weight: bold;
 	}
 
 	// [to_address]
@@ -30,7 +32,6 @@ header.print-header {
 		// default to 20mm, set in line in DOM to allow Admin to adjust this
 		top: 20mm;
 		left: 20mm;
-		font-weight: bold;
 		line-height: 1;
 		z-index: 1;
 		background: white;

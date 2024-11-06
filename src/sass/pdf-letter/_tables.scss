@@ -6,14 +6,13 @@
 table {
     width: 100%;
     border:2px solid $line-color;
-    margin:0.5em 0 1em 0;
+    margin:2mm 0 4mm 0; // changed to mm
     
     // try to avoid breaking up tabular data
     page-break-inside:avoid !important;
 	break-inside:avoid !important;
     
-    // Worklist tables could be long 
-    // add option to break on page
+    // Some tables could be long add option to break on page
     &.allow-page-break {
 	    page-break-inside: auto !important;
 		break-inside: auto !important;
@@ -21,9 +20,10 @@ table {
     
     // setup defaults
     td, th {
-	    padding: 4px;
+	    padding: 1mm 2mm;
 	 	text-align:left; 
-	 	vertical-align: top;  
+	 	vertical-align: top;
+	    line-height: 1.2;
 	}
 	
 	&.row-lines {

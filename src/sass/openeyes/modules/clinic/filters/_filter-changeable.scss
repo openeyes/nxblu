@@ -14,7 +14,8 @@
 			z-index:10;
 			
 			.filter-btn {
-				width: 160px; 
+				width: auto;
+				white-space: nowrap;
 				justify-content: flex-end;
 			}
 			

@@ -6,13 +6,12 @@
 // update hr slightly but support old DOM
 hr {
 	height:2mm;
-	margin: 4mm 0;
+	margin: 0.5rem 0;
 	border-top: 1mm solid #666;
 
 	&.divider {
 		display: block;
-		margin: 1rem 0;
-		border: 0;
+		margin: 1.5rem 0;
 		border-top: 2mm solid #bbb;
 	}
 
