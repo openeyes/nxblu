@@ -17,6 +17,11 @@
 	min-height: 50px; // single option
 	max-height: calc( 100vh - 450px ); // check the layout at various scales
 
+	// if regular login is squeezed then...
+	@include letterbox(){
+		max-height: 50svh;
+	}
+
 	.handheld & {
 		max-height: 50svh;
 	}
