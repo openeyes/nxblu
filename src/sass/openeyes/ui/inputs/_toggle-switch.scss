@@ -73,6 +73,16 @@
 		}
 	}
 
+	// v9, introduced to handle PIN confirm double check
+	&:is(.issue, .orange){
+		input[type="checkbox"] {
+			&:checked + .toggle-btn {
+				border-color: var(--txt-base);
+				background: var(--color-orange);
+			}
+		}
+	}
+
 	// disable the toggle switch
 	&.disabled {
 		pointer-events: none;

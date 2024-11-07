@@ -15,6 +15,11 @@
 	
 	// PIN icon
 	background: left 6px center/14px var(--color-orange) url( svg-white-icon("i/padlock"))  no-repeat;
+
+	&.no-padlock {
+		background: var(--color-orange);
+		padding-inline-start: 4px;
+	}
 	
 	&.accepted-pin { 
 		background-color: var(--color-green);

@@ -7,15 +7,15 @@
 hr {
 	height:2mm;
 	margin: 0.5rem 0;
-	border-top: 1mm solid #666;
+	border-top: 1pt solid #666;
 
 	&.divider {
 		display: block;
 		margin: 1.5rem 0;
-		border-top: 2mm solid #bbb;
+		border-top: 4pt solid #bbb;
 	}
 
-	&.spacer {
+	&.flow-spacer {
 		border-top: none;
 		height: 2rem;
 	}
