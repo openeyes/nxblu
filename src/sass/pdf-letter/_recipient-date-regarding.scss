@@ -1,0 +1,20 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "mix" as *;
+
+// recipient, date and regarding subject are pulled in from a textarea above Tiny
+.recipient-date {
+	@include flex(flex-start, space-between);
+	margin-bottom: 1rem;
+
+	.date {
+		transform: translateY(-1rem);
+	}
+}
+
+.regarding {
+	font-weight: bold;
+	margin-bottom: 1rem;
+
+}

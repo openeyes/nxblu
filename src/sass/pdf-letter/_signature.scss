@@ -1,5 +1,21 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-$border-color: #bbb;
-$line-color: #ddd;
+@use "mix" as *;
+
+.sign-block {
+	padding-top: 2rem;
+
+	.signed-on {
+		font-size: 75%;
+	}
+
+	.signee {
+		margin:0.5rem 0;
+	}
+}
+
+.addressees {
+	font-size: 75%;
+	line-height: 1.1;
+}

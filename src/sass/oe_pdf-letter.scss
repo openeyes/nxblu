@@ -26,6 +26,10 @@
 @use "pdf-letter/tickbox";
 @use "pdf-letter/dotted";
 
+// new structured DOM
+@use "pdf-letter/recipient-date-regarding";
+@use "pdf-letter/signature";
+
 
 
 

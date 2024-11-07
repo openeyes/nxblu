@@ -5,7 +5,7 @@
 
 table {
     width: 100%;
-    border:2px solid $line-color;
+    border:2pt solid $border-color;
     margin:2mm 0 4mm 0; // changed to mm
     
     // try to avoid breaking up tabular data
@@ -31,7 +31,7 @@ table {
 			padding:6px 4px;
 		}
 		tr {
-			border-top:1px solid #ddd;
+			border-top:1pt solid $border-color;
 			
 			&.no-line,
 			&:first-child { 
@@ -43,9 +43,9 @@ table {
 	// add borders to the data (standard table)
 	&.borders {
 		// need this here again, because of TinyMCE editor
-		border:2px solid $line-color;
+		border:2pt solid $border-color;
 		td, th {
-			border: 2px solid $line-color;
+			border: 2pt solid $border-color;
 		}
 		
 		// merge data in <tr> with <tr> above
