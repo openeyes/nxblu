@@ -22,8 +22,16 @@ body {
 		font-size: 11pt;
 	}
 
-	&.letter-14pt {
-		font-size: 14pt;
+	&.letter-18pt {
+		font-size: 18pt;
+	}
+
+	&.letter-20pt {
+		font-size: 20pt;
+	}
+
+	&.letter-22pt {
+		font-size: 22pt;
 	}
 
 	// DOM is sometimes loaded into an <iframe>

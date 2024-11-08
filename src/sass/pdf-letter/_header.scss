@@ -11,29 +11,48 @@ header.print-header {
 	@include mix.flex(flex-start, flex-end);
 
 	address {
-		font-size: 11pt; // fix font size
+		font-size: 10pt; // fix font size
 		font-style: normal;
 		line-height: 1.2;
 	}
+}
 
-	.primary-logo {
-		text-align: right;
-	}
+// [to_address]
+.to-address-envelope {
+	position: absolute;
+	// default to 20mm, set in line in DOM to allow Admin to adjust this
+	top: 20mm;
+	left: 20mm;
+	line-height: 1;
+	z-index: 1;
+	background: white;
+	font-size: 11pt; // fix font size
+}
 
-	.primary-identity-address {
-		text-align: right;
-		margin-top: 1rem;
-		font-weight: bold;
-	}
+// identity
+.identity-logo {
+	text-align: right;
 
-	// [to_address]
-	.to-address-envelope {
+	.logo-left & {
 		position: absolute;
-		// default to 20mm, set in line in DOM to allow Admin to adjust this
-		top: 20mm;
-		left: 20mm;
-		line-height: 1;
-		z-index: 1;
-		background: white;
+		top: 0;
+		left: 0;
 	}
 }
+
+.identity-details {
+	white-space: nowrap; // use Admin layout
+	text-align: right;
+	margin-top: 1rem;
+	font-weight: bold;
+
+	&.left-align {
+		text-align: left;
+	}
+
+	.logo-left & {
+		margin-top: 0;
+	}
+}
+
+
