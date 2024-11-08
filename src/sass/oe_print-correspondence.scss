@@ -13,22 +13,22 @@
 @use "base/cols";		// Simple grid layout
 @use "base/helpers";    // Helpers
 
-@use "pdf-letter/base";
+@use "print-correspondence/base";
 
-@use "pdf-letter/typography";
+@use "print-correspondence/typography";
 
-@use "pdf-letter/flex";
-@use "pdf-letter/header";
-@use "pdf-letter/spacing";
-@use "pdf-letter/lists";
-@use "pdf-letter/tables";
-@use "pdf-letter/checkbox";
-@use "pdf-letter/tickbox";
-@use "pdf-letter/dotted";
+@use "print-correspondence/flex";
+@use "print-correspondence/header";
+@use "print-correspondence/spacing";
+@use "print-correspondence/lists";
+@use "print-correspondence/tables";
+@use "print-correspondence/checkbox";
+@use "print-correspondence/tickbox";
+@use "print-correspondence/dotted";
 
 // new structured DOM
-@use "pdf-letter/recipient-date-regarding";
-@use "pdf-letter/signature";
+@use "print-correspondence/recipient-date-regarding";
+@use "print-correspondence/signature";
 
 
 
