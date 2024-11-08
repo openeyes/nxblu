@@ -6,18 +6,19 @@
 // update hr slightly but support old DOM
 hr {
 	height:2mm;
-	margin: 0.5rem 0;
+	margin: 0.5rem 0 0.3mm 0;
 	border-top: 1pt solid var.$line-color;
 
 	&.divider {
 		display: block;
-		margin: 1.5rem 0;
+		margin: 1.2rem 0 1rem 0;
 		border-top: 3pt solid var.$line-color;
 	}
 
 	&.text-spacer {
 		border-top: none;
-		height: 2rem;
+		height: 1rem;
+		margin: 0;
 	}
 }
 
@@ -29,7 +30,7 @@ hr {
 
 // print v1, but supported in pdf-letter CSS
 .spacer {
-	height: 0.5rem;
+	height: 1rem;
 }
 
 .group {
