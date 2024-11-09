@@ -34,6 +34,10 @@ body {
 		font-size: 22pt;
 	}
 
+	&.letter-24pt {
+		font-size: 24pt;
+	}
+
 	// DOM is sometimes loaded into an <iframe>
 	// then it needs some padding
 	@media screen {

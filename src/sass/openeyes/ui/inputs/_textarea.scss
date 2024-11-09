@@ -9,6 +9,12 @@ textarea {
 	resize: none; // hide corner resize
 	overflow-wrap: break-word; // allow long words to break and wrap
 
+	&.no-resize {
+		// allow textarea to honour rows attribute
+		// JS should NOT target and resize!
+		height: auto;
+	}
+
 	// when showing the placeholder text, make it look like <input>
 	&:placeholder-shown {
 		line-height: $oe-input-height;
