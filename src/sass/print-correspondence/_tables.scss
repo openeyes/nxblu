@@ -27,14 +27,15 @@ table {
 	}
 	
 	&.row-lines {
-		td, th {
-			padding:6px 4px;
-		}
 		tr {
 			border-top:1pt solid $border-color;
-			
-			&.no-line,
-			&:first-child { 
+
+			// inside the TinyMCE Editor it doesn't show unless..
+			.mce-content-body & {
+				border-top-width: 2pt;
+			}
+
+			&.no-line {
 				border-top: none;
 			}
 		}
@@ -42,8 +43,6 @@ table {
 	
 	// add borders to the data (standard table)
 	&.borders {
-		// need this here again, because of TinyMCE editor
-		border:2pt solid $border-color;
 		td, th {
 			border: 2pt solid $border-color;
 		}
@@ -57,7 +56,12 @@ table {
 			}
 		}
 	}
-	
+
+
+
+
+	// --- DEPRECIATED but keeping just in case it's used
+
 	// label - view layout
 	// to replace tab layouts
 	// structure is <tr><th>Label<th><td>Data<td></tr>
@@ -68,7 +72,7 @@ table {
 		}
 		
 		th {
-			width:26% !important;
+			width:26%;
 		}
 		
 	}
@@ -83,11 +87,11 @@ table {
 		}
 		
 		th {
-			width:26% !important;
+			width:26%;
 		}
 		
 		td {
-			width:37% !important;
+			width:37%;
 		}	
 	} 
 }
