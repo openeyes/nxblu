@@ -11,6 +11,7 @@
 @use "form-check-inline";
 @use "table";
 @use "input-text";
+@use "input";
 @use "sr-only";
 @use "formbuilder";
 @use "field-required";
@@ -18,3 +19,5 @@
 @use "legend";
 @use "card";
 @use "disabled-view";
+
+@use "component/survey";

@@ -1,0 +1,31 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// Advanced > Survey component
+.formio-component-survey {
+	
+	// Question and options are in a table:
+	table.table {
+		width: 95%;
+
+		:is(th, td) {
+			width: 15%;
+			vertical-align: middle;
+
+			padding:4px 0 4px 4px;
+
+			&:first-child {
+				width: auto;
+			}
+		}
+
+		tbody tr {
+			&:nth-child(odd){
+				background-color: var(--bg-odd-row-hint);
+			}
+			&:is(:hover) {
+				background-color: var(--bg-html);
+			}
+		}
+	}
+}

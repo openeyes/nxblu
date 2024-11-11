@@ -31,11 +31,11 @@ tbody {
 		}
 
 		// subtly show  odd/even rows
-		// this can be combined with those below
+		// this can be overridden with those below
 		// so it needs to be first
 		.oddeven-rows & {
 			&:nth-child(odd) {
-				background: var(--bg-title);
+				background: var(--bg-odd-row-hint);
 			}
 		}
 
