@@ -52,5 +52,8 @@
 @use "print/sem/event/prescription";
 @use "print/sem/formio"; // form.io
 
+// Long URL strings in Print
+@use "print/break-url-str";
+
 
 
