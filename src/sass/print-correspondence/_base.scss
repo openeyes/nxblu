@@ -14,29 +14,22 @@ body {
 
 	margin: 0;
 
-	&.letter-10pt {
-		font-size: 10pt;
+	@mixin letterPointSize($pt){
+		&.letter-#{$pt} {
+			font-size: $pt;
+		}
 	}
 
-	&.letter-11pt {
-		font-size: 11pt;
-	}
-
-	&.letter-18pt {
-		font-size: 18pt;
-	}
-
-	&.letter-20pt {
-		font-size: 20pt;
-	}
-
-	&.letter-22pt {
-		font-size: 22pt;
-	}
-
-	&.letter-24pt {
-		font-size: 24pt;
-	}
+	@include letterPointSize(10pt);
+	@include letterPointSize(11pt);
+	@include letterPointSize(12pt);
+	@include letterPointSize(14pt);
+	@include letterPointSize(16pt);
+	@include letterPointSize(18pt);
+	@include letterPointSize(20pt);
+	@include letterPointSize(22pt);
+	@include letterPointSize(24pt);
+	
 
 	// DOM is sometimes loaded into an <iframe>
 	// then it needs some padding
