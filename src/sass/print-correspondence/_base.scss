@@ -7,7 +7,7 @@ html {
 
 body {
 	// "Arial" is official NHS Letter font, shouldn't fall back to Roboto ever
-	font-family: "Arial", "Roboto", sans-serif;
+	font-family: Arial, "Roboto", sans-serif;
 	font-weight: 400;
 	font-size: 12pt;
 	line-height: 1.2;
@@ -29,7 +29,7 @@ body {
 	@include letterPointSize(20pt);
 	@include letterPointSize(22pt);
 	@include letterPointSize(24pt);
-	
+
 
 	// DOM is sometimes loaded into an <iframe>
 	// then it needs some padding
@@ -47,8 +47,4 @@ body {
 	-webkit-print-color-adjust: exact; // Chrome
 	print-color-adjust: exact;
 }
-
-
-
-
 

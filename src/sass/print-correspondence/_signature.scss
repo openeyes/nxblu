@@ -4,7 +4,12 @@
 @use "mix" as *;
 
 .sign-block {
-	padding-top: 2rem;
+	padding-top: 1rem;
+
+	.signature {
+		@include flex(flex-end, flex-start);
+		gap: 2rem;
+	}
 
 	.signed-on {
 		font-size: 75%;
@@ -12,6 +17,6 @@
 	}
 
 	.signee {
-		margin:0.5rem 0;
+		margin:0.3rem 0;
 	}
 }
