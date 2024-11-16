@@ -10,6 +10,10 @@
 	background: var(--bg-title);
 	border-right:1px solid var(--gui-line);
 
+	.nav-grp-hd-i {
+		color: var(--txt-hd);
+	}
+
 	ul.admin-nav {
 		margin: 0 0 10px 0;
 
