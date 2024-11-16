@@ -1,0 +1,54 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "var" as *;
+@use "mix" as *;
+
+// Admin can add inputs (checkbox, date) and select options in Admin Letter Macros
+// for PDF I only need to show the value... but in Tiny Edit I need to flag it
+
+input, select {
+	outline: 2px solid #06f;
+	outline-offset: 2px;
+
+
+	// PDF print
+	// make inputs look like text
+	body.print & {
+		all: unset;
+		font-weight: bold;
+
+		&[type="radio"],
+		&[type="checkbox"]{
+			display: inline-block;
+			border:2pt solid black;
+			vertical-align: middle;
+			height:1rem;
+			width:1rem;
+
+			&:checked {
+				background: center / 83% url( build-svg-path("print", "tick-chunky")) no-repeat;
+			}
+		}
+
+		&[type="checkbox"]{
+			margin:0 1rem 0 0;
+		}
+
+		&[type="radio"]{
+			margin:0 0.2rem 0 0;
+			border-radius: 50%;
+			transform: translateY(-1pt);
+		}
+	}
+}
+
+// used to wrap radio input
+label {
+	border: 2pt solid #aaa;
+	border-radius: 4pt;
+	padding: 0.2rem 0.4rem 0.2rem 0.2rem;
+	margin:0 0.3rem 0 0;
+	font-weight: bold;
+	cursor: pointer;
+}

@@ -8,12 +8,13 @@
 
 	.signature {
 		@include flex(flex-end, flex-start);
-		gap: 2rem;
 	}
 
 	.signed-on {
 		font-size: 75%;
-		color: #bbb;
+		color: #999;
+		margin: 0 0 0 2rem; // gap not supported
+		transform: translateY(-10px);
 	}
 
 	.signee {

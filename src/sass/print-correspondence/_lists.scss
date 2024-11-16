@@ -4,10 +4,14 @@
 @use "var" as *;
 
 ul, ol {
-	list-style-position: inside;
-	margin: 0.3rem 0; // match a paragraph
+	list-style: outside;
+	margin: 0.3rem 0 0.3rem 1rem; // match a paragraph
+
+	li {
+		margin:0 0 0.1rem 0;
+	}
 
 	table & {
-		margin: 0.2em 0;
+		margin:0;
 	}
 }

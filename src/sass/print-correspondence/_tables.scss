@@ -17,6 +17,10 @@ table {
 	    page-break-inside: auto !important;
 		break-inside: auto !important;
     }
+
+	header.print-header & {
+		border:none;
+	}
     
     // setup defaults
     td, th {
@@ -57,8 +61,9 @@ table {
 		}
 	}
 
-
-
+	&.no-borders {
+		border:none;
+	}
 
 	// --- DEPRECIATED but keeping just in case it's used
 
