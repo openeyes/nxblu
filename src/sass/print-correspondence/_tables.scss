@@ -5,9 +5,9 @@
 
 table {
     width: 100%;
-    border:2pt solid $border-color;
+	border:2pt solid $border-color;
     margin:2mm 0 4mm 0; // changed to mm
-    
+
     // try to avoid breaking up tabular data
     page-break-inside:avoid !important;
 	break-inside:avoid !important;

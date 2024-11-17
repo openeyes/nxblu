@@ -5,6 +5,7 @@
 // default block element (follows base)
 p {
 	margin-bottom: 0.4rem;
+	line-height: 1.2;
 }
 
 // shouldn't really be using h1
@@ -12,7 +13,7 @@ p {
 h1, h2 {
     font-size: 140%;
 	font-weight: bold;
-    line-height: 1.2;
+    line-height: 1.1;
 	margin-bottom: 1rem;
 }
 
@@ -26,8 +27,8 @@ h3 {
 // match p.bold
 h4 {
 	font-weight: bold;
-	line-height: 1.1;
-	margin-bottom: 0.5rem;
+	line-height: 1.2;
+	margin-bottom: 0.4rem;
 }
 
 // only down to h5, but covering h6!
@@ -39,7 +40,7 @@ h5, h6  {
 
 // fix size font IF it's only for Admin use
 .admin-only {
-	font-size: 9pt !important;
+	font-size: 8pt !important;
 	line-height: 1.1;
 }
 
