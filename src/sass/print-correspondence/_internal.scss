@@ -13,7 +13,7 @@ body.internal {
 		}
 
 		min-height: auto; // override default;
-		height:20mm;
-		background: center / 20mm url( build-svg-path('print','stripes')) repeat-x;
+		height:10mm;
+		background: center / 10mm url( build-svg-path('print','stripes')) repeat-x;
 	}
 }

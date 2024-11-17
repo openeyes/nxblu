@@ -13,7 +13,7 @@ input, select {
 
 	&[type="radio"],
 	&[type="checkbox"]{
-		margin:0 0.5rem 0 0;
+		margin:0 0.5em 0 0;
 	}
 
 	// PDF print
@@ -25,13 +25,14 @@ input, select {
 		&[type="radio"],
 		&[type="checkbox"]{
 			display: inline-block;
-			border:2pt solid black;
+			border:1.2pt solid #666;
 			vertical-align: middle;
-			height:1rem;
-			width:1rem;
+			height:0.8em;
+			width:0.8em;
 
 			&:checked {
-				background: center / 83% url( build-svg-path("print", "tick-chunky")) no-repeat;
+				border-color: #000;
+				background: center / 95% url( build-svg-path("print", "tick-chunky")) no-repeat;
 			}
 		}
 
@@ -45,8 +46,8 @@ input, select {
 label {
 	border: 1pt solid #bbb;
 	border-radius: 4pt;
-	padding: 0.2rem 0.4rem 0.2rem 0.2rem;
-	margin:0 0.3rem 0 0;
+	padding: 0.1em 0.3em 0.1em 0.1em;
+	margin:0 0.3em 0 0;
 	font-weight: bold;
 	cursor: pointer;
 }
