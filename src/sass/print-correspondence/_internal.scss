@@ -1,0 +1,19 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "mix" as *;
+
+// set 'internal' instead of letter-{size}pt on the body
+body.internal {
+	font-size: 10pt; // hard set
+
+	header.print-header {
+		* {
+			display: none;
+		}
+
+		min-height: auto; // override default;
+		height:20mm;
+		background: center / 20mm url( build-svg-path('print','stripes')) repeat-x;
+	}
+}

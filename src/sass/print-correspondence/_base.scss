@@ -9,7 +9,7 @@ body {
 	// "Arial" is official NHS Letter font, shouldn't fall back to Roboto ever
 	font-family: Arial, "Roboto", sans-serif;
 	font-weight: 400;
-	font-size: 12pt;
+	font-size: 1rem; // font size in TinyMCE
 	line-height: 1.2;
 
 	margin: 0;
@@ -20,7 +20,9 @@ body {
 		}
 	}
 
-	@include letterPointSize(10pt);
+	// when run through Puppeteer a letter-{size}pt class is added
+	// or it's set to 'internal'
+ 	@include letterPointSize(10pt);
 	@include letterPointSize(11pt);
 	@include letterPointSize(12pt);
 	@include letterPointSize(14pt);
