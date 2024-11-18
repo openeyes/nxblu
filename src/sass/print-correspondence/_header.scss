@@ -8,6 +8,8 @@ header.print-header {
 	min-height: 70mm; // 10mm Puppeteer top-margin, 10mm margin gap = 70mm (don't reduce this!)
 	margin: 0 0 10mm 0;
 
+	font-size: 10pt; // covers custom header content (in table)
+
 	@include mix.flex(flex-start, flex-end);
 
 	address {
