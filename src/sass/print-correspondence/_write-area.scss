@@ -1,0 +1,14 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "var" as *;
+
+// Internal "forms"(paper!) usage
+// when printed areas are need to be filled out
+.write-area {
+	display: inline-block;
+	height: 1.5em;
+	width: 100%;
+	margin: 0 0.1em 1pt 0.1em;
+	border-bottom: 1pt dotted $line-color;
+}
