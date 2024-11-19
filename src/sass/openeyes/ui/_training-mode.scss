@@ -21,9 +21,7 @@
 		}
 
 		&:is(:hover, .active) {
-			svg.oe-openeyes {
-				fill: $_yellow;
-			}
+			background: none;
 		}
 	}
 

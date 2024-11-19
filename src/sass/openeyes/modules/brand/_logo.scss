@@ -17,6 +17,11 @@
 	padding:0 20px; 	// increase hit area
 	cursor: pointer;
 
+	// on a small device OE logo overlays the header content
+	// this hides the overlaying issue
+	background: var(--bg-html);
+	border-radius: 5px;
+
 	@include flex(center, center );
 
 	// little sexy touch.
@@ -25,6 +30,7 @@
 	// JS adds on click
 	&.active {
 		left:0;
+		background: none;
 	}
 
 	&:is(:hover, .active) {
