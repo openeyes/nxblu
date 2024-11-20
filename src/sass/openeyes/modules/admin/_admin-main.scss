@@ -9,7 +9,7 @@
 	padding:10px 20px 40px 0;
 
 	h2, h3, p {
-		margin:0 0 10px 0;
+		margin:0 0 8px 0;
 	}
 
 	// title (if this can't moved out of page
@@ -22,9 +22,9 @@
 	}
 
 	h3 {
-		@include font-size(15);
-		color: var(--text-light);
-		font-weight: var(--font-light);
+		@include font-size(14);
+		color: var(--txt-hd);
+		font-weight: var(--font-medium);
 	}
 
 	p {
