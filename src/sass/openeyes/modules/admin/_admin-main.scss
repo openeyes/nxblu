@@ -8,27 +8,28 @@
 	@include  font-size(12);
 	padding:10px 20px 40px 0;
 
-	h2, h3, p {
-		margin:0 0 8px 0;
+	&:is(.right-column, .fixed-top){
+		padding: 0;
+		display: grid;
+		gap: 20px;
+
+		> :is( section, .admin-actions) {
+			overflow-y: auto;
+			padding:10px 20px 40px 0;
+		}
+
 	}
 
-	// title (if this can't moved out of page
-	// and into the header area)
-	h2 {
-		@include font-size(17);
-		color: var(--txt-highlight);
-		font-weight: var(--font-light);
-
+	&.right-column {
+		grid: 'section actions' 1fr / 1fr 220px;
 	}
 
-	h3 {
-		@include font-size(14);
-		color: var(--txt-hd);
-		font-weight: var(--font-medium);
+	&.fixed-top {
+		grid: 'actions' auto 'section' 1fr / 1fr;
 	}
 
-	p {
-		@include font-size(13);
+	.admin-actions {
+		grid-area: actions;
 	}
 }
 	

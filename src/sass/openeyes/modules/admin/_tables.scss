@@ -18,16 +18,24 @@
 		}
 	}
 
+
+
+
 	// modify the 'standard' table
 	table.standard {
 		th, td {
 			@include font-size(12);
 		}
 
-		thead.sticky {
+		thead {
 			position: sticky;
 			top:-10px;
 			background: var(--bg-html);
+			z-index: 9;
+
+			th {
+				padding-block: 8px;
+			}
 		}
 
 		tbody {
