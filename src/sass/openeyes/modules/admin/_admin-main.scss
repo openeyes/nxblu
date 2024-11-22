@@ -11,7 +11,6 @@
 	&:is(.right-column, .fixed-top){
 		padding: 0;
 		display: grid;
-		gap: 20px;
 
 		> :is( section, .admin-actions) {
 			overflow-y: auto;
@@ -22,10 +21,15 @@
 
 	&.right-column {
 		grid: 'section actions' 1fr / 1fr 220px;
+		gap: 20px;
 	}
 
 	&.fixed-top {
 		grid: 'actions' auto 'section' 1fr / 1fr;
+		gap: 10px;
+		.admin-actions {
+			padding-block-end:10px;
+		}
 	}
 
 	.admin-actions {

@@ -24,6 +24,14 @@
 		}
 	}
 
+	.fixed-top .admin-actions & {
+		margin-top: 0;
+		padding:0 15%;
+		border-top: none;
+
+	}
+
+
 	button {
 		flex: 1 1 0;
 	}

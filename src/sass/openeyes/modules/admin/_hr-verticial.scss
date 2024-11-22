@@ -1,0 +1,11 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+hr.v-line {
+	height: 24px;
+	width: 2px;
+	margin:0 10px;
+	padding: 0 5px 0 3px;
+	border-bottom: none;
+	border-left: 2px solid var(--gui-line);
+}
