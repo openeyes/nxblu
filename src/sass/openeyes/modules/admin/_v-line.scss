@@ -1,11 +1,10 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-hr.v-line {
-	height: 24px; // 100% doesn't work, hmmmm
-	width: 2px;
-	margin:0 10px;
-	padding: 0 5px 0 3px;
-	border-bottom: none;
-	border-left: 2px solid var(--gui-line);
+span.v-line {
+	display: inline-block;
+	height: 100%;
+	width: 3px;
+	margin:0 15px;
+	background: var(--gui-line);
 }
