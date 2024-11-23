@@ -2,6 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
 @use "openeyes/mix" as *;
+@use "openeyes/var" as *;
 
 .admin-main {
 	a:not(.button) {
@@ -18,6 +19,23 @@
 		margin: 1px 0;
 		font-weight: normal;
 		font-size: inherit;
+	}
+
+	// basically the same as Cancel button but a better UIX
+	a.breadcrumb {
+		display: inline-flex;
+		background: right center / 12px var(--i-direction-right) no-repeat;
+		text-decoration: none;
+		opacity: 0.5;
+		padding-inline-end: 20px;
+		margin-inline-end: 5px;
+		color: var(--txt-hd);
+		font-size: 80%;
+		font-weight: normal;
+
+		&:is(:hover,:focus,:active) {
+			opacity: 1;
+		}
 	}
 }
 	
