@@ -1,9 +1,8 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-
 // do not add any list styling here
-// way to many cascades!
+// way too many cascades!
 
 ul {
 	list-style: none;
@@ -15,7 +14,11 @@ ul {
 }
 
 // not actually using <ol>, only using <ul>
+// at least as far as i know, so keep!
 ol {
 	list-style-position: inside;
+	&.bullet-list {
+		list-style-type: disc;
+	}
 }
 

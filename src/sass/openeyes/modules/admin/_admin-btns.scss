@@ -18,7 +18,7 @@
 		gap: 15px;
 		padding: 15px 0;
 
-		button {
+		:is(button, .button) {
 			flex: none;
 			width: 100%;
 		}
@@ -31,9 +31,9 @@
 
 	}
 
-
-	button {
+	:is(button, .button) {
 		flex: 1 1 0;
+		font-weight: normal;
 	}
 }
 	

@@ -23,6 +23,8 @@
 
 	// modify the 'standard' table
 	table.standard {
+		margin-block-start: 10px;
+
 		th, td {
 			@include font-size(12);
 		}

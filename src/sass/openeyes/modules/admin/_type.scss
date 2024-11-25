@@ -5,13 +5,11 @@
 @use "openeyes/mix" as *;
 
 .admin-main {
-	h2, h3, p {
-		margin:0 0 8px 0;
-	}
 
 	// title (if this can't moved out of page
 	// and into the header area)
 	h2 {
+		margin:0 0 8px 0;
 		@include font-size(17);
 		color: var(--txt-highlight);
 		font-weight: var(--font-light);
@@ -19,12 +17,14 @@
 	}
 
 	h3 {
+		padding:8px 0 2px 0;
 		@include font-size(14);
 		color: var(--txt-hd);
 		font-weight: var(--font-medium);
 	}
 
 	p {
+		margin:0 0 4px 0;
 		@include font-size(13);
 	}
 }
