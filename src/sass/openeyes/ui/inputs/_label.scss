@@ -59,6 +59,7 @@ label {
 				@include flex(center, flex-start);
 				height: 100%;
 				padding:0 5px; // this was 3px 6px
+				border-radius: 3px;
 			}
 		}
 
