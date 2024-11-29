@@ -57,9 +57,9 @@ hr {
 		border-bottom:1px dotted var(--gui-line);
 	}
 
-	&.break {
+	&:is(.break, .spacer) {
 		border-bottom: none;
-		height: 10px;
+		margin: 0 0 5px 0;
+		height: 5px;
 	}
-
 }
