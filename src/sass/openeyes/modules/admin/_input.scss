@@ -14,7 +14,11 @@
 			outline-offset: 1px;
 
 		}
+	}
 
+	// check all input in a table header
+	thead label.highlight {
+		padding:0;
 	}
 }
 	
