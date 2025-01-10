@@ -39,6 +39,12 @@
 		outline: 1px dotted var(--input-focus-outline);
 		outline-offset: 1px;
 	}
+
+	// support 110+, but useful enhancement to help users know what has been auto-filled by browser
+	&:is(:-webkit-autofill, :autofill) {
+		outline: 1px solid var(--input-focus-outline);
+		outline-offset: 1px;
+	}
 }
 
 @supports (color-scheme: dark) {
