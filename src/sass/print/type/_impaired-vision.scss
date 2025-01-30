@@ -2,61 +2,16 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
 @use "../var" as *;
+@use "../mix" as *;
 
-// "impaired-vision" - very poor eye sight 
-
-.change-font.impaired-vision, 
 .impaired-vision {
-	
-	// adjust all type sizes
-	$impaired-vision-increase: 8;
-	// push regular text up to 24pt, from 21pt for AIS
-	$base-increase: 3;
-	
-	font-size: $fontsize-base + $impaired-vision-increase + $base-increase;
-	
-	h3 {
-		font-size: $fontsize-h3 + $impaired-vision-increase;
-	}
-	h4 {
-		font-size: $fontsize-base + $impaired-vision-increase + $base-increase;
-	}
-	p {
-		font-size: $fontsize-base + $impaired-vision-increase + $base-increase;
-	}
-	h5 {
-		font-size: $fontsize-base + $impaired-vision-increase + $base-increase;
-	}
+	font-size: 24pt;
 
-	ul, ol {
-		li {
-			font-size: $fontsize-small + $impaired-vision-increase;
-			font-weight:500;
- 		}
- 		&.normal {
- 			li {
- 				font-size: $fontsize-base + $impaired-vision-increase + $base-increase;
-			}
-		} 
-		&.large {
-			li {
-				font-size: $fontsize-h3 + $impaired-vision-increase; 
-			}
-		} 
-	}
-	
-	table {
-    	td, th {
-	    	font-size: $fontsize-small + $impaired-vision-increase + $base-increase;
-	    }
-	    
-	    &.label-item,
-	    &.label-r-l {
-			td, th {
-				font-size: $fontsize-base + $impaired-vision-increase + $base-increase;
-			}
-		}
-	}
+	@include letterPointSize(16pt);
+	@include letterPointSize(18pt);
+	@include letterPointSize(20pt);
+	@include letterPointSize(22pt);
+	@include letterPointSize(24pt); // == old default
 }
 
 

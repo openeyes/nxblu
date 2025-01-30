@@ -27,9 +27,9 @@
 
 /* font sizes */
 @use "print/type/typography";
-@use "print/type/normal-font";
 @use "print/type/large-font";
 @use "print/type/impaired-vision";
+@use "print/type/fix-font-size";
 
 /* JS esign canvas area */
 @use "print/esign-canvas";

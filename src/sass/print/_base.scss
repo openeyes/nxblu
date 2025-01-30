@@ -12,8 +12,18 @@ body {
 	// "Arial" is official NHS Letter font, shouldn't fall back to Roboto ever
 	font-family: "Arial", "Roboto", sans-serif;
 	font-weight: 400;
-	font-size: var.$fontsize-base;
+	font-size: 13pt;
 	line-height: 1.3;
+
+	// when run through Puppeteer a letter-{size}pt class is added
+	// or it's set to 'internal'
+	@include letterPointSize(10pt);
+	@include letterPointSize(11pt);
+	@include letterPointSize(12pt);
+	@include letterPointSize(13pt);
+	@include letterPointSize(14pt); // == old 'large-font'
+
+
 
 	margin: 0;
 

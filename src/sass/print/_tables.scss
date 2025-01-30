@@ -22,7 +22,6 @@ table {
     // setup defaults
     td, th {
 	    padding: 4px;
-	    font-size: $fontsize-small; 		// 8pt was set in v2
 	 	text-align:left; 
 	 	vertical-align: top;  
 	}
@@ -65,14 +64,6 @@ table {
 				}
 			}
 		}
-	} 
-	
-	// make text "normal"
-	&.large,
-	&.normal-text {
-		td, th {
-			font-size: $fontsize-sem-large; 
-		}
 	}
 	
 	// label - view layout
@@ -81,14 +72,12 @@ table {
 	&.label-item {
 		border: none;
 		td, th {
-			font-size: $fontsize-base; 
 			padding-bottom:1em;
 		}
 		
 		th {
 			width:26% !important;
 		}
-		
 	}
 	
 	// label - right - left layout
@@ -97,7 +86,6 @@ table {
 	&.label-r-l {
 		border: none;
 		td, th {
-			font-size: $fontsize-base; 
 			padding-bottom:1em;
 		}
 		

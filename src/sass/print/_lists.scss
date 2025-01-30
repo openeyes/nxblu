@@ -20,22 +20,9 @@ ul, ol {
 	 }
 	 
 	 li {
-		 font-size: $fontsize-small;
 		 font-weight:500;
 		 padding:2px 0;
 	 }
-
-	 &.normal {
-		li {
-			font-size: $fontsize-base; 
-		}
-	} 
-	 
-	 &.large {
-		li {
-			font-size: $fontsize-h3; 
-		}
-	} 
 }
 
 // lists in tables 

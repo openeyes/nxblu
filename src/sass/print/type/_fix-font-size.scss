@@ -1,0 +1,55 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "../var" as *;
+
+// some parts of printing need have there font-size fixed
+// (this is all very nasty but it is what it is...)
+
+.print-main {
+	.normal-font {
+		font-size: 12pt; // was 13pt
+	}
+}
+
+// match current DOM sizing
+// note 'large-font' was hard coded on the body (pre CR-622)
+// letter-14pt will be the new default (to match current)
+.large-font,
+.letter-14pt {
+	// div wraps, address-to, address-from, date, etc
+	.print-main {
+		.address-to {
+			font-size: 12pt; // was 13pt
+		}
+
+		// address-from (for some reason is 14pt)
+		.address-from {
+			// h5 is a wrapper for the from address
+			h5 {
+				font-size: 13pt;
+			}
+			.date {
+				font-size: 14pt;
+			}
+		}
+	}
+}
+
+// if Admin adjusts the default body to smaller than 14pt
+.print-main {
+	.address-to {
+		font-size: 11pt;
+	}
+
+	// address-from (for some reason is 14pt)
+	.address-from {
+		// h5 is a wrapper for the from address
+		h5 {
+			font-size: 12pt;
+		}
+		.date {
+			font-size: 13pt;
+		}
+	}
+}

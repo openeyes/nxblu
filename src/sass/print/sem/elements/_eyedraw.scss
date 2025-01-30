@@ -9,12 +9,12 @@
 .eyedraw {
 
 	.eyedraw-data {
-		font-size: $fontsize-small;
+		font-size: $fontsize-sem-base;
 		// this needed a fixed width and a smaller size
 		// to hand the overflow issue
 		&.stack {
 			width: 240px;
-			font-size: $fontsize-small - 1;
+			font-size: $fontsize-sem-small - 1;
 			overflow-wrap: break-word;
 		}
 	}

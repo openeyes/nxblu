@@ -21,3 +21,9 @@
 	align-items: $v;	
 }
 
+@mixin letterPointSize($pt){
+	&.letter-#{$pt} {
+		font-size: $pt;
+	}
+}
+
