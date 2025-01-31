@@ -3,53 +3,45 @@
 
 @use "../var" as *;
 
-// some parts of printing need have there font-size fixed
-// (this is all very nasty but it is what it is...)
+// some parts of print need have there font-size fixed
+// (it's all very nasty DOM but can't be changed...)
 
-.print-main {
-	.normal-font {
-		font-size: 12pt; // was 13pt
-	}
-}
-
-// match current DOM sizing
 // note 'large-font' was hard coded on the body (pre CR-622)
-// letter-14pt will be the new default (to match current)
+// letter-14pt will be the new default (to replace "large-font")
 .large-font,
 .letter-14pt {
 	// div wraps, address-to, address-from, date, etc
 	.print-main {
-		.address-to {
-			font-size: 12pt; // was 13pt
+		.normal-font {
+			font-size: 12pt; // !! important - default setting match pre: CR-266
 		}
-
+		.address-to {
+			font-size: 13pt !important; // !! important - default setting match pre: CR-266
+		}
 		// address-from (for some reason is 14pt)
 		.address-from {
 			// h5 is a wrapper for the from address
 			h5 {
-				font-size: 13pt;
+				font-size: 13pt; // !! important - default setting match pre: CR-266
 			}
 			.date {
-				font-size: 14pt;
+				font-size: 14pt; // !! important - default setting match pre: CR-266
 			}
 		}
 	}
 }
 
-// if Admin adjusts the default body to smaller than 14pt
+// if Admin adjusts the default body to anything smaller than letter-14pt
 .print-main {
 	.address-to {
-		font-size: 11pt;
+		font-size: 11pt !important;
 	}
 
 	// address-from (for some reason is 14pt)
 	.address-from {
 		// h5 is a wrapper for the from address
 		h5 {
-			font-size: 12pt;
-		}
-		.date {
-			font-size: 13pt;
+			font-size: inherit;
 		}
 	}
 }
