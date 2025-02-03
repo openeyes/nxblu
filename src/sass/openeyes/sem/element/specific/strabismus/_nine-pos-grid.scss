@@ -1,0 +1,57 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// OE Element - Strabismus
+// Updated layout for 9 Positions in Strabismus
+// Following OE Day review 2025
+
+.nine-pos-grid {
+	display: grid;
+	grid: auto-flow 1fr / 110px 1fr 175px 1fr 110px 1fr 175px 1fr 110px;
+
+	.ed-ninepos-canvas {
+		grid-row: span 3;
+	}
+
+	.np-measurement {
+
+		@include flex( center, space-between );
+		gap: 5px;
+
+		.ninepositions-look-value {
+			width:70px;
+			@include flex( flex-start, space-between);
+			flex-direction: column;
+
+			.ninepositions-look-h {
+				width: 100%;
+				padding-block-end: 1px;
+				margin-block-end: 1px;
+
+				border-bottom:1.5px solid var(--gui-line-hard);
+			}
+			.ninepositions-look-v {
+			}
+		}
+	}
+
+}
+
+// for above, below and tilts
+.nine-pos-row {
+	display: grid;
+	grid: auto-flow 1fr / 110px 1fr 110px 1fr 110px;
+
+	// dropdown centered (above eyedraw)
+	.ninepos-l-c {
+		grid-column: 2 / 3; // left
+	}
+	.ninepos-r-c {
+		grid-column: 4 / 5; // right
+	}
+}
+
+
+
