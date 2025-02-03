@@ -10,33 +10,11 @@
 .nine-pos-grid {
 	display: grid;
 	grid: auto-flow 1fr / 110px 1fr 175px 1fr 110px 1fr 175px 1fr 110px;
+	gap: 4px;
 
 	.ed-ninepos-canvas {
 		grid-row: span 3;
 	}
-
-	.np-measurement {
-
-		@include flex( center, space-between );
-		gap: 5px;
-
-		.ninepositions-look-value {
-			width:70px;
-			@include flex( flex-start, space-between);
-			flex-direction: column;
-
-			.ninepositions-look-h {
-				width: 100%;
-				padding-block-end: 1px;
-				margin-block-end: 1px;
-
-				border-bottom:1.5px solid var(--gui-line-hard);
-			}
-			.ninepositions-look-v {
-			}
-		}
-	}
-
 }
 
 // for above, below and tilts
@@ -50,6 +28,40 @@
 	}
 	.ninepos-r-c {
 		grid-column: 4 / 5; // right
+	}
+}
+
+// dropdown options
+.np-ocular-movement {
+	place-self: center;
+	select {
+		width: 50px;
+	}
+}
+
+// measurements
+.np-measurement {
+	@include flex( center, space-between );
+	gap: 5px;
+
+	.ninepositions-look-value {
+		flex:1 0 0;
+		@include flex( flex-start, space-between);
+		flex-direction: column;
+
+		// allow keyboard input of numerics
+		input {
+			width: 6.5ch;
+			margin-inline-end: 2px;
+		}
+
+		.ninepositions-look-h {
+			width: 100%;
+			padding-block-end: 1px;
+			margin-block-end: 1px;
+			border-bottom:1.5px solid var(--gui-line-hard);
+		}
+		.ninepositions-look-v {}
 	}
 }
 
