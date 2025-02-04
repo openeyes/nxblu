@@ -7,6 +7,15 @@
 
 .main-event {
 	.element {
+
+		.ed-ninepos-canvas {
+			border-radius:5px; // a touch! to bring inline with ED view UI
+		}
+
+		// eyedraw-controls
+		.eyedraw-controls {
+			margin:10px 0;
+		}
 		
 		// 9 positions requires a bespoke table layout
 		// look value | ocularmovement | canvas | ocularmovement | look value | ocularmovement | canvas | ocularmovement | look value
@@ -75,9 +84,7 @@
 				}
 			}
 			
-			.ed-ninepos-canvas {
-				border-radius:5px; // a touch! to bring inline with ED view UI
-			}
+
 			
 			td {
 				
@@ -100,10 +107,7 @@
 		
 		}
 		
-		// eyedraw-controls
-		.eyedraw-controls {
-			margin:10px 0;
-		}
+
 			
 	}
 }
