@@ -4,14 +4,9 @@
 @use "../var" as *;
 @use "../mix" as *;
 
+// depreciated as of 6.4.0 (CR-266)
 .impaired-vision {
 	font-size: 24pt;
-
-	@include letterPointSize(16pt);
-	@include letterPointSize(18pt);
-	@include letterPointSize(20pt);
-	@include letterPointSize(22pt);
-	@include letterPointSize(24pt); // == old default
 }
 
 

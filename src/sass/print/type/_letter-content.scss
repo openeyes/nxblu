@@ -1,0 +1,23 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "../var" as *;
+@use "../mix" as *;
+
+// TB may be using inline style for font-size instead of this...
+.letter-content {
+	
+	@include letterPointSize(10pt);
+	@include letterPointSize(11pt);
+	@include letterPointSize(12pt);
+	@include letterPointSize(13pt);
+	@include letterPointSize(14pt);
+	@include letterPointSize(16pt);
+	@include letterPointSize(18pt);
+	@include letterPointSize(20pt);
+	@include letterPointSize(22pt);
+	@include letterPointSize(24pt);
+}
+
+
+
