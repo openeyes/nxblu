@@ -4,9 +4,10 @@
 @use "../var" as *;
 @use "../mix" as *;
 
-// TB may be using inline style for font-size instead of this...
+// TB implemented using inline style "font-size:{$pt}"
+// instead of the following specific class approach:
+
 .letter-content {
-	
 	@include letterPointSize(10pt);
 	@include letterPointSize(11pt);
 	@include letterPointSize(12pt);
