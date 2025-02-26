@@ -23,4 +23,8 @@
 			background: center / 80% var(--i-tick-chunky) var(--input-base) no-repeat;
 		}
 	}
+
+	input[type="radio"]{
+		border-radius: 50%;
+	}
 }
