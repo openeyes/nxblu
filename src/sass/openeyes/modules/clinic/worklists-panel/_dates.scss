@@ -1,0 +1,39 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+
+@use "openeyes/mix" as *;
+@use "openeyes/var" as *;
+
+// supports current DOM
+.oe-worklists-panel {
+	.set-date-range {
+		margin:10px;
+	}
+}
+
+// new UIX
+.date-filter-options {
+	margin-block-end: 10px;
+
+	.date-type {
+		@include flex( center, flex-start);
+		gap:10px;
+
+		b {
+			opacity: 0.5;
+		}
+	}
+
+	.set-date-range {
+		margin: 10px 0 !important;
+	}
+
+	.set-by-day {
+		@include flex( center, space-between);
+		gap:5px;
+		margin: 10px 0;
+	}
+}
+
+

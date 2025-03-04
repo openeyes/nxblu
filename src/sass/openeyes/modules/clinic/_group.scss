@@ -27,12 +27,32 @@
 				// make space and shift up slightly to improve alignment
 				padding:0 8px 4px 0;
 			}
-			
+
 			h3 {
 				@include font-size(17);
 				font-weight:var(--font-light);
 				color:var(--txt-highlight);
 				transform: translateY(-2px); // visual tweak to vertically center the baseline
+
+				.oec-date {
+					&::before {
+						content: '\00B7';
+						padding-inline-end: 6px;
+					}
+					padding-inline-start: 6px;
+				}
+
+
+				.oec-patient-count {
+					font-size: 75%;
+					font-weight: var(--font-bold);
+					vertical-align: 20%;
+					background: var(--color-highlighter);
+					color:#000;
+					padding:1px 4px;
+					border-radius:2px;
+					margin-inline-start: 6px;
+				}
 			}
 			
 			background:var(--bg-html);
