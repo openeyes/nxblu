@@ -20,15 +20,15 @@
 		
 		&.table-sort {
 			position: relative;
-			padding-left:28px; // 16px default allow for the icon
+			padding-left:24px; // 16px default allow for the icon
 			
 			&:after {
 				content:'';
 				position: absolute;
 				top:12px;
-				left:8px; 
-				height:13px;
-				width:13px;
+				left:5px;
+				height:12px;
+				width:12px;
 				background: center / contain var(--i-downup) no-repeat;
 				opacity:0.4;
 			}
