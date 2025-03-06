@@ -3,7 +3,7 @@
 
 @use "openeyes/mix" as *;
 
-:is(.favourites, .list-manager) {
+.oe-worklists-panel {
 	h3 {
 		@include font-size(11);
 		color: var(--txt-light);
