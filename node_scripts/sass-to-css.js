@@ -98,6 +98,7 @@ const dartSass = ( style ) => {
 		 */
 		const result = sass.compile(`${config.src}${style}.scss`, {
 			style: 'compressed', // "expanded" or "compressed"
+			charset: false,
 			loadPaths: [ 'src/sass/' ]
 		});
 
