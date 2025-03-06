@@ -32,8 +32,11 @@
 			font-weight: var(--font-medium);
 			cursor: pointer;
 
-			&:hover,
-			&:focus {
+			* {
+				pointer-events: none;
+			}
+
+			&:is(:hover, :focus, .selected) {
 				color: #fff;
 				background-color: var(--btn-blue);
 			}
@@ -76,8 +79,8 @@
 
 		}
 
-		.expand-fav,
-		.remove-fav {
+
+		:is(.expand-fav, .remove-fav) {
 			width: 30px;
 			background: var(--btn-base-light);
 			margin: 0 0 0 1px;
