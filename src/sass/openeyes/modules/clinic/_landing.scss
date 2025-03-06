@@ -7,10 +7,10 @@
 	// Help info for landing page
 	.oec-help {
 		width: 450px;
-		margin:60px 20px;	
+		margin:100px 150px;
 		
 		
-		@include font-size(15);
+		@include font-size(16);
 		font-weight: var(--font-light);
 		color: var(--txt-light);
 		
