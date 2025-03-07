@@ -22,16 +22,18 @@
 	// new UIX
 	.show-hide-all {
 		@include flex( center, space-between);
+
 		.oe-worklists-panel & {
 			flex-direction: row-reverse;
 		}
 
-		button.show-all {
-			flex: 3 1 0;
-		}
-
-		button.hide-all {
-			flex: 1 1 0;
+		button {
+			&.show-all-lists {
+				flex: 3 1 0;
+			}
+			&.hide-all-lists {
+				flex: 1 1 0;
+			}
 		}
 	}
 
