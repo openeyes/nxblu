@@ -19,35 +19,30 @@
 		padding: 5px 10px;
 	}
 
+	// new UIX
+	.show-hide-all {
+		@include flex( center, space-between);
+		.oe-worklists-panel & {
+			flex-direction: row-reverse;
+		}
 
-	// rethink... moved to the header
-	.view-work & {
-		position: fixed;
-		top: $oe-header-height;
-		left: 0;
-		z-index: $oe-z-shortcuts;
-		width: 350px;
-		overflow-y: auto;
+		button.show-all {
+			flex: 3 1 0;
+		}
 
-		border-right:2px solid var(--bg-html);
-
-		button {
-			height: $oe-event-header-height;
+		button.hide-all {
+			flex: 1 1 0;
 		}
 	}
 
 	.worklists {
-
+		// need to restrict height and overflow
 		overflow-y: auto;
+		max-height: 70vh; // new UIX
 
-		// v1 within worklist panel
-		.oe-worklists-panel & {
+		// v1 keep current restricted height to support existing DOM
+		.list-manager & {
 			max-height: 160px;
-		}
-
-		// rethink... in the header
-		.view-work & {
-			max-height: calc(100vh - #{$oe-header-height + $oe-event-header-height});
 		}
 
 		margin-block-start: 2px; // provide a small gap with "All" button
