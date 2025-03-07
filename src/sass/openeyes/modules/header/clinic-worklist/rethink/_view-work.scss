@@ -7,17 +7,16 @@
 // rethink UIX
 // new UIX for header space
 
-.manage-loaded-worklists {
+.loaded-worklists-overview {
 	width: 100%;
 	@include flex(stretch, space-between);
 
 
 	// this button is new in the rethink (and it's in the header)
-	.view-state-btn {
+	.view-state {
 		@include flex(flex-end, center);
 		height: $oe-header-height;
 		padding: 10px;
-		cursor: pointer;
 
 		* {
 			pointer-events: none;
@@ -31,22 +30,18 @@
 		background: 50% 13px / 15px none no-repeat;
 
 		&.i-menu {
+			cursor: pointer;
 			background-image: var(--i-menu);
+
 			&:is(:hover, :focus, .active ) {
 				background-image: url(svg-white-icon("i/menu"));
+				background-color: var(--btn-blue-active); // match ALL Worklist button
+				color: #fff;
 			}
 		}
 
 		&.i-calendar {
 			background-image: var(--i-calendar);
-			&:is(:hover, :focus, .active ) {
-				background-image: url(svg-white-icon("i/calendar"));
-			}
-		}
-
-		&:is(:hover, :focus, .active ) {
-			background-color: var(--btn-blue-active); // match ALL Worklist button
-			color: #fff;
 		}
 	}
 
@@ -59,6 +54,7 @@
 		width: 350px;
 		overflow-y: auto;
 
+		border-top:1px solid var(--btn-blue-active);
 		border-right:2px solid var(--bg-html);
 
 		button {
