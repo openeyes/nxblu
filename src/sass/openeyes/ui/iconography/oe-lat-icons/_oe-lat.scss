@@ -9,6 +9,7 @@
 	display: block;
 	height: 14px; // match background-size
 	width:30px; // creates a center gap
+	min-width: 30px; // require if used in "flex" (or might be squashed)
 	margin: 0 2px; // space makes up to 36px (2 icons)
 
 	// default set up for all icons (match small icon size)
@@ -29,6 +30,7 @@
 	&.mini {
 		background-size:11px;
 		width:25px; // 2px gap
+		min-width: 25px; // // require if used in "flex" (or might be squashed)
 	}
 
 	// this is "n-n"
