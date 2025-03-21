@@ -37,7 +37,7 @@
 	position: fixed;
 	top: $oe-header-height - 5px;
 	right: 5px;
-	width: math.div($oe-hotlist-panel-width, 1.33);
+	width: $oe-hotlist-panel-width;
 
 	overflow-y: auto;
 	max-height: calc(100svh - #{$oe-header-height});
