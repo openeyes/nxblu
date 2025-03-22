@@ -11,6 +11,19 @@
 		margin: 0 0 5px 0;
 	}
 
+	.oe-xsys-panel & {
+		@include font-size(12);
+		padding: 10px;
+		.row {
+			display: flex;
+			margin: 0 0 3px 0;
+
+			.label {
+				width: 70px;
+			}
+		}
+	}
+
 	a {
 		display: inline-block;
 		margin-inline-start: 10px;
@@ -25,6 +38,12 @@
 		font-weight: var(--font-light);
 		color: var(--txt-light);
 	}
+}
+
+.profile-action {
+	padding-block-start: 20px;
+	@include flex( center, center );
+
 }
 
 
@@ -52,12 +71,6 @@
 		line-height:1.1;
 		color: var(--txt-light);
 		margin: 0 0 10px 0;
-	}
-
-	.profile-action {
-		padding-block-start: 20px;
-		@include flex( center, center );
-
 	}
 }
 

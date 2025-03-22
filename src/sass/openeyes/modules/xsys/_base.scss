@@ -6,7 +6,7 @@
 
 // OE Hotlist Panel (RHS)
 .oe-xsys-panel {
-	display:none; // js controlled
+	// display:none; // js controlled
 	z-index: $oe-z-hotlist; 	// overlays content
 
 	position:fixed;
@@ -31,6 +31,11 @@
 	// the 100px improves the screen balance between the content and the hotlist
 	@include super-wide(){	// 2048px+
 		width: $oe-hotlist-panel-max; 
+	}
+
+
+	.collapse-data-header-icon {
+		@include font-size(12);
 	}
 }
 
