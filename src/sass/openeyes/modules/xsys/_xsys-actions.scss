@@ -1,0 +1,37 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.xsys-actions {
+	background: var(--xsys-grey);
+	border-width: 3px;
+	border-color: var(--btn-blue-hint);
+	border-style: double;
+	border-radius: 5px;
+	background-clip: padding-box;
+	padding:5px;
+	margin:3px 1px; // match alert-box
+}
+
+:is(button, .button) {
+	// give a hint of the button colour to the user
+	&.xsys {
+		color: var(--btn-text);
+		background: var(--btn-blue-hint);
+
+		&:is(:hover, :focus, :active){
+			background: var(--btn-blue-active);
+		}
+
+		&::before {
+			content: "";
+			pointer-events: none;
+			height: 12px;
+			width: 12px;
+			background: center / 12px url(svg-white-icon("i/xsys")) no-repeat;
+			margin-inline-end:5px;
+		}
+	}
+}

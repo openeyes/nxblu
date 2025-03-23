@@ -4,9 +4,8 @@
 @use "openeyes/var" as *;
 @use "openeyes/mix" as *;
 
-// OE Hotlist Panel (RHS)
 .oe-xsys-panel {
-	// display:none; // js controlled
+	display:none; // js controlled
 	z-index: $oe-z-hotlist; 	// overlays content
 
 	position:fixed;
@@ -33,7 +32,10 @@
 		width: $oe-hotlist-panel-max; 
 	}
 
+	// soft visual link to nav button
+	border-top:1px solid var(--btn-blue-hint);
 
+	// hacky for demo:
 	.collapse-data-header-icon {
 		@include font-size(12);
 	}

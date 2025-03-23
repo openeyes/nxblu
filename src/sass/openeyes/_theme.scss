@@ -218,6 +218,15 @@ $ed3-light: (
 	"doo-bg": #ccc,
 );
 
+// --- xSys
+$xsys: (
+	"grey": rgb(51,50,50),
+);
+
+$xsys-light: (
+	"grey": rgb(181,180,180),
+);
+
 
 // ---- SVG icons
 
@@ -304,6 +313,7 @@ $themedIcons: (
 	"waiting",
 	"warning", "warning-standard", "warning-none", "klax", "allergy", "allergy-standard", "allergy-none",
 	"whiteboard",
+	"xsys",
 	"zoom-in", "zoom-out");
 
 // red, orange green flavours of icons
@@ -377,6 +387,7 @@ html.theme-dark {
 	@include cssVars("input", $input);
 	@include cssVars("step", $step);
 	@include cssVars("ed3", $ed3);
+	@include cssVars("xsys", $xsys);
 }
 
 
@@ -405,6 +416,7 @@ html.theme-light {
 	@include cssVars("input", $input-light);
 	@include cssVars("step", $step-light);
 	@include cssVars("ed3", $ed3-light);
+	@include cssVars("xsys", $xsys-light);
 
 
 }
