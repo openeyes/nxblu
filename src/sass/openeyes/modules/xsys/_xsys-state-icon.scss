@@ -15,8 +15,8 @@
 	z-index: 1;
 
 	position: absolute;
-	top: 10px;
-	right: 8px;
+	top: 11px;
+	right: 9px;
 
 	outline: 2px solid var(--bg-html);
 
@@ -24,11 +24,24 @@
 	.active & {
 		background-color: var(--bg-max);
 		outline: 2px solid var(--bg-max);
+		box-shadow: 0 0 3px 3px var(--bg-max);
 	}
-
 
 	&.good {
 		background-image: var(--i-tick-green);
+	}
+
+	&.error {
+		background-image: var(--i-cross-red);
+		background-size: #{$-size - 2px};
+	}
+
+	&.patient-found {
+		background-image: var(--i-person-green);
+	}
+
+	&.patient-mismatch {
+		background-image: var(--i-person-query);
 	}
 
 
