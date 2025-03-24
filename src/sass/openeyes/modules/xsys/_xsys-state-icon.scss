@@ -21,7 +21,7 @@
 	outline: 2px solid var(--bg-html);
 
 	// JS will set this class
-	.active & {
+	.active &:not(.syncing) {
 		background-color: var(--bg-max);
 		outline: 2px solid var(--bg-max);
 		box-shadow: 0 0 3px 3px var(--bg-max);
@@ -44,7 +44,19 @@
 		background-image: var(--i-person-query);
 	}
 
-	&.sync {
+	// bit different for the sync animation
+	&.syncing {
+		top: 8px;
+		right: 6px;
+		width: 18px;
+		height: 18px;
+		outline: none;
+		border-radius: 0;
+		background:center / contain var(--i-sync-blue) no-repeat;
+		animation: spinner 2s linear infinite;
 
+		.active & {
+			filter: var(--btn-icon-hover-filter);
+		}
 	}
 }
