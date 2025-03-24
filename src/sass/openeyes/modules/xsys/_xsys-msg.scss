@@ -12,4 +12,11 @@
 	border-radius: 3px;
 	margin:2px;
 	text-align: right;
+
+	// make highlighter "inline" to not have the class here
+	span.highlighter {
+		display:inline-block;
+		padding:1px 4px;
+	}
+
 }

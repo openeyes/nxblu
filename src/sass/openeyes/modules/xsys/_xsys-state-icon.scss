@@ -27,7 +27,7 @@
 		box-shadow: 0 0 3px 3px var(--bg-max);
 	}
 
-	&.good {
+	&.connected {
 		background-image: var(--i-tick-green);
 	}
 
@@ -46,10 +46,10 @@
 
 	// bit different for the sync animation
 	&.syncing {
-		top: 8px;
-		right: 6px;
-		width: 18px;
-		height: 18px;
+		top: 9px;
+		right: 7px;
+		width: 16px;
+		height: 16px;
 		outline: none;
 		border-radius: 0;
 		background:center / contain var(--i-sync-blue) no-repeat;
