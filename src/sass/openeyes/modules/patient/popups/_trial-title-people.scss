@@ -1,0 +1,20 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// Trials tables need to be used in the header and popup
+// DOM needs a slight adjustment to display well in both
+.trial-title-people {
+	:is(.flex-stack, .trial-people) {
+		flex: 1 1 0;
+		padding-block-end: 8px;
+	}
+
+	.oe-patient-popup & {
+		@include flex( flex-start, space-between);
+		gap:5px;
+	}
+}
+

@@ -34,6 +34,7 @@
 	&.error {
 		background-image: var(--i-cross-red);
 		background-size: #{$-size - 2px};
+		box-shadow: 0 0 3px 3px var(--color-red);
 	}
 
 	&.patient-found {
@@ -41,7 +42,8 @@
 	}
 
 	&.patient-mismatch {
-		background-image: var(--i-person-query);
+		background-image: var(--i-person-red);
+		box-shadow: 0 0 3px 3px var(--color-red);
 	}
 
 	// bit different for the sync animation
