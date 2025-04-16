@@ -56,7 +56,9 @@
 	position: fixed;
 	top: $oe-header-height - 5px;
 	right: 5px;
-	width: $oe-hotlist-panel-width;
+
+	// used on OE-lite, needs to adapt to phone
+	max-width: $oe-hotlist-panel-width;
 
 	overflow-y: auto;
 	max-height: calc(100svh - #{$oe-header-height});
