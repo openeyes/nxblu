@@ -1,0 +1,42 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// OE timegap - show interval between two events (any unit)
+.oe-timegap {
+	white-space: nowrap; // must not wrap
+	@include inline-flex(center, flex-start);
+	gap:4px;
+
+	background:var(--bg-odd-row-hint);
+	padding-inline:3px;
+	border-radius: 2px;
+
+	outline: 1px solid var(--gui-line-soft);
+
+	font-weight: 500;
+
+	.tgrp {
+		@include inline-flex(center, flex-start);
+		gap:1px;
+
+		&.gap-flag {
+			background: var(--txt-light);
+			color: var(--txt-invert);
+			padding-inline:3px;
+			border-radius: 2px;
+		}
+	}
+
+	sup {
+		flex:1 0 0;
+		font-size:0.6em;
+
+		//writing-mode: vertical-rl;
+		opacity: 0.9;
+	}
+
+}
+
+

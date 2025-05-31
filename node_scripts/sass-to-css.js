@@ -92,7 +92,6 @@ const dartSass = ( style ) => {
 
 	try {
 		/**
-		 * Dart-Sass recommends using RenderSync as it is faster.
 		 * Create compressed version for Production and a TAG prefixed
 		 * version for iDG to use
 		 */
