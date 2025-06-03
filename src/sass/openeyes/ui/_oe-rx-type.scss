@@ -1,0 +1,44 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+
+// Rx (drug) name with type: inject, prescribe, drops
+.oe-rx-type {
+	white-space: nowrap; // must not wrap
+	@include inline-flex(center, flex-start);
+	gap:4px;
+
+	background: var(--bg-odd-row-hint);
+	padding-inline:3px;
+	border-radius: 2px;
+
+	outline: 1px solid var(--gui-line-soft);
+
+	&.injection {
+		padding-inline-start:20px;
+		background: left 3px center / 12px var(--i-injection) var(--bg-odd-row-hint) no-repeat;
+	}
+
+	&.prescribed {
+		padding-inline-start:20px;
+		background: left 3px center / 12px var(--i-formulary) var(--bg-odd-row-hint) no-repeat;
+	}
+
+	&.drops {
+		padding-inline-start:20px;
+		background: left 3px center / 12px var(--i-drop) var(--bg-odd-row-hint) no-repeat;
+	}
+
+	// Note: have to switch to display:inline-block!
+	&.fixed-width {
+		display: inline-block;
+		width: 10ch;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+}
+
+
