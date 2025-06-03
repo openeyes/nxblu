@@ -32,9 +32,13 @@
 	sup {
 		flex:1 0 0;
 		font-size:0.6em;
-
-		//writing-mode: vertical-rl;
 		opacity: 0.9;
+		//writing-mode: vertical-rl;
+	}
+
+	&.show-icon {
+		padding-inline-start:20px;
+		background: left 3px center / 12px var(--i-interval) var(--bg-odd-row-hint) no-repeat;
 	}
 
 }
