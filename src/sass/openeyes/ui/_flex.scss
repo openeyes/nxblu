@@ -17,6 +17,9 @@
 
 .flex-l {
 	@include flex( center, flex-start );
+	&.f-w {
+		flex-wrap: wrap;
+	}
 }
 
 .flex-r {
