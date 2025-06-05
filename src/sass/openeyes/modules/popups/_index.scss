@@ -29,6 +29,7 @@
 @use "content-specific/popup-search-query"; // Popup Search Query (save and load)
 @use "content-specific/meds-mx";
 @use "content-specific/signature-pad";
+@use "content-specific/findings-grid";
 
 // event audit trail popup v3
 @use "oe-audit-trail-popup";	// User audit trail popup

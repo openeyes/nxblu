@@ -6,4 +6,12 @@
 .user-comment {
 	font-weight:var(--font-medium);
 	font-style: italic;
+
+	&.pad {
+		padding-block:3px;
+	}
+
+	&.pad-t {
+		padding-block:3px;
+	}
 }
