@@ -14,7 +14,7 @@
 	height: 70px;
 	width: 100%;
 	@include flex(center, center);
-	background: var(--bg-invert);
+	background: var(--bg-html);
 	border-top: 3px solid var(--bg-title);
 	transition: bottom 0.2s ease-in-out;
 	// slide up & down:
@@ -45,6 +45,10 @@
 			background-image: url(svg-white-icon("i/remove-circle"));
 		}
 
+		&.wb-task-flag {
+			background-color: var(--wb-highlighter);
+		}
+
 	}
 
 	button {
@@ -53,6 +57,11 @@
 		@include font-size(16);
 		padding: 0 16px;
 		margin: 10px 32px 10px 0;
+		outline: 1px solid var(--input-focus-outline);
+
+		&.wb-task-flag {
+			outline: 4px solid var(--wb-highlighter);
+		}
 
 		&:last-child {
 			margin-right: 0;

@@ -218,6 +218,15 @@ $ed3-light: (
 	"doo-bg": #ccc,
 );
 
+// --- whiteboard
+$wb: (
+	"highlighter": hsl(40, 95%, 40%),
+);
+
+$wb-light: (
+	"highlighter": hsl(43, 95%, 49%),
+);
+
 // --- xSys
 $xsys: (
 	"grey": rgb(51,50,50),
@@ -388,6 +397,7 @@ html.theme-dark {
 	@include cssVars("input", $input);
 	@include cssVars("step", $step);
 	@include cssVars("ed3", $ed3);
+	@include cssVars("wb", $wb);
 	@include cssVars("xsys", $xsys);
 }
 
@@ -417,6 +427,7 @@ html.theme-light {
 	@include cssVars("input", $input-light);
 	@include cssVars("step", $step-light);
 	@include cssVars("ed3", $ed3-light);
+	@include cssVars("wb", $wb-light);
 	@include cssVars("xsys", $xsys-light);
 
 }
