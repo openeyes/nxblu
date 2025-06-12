@@ -6,23 +6,26 @@
 
 .oe-whiteboard {
 
-	.multipage-stack {
+	.wb-user-inputs {
 		width:70vw;
 		// set the height of page wrap
 		height:calc(100svh - $oe-header-height);
-		
 		overflow-y:auto;
 
-		// assumes <img> stack
-		img {
-			display:block; 
-			margin:20px auto;
-			width:90%;
-		}
-		
+		padding:40px;
+
+
 		scroll-behavior: smooth;
+
+		h2 {
+			font-size: $wb3-font-medium;
+			font-weight: 400;
+		}
+
+		h3 {
+			font-size: $wb3-font-small-header;
+			font-weight: 400;
+		}
+
 	}
 }
-
-
-

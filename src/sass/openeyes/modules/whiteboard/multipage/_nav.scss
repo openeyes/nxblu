@@ -22,8 +22,7 @@
 			font-size: $wb3-font-small-header;
 			margin:10px 0;			
 		}
-		
-		
+
 		.page-jump {
 			padding:20px 0;
 			
@@ -63,7 +62,26 @@
 					background-image: url( svg-white-icon('i/direction-down-circle') );
 				}	
 			}
-		}	
+		}
+
+		// on tablets
+		@include handheld() {
+			top:5vh;
+			.page-jump .page-num-btn {
+				width:35px;
+				height:35px;
+				@include font-size(18);
+				margin:0 5px 5px 0;
+			}
+
+			.page-scroll .page-scroll-btn {
+				width:35px;
+				height:35px;
+				background-size:25px;
+			}
+		}
+
+
 	}
 }
 

@@ -13,8 +13,9 @@
 	@include flex(center, flex-start);
 	
 	@include font-size(16);
-	color: var(--txt-light); 	// not themed
+	color: var(--txt-light);
 	font-weight: var(--font-light);
+	line-height: 1.1;
 	
 	@include tablet-scaled(){
 		@include font-size(24);

@@ -4,7 +4,8 @@
 @use "openeyes/mix" as *;
 @use "openeyes/var" as *;
 
-// right' area for 'actions'
+// only used in Whiteboard!
+// (whiteboard is now responsive: initial scale 1)
 .oe-hd-actions {
 	position:absolute;
 	top:0; 
@@ -14,6 +15,12 @@
 	
 	@include font-size(16);
 	color: var(--txt-light);
+
+	@include handheld(){
+		@include font-size(11);
+		height: auto;
+		top:3px;
+	}
 	
 	button {
 		margin:0 8px 0 0;

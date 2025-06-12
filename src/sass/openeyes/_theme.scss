@@ -220,10 +220,12 @@ $ed3-light: (
 
 // --- whiteboard
 $wb: (
+	"bg": hsl(0, 6%, 25%),
 	"highlighter": hsl(40, 95%, 40%),
 );
 
 $wb-light: (
+	"bg": hsl(0, 5%, 60%),
 	"highlighter": hsl(43, 95%, 49%),
 );
 
@@ -343,7 +345,7 @@ $uiThemedIcons: ("face", "elem-rl-vertical", "event-elements", "btn-goto", "tab-
 "nystagmus-arrow-h-1", "nystagmus-arrow-h-2", "nystagmus-arrow-h-3");
 
 // universal icons
-$uiIcons: ("asterisk-white", "filter", "list-dot", "arrow-right-blue", "no-permissions-white",
+$uiIcons: ("asterisk-white", "filter", "list-dot", "arrow-right-blue", "no-permissions-white", "scan",
 "search-white", "search", "shortcut-arrow", "sidebar-audit-trail", "sidebar-switcher-elements", "sidebar-switcher-events",
 "sidebar", "type-linebreak", "type-paragraph", "vc-move", "watermark-clinic");
 

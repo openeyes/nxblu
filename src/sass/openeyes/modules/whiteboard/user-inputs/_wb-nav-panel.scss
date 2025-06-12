@@ -1,0 +1,47 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-whiteboard {
+
+	.wb-nav-panel {
+		position: absolute;
+		right: 3vw;
+		top: 10vh;
+		width: 22vw;
+		user-select: none;
+		color: #fff;
+
+		h3 {
+			font-size: $wb3-font-header;
+		}
+
+		h4 {
+			font-size: $wb3-font-small-header;
+			margin: 10px 0;
+		}
+
+		// like a divider
+		hr {
+			margin: 15px 0;
+			border-bottom: 2px solid var(--gui-line);
+		}
+
+		// improve the base case for wb
+		.button-stack {
+			margin-block:5vh;
+			:is(button, .button) {
+				height: $oe-event-header-height;
+				@include inline-flex(center, center);
+				@include font-size(16);
+				border: 1px solid var(--gui-line);
+			}
+		}
+
+	}
+}
+
+
+

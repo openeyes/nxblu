@@ -13,10 +13,14 @@
 	left: 0;
 	height: 70px;
 	width: 100%;
+
 	@include flex(center, center);
+	gap:20px;
+
 	background: var(--bg-html);
 	border-top: 3px solid var(--bg-title);
 	transition: bottom 0.2s ease-in-out;
+
 	// slide up & down:
 	&.down {
 		bottom: -70px;
@@ -28,6 +32,8 @@
 		border-top-color: var(--bg-max);
 	}
 
+
+	// pulled outside of footer
 	.openclose-icon-btn {
 		position: absolute;
 		bottom: 100%;
@@ -48,16 +54,13 @@
 		&.wb-task-flag {
 			background-color: var(--wb-highlighter);
 		}
-
 	}
 
 	button {
 		height: $oe-event-header-height;
 		@include inline-flex(center, center);
-		@include font-size(16);
 		padding: 0 16px;
-		margin: 10px 32px 10px 0;
-		outline: 1px solid var(--input-focus-outline);
+		outline: 1px solid var(--btn-blue-hint);
 
 		&.wb-task-flag {
 			outline: 4px solid var(--wb-highlighter);
@@ -68,26 +71,12 @@
 		}
 	}
 
-	// Tablet portrait handheld
-	@include tablet-scaled() {
-		position: static;
-		margin:5px 0 0 0;
-		height:200px;
-
-		// in portrait buttons may overflow!
-		overflow-x: auto;
-
-		// remove the draw slider
-		.openclose-icon-btn {
-			display: none;
-		}
-
+	// on tablets
+	@include handheld() {
+		gap:10px;
 		button {
-			height: #{$oe-header-height * 2};
-			@include font-size(24);
-			margin: 0 10px 0 0;
+			padding: 0 5px;
 		}
-
 	}
 }
 	

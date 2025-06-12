@@ -22,8 +22,7 @@
 		gap: 25px;
 	}
 
-	button,
-	.button {
+	:is(button, .button) {
 		// assume that buttons should fill area width, kinda standard design
 		width: 100%;
 	}

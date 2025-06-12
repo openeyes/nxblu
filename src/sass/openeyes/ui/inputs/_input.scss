@@ -32,6 +32,12 @@ input {
 		background: left 5px center / 18px var(--i-ui-filter) var(--input-base) no-repeat;
 	}
 
+	&.scan {
+		padding-left:30px;
+		background: left 5px center / 18px var(--i-ui-scan) var(--input-base) no-repeat;
+		width: calc( 22ch + 30px);
+	}
+
 	&[type="checkbox"],
 	&[type="radio"]{
 		height:auto;

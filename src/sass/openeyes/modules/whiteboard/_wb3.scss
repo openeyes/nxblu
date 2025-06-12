@@ -23,17 +23,11 @@
 	// Risks and Allergies assigns itself to a column outside the explicit grid:
 	grid-auto-columns: 1fr;
 
-	@include tablet-scaled() {
-		height: calc(80vh - $oe-header-height);
-		@supports(height: 100svh) {
-			height: calc(100svh - $oe-header-height - 200px);
-		}
-
+	@include handheld() {
 		// switch to 5 x 2 widget layout
 		grid-template-columns: 1fr 1fr ;
 		grid-auto-flow: column;
 	}
-
 
 }
 

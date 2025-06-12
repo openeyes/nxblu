@@ -31,5 +31,9 @@
 	@media only screen and (max-width: $oe-minimum-viewport-width - 1) {
 		display: block;
 	}
+
+	body.handheld & {
+		display: none;
+	}
 }
 
