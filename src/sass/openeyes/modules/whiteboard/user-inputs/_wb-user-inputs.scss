@@ -12,8 +12,7 @@
 		height:calc(100svh - $oe-header-height);
 		overflow-y:auto;
 
-		padding:40px;
-
+		padding:10vh 5vw 5vh 5vw;
 
 		scroll-behavior: smooth;
 
@@ -25,6 +24,19 @@
 		h3 {
 			font-size: $wb3-font-small-header;
 			font-weight: 400;
+		}
+
+		tr {
+			border-top-width: 3px;
+		}
+
+		:is(td, th) {
+			font-size: 1.5rem;
+			padding: 10px 0 10px 16px;
+
+			&:last-child {
+				text-align: left;
+			}
 		}
 
 	}

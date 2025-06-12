@@ -1,0 +1,16 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+
+// like a divider
+hr {
+	margin: 15px 0;
+	border-bottom: 2px solid var(--gui-line);
+
+	// gap
+	&.finger-space {
+		margin: $wb-finger-size 0 0 0;
+		border-bottom: none;
+	}
+}

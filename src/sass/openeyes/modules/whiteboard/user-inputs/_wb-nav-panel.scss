@@ -8,11 +8,13 @@
 
 	.wb-nav-panel {
 		position: absolute;
-		right: 3vw;
+		right: 0;
 		top: 10vh;
-		width: 22vw;
+		width: 30vw;
 		user-select: none;
 		color: #fff;
+
+		padding-inline: 5vw;
 
 		h3 {
 			font-size: $wb3-font-header;
@@ -21,12 +23,6 @@
 		h4 {
 			font-size: $wb3-font-small-header;
 			margin: 10px 0;
-		}
-
-		// like a divider
-		hr {
-			margin: 15px 0;
-			border-bottom: 2px solid var(--gui-line);
 		}
 
 		// improve the base case for wb
