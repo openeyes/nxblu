@@ -1,0 +1,74 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-whiteboard {
+
+	.wb-event-data {
+		width:70vw;
+		// set the height of page wrap
+		height:calc(100svh - $oe-header-height);
+		overflow-y:auto;
+
+		padding:10vh 5vw 5vh 5vw;
+
+		scroll-behavior: smooth;
+
+		header {
+			margin-block-end: 5vh;
+		}
+
+		section.wb-data-group {
+			margin-block-end: 5vh;
+			background-color: var(--input-hint);
+			padding:20px;
+			border-radius: 10px;
+		}
+
+		h2 {
+			font-size: $wb3-font-medium;
+			font-weight: 400;
+		}
+
+		h3 {
+			font-size: $wb3-font-small-header;
+			font-weight: 400;
+
+			&.section-title {
+				font-size: $wb3-font-base;
+				margin-block-end: 2vh;
+			}
+		}
+
+		tr {
+			border-top-width: 2px;
+		}
+
+
+
+		:is(td, th) {
+			@include font-size(14);
+			padding: 10px 0 10px 10px;
+
+			&:last-child {
+				text-align: left;
+			}
+		}
+
+		:is(input, textarea, select){
+			// provide subtle keyboard accessibility
+			// all set at 24px
+			// JS textAreaResize uses inline style to adjust this
+			height: $wb-input-height;
+			@include font-size(14);
+
+			&:focus-visible {
+				outline: 2px solid var(--input-focus-outline);
+				outline-offset: 1px;
+			}
+		}
+
+	}
+}

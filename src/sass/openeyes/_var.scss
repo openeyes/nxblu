@@ -78,7 +78,9 @@ $wb3-font-base: 2vw;
 $wb3-font-medium: 3.1vw;
 $wb3-font-large: 4vw;
 
-$wb-finger-size: 40px; // initial scale is 1 in whiteboard!
+$wb-input-height: 30px; // 24px OE default
+$wb-finger-size: 20px; // initial scale is 1 in whiteboard!
+
 
 @function build-svg-path($theme, $svg) {
 	@return "../svg/v6/" + $theme + "/" + $svg + ".svg";

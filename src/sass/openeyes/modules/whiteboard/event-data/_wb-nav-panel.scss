@@ -11,10 +11,10 @@
 		right: 0;
 		top: 10vh;
 		width: 30vw;
+		padding-inline: 5vw;
+
 		user-select: none;
 		color: #fff;
-
-		padding-inline: 5vw;
 
 		h3 {
 			font-size: $wb3-font-header;
@@ -23,17 +23,6 @@
 		h4 {
 			font-size: $wb3-font-small-header;
 			margin: 10px 0;
-		}
-
-		// improve the base case for wb
-		.button-stack {
-			margin-block:5vh;
-			:is(button, .button) {
-				height: $oe-event-header-height;
-				@include inline-flex(center, center);
-				@include font-size(16);
-				border: 1px solid var(--gui-line);
-			}
 		}
 
 	}

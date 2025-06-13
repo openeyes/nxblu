@@ -91,6 +91,13 @@
 		}
 	}
 
+	&.scan {
+		&::after {
+			opacity: $_state-opacity;
+			background-image: var(--i-scan);
+		}
+	}
+
 	&.edit {
 		&::after {
 			opacity: $_state-opacity;
