@@ -35,7 +35,6 @@
 		width: $-size-small;
 		height: $-size-small;
 		background-size: $-size-small;
-		vertical-align: middle;
 
 		.handheld & {
 			width: $-hh-size;
@@ -48,7 +47,6 @@
 	// large icon area but small icon
 	&.small-icon {
 		background-size: $-size-small;
-		vertical-align: text-top;
 
 		.handheld & {
 			background-size: $-size-large;
@@ -59,7 +57,6 @@
 		width: $-size-medium;
 		height: $-size-medium;
 		background-size: $-size-medium;
-		vertical-align: middle;
 
 		.handheld & {
 			width: $-hh-size;
@@ -71,7 +68,6 @@
 	// large icon area but medium icon
 	&.medium-icon {
 		background-size: $-size-medium;
-		vertical-align: text-top;
 
 		.handheld & {
 			background-size: $-size-large;
@@ -323,7 +319,8 @@
 		"pin": "pin",
 		"jump-to": "jump-to",
 		"calendar": "calendar",
-		"doc": "doc"
+		"doc": "doc",
+		"taper":"taper"
 	);
 
 	// red orange green icons

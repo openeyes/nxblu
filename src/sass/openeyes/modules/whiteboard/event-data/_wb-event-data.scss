@@ -36,9 +36,19 @@
 			font-size: $wb3-font-small-header;
 			font-weight: 400;
 
-			&.section-title {
+			&.device-name {
 				font-size: $wb3-font-base;
 				margin-block-end: 2vh;
+
+				&.for-lat-R {
+					padding-inline-start: 35px;
+					background: center left / 28px var(--i-lat-R-green) no-repeat;
+				}
+
+				&.for-lat-L {
+					padding-inline-start: 35px;
+					background: center left / 28px var(--i-lat-L-red) no-repeat;
+				}
 			}
 		}
 
