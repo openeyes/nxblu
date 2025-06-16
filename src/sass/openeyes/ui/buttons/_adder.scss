@@ -3,8 +3,8 @@
 
 @use "openeyes/var" as *;
 
-// Adder popup only!
-button.adder {
+// adder (+) or add-edit (pencil edit icon)
+button:is(.adder, .adder-edit){
 	contain: strict;
 	width: 34px;
 	padding: 0;
@@ -20,7 +20,6 @@ button.adder {
 		pointer-events: none;
 		height: 100%;
 		width: 100%;
-		background: center / 20px url(svg-white-icon("i/plus")) no-repeat;
 		opacity: 0.8;
 	}
 
@@ -30,4 +29,13 @@ button.adder {
 			opacity: 1;
 		}
 	}
+}
+
+button.adder::after {
+	background: center / 20px url(svg-white-icon("i/plus")) no-repeat;
+}
+
+button.adder-edit::after {
+	// match small icon size (e.g. the same as comments)
+	background: center / 14px url(svg-white-icon("i/pencil")) no-repeat;
 }

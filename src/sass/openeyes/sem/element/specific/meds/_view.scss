@@ -2,10 +2,24 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
 @use "openeyes/mix" as *;
+@use "openeyes/var" as *;
 
-.meds-view {
+.medx-view {
 	display: grid;
 	grid: 1fr auto / 36ch 34px 1fr 140px 1fr;
 	align-items: center;
 	column-gap: 6px; // match the table td
+}
+
+.medx-actions {
+	display: grid;
+	grid: 1fr / repeat(3, 50px);
+	grid-auto-rows: 1fr;
+	gap:6px;
+	place-items: center;
+
+	button {
+		min-width: 40px;
+	}
+
 }
