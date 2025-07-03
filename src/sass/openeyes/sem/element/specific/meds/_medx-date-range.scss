@@ -1,0 +1,32 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/mix" as *;
+@use "openeyes/var" as *;
+
+
+.medx-date-range {
+	@include flex( center, flex-start);
+	gap: 5px;
+
+	em {
+		opacity: 0.5;
+		font-size:90%;
+	}
+}
+
+.date-stopped-reason {
+	margin-block:8px;
+
+	display: grid;
+	grid: 1fr 1fr / 24px 1fr;
+	grid-auto-flow: row dense;
+	place-items: center;
+
+	row-gap: 3px;
+
+	.stopped-reason {
+		grid-column: 1 / span 2;
+	}
+}
+

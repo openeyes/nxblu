@@ -2,6 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
 @use "openeyes/mix" as *;
+@use "openeyes/var" as *;
 
 // Rx (drug) name with type: inject, prescribe, drops
 .oe-rx-type {
@@ -20,7 +21,12 @@
 		background: left 3px center / 12px var(--i-injection) var(--bg-odd-row-hint) no-repeat;
 	}
 
-	&.prescribed {
+	&.rx {
+		padding-inline-start:20px;
+		background: left 3px center / 12px var(--i-drug-rx) var(--bg-odd-row-hint) no-repeat;
+	}
+
+	&.formulary {
 		padding-inline-start:20px;
 		background: left 3px center / 12px var(--i-formulary) var(--bg-odd-row-hint) no-repeat;
 	}
@@ -28,6 +34,10 @@
 	&.drops {
 		padding-inline-start:20px;
 		background: left 3px center / 12px var(--i-drop) var(--bg-odd-row-hint) no-repeat;
+	}
+
+	&.no-outline {
+		outline: none;
 	}
 
 	// Note: have to switch to display:inline-block!

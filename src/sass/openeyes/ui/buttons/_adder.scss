@@ -4,7 +4,7 @@
 @use "openeyes/var" as *;
 
 // adder (+) or add-edit (pencil edit icon)
-button:is(.adder, .adder-edit){
+button:is(.adder, .adder-edit, .adder-rx){
 	contain: strict;
 	width: 34px;
 	padding: 0;
@@ -35,7 +35,11 @@ button.adder::after {
 	background: center / 20px url(svg-white-icon("i/plus")) no-repeat;
 }
 
+// match small icon size (e.g. the same as comments)
 button.adder-edit::after {
-	// match small icon size (e.g. the same as comments)
-	background: center / 14px url(svg-white-icon("i/pencil")) no-repeat;
+	background: center / 14px url(svg-white-icon("i/draft")) no-repeat;
+}
+
+button.adder-rx::after {
+	background: center / 12px url(svg-white-icon("i/drug-rx")) no-repeat;
 }

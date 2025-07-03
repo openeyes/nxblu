@@ -10,20 +10,29 @@
 fieldset.btn-list {
 
 	// fixed-width  btn-list
-	&.fixed-width {
+	&:is(.fixed-width, .multiline-fixed){
 		label {
 			white-space: normal;
-			width: 180px;
 			.li {
 				height: auto;
 				flex-wrap: wrap;
 				overflow-wrap: break-word;
-				// setup to handle PSD popup (180px is a best guess)
 				padding:3px 8px;
+				line-height: 1.2;
 			}
 		}
 	}
-		
+
+	&.fixed-width {
+		// setup to handle PSD popup (180px is a best guess)
+		width: 180px;
+	}
+
+	// for meds v10 popup
+	&.multiline-fixed {
+		width: 32ch;
+	}
+
 	label {
 		display:flex;
 		margin:0 0 2px 0;
