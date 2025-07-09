@@ -10,6 +10,10 @@ button:is(.adder, .adder-edit, .adder-rx){
 	padding: 0;
 	background: var(--btn-green-hint);
 
+	&.issue {
+		background: var(--btn-orange);
+	}
+
 	// smaller width, required in tight spaces
 	&.square {
 		width: $oe-input-height;

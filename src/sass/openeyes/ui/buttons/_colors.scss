@@ -17,6 +17,10 @@
 		&.blue {
 			background: var(--btn-blue-hint);
 		}
+
+		&.orange {
+			background: var(--btn-orange-hint);
+		}
 	}
 
 	// same as default, need this for 'hint' to work
@@ -46,6 +50,16 @@
 
 		&:active {
 			background: var(--btn-red-active);
+		}
+	}
+
+	&.orange {
+		&:is(:hover, :focus){
+			background: var(--btn-orange);
+		}
+
+		&:active {
+			background: var(--btn-orange-active);
 		}
 	}
 }

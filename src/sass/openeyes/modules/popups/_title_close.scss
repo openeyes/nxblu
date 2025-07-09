@@ -10,6 +10,19 @@
 		@include font-size(18);
 		font-weight:var(--font-light);
 		padding:0 0 10px 0;
+
+		&.with-i {
+			@include flex( center, flex-start);
+			gap:20px;
+
+			.oe-lat {
+				height: 20px; // match background-size
+				background-size:20px;
+				width:44px; // creates a center gap
+				min-width: 44px; // require if used in "flex" (or might be squashed)
+				margin: 0 2px;
+			}
+		}
 	}
 
 	// v1: div.close-icon-btn wraps i.oe-i
