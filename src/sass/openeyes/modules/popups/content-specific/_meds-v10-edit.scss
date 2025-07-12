@@ -16,6 +16,11 @@
 			color: var(--txt-light);
 		}
 
+		:is(.end-date-helpers, .quick-set-end-date) {
+			@include flex( center, space-between);
+			gap: 5px;
+		}
+
 		.medx-drug-name {
 			@include flex( flex-start, flex-start);
 			gap: 10px;
