@@ -1,0 +1,118 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-popup-content {
+
+	.medx-manage-dates {
+		display: grid;
+		grid: repeat(3, 1fr) / 280px 50px 3fr;
+		gap:10px 20px;
+		place-items: center start;
+
+		b {
+			color: var(--txt-light);
+		}
+
+		.medx-drug-name {
+			@include flex( flex-start, flex-start);
+			gap: 10px;
+			grid-row: span 3;
+			place-self: stretch start;
+			padding-block-start: 3px;
+		}
+	}
+
+	.medx-dispense-opts {
+		display: grid;
+		grid: repeat(3, auto) / 240px 1fr;
+		gap:10px 20px;
+
+		.dispense-duration {
+			@include flex(flex-start, space-between);
+			gap: 20px;
+		}
+	}
+
+	.medx-taper-opts {
+		display: grid;
+		grid: 1fr / 50px 2fr 16ch 160px 90px;
+		gap:20px;
+		place-items: center stretch;
+		padding:5px 10px;
+		margin-inline-start: 290px;
+
+		.taper-dose-freq {
+			@include flex( center, flex-start);
+			gap: 5px;
+		}
+
+		// add, duplicate, trash
+		.taper-actions {
+			@include flex(center, space-between);
+			.oe-i {
+				flex: 1 1 0;
+			}
+		}
+
+		// match rows-focus
+		&:is(:hover, :focus-within) {
+			background-color: var(--bg-hover-row);
+			outline: 1px solid var(--gui-line);
+		}
+	}
+
+	.medx-setup-rx-taper {
+		// divider
+		margin-top:20px;
+		padding-block: 20px;
+		border-top: 2px solid var(--gui-line);
+
+		// default display
+		.required-setup {
+			display: none;
+			position: relative;
+
+			// fixed info for tapers
+			.route-units {
+				position: absolute;
+				left:40px;
+				top:0;
+				width:200px;
+			}
+		}
+
+		.not-required-msg {
+			color: var(--txt-light);
+			font-weight: var(--font-light);
+		}
+
+		&.for-rx {
+			padding-inline-start: 40px; // allow for icon background
+			background: left center / 16px var(--i-drug-rx-green) no-repeat;
+		}
+
+		//&.for-taper {
+		//	background: left center / 16px var(--i-taper) no-repeat;
+		//}
+
+		&.not-required {
+			padding-inline-start: 0;
+			background: none;
+		}
+
+		&:not(.not-required) {
+
+			.required-setup {
+				display: block;
+			}
+
+			.not-required-msg {
+				display: none;
+			}
+		}
+	}
+
+}
