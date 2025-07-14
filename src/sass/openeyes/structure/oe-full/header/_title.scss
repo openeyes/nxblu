@@ -26,10 +26,26 @@
 		font-weight: var(--font-medium);
 	}
 
-	// Analytics and OEscape fix the styling
-	// wrapped this in case i need to make smaller:
+	&.oes-summary {
+		position: relative;
+		padding-inline-start: 20px;
+		&::before{
+			content:"";
+			position: absolute;
+			top:0;
+			bottom:0;
+			left:0;
+			width:16px;
+			background: left center / contain var(--i-chart) no-repeat;
+			opacity: 0.5;
+		}
+
+
+	}
+
+	// Admin (only, but could be used in Analytics too?)
 	.oe-area {
-		font-weight: 100;
+		font-weight: var(--font-thin);
 		padding: 0 10px 0 0;
 	}
 }

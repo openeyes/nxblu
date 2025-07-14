@@ -9,7 +9,7 @@
 	// could be used in OES or Analytics!
 	&.with-toolbar {
 		margin:0 0 $oe-event-header-height 0;
-		height: calc( 100vh - #{$oe-header-height + $oe-event-header-height + $oe-event-header-height});
+		height: calc( 100svh - #{$oe-header-height + $oe-event-header-height + $oe-event-header-height});
 	}
 	
 	// toolbar is setup for OES (fixed at the bottom)
@@ -22,7 +22,8 @@
 		bottom:0;
 		height: $oe-event-header-height; 
 		z-index: 1;
-		background: var(--bg-html);
+		background: var(--bg-title);
+		border-top: 1px solid var(--bg-max);
 		
 		// center because of the "OE tag" bottom right:
 		@include flex( center, center );
