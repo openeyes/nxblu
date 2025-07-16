@@ -6,27 +6,41 @@
 
 .oe-popup-content {
 
+	.medx-setup {
+		display: grid;
+		grid: 1fr / 1fr 32ch 16ch 80px 16ch 1fr;
+		gap:10px;
+	}
+
 	.medx-manage-dates {
 		display: grid;
-		grid: repeat(3, 1fr) / 280px 50px 3fr;
-		gap:10px 20px;
-		place-items: center start;
+		grid: 1fr auto / 280px 1fr 2fr 2fr;
+		gap:20px;
+		place-items: start stretch;
 
-		b {
+		h2 {
+			@include font-size(13);
+			font-weight: var(--font-medium);
 			color: var(--txt-light);
+			margin-block-end: 10px;
 		}
 
-		:is(.end-date-helpers, .quick-set-end-date) {
-			@include flex( center, space-between);
+		.medx-date-input {
+			margin-block:0 10px;
+		}
+
+		.quick-set-end-date {
+			@include flex( flex-start, space-between);
+			flex-direction: column;
 			gap: 5px;
 		}
 
 		.medx-drug-name {
 			@include flex( flex-start, flex-start);
 			gap: 10px;
-			grid-row: span 3;
 			place-self: stretch start;
-			padding-block-start: 3px;
+			@include font-size(14);
+			font-weight: var(--font-medium);
 		}
 	}
 
