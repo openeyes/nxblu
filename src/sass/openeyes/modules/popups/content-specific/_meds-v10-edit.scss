@@ -6,13 +6,13 @@
 
 .oe-popup-content {
 
-	.medx-setup {
+	.med-setup {
 		display: grid;
 		grid: 1fr / 1fr 32ch 20ch 80px 20ch 1fr;
 		gap:10px;
 	}
 
-	.medx-manage-dates {
+	.med-manage-dates {
 		display: grid;
 		grid: 1fr auto / 280px 1fr 2fr 2fr;
 		gap:20px;
@@ -25,7 +25,7 @@
 			margin-block-end: 10px;
 		}
 
-		.medx-date-input {
+		.med-date-input {
 			margin-block:0 10px;
 		}
 
@@ -35,7 +35,7 @@
 			gap: 5px;
 		}
 
-		.medx-drug-name {
+		.med-drug-name {
 			@include flex( flex-start, flex-start);
 			gap: 10px;
 			place-self: stretch start;
@@ -48,7 +48,7 @@
 		}
 	}
 
-	.medx-dispense-opts {
+	.med-dispense-opts {
 		display: grid;
 		grid: repeat(3, auto) / 240px 1fr;
 		gap:10px 20px;
@@ -59,7 +59,7 @@
 		}
 	}
 
-	.medx-taper-opts {
+	.med-taper-opts {
 		display: grid;
 		grid: 1fr / 50px 2fr 16ch 160px 90px;
 		gap:20px;
@@ -87,7 +87,7 @@
 		}
 	}
 
-	.medx-setup-rx-taper {
+	.med-setup-rx-taper {
 		// divider
 		margin-top:20px;
 		padding-block: 20px;
