@@ -1,0 +1,16 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+.mdx-view {
+	display: grid;
+	grid: 1fr / 230px 35px 200px 180px 1fr;
+	grid-auto-rows: 1fr;
+	align-items: center;
+	column-gap: 6px; // match the table td
+
+	// same for view / edit
+	.mdx-comments {
+		grid-column: 2 / 6;
+		padding: 5px;
+	}
+}

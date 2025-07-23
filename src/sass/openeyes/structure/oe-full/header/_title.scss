@@ -29,8 +29,8 @@
 	&.oes-summary {
 		position: relative;
 		padding-inline-start: 20px;
-		&::before{
-			content:"";
+		&::before {
+			content: "";
 			position: absolute;
 			top:0;
 			bottom:0;

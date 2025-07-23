@@ -8,7 +8,7 @@
 
 	.medx-setup {
 		display: grid;
-		grid: 1fr / 1fr 32ch 16ch 80px 16ch 1fr;
+		grid: 1fr / 1fr 32ch 20ch 80px 20ch 1fr;
 		gap:10px;
 	}
 
@@ -41,6 +41,10 @@
 			place-self: stretch start;
 			@include font-size(14);
 			font-weight: var(--font-medium);
+
+			i.oe-lat {
+				height: 18px; // to line up with the x-height of drug name
+			}
 		}
 	}
 

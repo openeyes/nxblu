@@ -2,15 +2,14 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
 @use "openeyes/mix" as *;
-@use "openeyes/var" as *;
 
-
-.medx-date-range {
-	@include flex( center, flex-start);
+.mdx-date-range {
+	@include flex(center, flex-start);
 	gap: 5px;
 
-	em {
-		opacity: 0.5;
-		font-size:90%;
+	.rarr {
+		&::before {
+			content: "\2192";
+		}
 	}
 }
