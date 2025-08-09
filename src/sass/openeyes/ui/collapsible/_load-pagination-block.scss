@@ -4,14 +4,14 @@
 @use "openeyes/var" as *;
 @use "openeyes/mix" as *;
 
-.load-more {
+.load-pagination-block {
 	@include flex( center, center);
 
 	// match collapse-data styling, when it loads
 	// it will switch to that expanded DOM
-	margin: 5px 5px 10px 5px;
 	cursor: pointer;
-	padding: 8px;
+	margin: 10px 5px;
+	padding: 20px;
 
 	// as User regularly interact with this turn off selection
 	user-select: none;

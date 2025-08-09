@@ -34,6 +34,17 @@
 				color:var(--txt-highlight);
 				transform: translateY(-2px); // visual tweak to vertically center the baseline
 
+				//
+				.oec-pagination-flag {
+					@include inline-flex(center, space-between);
+					@include font-size(16);
+					font-weight: var(--font-bold);
+					background: var(--bg-max);
+					padding-inline-end:4px;
+					border-radius: 3px;
+					outline: 1px dotted var(--txt-highlight);
+				}
+
 				.oec-date {
 					&::before {
 						content: '\00B7';
@@ -41,7 +52,6 @@
 					}
 					padding-inline-start: 6px;
 				}
-
 
 				.oec-patient-count {
 					font-size: 75%;

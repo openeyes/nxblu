@@ -4,12 +4,16 @@
 @use "openeyes/mix" as *;
 @use "openeyes/var" as *;
 
-
-
 .mdx-taper {
 	display: grid;
 	grid: 1fr / 277px 392px 140px 1fr;
 	align-items: center;
+
+	&.history {
+		opacity: 0.4;
+		line-height: 1;
+		margin-block:4px;
+	}
 
 	&.completed {
 		:is(.taper-dose-freq, .taper-duration) {
@@ -26,18 +30,6 @@
 	.mdx-i {
 		justify-self: end;
 		padding-inline-end: 8px;
-	}
-}
-
-.mdx-stopped {
-	display: grid;
-	grid: 20px / 271px 200px 180px 1fr;
-	column-gap: 6px; // match the table td
-	align-items: center;
-	opacity: 0.6;
-
-	.mdx-i {
-		padding-inline-start: 2px;
 	}
 }
 
