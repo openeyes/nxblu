@@ -10,21 +10,21 @@
 	align-items: center;
 
 	&.history {
-		opacity: 0.4;
+		opacity: var(--txt-fade);
 		line-height: 1;
 		margin-block:4px;
 	}
 
 	&.completed {
 		:is(.taper-dose-freq, .taper-duration) {
-			opacity: 0.5;
+			opacity: var(--txt-fade);
 			text-decoration: line-through;
 		}
 	}
 
 	.mdx-date-range {
 		white-space: nowrap;
-		opacity: 0.5;
+		opacity: var(--txt-fade);
 	}
 
 	.mdx-i {

@@ -9,7 +9,7 @@
 	grid: 20px / 230px 35px 200px 180px 1fr;
 	column-gap: 6px; // match the table td
 	align-items: center;
-	opacity: 0.6;
+	opacity: var(--txt-fade);
 	line-height: 1;
 
 	margin-block-start: 8px;

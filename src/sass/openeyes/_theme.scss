@@ -41,7 +41,8 @@ $txt: (
 	"hd": #5a8291,
 	"active": #46a0b4,
 	"highlight": #00c8cd,
-	"invert": #0d0d0d
+	"invert": #0d0d0d,
+	"fade": 0.4,
 );
 
 $txt-light: (
@@ -50,7 +51,8 @@ $txt-light: (
 	"hd": #2846c8,
 	"active": #2346c8,
 	"highlight": #2846fa,
-	"invert": #f0f0f0
+	"invert": #f0f0f0,
+	"fade": 0.6,
 );
 
 // ---- Font weights (because white on dark bleeds and looks thicker)
