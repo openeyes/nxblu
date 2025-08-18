@@ -6,6 +6,7 @@
 
 .load-pagination-block {
 	@include flex( center, center);
+	gap: 10px;
 
 	// match collapse-data styling, when it loads
 	// it will switch to that expanded DOM
@@ -16,11 +17,9 @@
 	// as User regularly interact with this turn off selection
 	user-select: none;
 
-	// use outline, rather than border to better balance visual
-	// vertical alignment with normal collapse-data layouts.
-	outline:2px dotted var(--txt-light);
-	outline-offset: -2px;
-
+	outline:2px dotted var(--txt-highlight);
+	outline-offset: 2px;
+	border: 2px solid var(--txt-highlight);
 	border-radius: 10px;
 
 	// JS

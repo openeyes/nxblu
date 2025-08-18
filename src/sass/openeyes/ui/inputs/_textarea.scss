@@ -15,6 +15,10 @@ textarea {
 		height: auto;
 	}
 
+	&.resizable-v {
+		resize: vertical;
+	}
+
 	// when showing the placeholder text, make it look like <input>
 	&:placeholder-shown {
 		line-height: $oe-input-height;
