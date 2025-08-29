@@ -38,6 +38,10 @@ input {
 		width: calc( 23ch + 30px);
 		outline:2px solid var(--btn-green);
 		outline-offset: 1px;
+
+		&:focus-within {
+			outline:2px solid var(--input-focus-outline);
+		}
 	}
 
 	&[type="checkbox"],
