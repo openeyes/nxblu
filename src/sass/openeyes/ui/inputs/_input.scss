@@ -35,7 +35,9 @@ input {
 	&.scan {
 		padding-left:30px;
 		background: left 5px center / 18px var(--i-ui-scan) var(--input-base) no-repeat;
-		width: calc( 22ch + 30px);
+		width: calc( 23ch + 30px);
+		outline:2px solid var(--btn-green);
+		outline-offset: 1px;
 	}
 
 	&[type="checkbox"],
