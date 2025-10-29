@@ -363,6 +363,7 @@
 		"cross-red": "cross-red",
 		"klax": "klax",
 		"allergy": "allergy",
+		"allergy-orange": "allergy-orange",
 		"allergy-none": "allergy-none",
 		"allergy-standard": "allergy-standard",
 		"drug-rx-green": "drug-rx-green"
@@ -378,7 +379,20 @@
 	);
 
 	// these icons need to always be at full opacity by default
-	$no-opacity: "laterality.R", "laterality.L", "laterality.NA", "lat-R", "lat-L", "lat-n", "lat-Ri", "lat-Li", "beo", "doubt-active", "circle-green", "circle-yellow", "circle-amber", "circle-orange", "circle-red", "circle-grey", "time-red", "time-orange", "time-green", "flag-green", "flag-amber", "flag-orange", "flag-red", "flag-grey", "triangle-green", "triangle-amber", "triangle-orange", "triangle-red", "triangle-grey", "triangle-urgent", "mpr", "mpr-red", "mpr-amber", "mpr-orange", "mpr-green", "exclamation-green", "exclamation-amber", "exclamation-orange", "exclamation-red", "tick-green", "tick-double-green", "cross-red", "warning", "warning-none", "person-green", "status-urgent", "asterisk-red", "a11ty-green","a11ty-orange","a11ty-red", "a11ty-grey", "assist", "klax", "allergy", "allergy-none", "tree-grow", "drug-rx-green";
+	$no-opacity: "laterality.R", "laterality.L", "laterality.NA",
+	"lat-R", "lat-L", "lat-n", "lat-Ri", "lat-Li", "beo", "doubt-active",
+	"circle-green", "circle-yellow", "circle-amber", "circle-orange", "circle-red", "circle-grey",
+	"time-red", "time-orange", "time-green",
+	"flag-green", "flag-amber", "flag-orange", "flag-red", "flag-grey",
+	"triangle-green", "triangle-amber", "triangle-orange", "triangle-red", "triangle-grey", "triangle-urgent",
+	"mpr", "mpr-red", "mpr-amber", "mpr-orange", "mpr-green",
+	"exclamation-green", "exclamation-amber", "exclamation-orange", "exclamation-red",
+	"tick-green", "tick-double-green",
+	"cross-red", "warning", "warning-none", "person-green", "status-urgent", "asterisk-red",
+	"a11ty-green","a11ty-orange","a11ty-red", "a11ty-grey",
+	"assist", "klax",
+	"allergy", "allergy-orange", "allergy-none",
+	"tree-grow", "drug-rx-green";
 
 	// @mixin - build specific icon classes
 	// $map: see lists above

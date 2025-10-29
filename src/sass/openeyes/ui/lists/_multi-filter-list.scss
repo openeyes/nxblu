@@ -36,7 +36,9 @@ ul.multi-filter-list {
 		min-height: $oe-input-height;
 		@include flex(center, flex-start);
 
-		padding:0 25px 0 5px;
+		line-height: 1;
+
+		padding:0 25px 0 6px;
 		margin:0 0 2px 0; // when wrapped provide a gap
 
 		color: var(--btn-text);
