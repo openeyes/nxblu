@@ -13,6 +13,13 @@
 		}
 	}
 
+	&.alert {
+		.patient-name a {
+			outline: 2px dotted var(--color-red);
+			outline-offset: 2px;
+		}
+	}
+
 	&.allergy {
 		.patient-name a {
 			outline: 2px solid var(--color-red);
@@ -43,7 +50,6 @@
 			color: var(--txt-invert);
 		}
 	}
-
 
 	.patient-name {
 		@include font-size(14);

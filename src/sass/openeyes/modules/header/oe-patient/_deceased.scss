@@ -12,12 +12,10 @@
 			background: var(--txt-base);
 			color: var(--txt-invert);
 			padding:2px;
-			outline: 2px solid #666;
+			outline: 2px dotted var(--txt-base);
 			outline-offset: 1px;
 		}
 	}
-
-
 }
 
 // replaces patient-age
