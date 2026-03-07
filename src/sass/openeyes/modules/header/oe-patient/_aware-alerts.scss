@@ -67,21 +67,4 @@
 			background-image: url(svg-white-icon("i/allergy-standard"));
 		}
 	}
-
-
-	//.aware-label {
-	//	pointer-events: none;
-	//	@include font-size(8);
-	//	font-weight: var(--font-bold);
-	//	color: #fff;
-	//	transform: translate(-4px, 9px );
-	//
-	//}
-	//
-	//// lose the text when its tight
-	//@include squeeze() {
-	//	.aware-label {
-	//		display: none;
-	//	}
-	//}
 }
