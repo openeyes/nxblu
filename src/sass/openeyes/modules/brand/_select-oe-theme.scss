@@ -42,6 +42,8 @@
 		font-weight: 500;
 		&.js-auto-active {
 			border-color: var(--txt-active);
+			border-style: dotted;
+			background-color: var(--btn-blue-active);
 		}
 	}
 }
