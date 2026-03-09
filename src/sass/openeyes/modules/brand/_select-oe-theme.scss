@@ -37,4 +37,11 @@
 			border-color: var(--txt-active);
 		}
 	}
+
+	.auto-theme {
+		font-weight: 500;
+		&.js-auto-active {
+			border-color: var(--txt-active);
+		}
+	}
 }
