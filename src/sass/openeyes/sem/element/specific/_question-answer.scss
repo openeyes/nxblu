@@ -14,11 +14,24 @@
 		// wrapper for Q & A group
 		.qa-g {
 			@include flex( flex-start, space-between );
+			gap: 30px;
+
+			// answer options
+			.answers {
+				flex: 2 1 0;
+			}
+
+			// in View
+			.answer {
+				flex: 2 1 0;
+				@include font-size( 14 );
+				font-style: italic;
+			}
 			
 			.question {
 				position:relative;
-				width: 40%;
-				padding:0 0 0 25px; // allow for the Number
+				flex: 1 1 0;
+				padding-inline-start: 20px; // allow for the Number
 				@include font-size( 14 );
 				
 				.num {
@@ -30,16 +43,20 @@
 					color:var(--txt-light);
 				}
 			}
-			// answer options
-			.answers {
-				width: 50%;
+
+			&.no-num {
+				.question {
+					padding-inline-start: 0; // allow for the Number
+				}
 			}
-			
-			// in View
-			.answer {
-				width: 50%;
-				@include font-size( 14 );
+
+			&.standard-font {
+				:is(.question, .answer) {
+					@include font-size( 12 );
+				}
 			}
+
+
 		}
 	}
 }
