@@ -84,6 +84,20 @@
 		}
 	}
 
+	&.injection-draft {
+		&::after {
+			opacity: 1;
+			background-image: var(--i-injection-orange);
+		}
+	}
+
+	&.injection-done {
+		&::after {
+			opacity: 1;
+			background-image: var(--i-injection-green);
+		}
+	}
+
 	&.draft {
 		&::after {
 			opacity: 1;
