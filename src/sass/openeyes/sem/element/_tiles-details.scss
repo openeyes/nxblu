@@ -1,0 +1,56 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+
+details.tile-group {
+	margin-block: 8px;
+	border-top: 2px dotted var(--bg-data);
+	border-bottom: 2px dotted var(--bg-data);
+	transition: border-color 1s ease-out;
+
+
+	&[open] {
+		border-top-color: var(--color-orange);
+		border-bottom-color: var(--color-orange);
+		padding-block-end: 4px;
+
+		summary::after {
+			background-image: var(--i-reduce-height);
+		}
+	}
+
+	summary {
+		/* remove default arrow */
+		list-style: none;
+		&::-webkit-details-marker {
+			display:none; /* safari */
+		}
+
+		user-select: none;
+
+		@include flex(center, flex-end);
+		gap: 10px;
+		padding-inline: 10px;
+		margin-block: 8px;
+		cursor: pointer;
+
+		&::after {
+			content: '';
+			display: block;
+			$-size-small: 14px;
+			width: $-size-small;
+			height: $-size-small;
+			background: center / $-size-small var(--i-increase-height) no-repeat;
+			opacity: $oe-icon-opacity;
+		}
+
+		&:hover {
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+}

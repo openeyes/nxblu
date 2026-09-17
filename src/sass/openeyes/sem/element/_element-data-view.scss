@@ -24,14 +24,13 @@
 			tbody {
 				th,
 				td {
-					height: 26px; // reduce slightly
+					// height: 26px; // removed in 6.4.19 don't see a need to keep this
 					vertical-align: top; // top!
 					padding-top: 4px; // adjust the padding
 					padding-bottom: 4px;
 				}
 			}
 		}
-
 
 		// keeping data-value as a useful hook
 		// but this could be easily de-coupled.
