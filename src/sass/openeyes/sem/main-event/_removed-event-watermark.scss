@@ -5,7 +5,7 @@
 
 // Viewing a removed Event is clinically un-safe
 // watermark must be add to make it clear what is going on
-.removed-record-watermark {
+:is(.removed-record-watermark, .event-watermark-warning) {
 	position: fixed; 
 	z-index: 10;
 	top: 50%;
