@@ -43,5 +43,15 @@
 			position: relative;
 			top: -1px;
 		}
+
+		@include squeeze(){
+			:is(.hospital-number, .nhs-number){
+				span:first-of-type {
+					display: none;
+				}
+			}
+		}
 	}
+
+
 }
