@@ -1,13 +1,14 @@
 // ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 
-@use "../../mix" as *;
+@use "openeyes/mix" as *;
+@use "openeyes/var" as *;
 
 // Viewing a removed Event is clinically un-safe
 // watermark must be add to make it clear what is going on
 :is(.removed-record-watermark, .event-watermark-warning) {
 	position: fixed; 
-	z-index: 10;
+	z-index: $oe-z-quicklook;
 	top: 50%;
 	left: 50%;
 	
