@@ -11,9 +11,11 @@
 		flex: 1 1 0;
 		align-self: center;
 		margin-inline-start: 10px;
-		padding-inline-start: 20px; // for icon
 
-		background: center left / 16px none no-repeat;
+		&:is(.fav, .team){
+			padding-inline-start: 24px; // for icon
+			background: top 2px left / 16px none no-repeat;
+		}
 
 		&.fav {
 			background-image: var(--i-star);

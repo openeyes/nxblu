@@ -48,3 +48,12 @@
 	}
 }
 
+// remove the labels in Worklist / Clinic Manager
+.oec-patients .oe-patient-meta .patient-details {
+	:is(.patient-gender, .patient-dob ){
+		em {
+			display:none;
+		}
+	}
+}
+
