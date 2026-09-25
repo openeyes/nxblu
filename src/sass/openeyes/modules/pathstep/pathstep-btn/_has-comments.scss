@@ -1,0 +1,27 @@
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oe-pathstep-btn {
+	// any pathStep "type" can can have comments
+	// pathsteps status-types are manaaged with background images
+
+	&.has-comments {
+		padding-inline-end: 12px;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: -1px;
+			right: -1px;
+			width: 12px;
+			height: 12px;
+			background: center / contain var(--i-comments-added) no-repeat;
+		}
+	}
+
+	&:is(.active, .done ){
+		&.has-comments::after {
+			background-image: url( svg-white-icon('i/comments-added'))
+		}
+	}
+}

@@ -21,75 +21,58 @@
 	// all steps have a border for consistent layout	
 	border:2px solid transparent;
 
-	// icon: person
-	&.person {
-		.step {
-			padding-left:13px;
-			background: center left / 11px var(--i-person) no-repeat;
-		}
-	}
+	// Unused
+	//&.person {
+	//	.step {
+	//		padding-left:13px;
+	//		background: center left / 11px var(--i-person) no-repeat;
+	//	}
+	//}
 
-	// icon: config
-	&.config {
-		background: left 3px top 3px / 11px var(--i-cog)  no-repeat;
+	// icon "types" on the button: note cannot be top right to allow for "has-comments"
+
+	&:is(.team, .mandatory, .config ){
+		background: left 3px top 3px / 11px none  no-repeat;
 		padding-left: 16px;
 	}
 
-	// icon: flag comments
-	&.has-comments {
-		background: right 3px top 3px / 11px var(--i-comments-added) no-repeat;
-		padding-right: 16px;
+	&.team {
+		background-image: var(--i-team);
 	}
 
-	// can't be deleted
-	&.mandatory {
-		background: right 2px top 2px / 10px var(--i-asterisk) no-repeat;
-		padding-right: 16px;
+	&.config {
+		background-image: var(--i-cog);
 	}
-	
-	// todo or todo-next
-	// conceptually the same but "next" is a different colour
+
+	&.mandatory {
+		background-image: var(--i-asterisk);
+	}
+
+	// process states (colour)
+
+	// todo or todo-next (conceptually the same, -next is optional)
 	&.todo {
 		background-color: var(--step-grey);
 		border-color: var(--step-outline);
 	}
 	&.todo-next {
-		background: var(--step-grey);
-		border-color:  var(--step-orange);
-	}
-	
-	&.config,
-	&.todo-later,
-	&.todo {
-		&:hover, 
-		&:focus {
-			border-color: var(--txt-base);
-		}
+		background-color: var(--step-grey);
+		border-color:  var(--step-blue);
 	}
 
 	// --- Solid steps
 	// active then done
-	&.active,
-	&.done { 
+	&:is(.done, .active) {
 		color: var(--step-text);
-		&:hover, 
-		&:focus {
-			border-color: rgba(200,200,200,0.3);
-		}
-		
-		// person icon, needs to be white
-		&.person {
-			.step {
-				background-image: url( svg-white-icon('i/person'));
-			}
-		}
 
+		&.team {
+			background-image: url( svg-white-icon("i/team"));
+		}
 		&.config {
-			background-image: url( svg-white-icon('i/cog'));
+			background-image: url( svg-white-icon("i/cog"));
 		}
-
-		&.has-comments {
-			background-image: url( svg-white-icon('i/comments-added'));
+		&.mandatory {
+			background-image: url( svg-white-icon("i/asterisk"));
 		}
 	}
 	
@@ -99,6 +82,13 @@
 	
 	&.done {
 		background-color: var(--step-green);
+	}
+
+	// flag interaction with steps
+	&:is(.todo, .todo-next, .active, .done ) {
+		&:is(:hover, :focus) {
+			border-color: var(--txt-base);
+		}
 	}
 	
 	// locked! another user is using this step
