@@ -10,11 +10,19 @@
 
 	.patient-row {
 		display: grid;
-		grid: none / 60px 120px 290px 48px 1fr repeat(5, 40px) 120px 48px;
-		gap: 4px;
+		grid: auto / 60px 120px 290px 48px 1fr repeat(5, 40px) 90px 48px;
+		gap: 8px 4px;
 		place-items: center;
 
-		:is(.list, .oe-patient-meta, .pathway, .select-tasks ) {
+
+		// match too old <th>
+		&.hds {
+			@include font-size(10);
+			color: var(--txt-light);
+			padding: 8px 0 2px 0; // 8px allows for the gradient fade on the group header
+		}
+
+		:is(.list, .oe-patient-meta, .pathway, .select-tasks, .left ) {
 			justify-self: start;
 		}
 
@@ -26,30 +34,11 @@
 			border-top: none;
 		}
 
-		&:hover, &:focus-within {
+		&:is(:hover, :focus-within){
 			background-color: var(--bg-hover-row);
 		}
 
-		// basic UIX version
-		&.basic {
-			grid: none / 70px 120px 290px 48px 1fr 100px 80px;
-		}
-
-		// match too old <th>
-		&.hds {
-			@include font-size(10);
-			color: var(--txt-light);
-			padding: 8px 0 2px 0; // 8px allows for the gradient fade on the group header
-
-			.left {
-				justify-self: start;
-			}
-		}
-
-		&.done {
-			color: var(--txt-light);
-		}
-
+		// elements
 		time {
 			@include font-size(12);
 			font-weight: var(--font-bold);
@@ -71,8 +60,31 @@
 				font-weight: var(--font-medium);
 			}
 		}
+
+
+		// states
+		&.done {
+			color: var(--txt-light);
+		}
+
+		// when squeeze move the pathway under name
+		@include squeeze(){
+			grid: auto auto / 60px 120px 1fr 48px repeat(5, 40px) 90px 48px;
+			padding-block: 8px 16px;
+
+			> .pathway {
+				grid-area: 2 / 3 / 4 / 3;
+			}
+
+			> .th-pathway {
+				display: none;
+			}
+
+		}
 	}
 
+
+	// multi-tasking
 	.all-pathway-tasks {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -84,6 +96,7 @@
 		margin-inline: 80px;
 		margin-block-end: 40px;
 	}
+
 
 	// multi-task options
 	.select-tasks {

@@ -55,11 +55,12 @@
 				}
 
 				.oec-patient-count {
-					font-size: 75%;
-					font-weight: var(--font-bold);
+					font-size: 70%;
+					font-weight: var(--font-medium);
 					vertical-align: 20%;
-					background: var(--color-highlighter);
-					color:#000;
+					background: var(--step-green);
+					color: var(--step-text);
+					opacity: 0.7;
 					padding:1px 4px;
 					border-radius:2px;
 					margin-inline-start: 6px;
