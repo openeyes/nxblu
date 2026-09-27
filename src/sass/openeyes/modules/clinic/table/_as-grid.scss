@@ -10,7 +10,7 @@
 
 	.patient-row {
 		display: grid;
-		grid: auto / 60px 120px 290px 48px 1fr repeat(5, 40px) 90px 48px;
+		grid: auto / 60px 120px 290px 48px 1fr repeat(5, 40px) 100px 48px;
 		gap: 8px 4px;
 		place-items: center;
 
@@ -69,7 +69,7 @@
 
 		// when squeeze move the pathway under name
 		@include squeeze(){
-			grid: auto auto / 60px 120px 1fr 48px repeat(5, 40px) 90px 48px;
+			grid: auto auto / 60px 120px 1fr 48px repeat(5, 40px) 100px 48px;
 			padding-block: 8px 16px;
 
 			> .pathway {
