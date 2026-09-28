@@ -31,12 +31,12 @@
 
 	// icon "types" on the button: note cannot be top right to allow for "has-comments"
 
-	&:is(.team, .mandatory, .config ){
+	&:is(.team, .mandatory, .config, .type-administrative ){
 		background: left 3px top 3px / 11px none  no-repeat;
 		padding-left: 16px;
 	}
 
-	&.team {
+	&:is(.team, .type-administrative) {
 		background-image: var(--i-team);
 	}
 
