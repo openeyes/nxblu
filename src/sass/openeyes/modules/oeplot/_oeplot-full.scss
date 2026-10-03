@@ -6,9 +6,14 @@
 .oeplot-full {
 	height: calc(100vh - #{ $oe-header-height + $oe-event-header-height + 40px});
 	margin:10px 0;
-
 	// outside of the plot area
 	&.has-title {
 		height: calc(100vh - #{ $oe-header-height + $oe-event-header-height + 80px});
 	}
+
+}
+
+.oeplot-with-content {
+	height: 60vh;
+	margin:10px 0 20px 0;
 }
