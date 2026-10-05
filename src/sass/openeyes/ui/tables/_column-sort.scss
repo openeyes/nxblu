@@ -7,6 +7,7 @@ a.column-sort {
 	// handle icons for states
 	// assuming these won't need to wrap
 	display: inline-block;
+	position: relative;
 
 	font-weight: var(--font-bold);
 	color: var(--txt-base);
@@ -15,12 +16,23 @@ a.column-sort {
 	// allow for background icon
 	padding: 0 14px 0 0;
 
-	// set up for 'ascend': A to Z sorting
-	background: right top/12px var(--i-direction-up) no-repeat;
+	&::after {
+		content: "";
+		display: block;
+		height: 12px;
+		width: 12px;
+		position: absolute;
+		inset: 0 0 auto auto;
+		// set up for 'ascend': A to Z sorting default
+		background: center/12px var(--i-direction-up) no-repeat;
+		opacity: 0.6;
+	}
 
 	// Z to A  sorting
 	&.descend {
-		background-image: var(--i-direction-down) ;
+		&::after {
+			background-image: var(--i-direction-down) ;
+		}
 	}
 
 	&.active{
@@ -31,4 +43,9 @@ a.column-sort {
 		opacity: 1;
 		color:var(--txt-active);
 	}
+
+	&:is(.active, :hover, :focus)::after {
+		opacity: 1;
+	}
+
 }

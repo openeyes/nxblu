@@ -21,6 +21,10 @@
 			grid-area: 1 / 7 / 4 / 8
 		}
 	}
+
+	.element-data & {
+		padding-inline: 20px
+	}
 }
 
 // for above, below and tilts
@@ -33,10 +37,20 @@
 
 	// dropdown centered (above eyedraw)
 	.ninepos-l-c {
+		text-align: center;
 		grid-column: 2 / 3; // left
 	}
 	.ninepos-r-c {
+		text-align: center;
 		grid-column: 4 / 5; // right
+	}
+
+
+}
+
+:is(.np-ocular-movement, .np-measurement){
+	span.fade {
+		opacity: .4;
 	}
 }
 
@@ -76,8 +90,13 @@
 			padding-block-end: 1px;
 			margin-block-end: 1px;
 			border-bottom:1.5px solid var(--gui-line-hard);
+
+			// View mode
+			.element-data & {
+				padding-block-end: 5px;
+				margin-block-end: 5px;
+			}
 		}
-		.ninepositions-look-v {}
 	}
 
 	// JS adds to readings (so affects all readings)
