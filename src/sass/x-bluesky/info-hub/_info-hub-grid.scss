@@ -1,0 +1,106 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.info-hub-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 150px;
+	grid-auto-flow: dense;
+	gap: 10px;
+
+	margin-block: 10px;
+}
+
+@keyframes slide-fade-in {
+	from {
+		opacity: 0;
+		box-shadow: none;
+		transform: scale(0.8) translateY(15vh);
+	}
+}
+
+.info-hub-article {
+	container-type: inline-size;
+	border-radius: 10px;
+	border: 1px solid var(--gui-line);
+	background: var(--bg-data);
+	padding: 20px;
+
+	overflow: hidden auto;
+
+	position: relative;
+
+	// standard is default
+	grid-row: span 2;
+
+	&.small {
+		grid-row: auto;
+	}
+
+	&.wide {
+		grid-column: span 2;
+		grid-row: auto;
+	}
+
+	&.full {
+		grid-column: span 3;
+	}
+
+
+	&:is(:hover, :focus-within){
+		background: var(--bg-max);
+		border-color: var(--txt-base);
+	}
+
+	@container (width > 600px) {
+		.article-layout {
+			@include flex( start, space-between);
+			gap: 20px;
+
+			:is(header, .article-content){
+				flex: 1 0 0;
+			}
+
+		}
+
+	}
+
+
+	header {
+		font-size: 1.625rem;
+		line-height: 1.1;
+		margin-block-end: 1rem;
+	}
+
+	p {
+		@include font-size(15);
+		margin-block-end: 1rem;
+	}
+
+	ul {
+		list-style: disc;
+		padding-inline-start: 1em;
+		margin:0;
+
+		li {
+			padding:0;
+			margin:0;
+			padding-block-end: 0.5rem;
+		}
+	}
+
+	a.i-link {
+		position: absolute;
+		bottom: 5px;
+		right: 5px;
+		@include font-size(13);
+		border-radius:5px !important;
+
+	}
+
+	animation: slide-fade-in linear both;
+	animation-timeline: view(80% 20%);
+}

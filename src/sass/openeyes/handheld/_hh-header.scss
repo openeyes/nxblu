@@ -13,7 +13,10 @@
 	overflow-y: auto;
 	overscroll-behavior: contain;
 
+	border-top-right-radius: 17px;
+
 	@include handheld(){
+		border-top-right-radius: 0;
 		max-height: 25svh;
 	}
 }

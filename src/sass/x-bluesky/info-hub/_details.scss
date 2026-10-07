@@ -1,0 +1,66 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+details.info-details {
+
+	border: 1px solid var(--gui-line-soft);
+	border-radius: 5px;
+	margin-block-end: 10px;
+
+	summary {
+		position: relative;
+		user-select: none;
+		border-radius: 5px;
+		padding: 10px;
+		color: var(--txt-active);
+
+		&:is(:hover, :focus-within) {
+			background-color: var(--bg-max);
+			cursor: pointer;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			inset: 0 10px auto auto;
+			width: 19px;
+			height: 100%;
+			background: center / contain no-repeat var(--i-arrow-down-bold);
+		}
+
+	}
+
+	// if open, UIX hints that it's collapsible
+	&[open] {
+		background: var(--bg-hover-row);
+
+		summary {
+			color: var(--txt-base);
+			font-weight: var(--font-bold);
+
+			&::after {
+				opacity: var(--gui-fade-soft);
+				background-image: var(--i-arrow-up-bold);
+			}
+
+			&:is(:hover, :focus-within) {
+				background-color: var(--bg-focus);
+
+				&::after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	> .details-content {
+		padding: 10px;
+		 em {
+			 color: var(--txt-light);
+		 }
+	}
+}

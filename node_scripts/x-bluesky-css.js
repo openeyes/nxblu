@@ -2,8 +2,9 @@
 
 const config = {
 	src: './src/sass/x-bluesky/',
-	dist: '/Users/toby/Sites/work/oe/idg/src/build/css/idg_bluesky.css'
+	dist: '/Users/toby/Sites/work/oe/idg/src/build/nxblu/dist/css/idg_bluesky.css'
 };
+
 
 const chalk = require('chalk');
 const cyan = chalk.bold.cyan;

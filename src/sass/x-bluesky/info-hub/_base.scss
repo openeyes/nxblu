@@ -1,0 +1,33 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+body.handheld.info-hub {
+	.hh-main {
+		padding-block-start: 5px;
+	}
+
+	.oe-search-patient {
+		grid-area: 1 / span 3;
+
+		.search-patient {
+			gap: 10px;
+			padding-block-end: 0;
+
+			flex-direction: row;
+
+			input.search {
+				flex: 3 0 0;
+				border:none;
+			}
+
+			button {
+				flex: 1 0 0;
+			}
+
+		}
+	}
+
+}
