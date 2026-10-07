@@ -7,6 +7,7 @@
 body.handheld.info-hub {
 	.hh-main {
 		padding-block-start: 5px;
+		padding-block-end: 150px;
 	}
 
 	.oe-search-patient {
@@ -15,6 +16,7 @@ body.handheld.info-hub {
 		.search-patient {
 			gap: 10px;
 			padding-block-end: 0;
+			padding-inline: 10px;
 
 			flex-direction: row;
 
