@@ -6,19 +6,94 @@
 
 // OESCAPE
 .oes-v2 {
-	@include flex( stretch, space-between );
+	width: 100vw;
 
-	// JS controls these widths
-	.oes-left-side,
-	.oes-right-side {
-		flex: 1 1 0;
+	// single plot in Summary .e.g BEO
+	.oes-full {
+		width: 100%;
+		height: 100%;
+	}
 
-		&.fill-2 {
-			flex:2 1 0;
+	// or a split view approach
+	.oes-split-grid {
+		display: grid;
+		grid: 1fr / repeat(6, 1fr);
+		width: 100%;
+		height: 100%;
+
+		:is(.oes-right-side, .oes-left-side){
+			overflow: hidden;
+			z-index: auto;
+			grid-row: 1;
+			height: 100%;
 		}
 
-		&.fill-3 {
-			flex:3 1 0;
+		&.split-1-1 {
+			:is(.oes-right-side, .oes-left-side){
+				grid-column: span 3;
+			}
+		}
+
+		&.split-1-0 {
+			.oes-right-side {
+				grid-column: span 5;
+			}
+			.oes-left-side {
+				grid-column: span 1;
+			}
+		}
+
+		&.split-2-1 {
+			.oes-right-side {
+				grid-column: span 4;
+			}
+			.oes-left-side {
+				grid-column: span 2;
+			}
+		}
+
+		&.split-1-2 {
+			.oes-right-side {
+				grid-column: span 2;
+			}
+			.oes-left-side {
+				grid-column: span 4;
+			}
+		}
+
+		&.split-0-1 {
+			.oes-right-side {
+				grid-column: span 1;
+			}
+			.oes-left-side {
+				grid-column: span 5;
+			}
+		}
+
+
+		&:is(.full-right, .full-left){
+			display: block;
+		}
+
+		&.full-right {
+			.oes-left-side {
+				display: none;
+			}
+
+			.oes-right-side {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		&.full-left {
+			.oes-right-side {
+				display:none;
+			}
+			.oes-left-side {
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 }

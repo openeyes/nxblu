@@ -4,18 +4,27 @@
 @use "openeyes/var" as *;
 @use "openeyes/mix" as *;
 
-// container to display current layout state
-// and for options for side / layout
-.oes-ui-change-layout {
+// to manage split plots view layouts in OES Summary
+.oes-ui-manage-layout {
 	position: relative;
-	margin: 0 10px;
+	margin: 0 10px 0 5px;
+
+	@include flex(center, flex-start);
 
 	// shows the side and layout state
-	.layout-select-btn {
+	.oes-layout-btn {
 		height: $oe-event-header-height;
 		@include flex(center, center);
 		padding: 0 10px;
 		cursor: pointer;
+		background:  var(--bg-popup);
+		border-top: 3px solid transparent;
+		border-bottom: 3px solid transparent;
+
+		&:hover {
+			border-bottom-color: var(--btn-blue-hint);
+		}
+
 		.oes-layout-icon {
 			margin: 0 0 0 6px;
 		}
@@ -30,34 +39,34 @@
 		}
 	}
 
-	.layout-options {
+	.split-layout-options {
 		z-index: $oe-z-add-insert;
 		position: absolute;
 		top: 100%;
 		left: 0;
 		// center it by eye
-		transform: translateX(-35%);
+		transform: translateX(-42px);
 		height: $oe-event-header-height;
 
 		@include flex(center, center);
-		gap:10px;
 
-		border-top: 1px solid var(--txt-highlight);
+		border-top: 1px solid var(--btn-blue-hint);
 		background: var(--bg-title); // match header
-		padding: 0 10px;
+		padding: 0;
 	}
 
-	.layout-option-btn {
+	.split-option-btn {
 		height: $oe-event-header-height;
 		@include flex(center, center);
-		margin: 0 5px;
-		padding: 0 5px;
+		padding: 0 10px;
 		cursor: pointer;
 		border-bottom: 2px solid transparent;
+		opacity: 0.5;
 
 		&:hover,
 		&:focus {
-			border-bottom-color: var(--txt-highlight);
+			opacity: 1;
+			border-bottom-color: var(--btn-blue-hint);
 		}
 
 		// no need for events on anything inside

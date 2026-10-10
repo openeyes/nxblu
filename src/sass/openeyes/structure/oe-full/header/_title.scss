@@ -26,20 +26,13 @@
 		font-weight: var(--font-medium);
 	}
 
-	&.oes-summary {
-		position: relative;
-		padding-inline-start: 20px;
-		&::before {
-			content: "";
-			position: absolute;
-			top:0;
-			bottom:0;
-			left:0;
-			width:16px;
-			background: left center / contain var(--i-chart) no-repeat;
-			opacity: 0.5;
-		}
-
+	&.limit-width {
+		display: inline-block;
+		max-width: 35vw;
+		// truncate text
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 
 	}
 

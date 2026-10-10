@@ -11,7 +11,7 @@
 .oescape-icon-btns {
 	@include flex(center, space-between);
 
-	// OEScape and Analytics header
+	// in OEScape and Analytics header
 	.oe-full-header & {
 		margin: 0 10px;
 	}
@@ -30,6 +30,7 @@
 			@include flex(center, center);
 			height: 31px; // was 28px
 			width: 100%;
+			user-select: none;
 
 			// OEScape and Analytics header
 			.oe-full-header & {

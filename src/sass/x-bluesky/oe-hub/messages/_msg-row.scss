@@ -1,7 +1,7 @@
 @use "openeyes/var" as *;
 @use "openeyes/mix" as *;
 
-.oe-widget {
+.unread-messages-summary {
 	.msg-row {
 		display: grid;
 		grid: 24px 1fr 40px / 2fr 1fr;
