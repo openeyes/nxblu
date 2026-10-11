@@ -11,17 +11,27 @@
 
 div.plotly-notifier {
 	border: none;
-	background: var(--bg-popup);
+
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	max-width: 300px;
+
+	top:90px;
+	right:0;
+	left:0;
+	margin-inline: auto;
 
 	.notifier-note {
 		border: none;
 		background: var(--bg-popup);
 		padding: 10px;
+		background: var(--bg-max);
+		border-radius: 3px;
 
 		p {
 			font-weight: var(--font-medium);
-			@include font-size(12);
+			@include font-size(14);
+			color: var(--txt-highlight);
+			text-align: center;
 		}
 
 		button {
