@@ -1,0 +1,68 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+
+.oes-report-grid {
+	display: grid;
+	grid: auto-flow 32px / repeat(6, 1fr);
+	gap: 12px 8px;
+
+	&.show-all {
+		// row: 1fr allow the img to push the height
+		grid-auto-rows: 1fr;
+
+		// this must scroll;
+		overflow: auto;
+		height: calc( 100svh - #{$oe-header-height + $oe-event-header-height + 100px});
+
+		.date-report {
+			.thumbnail {
+				padding: 4px;
+				img {
+					height: 100%;
+				}
+			}
+
+			.date {
+				display: block;
+				@include font-size(10);
+				font-weight: var(--font-medium);
+				text-align: center;
+				padding-block: 4px;
+			}
+
+		}
+
+	}
+
+	.date-report {
+		background: var(--bg-title);
+
+		display: grid;
+		grid: 1fr auto / 1fr;
+
+		&:hover {
+			background-color: var(--btn-blue);
+			.date {
+				color: var(--btn-text);
+			}
+		}
+
+		.thumbnail {
+			@include flex(center, center);
+			cursor: zoom-in;
+			img {
+				width: 100%;
+				height: 24px;
+				object-fit: contain;
+			}
+		}
+
+		.date {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,12 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+header.oes-reports-header {
+	display: grid;
+	grid: 1fr / repeat(2,max-content) 1fr repeat(3,max-content);
+	gap: 12px;
+	place-items: center start;
+	padding-block-end: 5px;
+	margin-block-end: 10px;
+	border-bottom: 2px solid var(--gui-line); // hr divider
+}

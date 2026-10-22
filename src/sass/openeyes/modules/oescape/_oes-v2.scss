@@ -26,6 +26,16 @@
 			z-index: auto;
 			grid-row: 1;
 			height: 100%;
+
+			:is(.right-eye-plot, .left-eye-plot){
+				height: 100%;
+			}
+
+			:is(.reports-right-eye, .reports-left-eye){
+				height: calc(100svh - #{$oe-header-height + $oe-event-header-height});
+				padding:15px 20px;
+			}
+
 		}
 
 		&.split-1-1 {
@@ -69,7 +79,6 @@
 				grid-column: span 5;
 			}
 		}
-
 
 		&:is(.full-right, .full-left){
 			display: block;
