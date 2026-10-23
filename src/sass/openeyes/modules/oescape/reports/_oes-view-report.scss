@@ -4,20 +4,20 @@
 @use "openeyes/var" as *;
 @use "openeyes/mix" as *;
 
-.oes-full-report {
+.oes-view-report {
 	margin-block-start: 10px;
 	padding-block-end: 20px;
 	border-top: 1px solid var(--gui-line); // hr divider
 	height: calc( 100svh - #{$oe-header-height + $oe-event-header-height + 100px});
 	overflow: hidden auto;
 
-	.report-img {
+	.full-report-img {
 		display: grid;
 		place-items: center;
 		padding-block:10px;
 		img {
 			width: 100%;
-			height: 60vh;
+			height: 70svh;
 			object-fit: contain;
 		}
 	}
