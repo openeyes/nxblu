@@ -8,5 +8,7 @@
 @use "oescape-icon-btns";
 @use "reports";
 
+@use "plotly";
+
 // DOM still(!) not updated so need to support v1
 @use "v1";
