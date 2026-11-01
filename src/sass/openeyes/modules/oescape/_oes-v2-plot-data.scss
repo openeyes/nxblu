@@ -1,0 +1,47 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+.oes-v2-plot-data {
+	position: fixed;
+	inset: 0;
+	width: 800px;
+	max-height: 400px;
+	margin: auto;
+	padding: 20px;
+	background: var(--bg-popup);
+	border: 2px solid var(--bg-max);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+
+	color: var(--txt-text);
+
+	overflow: auto;
+
+	&:popover-open {
+		display:block; // match UA
+	}
+
+
+	header {
+		@include flex( center, flex-start);
+		gap: 20px;
+		top: 0;
+
+		@include font-size(18);
+		font-weight:var(--font-light);
+		padding:0 0 10px 0;
+	}
+
+
+	button.remove-i-btn {
+		position:absolute;
+		top:15px;
+		right:15px;
+
+		width:29px;
+		height:29px;
+		padding: 0;
+	}
+}
