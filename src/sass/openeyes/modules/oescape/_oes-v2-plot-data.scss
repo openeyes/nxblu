@@ -9,20 +9,20 @@
 	inset: 0;
 	width: 800px;
 	max-height: 400px;
+
 	margin: auto;
 	padding: 20px;
+
+	color: var(--txt-text);
 	background: var(--bg-popup);
 	border: 2px solid var(--bg-max);
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-
-	color: var(--txt-text);
 
 	overflow: auto;
 
 	&:popover-open {
 		display:block; // match UA
 	}
-
 
 	header {
 		@include flex( center, flex-start);
@@ -33,7 +33,6 @@
 		font-weight:var(--font-light);
 		padding:0 0 10px 0;
 	}
-
 
 	button.remove-i-btn {
 		position:absolute;

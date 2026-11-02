@@ -21,15 +21,11 @@
 		border-top: 3px solid transparent;
 		border-bottom: 3px solid transparent;
 
-		&:is(:hover, :focus) {
+		&:is(:hover, :focus, .selected ) {
 			border-bottom-color: var(--btn-blue-hint);
 			background-color: var(--bg-max);
 		}
 
-		// JS adds this
-		&.active {
-			background: linear-gradient( rgba(0,0,0,0) 95%, var(--txt-highlight) 96% );
-		}
 		// no need for events on any children
 		* {
 			pointer-events: none;
