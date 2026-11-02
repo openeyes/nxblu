@@ -40,9 +40,9 @@
 
 	.date-report {
 		background: var(--bg-title);
-
 		display: grid;
 		grid: 1fr auto / 1fr;
+		user-select: none;
 
 		* {
 			pointer-events: none;
