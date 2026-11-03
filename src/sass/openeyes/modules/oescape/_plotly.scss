@@ -7,3 +7,7 @@
 .rangeslider-rangeplot text {
 	display: none;
 }
+
+.plotly :is( .cursor-default, .nsewdrag, .draglayer ){
+	cursor: crosshair !important;
+}

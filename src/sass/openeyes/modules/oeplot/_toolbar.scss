@@ -35,6 +35,10 @@
 			label {
 				color: var(--txt-light);
 			}
+
+			select {
+				min-width: 12ch;
+			}
 		}
 	}
 	
