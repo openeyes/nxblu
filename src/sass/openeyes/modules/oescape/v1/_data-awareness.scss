@@ -21,9 +21,8 @@
 
 		.group {
 			position: relative;
-
 			border-right:1px solid var(--gui-line);
-			padding:0 10px 12px 0; // padding bottom to allow for date positioning
+			padding:0 10px 0px 0; // padding bottom to allow for date positioning
 			margin:0 10px 0 0;
 
 			&:last-child {

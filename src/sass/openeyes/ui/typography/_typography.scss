@@ -22,5 +22,30 @@ strong, b {
 }
 
 
+:is( .restrict-64ch, .restrict-32ch, .restrict-24ch, .restrict-16ch ) {
+	display: inline-block;
+	// if text input value is too long, cut and add "..."
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.restrict-64ch {
+	max-width: 64ch;
+}
+
+.restrict-32ch {
+	max-width: 32ch;
+}
+
+.restrict-24ch {
+	max-width: 24ch;
+}
+
+.restrict-16ch {
+	max-width: 16ch;
+}
+
+
 
 		

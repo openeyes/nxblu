@@ -3,6 +3,8 @@
 
 @use "openeyes/mix" as *;
 
+
+
 .flex {
 	@include flex( center, space-between );
 	&.f-w {
@@ -24,6 +26,9 @@
 
 .flex-r {
 	@include flex( center, flex-end );
+	&.f-w {
+		flex-wrap: wrap;
+	}
 }
 
 .flex-t {
