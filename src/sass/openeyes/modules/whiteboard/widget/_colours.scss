@@ -21,21 +21,21 @@
 
 	// color flags for complexity
 	&.green {
-		border-bottom: 2px solid var(--color-green);
+		border-bottom: 4px solid var(--color-green);
 		&::after {
 			background-color: var(--color-green) ;
 		}
 	}
 
 	&.orange {
-		border-bottom: 2px solid var(--color-orange);
+		border-bottom: 4px solid var(--color-orange);
 		&::after {
 			background-color: var(--color-orange);
 		}
 	}
 
 	&.red {
-		border-bottom: 2px solid var(--color-red);
+		border-bottom: 4px solid var(--color-red);
 		&::after {
 			background-color: var(--color-red);
 		}

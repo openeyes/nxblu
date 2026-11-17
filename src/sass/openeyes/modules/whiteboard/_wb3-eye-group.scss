@@ -1,0 +1,44 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes.
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+@use "openeyes/var" as *;
+@use "openeyes/mix" as *;
+
+// OE Whiteboard - 2 target devices:
+// 1) landscape big touchscreen in Op Room (main focus)
+// 2) minimum res tablet (with Portrait in mind)
+
+.wb3-eye-group {
+	display: grid;
+	grid-template-rows: subgrid;
+	padding:8px;
+
+	outline: 4px solid var(--txt-hd);
+	outline-offset: -4px;
+
+	&.two-widgets {
+		grid-row:  span 2;
+
+		@include handheld() {
+			grid-row: 2 / span 2;
+		}
+	}
+
+	h3 {
+		padding-inline-start: 0 !important;
+		> .oe-i {
+			height: 100%;
+			aspect-ratio: 1 / 1;
+			width: auto;
+			background-size: 80%;
+			filter: invert(100%) grayscale(100%);
+			margin-inline-end: 0.5rem;
+		}
+	}
+
+
+}
+
+
+
+
