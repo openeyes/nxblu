@@ -16,6 +16,12 @@
 	outline: 4px solid var(--txt-hd);
 	outline-offset: -4px;
 
+	&.defocus {
+		outline: 4px solid var(--gui-line);
+		opacity: 0.5
+	;
+	}
+
 	&.two-widgets {
 		grid-row:  span 2;
 
